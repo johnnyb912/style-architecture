@@ -1,0 +1,19 @@
+.line {
+  fill: none;
+  stroke: $brand-purple-dark;
+  stroke-width: 2.5px;
+}
+
+.axis {
+  .domain {
+    stroke: $grey;
+  }
+  .tick {
+    line {
+      stroke: $grey;
+    }
+  }
+  text {
+    fill: $grey;
+  }
+}

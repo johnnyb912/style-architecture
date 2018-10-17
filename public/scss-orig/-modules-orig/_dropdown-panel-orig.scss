@@ -1,0 +1,184 @@
+// New styles for expandable toggle container (i.e. specialAccom and Notifcation Options)
+.dropdown-panel-header {
+  color: $grey-medium-dark;
+  font-size: 14px;
+  font-weight: 500;
+  @include flex-between;
+  cursor: pointer;
+  &:hover {
+    color: $grey-medium-dark;
+  }
+  > .fa {
+    font-size: 20px;
+  }
+}
+
+.dropdown-panel {
+  width: 100%;
+  overflow: scroll;
+  transition: height 0.2s ease;
+  padding: 0;
+  &.notes-for-driver[class*="notes-for-driver"]//attr selector to avoid using !important
+  {
+    height:auto; overflow:visible;
+
+    textarea{ margin-bottom:10px; }
+    .form-block-full{ border-top:0; }
+    .delete-button{ margin:10px 0 -10px; }
+  }
+  &.collapsed {
+    visibility: hidden;
+    height: 0;
+  }
+}
+
+.dropdown-panel-container {
+  border-top: 1px solid $cloudy-blue;
+  border-bottom: 1px solid $cloudy-blue;
+  padding: 7px 0;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  width: 100%;
+  &.no-header {
+    margin-top: 0;
+  }
+  @include media(medium) {
+    padding: 7px;
+  }
+  > div {
+    transition: 0.3s max-height ease-in-out;
+    overflow: hidden;
+    padding: 5px;
+    width: 100%;
+    max-height: 1000px;
+    background-color: $white;
+    border-top: 0;
+    overflow: scroll;
+    &.collapsed {
+      max-height: 0;
+      padding: 0 15px;
+      border: 0;
+      margin: 0;
+      opacity: 0;
+      .note {
+        margin-top: 0;
+      }
+    }
+  }
+  .custom-note {
+    margin-top: 15px;
+  }
+  .checkbox-new {
+    margin: 5px;
+  }
+  &.edit-rider {
+    border-top: 0;
+    border-bottom: 0;
+    padding: 0;
+    margin-top: 0;
+    .dropdown-panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 20px;
+      .fa {
+        cursor: pointer;
+        margin-left: 20px;
+      }
+      span {
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 0;
+        font-weight: bold;
+        color: $brand-purple;
+        cursor: pointer;
+      }
+      .note {
+        color: $grey-warm;
+        margin-left: 5px;
+        font-style: italic;
+        font-size: 1.2rem;
+        font-weight: 500;
+        text-transform: none;
+        letter-spacing: 0px;
+      }
+      .toggle-all {
+        color: $bright-blue;
+        text-decoration: underline;
+        margin-left: 20px;
+        margin-bottom: 0;
+        font-size: 1.4rem;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        text-transform: none;
+      }
+    }
+    .dropdown-panel {
+      font-size: 1.4rem;
+      flex-wrapper {
+        width: auto;
+        background-color: yellow;
+        margin: 0 auto;
+      }
+      .input-wrapper {
+        margin-right: 0;
+        width: 100%;
+        margin-top: 15px;
+        input {
+          width: 100%;
+        }
+        @include media(medium) {
+          width: 32%;
+          margin-right: 1.6%;
+        }
+      }
+      .input-wrapper:nth-child(3),
+      .input-wrapper:nth-child(6) {
+        margin-right: 0;
+      }
+      .input-wrapper:nth-child(1),
+      .input-wrapper:nth-child(2),
+      .input-wrapper:nth-child(3) {
+        margin-top: 10px;
+      }
+      .note {
+        margin-top: 20px;
+      }
+    }
+  }
+  &.care-team {
+    border-top: 2px solid $blueberry;
+  }
+  .note {
+    margin: 10px 0 0;
+  }
+
+  .button-container {
+    @include flex-center;
+    flex-direction: column;
+    margin-top: 20px;
+    button {
+      text-transform: uppercase;
+      padding: 0;
+      height: 36px;
+      font-weight: bold;
+      font-size: 14px;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+      width: 293px;
+      max-width: 80%;
+    }
+    p {
+      margin: 10px 0 0;
+    }
+  }
+}
+
+.note.optional {
+  color: $grey-warm-darker;
+  font-size: 12px;
+  font-weight: 500;
+  font-style: italic;
+  margin-bottom: 0;
+  margin-left: 5px;
+}

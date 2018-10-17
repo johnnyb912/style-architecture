@@ -1,0 +1,334 @@
+// vertical centering, when Flexbox isn't an option.
+// Takes one argument of $height which is the total height of the element that will be vertically centered (including margins & padding)
+body {
+  overflow: hidden;
+  padding-top: constant(safe-area-inset-top); /* iOS 11.0 */
+  padding-top: env(safe-area-inset-top); /* iOS 11.2 */
+}
+
+@mixin absolute-vertical-center($height: 100%) {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: $height;
+}
+
+// Same as above mixing, but adds vertical AND horizontal centring
+@mixin absolute-vert-horz-center($height: 100%) {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: $height;
+}
+
+//vertical center w/ flexbox!
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+@mixin flex-start {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@mixin flex-end {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-around {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@mixin flex-between-baseline {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    &.align-center {
+      align-items: center;
+    }
+}
+
+.flex {
+  display: flex;
+  &.between {
+    justify-content: space-between;
+  }
+  &.center {
+    justify-content: center;
+    align-items: center;
+  }
+  &.center-align {
+    align-items: center;
+  }
+  &.flex-grow {
+    > div {
+      flex-grow: 1;
+    }
+  }
+}
+
+.flex-between {
+  @include flex-between;
+  &.baseline {
+    align-items: baseline;
+  }
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+
+.map-container {
+  width: 800px;
+  max-width: 100%;
+  height: 500px;
+}
+
+$content-wrapper-width-small: calc(100% - 61px);
+$content-wrapper-width-xlarge: calc(80% + 75px);
+
+.content-wrapper {
+    margin: 0 auto;
+    padding: 22px 0 15px;
+    min-height: calc(100vh - 41px); // view height minus footer height
+    width: 96%;
+    max-width: 400px;
+    transition: 0.5s $sweetEasing all;
+
+    @media screen and (max-width: $break-small) {
+      width: 100%;
+    }
+
+    @media screen and (max-width: $break-mobile) {
+      padding-top: 0;
+    }
+
+    @include media(small) {
+        width: 90%;
+        max-width: inherit;
+        padding-top: 60px;
+    }
+
+    @include media(medium) {
+      padding: 60px 0 15px;
+    }
+
+    @include media(large) {
+        width: 80%;
+    }
+
+    @include media(xlarge) {
+        width: 60%;
+    }
+
+    // to accomodiate the left hand nav bar
+    .loggedIn & {
+      min-height: 99vh; // 99vh prevents printing an extra page
+
+      @include media(small) {
+        padding-left: 75px;
+        width: $content-wrapper-width-small;
+      }
+
+      @include media(xlarge) {
+        width: $content-wrapper-width-xlarge;
+      }
+    }
+
+    &.list {
+      @include media(small) {
+        width: 100%;
+        padding-left: 75px;
+      }
+    }
+    &.ride-list-mobile {
+      position: relative;
+      padding-top: 10px;
+      width: 100%;
+      @media screen and (max-width: $break-mobile) {
+        padding-top: 0;
+      }
+    }
+    &.no-max-width {
+      max-width: none;
+    }
+    .phone-field {
+      width: 100%;
+      position: relative;
+      .phone {
+        display: inline-block;
+        width: calc(75% - 14px);
+        margin-right: 14px;
+      }
+      .ext {
+        display: inline-block;
+        width: 25%;
+        white-space: nowrap;
+      }
+      .phone-icon-wrapper {
+        position: absolute;
+        height: 26px;
+        width: 26px;
+        top: 4px;
+        right: 4px;
+        svg {
+          fill: $blueberry;
+          width: 100%;
+        }
+      }
+    }
+}
+
+// Use the section tag as the outer container of each section of the home page
+section {
+    width: 100%;
+    position: relative;
+}
+
+// Use the .container class for anything that needs to be inside the grid.
+.container {
+    max-width: 96%;
+    margin: 0 auto;
+    position: relative;
+
+    @include media(small) {
+        max-width: 90%;
+    }
+
+    @include media(medium) {
+        max-width: 80%;
+    }
+
+    @include media(large) {
+        max-width: 1000px;
+    }
+
+    @include media(xlarge) {
+        max-width: 1200px;
+    }
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+//need to give the div it's actual height for each use
+.vertical-center {
+    @extend %vertical-align;
+}
+
+.Sticky.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+}
+
+.relative-position {
+  position: relative;
+}
+
+.absolute-position {
+  position: absolute;
+}
+
+.shadow-container {
+  @include nice-easing-animation;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  background-color: $white-medium-dark;
+  @media screen and (max-width: $break-mobile) {
+    box-shadow: none;
+    background-color: none;
+    border-bottom: $base-border;
+  }
+  @include media(small) {
+    margin-top: 20px;
+  }
+  &.remove-margin {
+    margin-top: 0;
+  }
+}
+
+.page-container {
+  display: inline-block;
+  width: 100%;
+  .page-section {
+    background-color: $white;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+    @include media(mediumLarge) {
+      &.one-third {
+        width: 30%;
+      }
+      &.two-thirds {
+        width: calc(70% - 20px);
+      }
+    }
+    &.left {
+      float: left;
+    }
+    &.right {
+      float: right;
+    }
+  }
+}
+
+.verify-page
+{
+  .rider-consent-page
+  {
+    a{ word-wrap:break-word; }
+    .upload-file
+    {
+      margin:0;
+      input,label,a{ display:none; }
+      @include media(small)
+      {
+        input,label,a{ display:block; }
+        margin-left:100px;
+      }
+    }
+  }
+}
+
+.ellipsis-overflow {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

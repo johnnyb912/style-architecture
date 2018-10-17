@@ -1,0 +1,1234 @@
+div.trip-list-ride-item {
+    @include nice-easing-animation;
+    position: relative;
+    background: $white;
+    min-height: 80px;
+    font-size: 12px;
+
+    &.rider-alert {
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      @include media(small) {
+        flex-direction: row;
+      }
+      > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .ride-info {
+        width: 100%;
+        margin-left: 0;
+      }
+      .alert-type {
+        width: 400px;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 120%;
+        @include media(small) {
+          padding-left: 30px;
+        }
+        p {
+          color: $error-color;
+        }
+      }
+      .alert-detail {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        @include media(small) {
+          width: 32%;
+        }
+      }
+      .info-container {
+        margin-left: .5rem;
+        width: 32px;
+      }
+    }
+
+    .rider-name {
+      color: $blueberry;
+      font-size: 12px;
+      @include media(medium) {
+        font-size: 14px;
+      }
+    }
+
+    .tzone {
+      font-size: 1.1rem;
+      margin: 0 .2rem;
+    }
+
+    .current-trip &{
+      cursor: default;
+    }
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    &.disabled {
+
+        &:hover button {
+          cursor: not-allowed;
+        }
+
+        &.current-trip {
+          margin-bottom: 35px;
+        }
+
+        button:active {
+          pointer-events: none;
+        }
+    }
+
+    border-left: 5px solid $blueberry;
+
+    &.completed {
+      border-left-color: $success-color;
+    }
+
+    &.incomplete {
+      border-left-color: $brand-magenta;
+    }
+
+    &.canceled {
+      border-left-color: $light-aqua;
+    }
+
+    &.in-transit {
+      border-left: $sucess-border;
+    }
+
+    &.warning, &.warning-level-2 {
+      border-left: $warning-border;
+    }
+
+    &.alert, &.warning-level-1 {
+      border-left: $alert-border;
+    }
+
+    &.dispatch {
+      &.queued, &.dismissed {
+        border-left-color: $grey-warm;
+      }
+      &.accepted {
+        border-left-color: $blueberry;
+        .vehicle svg {
+          .dark-grey, .white {
+            fill: $blueberry;
+          }
+          .dark-grey-stroke {
+            stroke: $blueberry;
+          }
+          .light-grey, .lighter-grey {
+            fill: $white;
+          }
+        }
+      }
+      &.incomplete {
+        border-left-color: $brand-magenta;
+        .vehicle svg {
+          .dark-grey, .white {
+            fill: $brand-magenta;
+          }
+          .dark-grey-stroke {
+            stroke: $brand-magenta;
+          }
+          .light-grey, .lighter-grey {
+            fill: $white;
+          }
+        }
+      }
+      &.completed, &.in-transit, &.en-route, &.processing, &.booking {
+        border-left-color: $success-color;
+        .vehicle svg {
+          .dark-grey, .white {
+            fill: $success-color;
+          }
+          .dark-grey-stroke {
+            stroke: $success-color;
+          }
+          .light-grey, .lighter-grey {
+            fill: $white;
+          }
+        }
+        .timer {
+          color: #5db37e;
+          font-weight: bold;
+        }
+      }
+      &.canceled {
+        border-left-color: $light-aqua;
+      }
+      &.expired {
+        border-left-color: $error-color;
+        .vehicle svg {
+          .dark-grey, .white {
+            fill: $error-color;
+          }
+          .dark-grey-stroke {
+            stroke: $error-color;
+          }
+          .light-grey, .lighter-grey {
+            fill: $white;
+          }
+        }
+      }
+    }
+
+    &.first-row {
+      margin-top: 50px;
+    }
+
+    svg {
+        width: 18px;
+        max-height: 25px;
+        min-width: 18px;
+        min-height: 18px;
+
+        &.repeat svg {
+          fill: $brand-purple-dark;
+        }
+
+        &.car{
+            height:30px;
+            width:30px;
+        }
+
+        &.surge-warning-icon {
+            fill: $error-color;
+        }
+    }
+
+    .ride-status {
+      min-width: 100%;
+      padding-bottom: 1rem;
+      &.vehicle {
+        text-align: center;
+        svg {
+          width: 50px;
+          height: 20px;
+          margin-bottom: 4px;
+          @include media(mediumLarge) {
+            width: 80px;
+            height: 20px;
+          }
+        }
+        .dark-grey {
+          fill: $blueberry;
+        }
+        .light-grey, .lighter-grey {
+          fill: $white;
+        }
+        span {
+          width: 130px;
+          color: $greyish-brown;
+        }
+      }
+      @include media(small) {
+        min-width: 100px;
+        padding-bottom: 0;
+      }
+      @include media(medium) {
+        min-width: 140px;
+        padding: 0 10px;
+      }
+      @include media(large) {
+        min-width: 200px;
+        &.vehicle {
+          min-width: 100px;
+        }
+      }
+      .fa {
+        font-size: 1.8rem;
+        &.fa-exclamation-circle {
+          color: $error-color;
+        }
+        &.fa-ban {
+          color: $brand-magenta;
+        }
+        &.fa-check-circle {
+          color: $success-color;
+        }
+        &.fa-times-circle-o {
+          font-size: 2rem;
+          color: $light-aqua;
+        }
+      }
+      .past-alert {
+        opacity: 0.6;
+      }
+    }
+    .alert-detail {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      margin-top: 0;
+      p {
+        color: $grey-warm;
+        margin-bottom: 0;
+        &.warning {
+          opacity: .5;
+        }
+      }
+      @include media(medium) {
+        width: 32%;
+      }
+    }
+    .checkbox {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 60px;
+      @include media(small) {
+        border-left: 1px solid #e5e5e5;
+        position: inherit;
+        top: inherit;
+        right: inherit;
+        height: 80px;
+      }
+      .fa {
+        color: $blueberry;
+        &:hover {
+          color: darken($blueberry, 10%);
+        }
+      }
+    }
+    .button-wrapper, .dispatch-actions {
+      border-top: 1px solid $grey-white;
+      @include media(small) {
+        border-left: 1px solid $grey-white;
+        border-top: 0;
+        width: 200px;
+      }
+    }
+    .button-wrapper {
+      button {
+        height: 50px;
+        @include media(small) {
+          height: 80px;
+        }
+        background-color: transparent;
+        &:hover svg {
+          transform: scale3d(1.1, 1.1, 1.1);
+        }
+        svg {
+          @include nice-easing-animation;
+          transform: scale3d(1, 1, 1);
+          height: 20px;
+          width: 20px;
+        }
+      }
+      width: 100%;
+      @include media(small) {
+        height: 80px;
+        width: auto;
+      }
+        > span {
+          display: flex;
+          justify-content: center;
+
+          @include media(small) {
+            min-width: 140px;
+            justify-content: flex-end;
+          }
+          @include media(medium) {
+            min-width: 150px;
+          }
+        }
+
+        flex-direction: row;
+        margin-top: 0;
+
+        .fa-spinner {
+          color: $white;
+          margin-right: 3px;
+        }
+
+        button {
+            font-size: 1.2rem;
+            padding: 1.2rem 0;
+            width: 100px;
+            > span {
+              color: $white;
+            }
+
+            @include media(small) {
+              padding: 1rem 0;
+              font-size: 1rem;
+              width: 45px;
+            }
+
+            @include media(medium) {
+              font-size: 1.1rem;
+              padding: 1.1rem 0;
+              width: 50px;
+            }
+
+            @include media(large) {
+              font-size: 1.15rem;
+              padding: 1.2rem 0;
+            }
+
+        }
+        .disable-initiate {
+          color: $brand-purple-light;
+          font-size: 24px;
+          &:disabled {
+              cursor: default;
+              opacity: 0.25;
+          }
+        }
+        &.alert-detail {
+          display: none;
+        }
+    }
+}
+
+.rides-list {
+  @include nice-easing-animation;
+  width: 100%;
+  margin: 0;
+  @include media(small) {
+    height: 80px;
+    min-height: 80px;
+    &.pending-cancel {
+      min-height: 174px;
+      height: auto;
+    }
+    &.show-details {
+      @include media(small) {
+        height: 330px;
+        &.pending-cancel {
+          height: auto;
+        }
+      }
+      .rides-list-ride-item {
+        background-color: $faded-purple;
+        p, span {
+          color: $greyish-brown;
+        }
+        .progress-bar-background {
+          border-color: $grey;
+          .dot {
+            background-color: $grey;
+          }
+        }
+        svg.canceled {
+          .cls-1, .cls-2 {
+            stroke: darken(#8bd5ea, 15%)
+          }
+        }
+        svg.complete, svg.car-circle {
+          fill: darken($light-green, 15%);
+          .st0 {
+            fill: darken($light-green, 15%);
+          }
+          .st1 {
+            fill: #DBC0DC;
+          }
+          .st2 {
+            stroke: #DBC0DC;
+          }
+          .st3 {
+            stroke: darken($light-green, 15%);
+          }
+        }
+      }
+    }
+    .ie11 & {
+      -ms-overflow-style: none; // make sure there's no scrollbar in IE
+    }
+  }
+  &.placeholder {
+    cursor: auto;
+
+    .ride-status-masker {
+      position: relative;
+      height: 90%;
+      flex: 1;
+    }
+
+    .ride-data-wrapper {
+      position: relative;
+      height: 70%;
+      flex: 1;
+      &.masked-time-block {
+        flex: 2;
+      }
+      &.pricingblock {
+        display: block;
+      }
+    }
+
+    .blocker {
+      background-color: white;
+      position: absolute;
+      &.bar {
+        width: 100%;
+        height: 15px;
+        &.top-bar {
+          top: 0;
+        }
+        &.bottom-bar {
+          bottom: 0;
+        }
+      }
+
+      &.status-top-left-blocker {
+        width: 40%;
+        height: 60%;
+        top: 0;
+        left: 0;
+      }
+      &.status-bottom-left-blocker {
+        width: 30%;
+        height: 40%;
+        bottom: 0;
+        left: 0;
+      }
+      &.status-top-right-blocker {
+        width: 40%;
+        height: 60%;
+        top: 0;
+        right: 0;
+      }
+      &.status-bottom-right-blocker {
+        width: 30%;
+        height: 40%;
+        bottom: 0;
+        right: 0;
+      }
+      &.status-middle-blocker {
+        width: 80%;
+        height: 8px;
+        bottom: 20px;
+      }
+
+      &.rider-name-top {
+        width: 100%;
+        height: 10px;
+        top: 0;
+      }
+      &.rider-name-middle {
+        width: 100%;
+        height: 8px;
+        bottom: 18px;
+      }
+      &.rider-name-bottom {
+        width: 100%;
+        height: 8px;
+        bottom: 0;
+      }
+      &.rider-name-right {
+        width: 15%;
+        height: 100%;
+        right: 0;
+      }
+
+      &.time-block-left {
+        height: 100%;
+        width: 8%;
+        left: 0;
+        margin: 0;
+      }
+      &.time-block-right {
+        height: 100%;
+        width: 8%;
+        right: 0;
+        margin: 0;
+      }
+
+      &.time-block-depart {
+        width: 25%;
+        height: 8px;
+        bottom: 15px;
+        left: 0;
+      }
+      &.time-block-arrive {
+        width: 25%;
+        height: 8px;
+        bottom: 15px;
+        right: 0;
+      }
+
+      &.time-block-progress-left {
+        width: 12%;
+        height: 100%;
+        left: 22%;
+      }
+      &.time-block-progress-middle {
+        width: 50%;
+        height: 10px;
+      }
+      &.time-block-progress-right {
+        width: 12%;
+        height: 100%;
+        right: 22%;
+      }
+
+      &.time-block-top {
+        height: 10px;
+        width: 50%;
+        top: 0;
+      }
+      &.time-block-bottom {
+        height: 10px;
+        width: 50%;
+        bottom: 0;
+      }
+
+      &.cost-top {
+        width: 100%;
+        height: 20px;
+        top: 0;
+        left: 0;
+      }
+      &.cost-bottom {
+        width: 100%;
+        height: 20px;
+        bottom: 0;
+        left: 0;
+      }
+      &.cost-left {
+        width: 10%;
+        height: 100%;
+        left: 0;
+      }
+      &.cost-right {
+        width: 25%;
+        height: 100%;
+        right: 0;
+      }
+
+      &.button-blocker {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    @media screen and (max-width: $break-small) {
+      .rides-list-ride-item {
+        height: 275px;
+        padding: 0;
+        .mobile-ride-data-wrapper {
+          position: relative;
+          height: 100%;
+          width: 100%;
+          .mobile-top {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 25px;
+            background-color: white;
+          }
+          .mobile-side {
+            position: absolute;
+            top: 25px;
+            width: 40%;
+            height: 50px;
+            background-color: white;
+            &.left { left: 0; }
+            &.right { right: 0; }
+            &.mid-top { top: 90px; width: 35%; }
+            &.mid-bottom {
+              top: 155px;
+              width: 27%;
+              height: 15px;
+            }
+            &.bottom-top {
+              top: 177px;
+              width: 40%;
+              height: 15px;
+            }
+            &.timeblock {
+              top: 199px;
+              width: 10%;
+            }
+            &.block-left {
+              top: 192px;
+              width: 5%;
+              left: 50%;
+              transform: translate(-50%) translate(-50px);
+            }
+            &.block-right {
+              top: 192px;
+              width: 5%;
+              left: 50%;
+              transform: translate(-50%) translate(50px);
+            }
+          }
+          .mobile-middle {
+            position: absolute;
+            background-color: white;
+            width: 120px;
+            height: 20px;
+            margin: 0 auto;
+            left: 50%;
+            transform: translate(-50%);
+            &.block-top {
+              top: 199px;
+            }
+            &.block-bottom {
+              top: 229px;
+            }
+          }
+          .mobile-placeholder-bar {
+            position: absolute;
+            top: 75px;
+            width: 100%;
+            height: 15px;
+            background-color: white;
+            &.two { top: 140px; }
+            &.three { top: 170px; height: 7px; }
+            &.four { top: 192px; height: 7px; }
+            &.five { top: 249px; height: 25px; }
+          }
+        }
+      }
+    }
+  }
+}
+
+.rider-alert, .rides-list {
+  border-bottom: 1px solid rgba($purple-blue, 0.75);
+}
+
+div.rides-list-ride-item   > div {
+    @include flex-between;
+    @include nice-easing-animation;
+
+    flex-direction: column;
+    @include media(small) {
+      flex-direction: row;
+    }
+
+    .in-transit &{
+      margin-left: 0;
+    }
+
+    // info button
+    .info-container {
+      margin-left: .5rem;
+      width: 40px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      @include media(small) {
+        position: relative;
+      }
+      &:hover .fa {
+        color: $brand-purple;
+      }
+    }
+    .fa-info-circle {
+      cursor: pointer;
+      @include nice-easing-animation;
+      color: $grey;
+      font-size: 1.4rem;
+    }
+    @media screen and (max-width: $break-mobile) {
+      display: block;
+    }
+}
+
+// Each flex item inside li
+.ride-info {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  @include media(small) {
+    flex-direction: row;
+  }
+}
+.ride-data-wrapper {
+    display: flex;
+    flex: 1 1 auto;
+    &.block {
+      display: block;
+    }
+    min-width: 1px;
+    width: 100%;
+    justify-content: space-around;
+    @include media(small) {
+      justify-content: flex-start;
+    }
+    padding-bottom: 1rem;
+    align-items: center;
+    text-align: center;
+    &.column {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      &.org {
+        padding-right: 10px;
+        p {
+            width: 100%;
+        }
+      }
+    }
+    &.checkbox {
+      min-width: 50px; // needed to get IE to behave
+      width: 50px;
+      @include flex-center;
+      &.disabled {
+        pointer-events: none;
+        cursor: auto;
+        .fa {
+          opacity: .4;
+        }
+        svg {
+          opacity: .8;
+        }
+      }
+      .checkbox-container {
+        background-color: $white;
+        @include flex-center;
+        height: 13px;
+        width: 14px;
+        border-radius: 2px;
+      }
+      .fa {
+        cursor: pointer;
+        @include nice-easing-animation;
+        &:hover {
+          transform: scale3d(1.1, 1.1, 1.1);
+        }
+        font-size: 18px;
+        height: 17px;
+      }
+      svg {
+        position: absolute;
+        fill: $greyish-brown;
+        width: 23px;
+        min-height: 18px;
+        min-height: 25px;
+        margin: -3px 0 0 3.5px;
+        top: -5px;
+        left: -4px;
+      }
+    }
+    &.duration {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-left: 5px;
+      span {
+        display: flex;
+      }
+    }
+    @include media(small) {
+      width: 180px;
+      padding-bottom: 0;
+      &.time {
+        width: 400px;
+        display: flex;
+        justify-content: space-around;
+        > div:first-of-type, > div:last-of-type {
+          margin: 0 20px;
+        }
+      }
+      &.past-actions {
+        width: 300px;
+        .sub-info {
+          padding-right: 10px;
+        }
+      }
+    }
+    @include media(medium) {
+      text-align: left;
+    }
+    &.pricingblock {
+      display: block;
+      p.sub-info.error {
+        max-width: unset;
+        padding-right: 5px;
+        @include media(medium) {
+          text-align: left;
+        }
+      }
+    }
+    &.time {
+      .progress-bar-container {
+        @include media(medium) {
+          width: 125px;
+          &.mini, .rider-rides-wrapper &{
+            width: 105px;
+          }
+        }
+      }
+      p.sub-info.error {
+        max-width: 100px;
+        @include media(small) {
+          white-space: nowrap;
+        }
+        @include media(medium) {
+          max-width: unset;
+        }
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-bottom: -10px;
+        &.past-alert {
+          opacity: .5;
+        }
+      }
+    }
+    &.trip-fail {
+        font-size: 120%;
+        width: 100%;
+        justify-content: flex-start;
+        @include media(small) {
+          width: 80%;
+        }
+
+        svg {
+            margin: 0 5px;
+            min-width: 22px;
+            height: 22px;
+        }
+    }
+
+    &.surge p {
+      color: $error-color;
+    }
+    &.past-alert {
+      opacity: .5;
+      align-items: center;
+    }
+}
+
+.init-code{
+  color: $aqua;
+}
+
+.page-trip-list {
+  .circulation-loader {
+    height: 50%;
+    z-index: 100;
+  }
+  .triplist-group-wrapper {
+    transition: .2s $sweetEasing opacity;
+    opacity: 1;
+  }
+  .triplist-group-wrapper.loading {
+    opacity: 0.5;
+  }
+  .current-ride-summary {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    width: 100%;
+    margin: 10px 0;
+    .ride-summary-header {
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      letter-spacing: .1rem;
+      padding: 10px 0px 10px 0px;
+      width: 100%;
+      text-align: center;
+      @include media(small) {
+        text-align: left;
+        width: 25%;
+      }
+      @include media(medium) {
+        width: auto;
+      }
+    }
+    .ride-summary-details {
+      display: flex;
+      justify-content: center;
+      padding-left: 0px;
+      > div {
+        width: 100px;
+        padding: 0px 10px;
+        background-color: $white;
+        text-align: center;
+        p {
+          color: $greyish-brown;
+          margin: 0 0 0.05rem;
+        }
+        h4 {
+          font-size: 2rem;
+          font-weight: 500;
+          margin-bottom: 0;
+        }
+      }
+      @include media(small) {
+        padding-left: 10px;
+      }
+    }
+    @include media(small) {
+      width: 73%;
+      padding-left: 0px;
+      margin: 0;
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+    }
+    @include media(medium) {
+      width: 80%;
+      margin: 0;
+      justify-content: flex-end;
+      .ride-summary-header {
+        padding: 10px 20px 10px 0px;
+      }
+    }
+    @include media(large) {
+      padding-right: 5%;
+    }
+  }
+  h2 {
+    color: $brand-grape;
+    margin-top: 20px;
+  }
+}
+
+.page-rider {
+  .view-options {
+    cursor: pointer;
+    display: flex;
+    margin-bottom: 1rem;
+    justify-content: flex-end;
+    span {
+      margin-right: 10px;
+    }
+    a {
+      margin-right: 10px;
+      &.disabled {
+        pointer-events: none;
+        color: $grey-dark;
+      }
+    }
+    a:hover {
+      color: $brand-accent-color;
+    }
+  }
+}
+
+.page-alerts .view-options {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 0;
+  span {
+    margin-right: 10px;
+  }
+  a:not(.disabled) {
+    cursor: pointer;
+    color: $iris;
+  }
+  a {
+    margin-right: 10px;
+    color: $grey-warm-darker;
+  }
+}
+
+.dispatch-queue,
+.page-rider,
+.page-trip-list {
+  .pages {
+    background-color: $white-medium-dark;
+    min-height: 40px;
+    padding: 12px 0;
+    align-items: center;
+    font-size: 12px;
+    position: relative;
+    display: inline-flex;
+    width: 100%;
+    .ride-count-display {
+      position: absolute;
+      left: 10px;
+    }
+    .pagination {
+      width: 100%;
+      margin: auto;
+      display: inline-flex;
+      a {
+        display: flex;
+        align-items: center;
+        height: 20px;
+      }
+    }
+    .view-options {
+      position: absolute;
+      right: 10px;
+      span {
+        margin-right: 5px;
+      }
+      a {
+        margin-left: 10px;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    div {
+      display: inline-block;
+      justify-content: center;
+      width: auto;
+      margin: 0 auto;
+      span {
+        vertical-align: middle;
+        margin: 10px;
+      }
+      a {
+        text-align: center;
+        background-color: transparent;
+        margin: 0;
+        border: 0;
+        color: $greyish-brown;
+        cursor: pointer;
+        span {
+          margin: 10px;
+          border-bottom: 1px solid $greyish-brown;
+          font-size: 1.4rem;
+        }
+        &.disabled {
+          pointer-events: none;
+          color: $grey;
+          span {
+            border-bottom: 1px solid $grey;
+          }
+        }
+      }
+    }
+  }
+}
+
+.ride-data-wrapper, .rides-list, .button-wrapper {
+  @include nice-easing-animation;
+}
+
+.rides-list-ride-item {
+  &.pending-cancel {
+    &.trip-list-ride-item {
+      border-color: rgba($error-color, 0.2);
+    }
+    .cancel-trip {
+      pointer-events: none;
+      @media screen and (max-width: $break-mobile) {
+        bottom: -1.3rem;
+      }
+    }
+    .ride-data-wrapper, > .button-wrapper, .info-container, .ride-status {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+}
+
+.current-trip {
+  transition: .2s ease-in-out all;
+  position: relative;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+  .cancel-trip {
+    float: right;
+    padding: 7px 15px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+    font-weight: 500;
+    height: 36px;
+    margin-top: -45px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+    + div {
+      clear: both;
+    }
+  }
+  .ride-list > div:last-of-type .rides-list {
+    border-bottom: 0;
+  }
+  &.pending-cancel {
+    .rides-list {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .trip-list-id-wrapper {
+      opacity: .2;
+      pointer-events: none;
+    }
+    &:before {
+      opacity: .2;
+    }
+    &.alert {
+      border-color: rgba($error-color, .2);
+      &.warning {
+        border-color: rgba($warning-color, .2);
+      }
+    }
+    .car.pulse {
+      animation: none;
+      opacity: .2;
+    }
+    .cancel-block {
+      @include flex-column;
+      padding: 30px;
+      background-color: $white;
+      position: absolute;
+      width: calc(100% - 5px);
+      height: 100%;
+      margin-left: 5px;
+      border-bottom: 0;
+      .cancel-reason-inputs {
+        @include media(small) {
+          height: 38px;
+        }
+      }
+    }
+  }
+}
+
+.page-rider .helpful-message {
+  color: $grey-dark;
+  margin: 10px 0 0 10px;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  .fa {
+    margin-right: 1rem;
+    font-size: 1.6rem;
+    color: $grey-dark;
+  }
+}
+
+.warn-message {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 100%;
+  font-size: 11px;
+  background-color: $white-dark;
+  color: $grey-dark;
+  padding: 6px 12px;
+  border-bottom: $base-border;
+  .fa-lock {
+    margin-right: 10px;
+    color: $grey-dark;
+  }
+}
+
+.rider-rides-wrapper {
+  @media screen and (max-width: $break-medium) {
+    div.ride-status, div.vehicle {
+      min-width: 120px;
+      max-width: 120px;
+      &.vehicle {
+        min-width: 90px;
+        max-width: 90px;
+      }
+    }
+    .ride-list p {
+      font-size: 12px;
+    }
+    .pricingblock {
+      padding-left: 10px;
+    }
+  }
+}

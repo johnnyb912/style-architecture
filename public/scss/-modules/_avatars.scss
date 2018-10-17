@@ -1,0 +1,48 @@
+body {
+	.avatar{
+		display:none;
+	}
+}
+
+.showavatars {
+
+	.avatar{
+		display:block;
+	}
+
+	.page-section-rider-at-glance{
+
+	  .rider-info:first-child{
+      	padding-left: 35px;
+    }
+
+    .rider-info:first-child{
+				padding-left: 35px;
+		}
+
+    .avatar{
+        border:1px solid $grey-warm-darker;
+        position:absolute;
+        left:-15px;
+        top:15px;
+        height:50px;
+        width:50px;
+        background-color:$white;
+    }
+  }
+
+    li.trip-list-ride-item {
+    		.avatar{
+            $avsize:30px;
+            background:$white;
+            border:1px solid $grey-warm-darker;
+            width:$avsize;
+            height:$avsize;
+            min-height:$avsize;
+            min-width:$avsize;
+            top:-6px;
+            left:-7px;
+            position:absolute;
+        }
+		}
+}

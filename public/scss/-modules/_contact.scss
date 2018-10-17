@@ -1,0 +1,76 @@
+.page-contact {
+  h1 {
+    text-align: center;
+    margin: 50px auto;
+  }
+  .bold {
+    font-weight: bold;
+  }
+  a {
+    cursor: pointer;
+    color: $black;
+    display: block;
+    &:hover {
+      i { font-size: 3.2rem; }
+      svg { width: 42px; height: 42px; }
+    }
+  }
+  i {
+    font-size: 3rem;
+    color: $blueberry;
+  }
+  svg {
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    fill: $blueberry;
+  }
+  .contact-wrapper {
+    background-color: $white-med;
+    padding: 40px 30px 20px 30px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    .icon-wrapper {
+      vertical-align: middle;
+      display: inline-block;
+      width: 42px;
+      text-align: center;
+    }
+    .text-wrapper {
+      margin: 0 0 0 30px;
+      display: inline-block;
+      vertical-align: middle;
+      white-space: normal;
+    }
+    h3 {
+      font-size: 1.6rem;
+      margin-bottom: 40px;
+    }
+    h4 {
+      color: $black;
+      font-size: 1.6rem;
+      margin-bottom: 0;
+    }
+    .section-wrapper {
+      width: 80%;
+      margin: 0 auto;
+    }
+    .section {
+      font-size: 2.1rem;
+      color: $grey;
+      margin: 30px auto;
+      min-width: 275px;
+      text-align: left;
+      white-space: nowrap;
+      .hours {
+        color: $grey;
+        font-size: 1.5rem;
+        margin-top: 5px;
+      }
+    }
+    @include media(small) {
+      width: 500px;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+.estimate-dynamic-tab {
+  .input-wrapper {
+    margin-top: 0;
+  }
+  .dynamic-search-results {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    max-width: calc(100% - 3px);
+    left: 0;
+    overflow-x: hidden;
+    .disabled {
+      cursor: not-allowed;
+      p {
+        cursor: not-allowed;
+      }
+    }
+    .fa {
+      font-size: 12px;
+      margin: 0px 30px 0 10px;
+      color: $brand-purple;
+      display: none;
+      &.fa-exclamation-circle {
+        color: $error-color;
+        &.orange {
+          color: $orange;
+        }
+        &.grey {
+          color: $grey-medium-light;
+        }
+      }
+      @include media(small) {
+        display: inline;
+        margin: 0 5px 0 2px;
+      }
+    }
+    p {
+      max-width: 100%;
+    }
+    .reliability {
+      color: $brand-purple;
+      position: relative;
+      display: block;
+      font-size: 12px;
+      &.red {
+        color: $error-color;
+      }
+      &.orange {
+        color: $orange;
+      }
+      &.grey {
+        color: $grey-medium-light;
+      }
+    }
+    .eta {
+      font-size: 12px;
+      color: $grey-medium-dark;
+      margin-top: -3px;
+      .fa {
+        color: $grey-medium-dark;
+      }
+    }
+  }
+}

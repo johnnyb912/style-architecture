@@ -1,0 +1,306 @@
+.home {
+   .flex-wrapper {
+       margin-top: 7%;
+       max-width: 800px;
+       margin-left: auto;
+       margin-right: auto;
+       justify-content: center;
+       padding: 0 10px;
+       h1 {
+         font-size: 4rem;
+         font-weight: 500;
+         @media screen and (max-width: $break-mobile) {
+           font-size: 3rem;
+         }
+         @include media(small) {
+           font-size: 48px;
+         }
+         @include media(medium) {
+           margin-bottom: 28px;
+         }
+       }
+   }
+}
+
+#resultList .home-search-result:not(.add-rider) {
+  display: flex;
+  a {
+    max-width: calc(100% - 61px);
+    @include media(small) {
+      max-width: calc(100% - 72px);
+    }
+  }
+  .search-book-trip-container {
+    color: $brand-purple-light;
+    font-size: 12px;
+    border-left: 1px dotted $grey-white;
+    @include flex-column;
+    width: 61px;
+    @include media(small) {
+      width: 72px;
+    }
+    button {
+      background-color: $brand-purple-light;
+      width: 34px;
+      height: 34px;
+      padding: 0;
+      font-size: 24px;
+      font-weight: 500;
+      border-radius: 1px;
+      span {
+        @include flex-center;
+      }
+      svg {
+        fill: $white;
+        width: 25px;
+        height: 25px;
+        margin-top: 0;
+      }
+      &:hover {
+        background-color: $brand-purple;
+      }
+      &:disabled {
+        opacity: .5;
+        background-color: $grey;
+        cursor: not-allowed;
+        + span {
+          color: $grey;
+        }
+      }
+    }
+    > span {
+      margin-bottom: -5px;
+    }
+  }
+}
+
+#resultList .home-search-result, #resultList_analytics .home-search-result {
+   h3,
+   p {
+       display: inline-block;
+       margin: 0;
+       overflow: hidden;
+       text-overflow: ellipsis;
+       white-space: nowrap;
+       line-height: 1.1;
+       color: $greyish-brown;
+       width: 100%;
+       @include media(small) {
+         width: 25%;
+         max-width: 25%;
+       }
+   }
+   &.inactive {
+     background-color: $grey-extra-light;
+     h3, p {
+       color: $grey-warm;
+     }
+     &:hover, &:focus {
+       background-color: $grey-very-light;
+     }
+   }
+   .name {
+     font-size: 17px;
+     width: 100%;
+     max-width: 100%;
+     display: flex;
+     align-items: center;
+     margin-bottom: 8px;
+     color: $brand-purple;
+     overflow: visible;
+     flex-wrap: wrap;
+     span {
+       padding-right: 1.5rem;
+     }
+     &.user-long {
+       margin: 0.5rem 0;
+     }
+   }
+   .study {
+     @include media(small) {
+       width: 40%;
+       max-width: 40%;
+     }
+      font-size: 13px;
+    &.user-long {
+      width: 80%;
+      max-width: 80%;
+    }
+   }
+   .phone, .dob {
+     @include media(small) {
+       width: 200px;
+     }
+     font-size: 13px;
+   }
+   @include media(small) {
+     .phone {
+       max-width: 28%;
+     }
+     .dob {
+       max-width: 22%;
+     }
+   }
+   .long-name   {
+     width: 100%;
+     max-width: 100%;
+     margin: 0;
+   }
+   .address {
+     @include media(small) {
+       width: 50%;
+       max-width: 100%;
+     }
+     font-size: 13px;
+     margin: 0;
+   }
+   .address.long {
+     width: 50%;
+     max-width: 50%;
+   }
+   span {
+     &.label {
+       font-weight: 600;
+       margin-right: 5px;
+     }
+   }
+   .tag {
+     margin-right: 1.5rem;
+     font-size: 12px;
+     font-weight: 500;
+     padding: 0.3rem 0.5rem;
+     border-radius: 3px;
+     width: auto;
+     color: $grey-warm-darker;
+     border: 1px solid $faded-blue;
+     &:last-of-type {
+       margin-right: 0;
+     }
+   }
+}
+
+#resultList .add-rider {
+  background: $grey-dark;
+  text-transform: uppercase;
+  font-size: 2rem;
+  text-align: center;
+  &.disabled {
+    opacity: .5;
+    cursor: not-allowed;
+    a {
+      pointer-events: none;
+      p {
+        color: $white;
+      }
+    }
+    svg {
+      height: 13px;
+      width: 13px;
+      fill: $grey-very-light;
+      margin: 0 5px -1px 0;
+    }
+    .note {
+      font-size: 12px;
+      text-transform: none;
+      font-style: italic;
+    }
+  }
+
+  a {
+    @include nice-easing-animation;
+    &:focus, &:hover {
+      background-color: $black;
+      p:first-child {
+          font-size: 0.6em;
+          color: $white;
+      }
+      p:last-child {
+          font-size: 0.9em;
+          color: $white;
+      }
+    }
+    min-height: 74px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+      margin: 2px 0;
+      min-width: 100%;
+      text-overflow: inherit;
+      -ms-overflow-style: none; // make sure there's no scrollbar in IE
+    }
+      p:first-child {
+          font-size: 0.6em;
+          color: $white;
+      }
+      p:last-child {
+          font-size: 0.9em;
+          color: $white;
+      }
+  }
+}
+
+.rider-search, .admin-portal-filter {
+  .fa.loading {
+    position: absolute;
+    right: 15px;
+    top: calc(50% - 5px);
+  }
+  &.header-search {
+    background-color: transparent;
+    padding: 0;
+    .fa.loading {
+      right: 1.5rem;
+    }
+    .search-results {
+      left: 0;
+    }
+  }
+}
+
+.clear-search {
+  position: absolute;
+  margin-top: -3px;
+  color: $grey;
+  cursor: pointer;
+  right: 15px;
+  @include flex-center;
+  &:hover {
+    color: $grey-warm;
+  }
+}
+
+form.rider-search {
+  align-items: stretch;
+  position: relative;
+  padding: 0;
+  background-color: transparent;
+  max-width: 600px;
+
+  .input-wrapper {
+    label {
+      height: 36px;
+      svg {
+        fill: $brand-purple;
+      }
+      .icon-form {
+        min-width: 32px;
+        border-right-color: $brand-purple;
+      }
+      .label-content {
+        color: $grey-warm;
+      }
+    }
+    input {
+      height: 36px;
+      &:active {
+        transition: none;
+      }
+      &:focus {
+        border: 1px solid $blueberry;
+      }
+    }
+  }
+}

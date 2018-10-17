@@ -1,0 +1,500 @@
+
+// @extend %button for left-to-right hover effect
+%button {
+    transition: all 0.25s ease-in-out;
+    -webkit-font-smoothing: antialiased;
+    background: $brand-purple;
+    border-radius: 3px;
+    border: none;
+    color: $white;
+    display: inline-block;
+    font-family: $font;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+    outline: none;
+    font-size: 1.6rem;
+    padding: 1.8rem 3.8rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    @include media(xlarge) {
+        font-size: 1.9rem;
+    }
+
+    &:hover,
+    &:focus {
+        background: $brand-purple-dark;
+    }
+
+    &:disabled {
+        background-color: #e5e5e5;
+        color: $pinkish-grey;
+        svg, svg > svg {
+          fill: $grey-warm-darker;
+          opacity: .9;
+        }
+    }
+}
+
+button,
+a.button,
+input.button,
+input[type="submit"] {
+    @extend %button;
+    -webkit-appearance: none;
+    user-select: none;
+
+    &.shadow {
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 12px;
+      padding: 1.2rem 3.5rem;
+      &:hover {
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+      }
+    }
+
+    &.error {
+        background: $error-color;
+        color: $white !important;
+        &:hover {
+          background-color: #cc0707;
+        }
+        &.loading {
+          @include loading-button-red(1s);
+          pointer-events: none;
+        }
+    }
+
+    &.approve {
+      background: $brand-grape;
+      &:hover {
+        background: darken($brand-grape, 5%);
+      }
+    }
+
+    &.modify {
+        background: $brand-accent-color;
+        color: $grey-dark;
+        &:hover {
+          background: darken($brand-accent-color, 5%);
+        }
+    }
+
+    &.cancel {
+      background: $brand-magenta;
+      &:hover {
+        background: darken($brand-magenta, 5%);
+      }
+    }
+
+    &.iris {
+      background-color: $iris;
+      color: $white;
+      &:hover {
+        background: darken($iris, 5%);
+      }
+      &:disabled {
+        opacity: .6;
+        pointer-events: none;
+      }
+    }
+
+    &.alternate {
+      background: $greyish-brown;
+      &:hover {
+        background: darken($grey-dark, 10%);
+      }
+    }
+
+    &.btn-small {
+      padding: 10px 15px;
+      font-size: 1.2rem;
+    }
+
+
+    &.new-style {
+      padding: 10px 15px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      font-size: 1.4rem;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+      border-radius: 2px;
+    }
+
+    &.new-style-secondary {
+      font-size: 1.4rem;
+      font-weight: 500;
+      padding: 8px;
+      width: auto;
+      color: $grey-dark;
+      background-color: $white;
+      border: solid 1px $faded-blue;
+      vertical-align: middle;
+      i {
+        color: $blueberry;
+        font-size: 1.5rem;
+        margin-right: 5px;
+      }
+      &:hover {
+        border: solid 1px $blueberry;
+        background-color: $white;
+      }
+      &:disabled {
+        opacity: .6;
+        pointer-events: none;
+      }
+    }
+
+    &.outline {
+      background-color: $white;
+      border: 2px solid $success-color;
+      color: $greyish-brown;
+      &:disabled {
+        pointer-events: none;
+      }
+      &.loading {
+        @include loading-button-green(1s);
+      }
+    }
+}
+
+.button-wrapper {
+    button,
+    .button,
+    input[type="submit"] {
+        width: calc(50% - 40px);
+        @media screen and (max-width: $break-mobile) {
+           width: calc(100% - 40px);
+        }
+    }
+}
+
+//datetimepicker
+.xdsoft_datetimepicker {
+    max-width: 310px;
+}
+
+.xdsoft_timepicker {
+    margin-top: 9px !important;
+}
+
+#datetimepicker-booknow {
+    background-color: $brand-purple;
+    color: #fff;
+    margin-top: 10px !important;
+    margin-left: 8px !important;
+    width: calc(100% - 9px);
+    line-height: 30px;
+    text-align: center;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: bottom;
+    cursor: pointer;
+}
+
+.tabs {
+  display: flex;
+  width: 100%;
+  .tab {
+    transition: none;
+    cursor: pointer;
+    background-color: $blueberry;
+    color: $white;
+    border-radius: 0;
+    border-top: 2px solid transparent;
+    border-bottom: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    padding: 1.3rem;
+    white-space: normal;
+    width: 100%;
+    font-weight: 500;
+    @include media(medium) {
+      height: 40px;
+      padding: 0;
+    }
+    svg {
+      fill: $white;
+      vertical-align: middle;
+      height: 21px;
+      width: 21px;
+      margin: -2px 10px 0 0;
+      &.car-circle {
+        .st0 {
+          fill: $white;
+        }
+        .st3 {
+          stroke: $white;
+        }
+        .st1 {
+          fill: $blueberry;
+        }
+        .st2 {
+          stroke: $blueberry;
+        }
+      }
+    }
+    &.active {
+      background-color: $white;
+      color: $blueberry;
+      border-left: 1px solid $blueberry;
+      border-right: 1px solid $blueberry;
+      border-top: 2px solid $blueberry;
+      font-weight: bold;
+      &:hover {
+        background-color: $white;
+        color: $blueberry;
+      }
+      + .tab {
+        border-left: 0;
+      }
+      svg {
+        fill: $blueberry;
+        &.car-circle {
+          .st0 {
+            fill: $blueberry;
+          }
+          .st3 {
+            stroke: $blueberry;
+          }
+          .st1 {
+            fill: $white;
+          }
+          .st2 {
+            stroke: $white;
+          }
+        }
+      }
+    }
+    &:not(.active) {
+      border-left: 1px solid $white-dark;
+      &:first-of-type {
+        border-left: 0;
+      }
+    }
+    &:first-of-type.active {
+      border-left-color: transparent;
+    }
+    &:last-of-type.active {
+      border-right: 0;
+    }
+    &:hover {
+      background-color: darken($blueberry, 5%);
+      color: $white;
+    }
+  }
+}
+
+.pill-wrapper {
+  transition: background-color 0.2s ease;
+  background-color: none;
+  display: inline-block;
+  div {
+    background-color: none;
+  }
+  .tooltip-text {
+    &:hover {
+      background-color: #fff;
+    }
+  }
+  &:hover:not(.loading) {
+    cursor: pointer;
+    .tooltip-text {
+      visibility: visible;
+      z-index: 2147483647;
+      opacity: 1;
+      background-color: none;
+    }
+  }
+  &:hover:not(.disabled), &.faux-hover:not(.disabled) {
+    .filter-pill {
+      opacity: 1;
+    }
+    .processing, .in-transit, .completed {
+      background-color: #ebf7eb;
+      .st1 {
+        fill: #cae5c8;
+      }
+      .st2 {
+        stroke: #cae5c8;
+      }
+    }
+    .canceled_past, .canceled_future, .canceled {
+      background-color: #e5f8fc;
+    }
+    .incomplete {
+      background-color: #fae6f2;
+    }
+    .initiated, .scheduled, .queued, .no-driver {
+      background-color: #efebff;
+    }
+  }
+  &.loading {
+    cursor: default;
+    .filter-pill {
+      &.initiated, &.scheduled, &.queued, &.no-driver {
+        @include loading-button-iris(.5s);
+      }
+      &.processing, &.in-transit, &.completed {
+        @include loading-button-green(.5s);
+      }
+      &.incomplete {
+        @include loading-button-pink(.5s);
+      }
+      &.canceled_past, &.canceled_future, &.canceled {
+        @include loading-button-light-blue(.5s);
+      }
+    }
+  }
+  &.selected {
+    &:not(.loading){
+      .tooltip-text:hover {
+        background-color: #fff;
+      }
+      .pill:hover {
+        background-color: inherit;
+      }
+      .filter-pill {
+        opacity: 1;
+        background-color: #8bc087;
+        &.incomplete {
+          background-color: #be1d77;
+          span {
+            color: white;
+          }
+          .cls-3 {
+            fill: white;
+          }
+          :hover {
+            background-color: #be1d77;
+          }
+        }
+        &.canceled_past, &.canceled_future, &.patient_initiated, &.canceled {
+          background-color: #8bd5ea;
+          span {
+            color: white;
+          }
+          .cls-1, .cls-2 {
+            stroke: white;
+          }
+          :hover {
+            background-color: #8bd5ea;
+          }
+        }
+        &.initiated, &.scheduled, &.queued, &.no-driver {
+          background-color: $blueberry;
+          :hover {
+            background-color: $blueberry;
+          }
+          .st0 {
+            fill: $white;
+          }
+          .st1 {
+            stroke: $blueberry;
+          }
+        }
+        span {
+          color: white;
+        }
+        svg {
+          fill: white;
+          &.icon-queued {
+            .cls-2 {
+              fill: $white;
+            }
+            .cls-1 {
+              stroke: $white;
+            }
+          }
+        }
+      }
+      .car-icon {
+        .car-circle {
+          .st0{fill: $white;}
+          .st1{fill: $success-color;}
+          .st2{stroke:$success-color;}
+          .st3{stroke:$white;}
+        }
+      }
+      :hover {
+        background-color: #8bc087;
+      }
+    }
+  }
+  &.disabled:not(.loading) {
+    cursor: default;
+    filter: grayscale(.2);
+    opacity: .75;
+  }
+}
+
+.filter-pill {
+  opacity: 1;
+  margin: 0 10px 0 0;
+  padding: 0 12px;
+  height: 33px;
+  min-width: 75px;
+  background-color: #f8f8f8;
+  white-space: nowrap;
+  .number-of-rides {
+    font-size: 1.5rem;
+  }
+  .icon-style {
+    margin-bottom: -10px;
+    width: 30px;
+  }
+  .car-icon {
+    width: 25px;
+  }
+  .not-car {
+    width: 20px;
+    circle {
+      display: inline-block;
+    }
+  }
+  border-radius: 40px;
+  &.processing, &.in-transit {
+    border: 2px solid #8bc087;
+    span {
+      color: #8bc087;
+    }
+  }
+  &.canceled_past, &.canceled_future, &.canceled {
+    border: 2px solid #87daee;
+    span {
+      color: #87daee;
+    }
+  }
+  &.incomplete {
+    border: 2px solid #be1d77;
+    span {
+      color: #be1d77;
+    }
+  }
+  &.completed {
+    border: 2px solid #8bc087;
+    svg {
+      fill: #8bc087;
+    }
+    span {
+      color: #8bc087;
+    }
+  }
+  &.initiated, &.scheduled, &.queued, &.no-driver {
+    border: 2px solid $blueberry;
+    span {
+      color: $blueberry;
+    }
+  }
+  &.no-driver svg {
+    fill: $blueberry;
+  }
+}

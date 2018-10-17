@@ -1,0 +1,37 @@
+.language-button-container {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2rem;
+  margin-bottom: -5rem;
+  margin-top: 2rem;
+  @include media(small) {
+    margin-bottom: -5.5rem;
+  }
+  &.privacy {
+    margin-bottom: 1rem;
+    margin-top: -1rem;
+    @include media(medium) {
+      padding-right: 2rem;
+      margin-bottom: -5rem;
+      margin-top: 2rem;
+    }
+  }
+  button {
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    margin: 0;
+    &:last-of-type {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    &:first-of-type {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    opacity: .5;
+    &.active {
+      opacity: 1;
+    }
+  }
+}

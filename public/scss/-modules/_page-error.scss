@@ -1,0 +1,12 @@
+.page-404, .page-403 {
+  .flex-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  h2 {
+    font-size: 3.1rem;
+  }
+  a {
+    cursor: pointer;
+  }
+}

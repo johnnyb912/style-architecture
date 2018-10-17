@@ -1,0 +1,271 @@
+.page-login {
+  height: calc(100vh - 61px);
+  @include media(medium) {
+    height: calc(100vh - 41px);
+  }
+}
+
+@keyframes onAutoFillStart {
+  from {/**/}
+  to {/**/}
+}
+
+.form-container {
+  @include nice-easing-animation;
+  background-color: $white;
+  box-shadow: 0 1px 3px rgba($black, 0.12), 0 1px 2px rgba($black, 0.24);
+  max-width: 360px;
+  margin: 0 auto;
+  border-radius: 1px;
+  padding: 30px 20px;
+  &.forgot-password.animate .password-input {
+    animation: .2s ease collapseAndFadeOut;
+    animation-fill-mode: forwards;
+    .ie11 &{
+      display: none;
+    }
+  }
+  &.forgot-password:not(.animate) .password-input {
+    display: none;
+  }
+  &.login.animate .password-input {
+    animation: .2s ease collapseAndFadeOut reverse;
+    animation-fill-mode: forwards;
+  }
+  position: relative;
+  perspective: 800px;
+  .password-input {
+    margin-bottom: 20px;
+    animation: .2s ease collapseAndFadeOut reverse;
+    animation-fill-mode: forwards;
+    &.hide-field {
+      display: none;
+    }
+  }
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 135px;
+    cursor: pointer;
+  }
+}
+
+form.login-form {
+    img {
+      margin-bottom: 30px;
+    }
+
+    input::-ms-clear, input::-ms-reveal {
+      display: none !important; // hides show/reveal password icons
+    }
+
+    input::-webkit-credentials-auto-fill-button {
+      background-color: transparent; // hides autocompelte dropdown icon in safari
+      pointer-events: none;
+    }
+
+    .firefox &{
+      input {
+        margin-bottom: 1px;
+      }
+    }
+
+    input:focus ~ .validation {
+      display: none;
+    }
+
+    .input-wrapper {
+      margin: 0 0 20px;
+    }
+
+    #user-email {
+      &:-webkit-autofill {
+        animation-name: onAutoFillStart;
+        transition: background-color 50000s ease-in-out 0s;
+      }
+    }
+
+    .forgot-password {
+      position: absolute;
+      right: 0;
+      top: -2px;
+      cursor: pointer;
+      font-size: 12px;
+      margin-bottom: 5px;
+      color: $brand-purple;
+    }
+    .sso {
+      margin-top: 20px;
+      border-top: 1px solid $grey-warm;
+      padding-top: 15px;
+      position: relative;
+      // text-align: center;
+      span {
+        font-size: 13px;
+        background-color: #fff;
+        color: $grey-warm;
+        position: absolute;
+        padding: 0 10px;
+        top: -9px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    button {
+        margin-top: 5px;
+        width: 100%;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+        text-transform: uppercase;
+        border-radius: 2px;
+        padding: 10px 20px;
+        &::before {
+          content: attr(data-label);
+          font-size: 13px;
+        }
+        .fa {
+          margin-left: 10px;
+          top: calc(50% - 5px);
+          display: none;
+        }
+        &.submitting {
+          padding-left: 10px;
+          &::before {
+            content: attr(data-label-submitting);
+          }
+          .fa {
+            display: inline;
+          }
+        }
+    }
+
+    h3.validation {
+      width: 100%;
+    }
+
+    .validation {
+      text-align: center;
+      margin-top: 10px;
+      color: $berry;
+      &.note {
+        color: $grey-warm;
+      }
+      a {
+        display: block;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+    }
+
+    .password-rules {
+      width: 100%;
+      list-style-type: disc;
+      padding-left: 22px;
+      margin: 10px 0 5px;
+      li {
+        color: $berry;
+        width: 100%;
+        line-height: normal;
+        span {
+          color: $grey;
+          font-size: 1.3rem;
+        }
+      }
+      &.error {
+        list-style-type: none;
+        margin-left: 0.5rem;
+        span, li {
+          color: $berry;
+        }
+      }
+    }
+    .login-icon-wrapper {
+      position: absolute;
+      height: 26px;
+      top: 145px;
+      right: 27px;
+      color: #832B7B;
+      font-size: 2rem;
+      cursor: pointer;
+      &.disabled {
+        cursor: default;
+        opacity: .5;
+      }
+    }
+}
+
+.half-page-gradient {
+  box-shadow: 0 1px 3px rgba($black, 0.12), 0 1px 2px rgba($black, 0.24);
+  background-image: linear-gradient(to left, #4d3a8e, #832b7b, #4d3a8e, #832b7b);
+  opacity: .9;
+  height: 44vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: gradientAnimation 40s ease infinite;
+  background-size: 300% 100%;
+  z-index: -1;
+}
+
+.password-eye {
+  color: $grey-warm;
+  position: absolute;
+  right: 12px;
+  bottom: 9px;
+}
+
+.reset-password-link {
+  display: block;
+  font-size: 13px;
+  text-align: center;
+  margin: 15px 0 -10px 0;
+  cursor: pointer;
+}
+
+.single-sign-on {
+  height: 100%;
+}
+.org-logo-list {
+  overflow: auto;
+  position: relative;
+  margin: 0 auto;
+  width: 620px;
+  transform: translateY(50%);
+  background-color: white;
+  padding-bottom: 50px;
+  box-shadow: 0 1px 3px rgba($black, 0.12), 0 1px 2px rgba($black, 0.24);
+  .org-list-header {
+    width: 95%;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 10px;
+    border-bottom: 1px solid $grey-medium-dark;
+    margin-bottom: 30px;
+    h3 {
+      font-size: 1.3em;
+      font-weight: 500;
+      color: $grey-medium-dark;
+      margin: 10px 0;
+    }
+  }
+  .org-container {
+    @include nice-easing-animation;
+    width: 40%;
+    padding: 2%;
+    background-color: white;
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    img {
+      margin-bottom: 10px;
+    }
+    h4 {
+      color: $grey-medium-dark;
+      margin-bottom: 0;
+    }
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba($black, 0.12), 0 1px 2px rgba($black, 0.24);
+    }
+  }
+}

@@ -1,0 +1,147 @@
+.error-modal {
+  .fa {
+    margin-bottom: 1rem;
+    color: $grey;
+    font-size: 3.5rem;
+  }
+  span {
+    display: block;
+    color: $black;
+    text-align: center;
+    width: 100%;
+    font-weight: 500;
+    max-width: 350px;
+    font-size: 2rem;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    &.sub-message {
+      font-size: 1.5rem;
+      color: $grey-warm;
+    }
+  }
+  h4 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    line-height: 25px;
+  }
+  button {
+    font-size: 1.4rem;
+  }
+  .logo {
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  @media screen and (max-width: $break-mobile) {
+    .content {
+      .scrollable {
+        @include flex-center;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.new-error-modal {
+  width: 429px;
+  padding: 0 30px;
+  .icon-container {
+    .st0{fill-rule:evenodd;clip-rule:evenodd;}
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    z-index: 1;
+    &.megaphone {
+      svg {
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1) rotate(60deg);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+      }
+    }
+    svg {
+      overflow: hidden;
+      height: 180px;
+      width: 180px;
+      top: -34px;
+      right: -25px;
+      position: absolute;
+      fill: #e5e5e5;
+    }
+  }
+  .new-error-content {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 40px;
+    .main-paragraph {
+      padding-bottom: 30px;
+      border-bottom: 1px solid $brand-purple;
+    }
+    h3 {
+      &.lighter {
+        color: #BC2477;
+      }
+      font-size: 1.1em;
+      text-transform: uppercase;
+      letter-spacing: 1.7px;
+      color: $iris;
+      font-weight: bold;
+    }
+    p {
+      color: $grey-dark;
+      margin: 0;
+      font-size: .8em;
+      font-style: italic;
+      text-align: left;
+    }
+  }
+  h4 {
+    margin: 20px 0;
+    text-align: left;
+    font-size: .8em;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 0;
+    color: $grey-warm;
+  }
+  .custom-warning & {
+    h3.medium-warning {
+      color: $brand-magenta;
+    }
+    .main-paragraph {
+      padding: 40px 0 21px;
+      p {
+        font-size: 14px;
+      }
+    }
+    .new-error-footer h4 {
+      color: $greyish-brown;
+      font-size: 14px;
+    }
+  }
+  @media screen and (max-width: $break-mobile) {
+    width: auto;
+    padding: 0;
+    .main-paragraph {
+      font-size: .85em;
+    }
+  }
+}
+
+@media screen and (max-width: $break-small) {
+  .custom-warning.modal-dialog .animated-component.will-animate .content {
+    transform: translate3d(-50%, -100px, 0);
+  }
+  .custom-warning .content {
+    width: calc(100% - 20px);
+    top: calc(100px + 10px);
+    .new-error-modal {
+      width: auto;
+    }
+  }
+}

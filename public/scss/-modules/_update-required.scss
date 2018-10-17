@@ -1,0 +1,21 @@
+.update-required {
+  @include flex-center;
+  flex-direction: column;
+  i {
+    margin: 0 0 .3em;
+    color: $brand-purple;
+  }
+  h2 {
+    text-align: center;
+  }
+  .message {
+    font-size: 1.6rem;
+    font-style: italic;
+  }
+  p {
+    margin: 0;
+  }
+  a {
+    margin-top: .5rem;
+  }
+}

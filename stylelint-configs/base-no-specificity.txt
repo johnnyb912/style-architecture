@@ -1,0 +1,208 @@
+
+public/scss/base/_alerts-and-warnings.scss
+  22:9   ✖  Unexpected longhand value '0 14px 0' instead of '0 14px'   shorthand-property-no-redundant-values     
+  35:27  ✖  Unexpected hex color "#ffbec5"                             color-no-hex                               
+ 130:31  ✖  Unexpected hex color "#ffbec5"                             color-no-hex                               
+ 134:35  ✖  Unexpected hex color "#ffbec5"                             color-no-hex                               
+ 157:24  ✖  Unexpected hex color "#313333"                             color-no-hex                               
+ 169:33  ✖  Unexpected hex color "#313333"                             color-no-hex                               
+ 208:9   ✖  Expected empty line before comment                         scss/double-slash-comment-empty-line-before
+
+public/scss/base/_animations.scss
+  63:43   ✖  Unexpected hex color "#fff"                                       color-no-hex                                  
+  63:53   ✖  Unexpected hex color "#f5f5f7"                                    color-no-hex                                  
+  63:66   ✖  Unexpected hex color "#fff"                                       color-no-hex                                  
+  83:5    ✖  Expected an empty line before property "animation"                order/properties-order                        
+  96:24   ✖  Unexpected hex color "#5db37e"                                    color-no-hex                                  
+  98:26   ✖  Unexpected hex color "#5db37e"                                    color-no-hex                                  
+ 146:8    ✖  Expected no more than 1 declaration                               declaration-block-single-line-max-declarations
+ 146:37   ✖  Expected an empty line before property "transform"                order/properties-order                        
+ 147:9    ✖  Expected no more than 1 declaration                               declaration-block-single-line-max-declarations
+ 147:23   ✖  Expected an empty line before property "transform"                order/properties-order                        
+ 148:10   ✖  Expected no more than 1 declaration                               declaration-block-single-line-max-declarations
+ 148:35   ✖  Expected an empty line before property "transform"                order/properties-order                        
+ 151:8    ✖  Expected no more than 1 declaration                               declaration-block-single-line-max-declarations
+ 151:33   ✖  Expected an empty line before property "transform"                order/properties-order                        
+ 152:8    ✖  Expected no more than 1 declaration                               declaration-block-single-line-max-declarations
+ 152:38   ✖  Expected an empty line before property "transform"                order/properties-order                        
+ 153:10   ✖  Expected no more than 1 declaration                               declaration-block-single-line-max-declarations
+ 153:39   ✖  Expected an empty line before property "transform"                order/properties-order                        
+ 156:8    ✖  Expected no more than 1 declaration                               declaration-block-single-line-max-declarations
+ 156:22   ✖  Expected an empty line before property "transform"                order/properties-order                        
+ 157:8    ✖  Expected no more than 1 declaration                               declaration-block-single-line-max-declarations
+ 157:22   ✖  Expected an empty line before property "transform"                order/properties-order                        
+ 173:10   ✖  Expected no more than 1 declaration                               declaration-block-single-line-max-declarations
+ 174:8    ✖  Expected no more than 1 declaration                               declaration-block-single-line-max-declarations
+ 177:10   ✖  Expected no more than 1 declaration                               declaration-block-single-line-max-declarations
+ 178:8    ✖  Expected no more than 1 declaration                               declaration-block-single-line-max-declarations
+ 266:1    ✖  Unexpected vendor-prefixed at-rule "@-webkit-keyframes"           at-rule-no-vendor-prefix                      
+ 272:1    ✖  Unexpected vendor-prefixed at-rule "@-moz-keyframes"              at-rule-no-vendor-prefix                      
+ 284:1    ✖  Unexpected vendor-prefixed at-rule "@-webkit-keyframes"           at-rule-no-vendor-prefix                      
+ 305:17   ✖  Unexpected hex color "#f6f7f8"                                    color-no-hex                                  
+ 306:17   ✖  Expected "#eeeeee" to be "#eee"                                   color-hex-length                              
+ 306:17   ✖  Unexpected hex color "#eeeeee"                                    color-no-hex                                  
+ 307:78   ✖  Expected "#eeeeee" to be "#eee"                                   color-hex-length                              
+ 307:78   ✖  Unexpected hex color "#eeeeee"                                    color-no-hex                                  
+ 307:104  ✖  Unexpected hex color "#dad6dd"                                    color-no-hex                                  
+ 307:130  ✖  Expected "#eeeeee" to be "#eee"                                   color-hex-length                              
+ 307:130  ✖  Unexpected hex color "#eeeeee"                                    color-no-hex                                  
+ 308:17   ✖  Unexpected vendor-prefix "-webkit-linear-gradient"                value-no-vendor-prefix                        
+ 308:47   ✖  Expected "#eeeeee" to be "#eee"                                   color-hex-length                              
+ 308:47   ✖  Unexpected hex color "#eeeeee"                                    color-no-hex                                  
+ 308:59   ✖  Unexpected hex color "#dad6dd"                                    color-no-hex                                  
+ 308:72   ✖  Expected "#eeeeee" to be "#eee"                                   color-hex-length                              
+ 308:72   ✖  Unexpected hex color "#eeeeee"                                    color-no-hex                                  
+ 309:43   ✖  Expected "#eeeeee" to be "#eee"                                   color-hex-length                              
+ 309:43   ✖  Unexpected hex color "#eeeeee"                                    color-no-hex                                  
+ 309:55   ✖  Unexpected hex color "#dad6dd"                                    color-no-hex                                  
+ 309:68   ✖  Expected "#eeeeee" to be "#eee"                                   color-hex-length                              
+ 309:68   ✖  Unexpected hex color "#eeeeee"                                    color-no-hex                                  
+ 310:5    ✖  Unexpected vendor-prefix "-webkit-background-size"                property-no-vendor-prefix                     
+ 312:5    ✖  Unexpected vendor-prefix "-webkit-animation-name"                 property-no-vendor-prefix                     
+ 312:5    ✖  Expected an empty line before property "-webkit-animation-name"   order/properties-order                        
+ 314:5    ✖  Unexpected vendor-prefix "-webkit-animation-duration"             property-no-vendor-prefix                     
+ 316:5    ✖  Unexpected vendor-prefix "-webkit-animation-timing-function"      property-no-vendor-prefix                     
+ 318:5    ✖  Unexpected vendor-prefix "-webkit-animation-iteration-count"      property-no-vendor-prefix                     
+ 320:5    ✖  Unexpected vendor-prefix "-webkit-animation-fill-mode"            property-no-vendor-prefix                     
+ 332:10   ✖  Expected no more than 1 declaration                               declaration-block-single-line-max-declarations
+ 335:16   ✖  Unexpected hex color "#feffff"                                    color-no-hex                                  
+
+public/scss/base/_buttons.scss
+  21:5   ✖  Expected an empty line before property "transition"   order/properties-order   
+  33:27  ✖  Unexpected hex color "#e5e5e5"                        color-no-hex             
+  48:5   ✖  Unexpected vendor-prefix "-webkit-appearance"         property-no-vendor-prefix
+  64:24  ✖  Unexpected !important                                 declaration-no-important 
+  66:31  ✖  Unexpected hex color "#cc0707"                        color-no-hex             
+ 186:22  ✖  Unexpected !important                                 declaration-no-important 
+ 193:12  ✖  Unexpected hex color "#fff"                           color-no-hex             
+ 197:23  ✖  Unexpected !important                                 declaration-no-important 
+ 198:23  ✖  Unexpected !important                                 declaration-no-important 
+ 265:21  ✖  Expected nesting depth to be no more than 4           max-nesting-depth        
+ 268:21  ✖  Expected nesting depth to be no more than 4           max-nesting-depth        
+ 271:21  ✖  Expected nesting depth to be no more than 4           max-nesting-depth        
+ 274:21  ✖  Expected nesting depth to be no more than 4           max-nesting-depth        
+ 302:5   ✖  Expected an empty line before property "transition"   order/properties-order   
+ 302:34  ✖  Expected a minimum of 250 milliseconds                time-min-milliseconds    
+ 308:31  ✖  Unexpected hex color "#fff"                           color-no-hex             
+ 328:31  ✖  Unexpected hex color "#ebf7eb"                        color-no-hex             
+ 330:23  ✖  Unexpected hex color "#cae5c8"                        color-no-hex             
+ 333:25  ✖  Unexpected hex color "#cae5c8"                        color-no-hex             
+ 339:31  ✖  Unexpected hex color "#e5f8fc"                        color-no-hex             
+ 342:31  ✖  Unexpected hex color "#fae6f2"                        color-no-hex             
+ 348:31  ✖  Unexpected hex color "#efebff"                        color-no-hex             
+ 378:35  ✖  Unexpected hex color "#fff"                           color-no-hex             
+ 384:35  ✖  Unexpected hex color "#8bc087"                        color-no-hex             
+ 387:39  ✖  Unexpected hex color "#be1d77"                        color-no-hex             
+ 388:21  ✖  Expected nesting depth to be no more than 4           max-nesting-depth        
+ 389:32  ✖  Unexpected named color "white"                        color-named              
+ 391:21  ✖  Expected nesting depth to be no more than 4           max-nesting-depth        
+ 392:31  ✖  Unexpected named color "white"                        color-named              
+ 394:21  ✖  Expected nesting depth to be no more than 4           max-nesting-depth        
+ 395:43  ✖  Unexpected hex color "#be1d77"                        color-no-hex             
+ 402:39  ✖  Unexpected hex color "#8bd5ea"                        color-no-hex             
+ 403:21  ✖  Expected nesting depth to be no more than 4           max-nesting-depth        
+ 404:32  ✖  Unexpected named color "white"                        color-named              
+ 406:21  ✖  Expected nesting depth to be no more than 4           max-nesting-depth        
+ 408:33  ✖  Unexpected named color "white"                        color-named              
+ 410:21  ✖  Expected nesting depth to be no more than 4           max-nesting-depth        
+ 411:43  ✖  Unexpected hex color "#8bd5ea"                        color-no-hex             
+ 419:21  ✖  Expected nesting depth to be no more than 4           max-nesting-depth        
+ 422:21  ✖  Expected nesting depth to be no more than 4           max-nesting-depth        
+ 425:21  ✖  Expected nesting depth to be no more than 4           max-nesting-depth        
+ 430:28  ✖  Unexpected named color "white"                        color-named              
+ 433:27  ✖  Unexpected named color "white"                        color-named              
+ 434:21  ✖  Expected nesting depth to be no more than 4           max-nesting-depth        
+ 435:25  ✖  Expected nesting depth to be no more than 4           max-nesting-depth        
+ 438:25  ✖  Expected nesting depth to be no more than 4           max-nesting-depth        
+ 446:21  ✖  Expected nesting depth to be no more than 4           max-nesting-depth        
+ 447:21  ✖  Expected nesting depth to be no more than 4           max-nesting-depth        
+ 448:21  ✖  Expected nesting depth to be no more than 4           max-nesting-depth        
+ 449:21  ✖  Expected nesting depth to be no more than 4           max-nesting-depth        
+ 453:35  ✖  Unexpected hex color "#8bc087"                        color-no-hex             
+ 467:23  ✖  Unexpected hex color "#f8f8f8"                        color-no-hex             
+ 491:27  ✖  Unexpected hex color "#8bc087"                        color-no-hex             
+ 493:20  ✖  Unexpected hex color "#8bc087"                        color-no-hex             
+ 499:27  ✖  Unexpected hex color "#87daee"                        color-no-hex             
+ 501:20  ✖  Unexpected hex color "#87daee"                        color-no-hex             
+ 505:27  ✖  Unexpected hex color "#be1d77"                        color-no-hex             
+ 507:20  ✖  Unexpected hex color "#be1d77"                        color-no-hex             
+ 511:27  ✖  Unexpected hex color "#8bc087"                        color-no-hex             
+ 513:19  ✖  Unexpected hex color "#8bc087"                        color-no-hex             
+ 516:20  ✖  Unexpected hex color "#8bc087"                        color-no-hex             
+
+public/scss/base/_footer.scss
+ 80:17  ✖  Unexpected !important   declaration-no-important
+ 84:21  ✖  Unexpected !important   declaration-no-important
+
+public/scss/base/_form-elements.scss
+   13:26  ✖  Unexpected !important                                                                                           declaration-no-important                      
+   17:5   ✖  Unexpected vendor-prefix "-webkit-appearance"                                                                   property-no-vendor-prefix                     
+   29:18  ✖  Expected no more than 1 declaration                                                                             declaration-block-single-line-max-declarations
+  104:9   ✖  Unnecessary nesting selector (&)                                                                                scss/selector-no-redundant-nesting-selector   
+  241:5   ✖  Unexpected vendor-prefix "-moz-appearance"                                                                      property-no-vendor-prefix                     
+  290:9   ✖  Unexpected unknown property "scrollbar-3dlight-color"                                                           property-no-unknown                           
+  293:9   ✖  Unexpected duplicate "$brand-accent-color"                                                                      declaration-block-no-duplicate-properties     
+  305:13  ✖  Unexpected vendor-prefix "-moz-appearance"                                                                      property-no-vendor-prefix                     
+  468:17  ✖  Expected a minimum of 250 milliseconds                                                                          time-min-milliseconds                         
+  507:16  ✖  Unexpected named color "white"                                                                                  color-named                                   
+  541:5   ✖  Unexpected vendor-prefix "-webkit-appearance"                                                                   property-no-vendor-prefix                     
+  542:5   ✖  Unexpected vendor-prefix "-moz-appearance"                                                                      property-no-vendor-prefix                     
+  557:16  ✖  Unexpected named color "white"                                                                                  color-named                                   
+  654:5   ✖  Unexpected duplicate selector "input.check-toggle:checked + label.check-toggle-label", first used at line 571   no-duplicate-selectors                        
+  702:24  ✖  Unexpected !important                                                                                           declaration-no-important                      
+  716:13  ✖  Expected an empty line before property "transform"                                                              order/properties-order                        
+  720:17  ✖  Unexpected vendor-prefix "-ms-transform-origin"                                                                 property-no-vendor-prefix                     
+  744:41  ✖  Expected "#7A7A7A" to be "#7a7a7a"                                                                              color-hex-case                                
+  744:41  ✖  Unexpected hex color "#7A7A7A"                                                                                  color-no-hex                                  
+  753:5   ✖  Unexpected longhand value '20px 25px 0 25px' instead of '20px 25px 0'                                           shorthand-property-no-redundant-values        
+  756:17  ✖  Expected a minimum of 250 milliseconds                                                                          time-min-milliseconds                         
+  789:21  ✖  Expected a minimum of 250 milliseconds                                                                          time-min-milliseconds                         
+  982:9   ✖  Expected an empty line before property "transition"                                                             order/properties-order                        
+  982:25  ✖  Expected a minimum of 250 milliseconds                                                                          time-min-milliseconds                         
+ 1058:17  ✖  Expected a minimum of 250 milliseconds                                                                          time-min-milliseconds                         
+ 1108:23  ✖  Unexpected named color "white"                                                                                  color-named                                   
+
+public/scss/base/_form-layout.scss
+ 11:28  ✖  Unexpected !important   declaration-no-important
+
+public/scss/base/_header.scss
+  18:21  ✖  Unexpected hex color "#000"                               color-no-hex                               
+ 150:21  ✖  Unexpected vendor-prefix "-ms-transform"                  property-no-vendor-prefix                  
+ 152:21  ✖  Unexpected vendor-prefix "-webkit-transform"              property-no-vendor-prefix                  
+ 152:21  ✖  Expected "-webkit-transform" to come before "transform"   order/properties-order                     
+ 246:28  ✖  Unexpected !important                                     declaration-no-important                   
+ 280:17  ✖  Expected empty line before comment                        scss/double-slash-comment-empty-line-before
+
+public/scss/base/_helper-classes.scss
+  3:25  ✖  Unexpected !important   declaration-no-important
+  7:20  ✖  Unexpected !important   declaration-no-important
+ 22:41  ✖  Unexpected !important   declaration-no-important
+ 23:41  ✖  Unexpected !important   declaration-no-important
+
+public/scss/base/_nav.scss
+  11:5   ✖  Unexpected vendor-prefix "-ms-transform"                  property-no-vendor-prefix
+  11:5   ✖  Expected "-ms-transform" to come before "transform"       order/properties-order   
+  12:5   ✖  Unexpected vendor-prefix "-webkit-transform"              property-no-vendor-prefix
+  18:9   ✖  Unexpected vendor-prefix "-ms-transform"                  property-no-vendor-prefix
+  20:9   ✖  Unexpected vendor-prefix "-webkit-transform"              property-no-vendor-prefix
+  20:9   ✖  Expected "-webkit-transform" to come before "transform"   order/properties-order   
+  46:21  ✖  Expected a minimum of 250 milliseconds                    time-min-milliseconds    
+ 100:25  ✖  Unexpected !important                                     declaration-no-important 
+ 160:28  ✖  Unexpected !important                                     declaration-no-important 
+ 182:5   ✖  Expected an empty line before property "animation"        order/properties-order   
+ 183:25  ✖  Expected a minimum of 250 milliseconds                    time-min-milliseconds    
+ 193:9   ✖  Unexpected empty line before at-rule                      at-rule-empty-line-before
+ 212:21  ✖  Expected a minimum of 250 milliseconds                    time-min-milliseconds    
+
+public/scss/base/_read-only.scss
+  8:30  ✖  Unexpected !important   declaration-no-important
+ 11:35  ✖  Unexpected !important   declaration-no-important
+ 17:23  ✖  Unexpected !important   declaration-no-important
+ 20:34  ✖  Unexpected !important   declaration-no-important
+
+public/scss/base/_tables.scss
+ 46:1  ✖  Unexpected duplicate selector "td", first used at line 36   no-duplicate-selectors
+
+public/scss/base/_typography.scss
+ 109:30  ✖  Unexpected !important   declaration-no-important
+

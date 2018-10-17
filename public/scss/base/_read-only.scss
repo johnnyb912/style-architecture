@@ -1,0 +1,23 @@
+.user-type-R,
+.user-type-PII {
+    // read only
+    button:not(.bypass-read-only),
+    .edit:not(.bypass-read-only),
+    input:not(.bypass-read-only):not(.DateInput_input) {
+
+        cursor: not-allowed !important;
+
+        &:active {
+            pointer-events: none !important;
+        }
+    }
+
+    .page-admin-portal input,
+    .page-analytics input {
+        cursor: auto !important;
+
+        &:active {
+            pointer-events: all !important;
+        }
+    }
+}

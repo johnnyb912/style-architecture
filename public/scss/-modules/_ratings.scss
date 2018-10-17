@@ -1,0 +1,214 @@
+.ratings-page {
+  padding: 1rem 0;
+  min-height: 100vh;
+  .previously-rated {
+    text-align: center;
+  }
+  .expired {
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    text-align: center;
+    line-height: 1.5;
+  }
+  .details {
+    height: 390px;
+    overflow: hidden;
+    transition: 0.5s ease all;
+    &.details-hide {
+      height: 0;
+      opacity: 0;
+    }
+  }
+  .next-ride {
+    font-size: 3.5rem;
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    .fa {
+      margin-left: 1.5rem;
+      font-size: 2rem;
+      margin-top: 0.5rem;
+    }
+  }
+  .error-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+    h3, h4 {
+      margin: 0;
+    }
+    h4 {
+      font-size: 2rem;
+      margin-top: 1rem;
+    }
+  }
+  h2 {
+    font-size: 3rem;
+    text-align: center;
+  }
+  @include media(small) {
+    min-height: auto;
+    padding: 50px 0;
+    h2 {
+      font-size: 5rem;
+    }
+  }
+  button {
+    margin-top: 3rem;
+  }
+  .flex-wrapper {
+    height: 100%;
+    @include media(small) {
+      height: auto;
+    }
+  }
+  .form-column {
+    padding-bottom: 4rem;
+    min-height: 90vh;
+    justify-content: flex-start;
+    @include media(small) {
+      padding: 3rem 10rem;
+      height: auto;
+    }
+  }
+  textarea {
+    min-height: auto;
+    @include media(small) {
+      min-height: 200px;
+    }
+  }
+  .logo {
+    margin: 3rem 0;
+    height: 8rem;
+    &.avo {
+      padding: 2rem;
+    }
+    &.humana, &.Humana {
+      padding: 2.8rem;
+    }
+    @include media(medium){
+      height: 9rem;
+      &.avo {
+        padding: 2rem;
+      }
+    }
+  }
+  .input-wrapper {
+    margin-bottom: 2rem;
+    select {
+      padding-left: 10px;
+    }
+    .select-label {
+      width: 0;
+      border-right: 0;
+      @include media(small) {
+        width: 55px;
+        border-right: 1px dotted #C4C4C4;
+      }
+    }
+  }
+  .unrecognized-ride {
+    margin-top: 100px;
+    a {
+      text-decoration: underline;
+      color: #4a4a4a;
+      cursor: pointer;
+    }
+  }
+}
+
+#rate-form {
+  width: 100%;
+  .form-block.form-block-rate-ride {
+    width: 100%;
+    min-width: 323px;
+    margin-left: -1px;
+    .scrollable {
+      overflow: hidden;
+    }
+    .rate-ride-stars {
+      display: flex;
+      justify-content: center;
+      section.form-section-trip-overview & {
+        padding: 10px;
+        margin: 2rem 50px 2rem;
+      }
+      .ratings-page & {
+        @include media(small){
+          padding: 3% 10%;
+        }
+        @include media(medium){
+          padding: 3% 20%;
+        }
+      }
+      div {
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        &.hovering {
+          svg {
+            fill: $grey;
+          }
+          &.star1 svg {
+            fill: rgba(131,100,128, 0.3);
+          }
+          &.star2 svg {
+            fill: rgba(131,100,128, 0.5);
+          }
+          &.star3 svg {
+            fill: rgba(131,43,123, 0.5);
+          }
+          &.star4 svg {
+            fill: rgba(131,43,123, 0.6);
+          }
+          &.star5 svg {
+            fill: rgba(131,43,123, 0.8);
+          }
+        }
+        &.selected {
+          svg {
+            fill: $brand-purple;
+          }
+        }
+      }
+    }
+
+    .details {
+      height: 390px;
+      overflow: hidden;
+      transition: 1s ease height;
+      &.details-hide {
+        height: 0;
+      }
+    }
+
+    svg {
+      cursor: pointer;
+      section.form-section-trip-overview & {
+        transform: scale(3);
+        margin: 0 20px;
+      }
+      .ratings-page & {
+        height: 8rem;
+        fill: $grey-warm-darker;
+      }
+    }
+
+    .adj-margin-top {
+      margin-top: 20px;
+    }
+
+    .adj-margin-bottom {
+      margin-bottom: -15px;
+    }
+    .rating-word {
+      text-align: center;
+      display: block;
+      color: $black;
+      font-style: italic;
+      cursor: default;
+    }
+  }
+}

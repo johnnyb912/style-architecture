@@ -1,0 +1,66 @@
+table {
+    background: $white;
+    border-collapse: collapse;
+    margin: ($base-spacing / 2) 0;
+    width: 100%;
+
+    th.sortable {
+      cursor: pointer;
+    }
+
+    th.sorted-by {
+      font-weight: bold;
+    }
+
+    th.disabled {
+      pointer-events: none;
+    }
+
+    th,
+    thead > tr {
+        border-bottom: $base-border;
+        font-family: $font;
+        font-weight: 500;
+        padding: $base-spacing / 2;
+        text-align: left;
+        background: $grey;
+        color: $white;
+        font-size: 14px;
+
+        td {
+            border-right: none;
+        }
+    }
+}
+
+td {
+    border-bottom: $base-border;
+    padding: $base-spacing / 2;
+    color: $greyish-brown;
+}
+
+tbody {
+    padding: 0 1%;
+}
+
+td {
+    border-right: 1px solid $grey-white;
+    border-left: 1px solid $grey-white;
+    &:first-of-type {
+      border-left-color: $faded-blue;
+    }
+    &:last-of-type {
+      border-right-color: $faded-blue;
+    }
+}
+
+thead tr {
+  border: $base-border;
+  border-color: darken($grey, 10%);
+}
+
+tr,
+td,
+th {
+    vertical-align: middle;
+}

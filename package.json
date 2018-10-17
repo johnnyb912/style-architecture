@@ -2,6 +2,14 @@
   "name": "style-architecture",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "stylelint": "stylelint \"public/scss/*.scss\"",
+    "stylelint:specificity": "stylelint \"public/scss/base/*.scss\" --config stylelint-configs/stylelint-no-specificity.json",
+    "stylelint:order": "stylelint \"public/scss/base/*.scss\" --config stylelint-configs/stylelint-order.json",
+    "stylelint:spaces": "stylelint \"public/scss/base/*.scss\" --config stylelint-configs/stylelint-spaces.json",
+    "stylelint:minor": "stylelint \"public/scss/base/*.scss\" --config stylelint-configs/stylelint-minor.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": "git@github.com:johnnyb912/style-architecture.git",
   "author": "John Boyle <john.boyle912@gmail.com>",
   "license": "MIT",

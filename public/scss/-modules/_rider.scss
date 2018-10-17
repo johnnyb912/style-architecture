@@ -1,0 +1,1357 @@
+.page-rider {
+  .shadow-container {
+    margin-bottom: 20px;
+    background-color: $white;
+    .tab {
+      height: 50px;
+    }
+  }
+
+  .ride-wrapper.active-rides {
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .rider-rides-wrapper {
+    .rider-rides-header {
+      flex-direction: column;
+      .filter-pill-wrapper {
+        padding: 15px;
+      }
+      border-bottom: 1px solid rgba($purple-blue, 0.75);
+      @include media(small) {
+        border-bottom: 0;
+        margin: 15px;
+        flex-direction: row;
+        .filter-pill-wrapper {
+          margin-left: 15px;
+          padding: 0 0 0 15px;
+          border-left: 1px solid $blueberry;
+        }
+      }
+      .false-radio {
+        flex-grow: 1;
+        padding: 0 10px;
+        @include media(smallMedium) {
+          min-width: 150px;
+        }
+        @include media(medium) {
+          min-width: 169px;
+        }
+        font-size: 14px;
+        font-weight: 500;
+        color: $grey-warm-darker;
+        height: 36px;
+        &.active {
+          color: $white;
+          background-color: $iris;
+        }
+        @include media(medium) {
+          span:after {
+            content: ' Rides';
+          }
+        }
+      }
+    }
+    .circulation-loader {
+      position: relative;
+      background-color: $white;
+      width: 100%;
+      padding: 20px 0 40px;
+    }
+    .section-header {
+      background-color: $iris;
+      color: $white;
+      padding: 10px;
+      font-size: 16px;
+      height: 36px;
+      &.expandable {
+        transition: .2s all $sweetEasing;
+        cursor: pointer;
+        &:hover {
+          background-color: darken($iris, 5%);
+        }
+        + .triplist-group-wrapper {
+          .circulation-loader {
+            padding-top: 40px;
+          }
+        }
+      }
+      .fa {
+        color: $white;
+      }
+    }
+    .repeat-block {
+      padding-left: 16px;
+      transition: .5s $sweetEasing all;
+      border-color: $iris;
+      border-width: 2px;
+      input {
+        color: $blueberry !important;
+        width: 100%;
+      }
+      &:not(.expanded) {
+        &:hover {
+          background-color: darken($white-dark, 5%);
+        }
+      }
+      .summary {
+        padding: 0 20px 0 5px;
+        h4 {
+          color: $blueberry;
+        }
+        h4, a {
+          display: inline-block;
+        }
+      }
+      .circulation-loader {
+        background-color: $white-dark;
+      }
+    }
+  }
+
+  .page-section {
+    @include nice-easing-animation;
+    display: flex;
+  }
+
+  .page-section-rider-info,
+  .page-section-rider-rides {
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: column;
+    @include media(mediumLarge) {
+      justify-content: flex-start;
+    }
+  }
+
+  .page-section-rider-info {
+    position: relative;
+    padding: 40px;
+    @include media(large) {
+      padding: 40px 70px;
+    }
+    @media screen and (max-width: $break-small) {
+      padding: 0;
+    }
+    .section .detail span {
+      & > h4{ margin-bottom: -10px; }
+      & > hr{ border:0; margin:1.8rem 0; }
+    }
+    .edit-icon {
+      position: absolute;
+      right: 0;
+      top: 8px;
+      text-align: right;
+      cursor: pointer;
+      svg {
+        fill: $brand-purple;
+        width: 22px;
+        height: 22px;
+      }
+    }
+    .section {
+      @include nice-easing-animation;
+      max-width: 700px;
+      @media screen and (max-width: $break-small) {
+        padding: 10px 20px;
+      }
+      @include media(small) {
+        margin-left: 220px;
+        margin-bottom: 14px;
+      }
+      @include media(medium) {
+        margin-left: 270px;
+      }
+      @include media(large) {
+        margin: 50px auto;
+        &:first-of-type {
+          margin-top: 0;
+        }
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+        padding-left: 60px;
+      }
+
+      .detail {
+        transition: .2s ease-out all;
+        height: auto;
+        overflow: visible;
+        visibility: visible;
+        margin: 16px 0px;
+        h4 {
+          font-size: 1.6rem;
+          font-weight: 500;
+          margin-bottom: 5px;
+        }
+        .name {
+          font-size: 1.2rem;
+          color: $grey-warm-darker;
+          margin-bottom: 3px;
+        }
+        svg {
+          height: 18px;
+          fill: $blueberry;
+          width: 17px;
+          margin: 0 5px -4px 0;
+        }
+        .pull-up {
+          margin-top: -8px;
+        }
+      }
+
+      &.collapsed {
+        margin-bottom: 0;
+        .detail {
+          height: 0;
+          overflow: hidden;
+          display: none;
+          margin: 0px;
+        }
+      }
+      &.locked {
+        max-height: 54px;
+        overflow: hidden;
+        cursor: default;
+        margin: 15px auto 15px 200px;
+        @include media(medium) {
+          margin: 15px auto 15px 250px;
+        }
+        @include media(large) {
+          margin: 15px auto 15px auto;
+        }
+        &:hover {
+          .rider-info-secion-header .arrow-container {
+            right: 28px;
+          }
+        }
+        &.expanded {
+          max-height: 600px;
+          .rider-info-secion-header:before {
+            width: 0;
+          }
+          .rider-info-secion-header .arrow-container {
+            right: 24px;
+            transform: rotate(90deg);
+          }
+        }
+        p, li, h4 {
+          color: $grey-warm-darker;
+        }
+        .rider-info-secion-header {
+          height: 54px;
+          .arrow-container {
+            position: absolute;
+            right: 35px;
+            i {
+              color: $grey-warm-darker;
+            }
+          }
+          &:before {
+            content: '';
+            border-bottom: 1px solid #cfcbdd;
+            width: calc(100% - 20px);
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+          }
+        }
+        .rider-info-secion-header:after {
+          top: 0;
+          bottom: initial;
+        }
+      }
+    }
+
+    p, li {
+      font-size: 1.4rem;
+      color: $greyish-brown;
+      &.note {
+        font-size: 1.3rem;
+        color: $grey-warm;
+      }
+      &.char-limit {
+        font-size: 1.2rem;
+        color: $grey-warm;
+      }
+    }
+    li {
+      margin-left: 16px;
+      padding-right: 16px;
+    }
+  }
+
+  .page-section-rider-rides {
+    margin-top: 20px;
+    @include media(mediumLarge) {
+        margin-top: 0px;
+    }
+  }
+}
+
+.edit-rider-modal, .add-edit-modal {
+  .edit-rider-header-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: none;
+    &.collapsed {
+      border-bottom: 1px solid $cloudy-blue;
+    }
+    h4 {
+      font-size: 20px;
+      margin-bottom: 0;
+    }
+    .arrow {
+      min-width: 20px;
+      text-align: center;
+    }
+    i {
+      color: $brand-purple;
+      font-size: 3rem;
+      font-weight: bold;
+    }
+    visibility: visible;
+    height: auto;
+    @include media(small) {
+      visibility: collapse;
+      height: 0;
+      padding: 0;
+    }
+  }
+
+  #care-contacts-opt {
+    margin-left: 0;
+    max-width: 100%;
+  }
+  .edit-rider-section, .add-edit-modal-form {
+    visibility: visible;
+    border-bottom: 1px solid $cloudy-blue;
+    padding: 0 20px;
+    width: 100%;
+    height: 100%;
+    &.padding-top {
+      padding-top: 30px;
+    }
+    @include media(small) {
+      height: calc(95vh - 128px);
+      min-height: 100%;
+      padding: 0 30px;
+      border-bottom: none;
+      position: relative;
+      select:focus,
+      textarea:focus,
+      input:focus {
+        font-size: 16px;
+      }
+    }
+    @include media(medium) {
+      select:focus,
+      textarea:focus,
+      input:focus {
+        font-size: 1.4rem;
+      }
+    }
+    &.collapsed {
+      height: 0;
+      display: none;
+      border-bottom: none;
+      form {
+        visibility: hidden;
+      }
+    }
+
+    .form-block-full {
+      width: 100%;
+      margin-bottom: 0;
+    }
+
+    section {
+      h4 {
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 0;
+        font-weight: 500;
+        &.rider-notes {
+          padding: 0;
+        }
+      }
+      .field {
+        margin-bottom: 20px;
+        .field-name {
+          font-size: 13px;
+          color: $grey-dark;
+          display: flex;
+          align-items: center;
+        }
+
+        .field-name-optional {
+          color: $grey-warm-darker;
+          font-style: italic;
+        }
+
+        &:first-of-type {
+          margin-top: 20px;
+        }
+
+        &:last-of-type {
+          margin-bottom: 0px;
+        }
+
+        .input-wrapper {
+          margin-top: 0;
+        }
+      }
+
+      .input-wrapper:not(.mini) {
+        width: 100%;
+        overflow: visible;
+        input {
+          padding: 0 0 0 10px;
+          .disabled {
+            color: $grey-medium-light;
+          }
+        }
+
+        select,
+        .label-content {
+          font-size: 1.4rem;
+        }
+
+        .icon-form {
+          width: 0;
+          border-right: 0;
+        }
+      }
+
+      .complete-check {
+        color: $light-green;
+        display: flex;
+        align-items: flex-start;
+        position: absolute;
+        margin-top: 0;
+        z-index: auto;
+        left: -15px;
+        top: -2px;
+        .fa-asterisk {
+          margin-left: 0;
+          font-size:9px;
+          color: $brand-magenta;
+        }
+      }
+    }
+
+    .form-section {
+      display: flex;
+      border-top: none;
+      flex-direction: column;
+      margin: 0px;
+      padding: 0px;
+      .edit {
+        padding: 2px 5px;
+        width: auto;
+        height: auto;
+      }
+      .edit.closing-button {
+        background: $blueberry;
+        top: 0px;
+        svg {
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+
+    .form-block-full {
+      width: 100%;
+      border-top: 2px $blueberry solid;
+      margin: 0 0 20px 0;
+    }
+
+    // Basic Information
+    .form-section-rider-contact {
+      margin-top: 0;
+    }
+
+    .locked-message {
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+
+    .contact-pref {
+      margin-right: 0;
+    }
+
+    // Insurance, Care Contacts, Rider Notes
+    .care-contact-wrapper {
+      overflow: visible;
+    }
+    .rider-notes-container,
+    .care-contacts-container {
+      h4 {
+        padding-top: 0;
+      }
+      h3 {
+        padding: 0;
+        margin-bottom: 0;
+        display: none;
+        @include media(small) {
+          display: block;
+          font-size: 20px;
+          width: 100%;
+          padding: 20px 0 10px;
+          margin-bottom: 0;
+        }
+      }
+      .form-block-full {
+        border-top: 2px $blueberry solid;
+        margin: 0 0 20px 0;
+        padding-top: 10px;
+      }
+      .add-note-wrapper,
+      .add-member-wrapper {
+        border-top: 2px $blueberry solid;
+        border-bottom: 2px $blueberry solid;
+        padding: 20px 0;
+        justify-content: flex-start;
+        button {
+          width: auto;
+        }
+      }
+
+      .input-field-third {
+        margin-right: 0;
+      }
+
+      .consent-status {
+        top: 0px;
+        margin-bottom: 20px;
+        button {
+          border-radius: 2px;
+          font-weight: 500;
+          padding: 12px 9px 12px 7px;
+          font-size: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: $light-green;
+          width: 100%;
+          cursor: pointer;
+          @include media(small) {
+            width: auto;
+            padding: 9px 9px 9px 7px;
+          }
+          &.error {
+            background: $error-color;
+          }
+        }
+        @include media(small) {
+          margin-bottom: 0px;
+          top: 15px;
+        }
+      }
+    }
+  }
+
+  .edit-rider-section {
+    .footnote {
+      margin-top: -23px;
+    }
+  }
+
+  .edit-rider-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 10px 20px;
+    border-top: $grey solid 1px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    z-index: 10;
+    @include media(small) {
+      flex-direction: row;
+      justify-content: flex-end;
+      padding: 10px 20px;
+      border-bottom: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      .ie11 & {
+        @include media(medium) {
+          width: 820px;
+          margin: 0 auto;
+          margin-bottom: 2.5vh;
+        }
+      }
+    }
+    .fa-refresh {
+      margin-right: 15px;
+      font-size: 2rem;
+      color: $light-green;
+    }
+    .footer-note {
+      display: flex;
+      font-weight: 500;
+      color: $greyish-brown;
+      margin: 0;
+      p {
+        margin-bottom: 10px;
+      }
+      i {
+        font-size: 2rem;
+        font-weight: 100;
+        margin-right: 5px;
+      }
+      .fa-exclamation-triangle {
+        color: $error-color;
+      }
+      .fa-check {
+        color: $light-green;
+      }
+      @include media(small) {
+        p {
+          margin-bottom: 0;
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+}
+
+.rider-info-secion-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 15px;
+  position: relative;
+  height: 31px;
+  padding-right: 20px;
+  &:after {
+    content: '';
+    border-bottom: 1px solid $cloudy-blue;
+    width: calc(100% - 20px);
+    display: inline-block;
+    position: absolute;
+    bottom: 6px;
+    left: 0;
+  }
+  &.disabled {
+    pointer-events: none;
+    cursor: default;
+  }
+  .name.message {
+    font-size: 1.2rem;
+    font-style: italic;
+    width: 100%;
+    flex-basis: 100%;
+  }
+  h4 {
+    background-color: $white;
+    padding: 2px 0;
+    z-index: 100;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 0;
+    white-space: nowrap;
+    transition: 0.25s all $sweetEasing;
+    @media (max-width: 1400px) and (min-width: 1230px) {
+      letter-spacing: 1px;
+    }
+    &.ellipsis-overflow {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  .arrow {
+    min-width: 20px;
+    min-height: 31px;
+    text-align: center;
+    background-color: $white;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  i {
+    color: $brand-purple;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+}
+
+.add-edit-modal-form {
+  overflow: scroll;
+  padding-bottom: 20px !important;
+  + .edit-rider-footer {
+    position: fixed;
+    background-color: $white;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 10px 20px;
+    border-bottom: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+.locations-modal-form {
+  p.toggle-map-btn {
+    margin-top: 10px;
+    text-align: right;
+    color: $brand-purple;
+    cursor: pointer;
+    visibility: hidden;
+    &.enabled {
+      visibility: visible;
+    }
+  }
+  .address-field {
+    @include media(small) {
+      display: flex;
+      > div:nth-of-type(1) {
+        width: 70%;
+        margin-right: 10px;
+      }
+      > div:nth-of-type(2) {
+        flex: 2;
+      }
+    }
+  }
+  .toggle-map-btn + .footnote {
+    margin-top: 0;
+  }
+}
+
+.appointment-types {
+  font-size: 14px;
+  color: $grey-medium-dark;
+  .appointment-types-ext {
+    color: $brand-purple;
+    cursor: pointer;
+  }
+}
+
+.benefit-details-card {
+  .benefit-type {
+    font-size: 12px;
+    color: $grey-warm;
+  }
+  p.benefit-stipulations {
+    font-size: 14px;
+    color: $brand-purple;
+  }
+  .rider-info-auth-card {
+    margin-left: 15px;
+    padding-left: 10px;
+    border-left: 1px solid grey;
+  }
+}
+
+.form-section-rider-contact,
+.form-section-rider-care-team,
+.form-section-rider-notes,
+.page-section-rider-at-glance {
+    .datetime-radio-wrapper {
+        display: flex;
+        margin-top: 25px;
+        padding-top:20px;
+
+        > div {
+            display: inline-block;
+
+            &:not(:last-child) {
+                margin-right: 15px;
+            }
+        }
+    }
+
+    #rider-contact-form,
+    .care-team-form {
+        width: 100% !important;     //THERE IS AN IMPORTANT VALUE BEING USED HERE BE CAREFUL
+    }
+
+    .form-block-full {
+        width: 100%;
+        margin-bottom:40px;
+
+        .page-add-a-rider &{
+          &:last-of-type {
+            margin-bottom: 10px;
+          }
+        }
+
+        h3{
+            margin-bottom: 0;
+        }
+
+        &.form-block-rider-address {
+          .flex-wrapper {
+            justify-content: space-between;
+          }
+          .input-field-two-thirds {
+            position: relative;
+          }
+          .input-field-third {
+            margin-right: 0;
+          }
+          .fa-spinner {
+            position: absolute;
+            top: 0;
+            right: 1.5rem;
+            height: calc(100% + 20px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+    }
+
+    .form-block {
+        width: 100%;
+
+        &.form-block-rider-address,
+        &.form-block-rider-contact-pref,
+        &.form-block-care-team-member,
+        &.form-block-care-team-contact-pref {
+            float: left;
+        }
+
+        &.form-block-rider-contact-pref,
+        &.form-block-care-team-contact-pref {
+          @include media(small) {
+            margin-top: 50px;
+          }
+        }
+
+        @include media(small) {
+            width: 50%;
+
+            &.form-block-rider-address,
+            &.form-block-care-team-member {
+                width: calc(50% - 20px);
+                margin-right: 20px;
+            }
+
+            &.form-block-rider-contact-pref,
+            &.form-block-care-team-contact-pref {
+                margin-top: 0px;
+            }
+        }
+    }
+
+    .validation-message {
+        text-align: center;
+    }
+}
+
+.form-section-rider-contact {
+    margin-top: 3rem;
+
+    .fields-required-message {
+      margin-bottom: 2rem;
+    }
+}
+
+.rider-section-title {
+  margin-top: 60px;
+
+  @include media(large) {
+    margin-top: 60px;
+  }
+}
+
+.care-contacts-container {
+  .care-contact-wrapper.expanded {
+    margin-bottom:30px;
+  }
+}
+
+section.form-section-rider-care-team, section.form-section-insurance-information {
+    flex-wrap: wrap;
+    margin: 0;
+
+    .checkbox-wrapper {margin-top: 34px;}
+
+    .button-wrapper {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+// THIS IS THE FIRST CARE TEAM MEMBER - IT'S THE FOURTH CHILD OF IT'S PARENT. IF ANY MORE ELEMENTS GET ADDED TO THIS FORM, THIS NUMBER NEEDS TO CHANGE
+section.form-section-rider-care-team:nth-child(4) {
+    margin-top: 16px;
+
+    @include media(large) {
+        margin-top: 16px;
+    }
+}
+
+.form-section-rider-notes {flex-direction: column;}
+
+.add-member-wrapper {
+    @include flex-center;
+    padding-bottom: 50px;
+    background: $white;
+    &.first {
+      padding-top: 50px;
+    }
+
+    button {
+        width: calc(50% - 40px);
+        @media screen and (max-width: $break-mobile) {
+          width: calc(100% - 40px);
+        }
+    }
+}
+
+.page-rider {
+  @include nice-easing-animation;
+  @media screen and (max-width: $break-mobile) {
+    margin-top: 0;
+  }
+  margin-top: -10px;
+  @include media(small) {
+    margin-top: -30px;
+  }
+  .circulation-loader {
+    height: auto;
+    padding-top: 8rem;
+    &.map-loader {
+      padding-top: 0;
+      position: relative;
+      @include flex-column;
+      height: 300px;
+      > div {
+        height: 50px;
+        width: 50px;
+        background-size: 50px 50px;
+      }
+      p {
+        margin-top: 10px;
+      }
+    }
+  }
+  h2 {
+    font-size: 24px;
+  }
+    .form-block-uuid .input-field-third{
+        margin-bottom:40px;
+    }
+    .form-section-additional-information {
+      padding: 0;
+      border-top: 0;
+      margin-bottom: 0;
+      #rider-additional-information-form {
+        h3 {
+          margin-bottom: 0;
+        }
+      }
+    }
+}
+
+.form-section-additional-information {
+  ul.search-results {
+    position: relative;
+  }
+}
+
+.page-add-a-rider {
+  @media screen and (max-width: $break-mobile) {
+    padding-bottom: 3rem;
+  }
+  .form-section-additional-information .rider-status h4 {
+    text-align: center;
+  }
+}
+
+.page-add-a-rider .form-block-uuid{
+    display:none;
+}
+
+.page-add-a-rider .rider-notes-wrapper section {
+  border-color: $brand-accent-color;
+}
+
+.force-status-update .datetime-radio-wrapper {
+  justify-content: center;
+}
+
+.notification-options {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 40px;
+  &.add-a-rider {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  &.care-team {
+    margin-bottom: 0;
+    margin-top: 15px;
+  }
+  &.share-trip {
+    margin: 0;
+    > div {
+      background-color: $white;
+      border: 0;
+    }
+  }
+  > span {
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+    transition: .2s color ease-in-out;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+    a {
+      font-size: 1.5rem;
+      .fa {
+        margin-right: 0.5rem;
+      }
+    }
+    &:hover {
+      .collapse-button {
+        color: $hover-link-color;
+      }
+    }
+    .collapse-button {
+      margin: 0 0.5rem 0 0;
+      font-size: 2rem;
+    }
+  }
+  > div {
+    justify-content: space-between;
+    transition: 0.3s all ease-in-out;
+    max-height: 200px;
+    overflow: hidden;
+    background-color: $white-dark;
+    border-top: 1px dotted $grey-warm-darker;
+    padding: 15px;
+    .input-wrapper {
+      width: auto;
+      margin-right: 2rem;
+      margin-top: 0;
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+    &.collapse {
+      max-height: 0;
+      padding: 0 15px;
+      border: 0;
+    }
+  }
+}
+
+.form-section-additional-information, .form-section-basic-information {
+  form {
+    width: 100%;
+  }
+}
+
+.form-section-additional-information .rider-status .flex-wrapper {
+  margin: 3rem 0;
+  > div:last-of-type {
+    margin-left: 3rem;
+    border-left: 1px solid $white-dark;
+    padding-left: 4rem;
+  }
+  > div:first-of-type {
+    margin: 0;
+    border: 0;
+    padding-left: 1rem;
+  }
+}
+
+.validation {
+  opacity: 1;
+  margin-bottom: -1rem;
+  &.location {
+    margin-bottom: 0;
+  }
+  &.billing {
+    margin-bottom: 0;
+  }
+  &.fade-out {
+    height: 0;
+    opacity: 0;
+  }
+  &.suppress {
+    opacity: 0;
+  }
+  &.no-margin {
+    margin: 0;
+  }
+  &.deleted-location {
+    margin: 1rem 0;
+    font-size: 12px;
+  }
+}
+
+.remove-address {
+  position: absolute;
+  right: 0;
+  a {
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: .2s ease-in-out all;
+    border-radius: 2px;
+    &:hover {
+      color: $success-color;
+    }
+    i {
+      margin-right: 0.5rem;
+    }
+  }
+  &.danger {
+    a:hover {
+      color: $error-color;
+    }
+  }
+  @media screen and (max-width: $break-mobile) {
+    position: relative;
+  }
+  &.edit-rider {
+    top: 15px;
+  }
+}
+
+#rider-cohort-form {
+  width: 100%;
+}
+
+.special-accom-container {
+  margin-top: 25px;
+  width: 100%;
+  .collapse-button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-bottom: .5rem;
+    color: $grey;
+    i:not(.fa-lock) {
+      margin-right: 1rem;
+      font-size: 2rem;
+      color: $brand-purple-dark;
+      @include nice-easing-animation;
+      &.fa-minus-circle {
+        color: $grey;
+      }
+    }
+  }
+  > div {
+    justify-content: space-between;
+    transition: 0.3s all ease-in-out;
+    overflow: hidden;
+    background-color: $white-dark;
+    border-top: 1px dotted $grey-warm-darker;
+    margin-bottom: 10px;
+    padding: 20px;
+    width: 100%;
+    &.collapsed {
+      max-height: 0;
+      padding: 0 15px;
+      border: 0;
+    }
+  }
+  &.trip-overview {
+    margin: 20px 0px 0px 0px;
+    a {
+      padding-bottom: 0
+    }
+    @include media(medium) {
+      margin: 0 20px;
+    }
+  }
+  .accom-options {
+    width: 100%;
+    overflow: scroll;
+    .input-wrapper {
+      max-width: 35%;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    .input-wrapper:nth-child(2),
+    .input-wrapper:nth-child(5) {
+      max-width: 37%;
+    }
+    .input-wrapper:nth-child(3),
+    .input-wrapper:nth-child(6) {
+      max-width: 25%;
+    }
+    .input-wrapper:nth-child(7) {
+      max-margin-bottom: 0;
+    }
+  }
+  .footnote {
+    font-size: 1.12rem;
+    position: relative;
+    bottom: -5px;
+  }
+}
+
+.rider-rides-wrapper {
+  .trip-list-ride-item {
+    .ride-info .ride-data-wrapper.duration {
+      padding-left: 0;
+    }
+  }
+}
+
+.form-section-rider-contact {
+  margin-top: 25px;
+  .page-rider &{
+    .form-block-uuid {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+#verify-form .input-wrapper {
+  // This is just selecting the event form...it turns out ALL of the radio inputs are taking up 100% width, in this specific case blocking links from being clickable. I think the best solution is below, but didn't want to mess up other parts of the site.
+  width: 35%;
+  display: inline-block;
+}
+
+.confirm-delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  padding: 0 20px;
+  @include media(medium) {
+    padding: 0 100px;
+  }
+  p {
+    width: 100%;
+  }
+  button {
+    margin: 15px 8px;
+  }
+  &.success p {
+    margin-top: 20px;
+    .fa {
+      color: $success-color;
+    }
+  }
+}
+
+@media screen and (max-width: $break-small) {
+  .page-rider {
+    .tab svg {
+      display: none;
+    }
+    .shadow-container {
+      position: relative;
+    }
+    .page-section-rider-rides {
+      margin-top: 0;
+    }
+    .recurring-rides {
+      padding-top: 5px;
+    }
+    .rider-rides-header > div:first-of-type, .vertical-scrollspy {
+      box-shadow: 0px 3px 4px -1px rgba(0, 0, 0, 0.5);
+      .false-radio {
+        height: 55px;
+        border: 0;
+        border-radius: 0;
+        font-weight: 500;
+        color: $blueberry;
+        border-bottom: 5px solid transparent;
+        &.active {
+          background-color: $white;
+          color: $blueberry;
+          font-weight: bold;
+          border-bottom-color: $iris;
+        }
+      }
+    }
+    .page-section-rider-info {
+      .section:not(.active) {
+        display: none;
+      }
+      .section {
+        padding-top: 20px;
+      }
+    }
+  }
+}
+
+.vertical-scrollspy {
+  width: 200px;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  @include media(large) {
+    left: 70px;
+  }
+  .firefox &, .ie11 &, .safari &{
+    margin-top: 0 !important;
+  }
+  a {
+    font-size: 14px;
+    padding: 10px 0;
+    display: block;
+    color: $grey-warm;
+    font-weight: 500;
+    cursor: pointer;
+    &:hover {
+      color: darken($grey-warm, 10%);
+    }
+    &.active {
+      color: $brand-purple;
+      font-weight: bold;
+      pointer-events: none;
+    }
+  }
+}
+
+.mobile-horz-scroll-links {
+  @media screen and (max-width: $break-small) {
+    box-shadow: 0px 3px 4px -1px rgba(0, 0, 0, 0.5);
+    position: relative;
+    top: 0;
+    left: 0;
+    width: auto;
+    white-space: nowrap;
+    overflow-x: scroll;
+    -ms-overflow-style: none; // make sure there's no scrollbar in IE
+    a, button {
+      display: inline-block;
+      padding: 20px 15px 15px;
+      color: $blueberry;
+      border-bottom: 5px solid transparent;
+      background-color: $white;
+      border-radius: 0;
+      font-weight: 500;
+      font-size: 14px;
+      padding: 20px 15px 15px;
+      &.active {
+        border-bottom-color: $iris;
+        color: $blueberry;
+        font-weight: bold;
+      }
+      &:hover {
+        background-color: $white;
+        color: $blueberry;
+      }
+    }
+  }
+}

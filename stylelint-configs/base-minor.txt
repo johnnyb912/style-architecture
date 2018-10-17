@@ -1,0 +1,170 @@
+RULES
+============================================
+at-rule-empty-line-before
+declaration-block-trailing-semicolon
+function-url-quotes
+length-zero-no-unit
+no-extra-semicolons
+no-invalid-double-slash-comments
+number-leading-zero
+number-no-trailing-zeros
+selector-pseudo-element-colon-notation
+string-quotes
+scss/at-mixin-argumentless-call-parentheses
+
+public/scss/base/_alerts-and-warnings.scss
+  8:5   ✖  Expected parentheses in mixin "flex-center" call             scss/at-mixin-argumentless-call-parentheses
+  9:5   ✖  Expected parentheses in mixin "nice-easing-animation" call   scss/at-mixin-argumentless-call-parentheses
+ 20:19  ✖  Unexpected unit                                              length-zero-no-unit                        
+ 20:28  ✖  Unexpected unit                                              length-zero-no-unit                        
+ 31:9   ✖  Expected parentheses in mixin "flex-center" call             scss/at-mixin-argumentless-call-parentheses
+
+public/scss/base/_animations.scss
+ 104:42  ✖  Expected a leading zero         number-leading-zero                 
+ 121:38  ✖  Expected a trailing semicolon   declaration-block-trailing-semicolon
+ 122:53  ✖  Expected a trailing semicolon   declaration-block-trailing-semicolon
+ 123:40  ✖  Expected a trailing semicolon   declaration-block-trailing-semicolon
+ 126:38  ✖  Expected a trailing semicolon   declaration-block-trailing-semicolon
+ 127:35  ✖  Expected a trailing semicolon   declaration-block-trailing-semicolon
+ 128:40  ✖  Expected a trailing semicolon   declaration-block-trailing-semicolon
+ 131:28  ✖  Expected a trailing semicolon   declaration-block-trailing-semicolon
+ 132:32  ✖  Expected a trailing semicolon   declaration-block-trailing-semicolon
+ 133:30  ✖  Expected a trailing semicolon   declaration-block-trailing-semicolon
+ 136:28  ✖  Expected a trailing semicolon   declaration-block-trailing-semicolon
+ 137:32  ✖  Expected a trailing semicolon   declaration-block-trailing-semicolon
+ 138:30  ✖  Expected a trailing semicolon   declaration-block-trailing-semicolon
+ 196:77  ✖  Unexpected trailing zero(s)     number-no-trailing-zeros            
+ 211:77  ✖  Unexpected trailing zero(s)     number-no-trailing-zeros            
+ 226:77  ✖  Unexpected trailing zero(s)     number-no-trailing-zeros            
+ 241:77  ✖  Unexpected trailing zero(s)     number-no-trailing-zeros            
+ 262:36  ✖  Expected a trailing semicolon   declaration-block-trailing-semicolon
+ 263:39  ✖  Expected a trailing semicolon   declaration-block-trailing-semicolon
+ 264:38  ✖  Expected a trailing semicolon   declaration-block-trailing-semicolon
+ 268:36  ✖  Expected a trailing semicolon   declaration-block-trailing-semicolon
+ 269:39  ✖  Expected a trailing semicolon   declaration-block-trailing-semicolon
+ 270:38  ✖  Expected a trailing semicolon   declaration-block-trailing-semicolon
+ 274:36  ✖  Expected a trailing semicolon   declaration-block-trailing-semicolon
+ 275:39  ✖  Expected a trailing semicolon   declaration-block-trailing-semicolon
+ 276:38  ✖  Expected a trailing semicolon   declaration-block-trailing-semicolon
+ 281:38  ✖  Expected a trailing semicolon   declaration-block-trailing-semicolon
+ 284:37  ✖  Expected a trailing semicolon   declaration-block-trailing-semicolon
+ 290:38  ✖  Expected a trailing semicolon   declaration-block-trailing-semicolon
+ 293:37  ✖  Expected a trailing semicolon   declaration-block-trailing-semicolon
+
+public/scss/base/_buttons.scss
+  38:22  ✖  Expected a leading zero   number-leading-zero
+ 103:22  ✖  Expected a leading zero   number-leading-zero
+ 125:25  ✖  Expected a leading zero   number-leading-zero
+ 150:22  ✖  Expected a leading zero   number-leading-zero
+ 357:46  ✖  Expected a leading zero   number-leading-zero
+ 362:47  ✖  Expected a leading zero   number-leading-zero
+ 365:46  ✖  Expected a leading zero   number-leading-zero
+ 370:52  ✖  Expected a leading zero   number-leading-zero
+ 458:27  ✖  Expected a leading zero   number-leading-zero
+ 459:18  ✖  Expected a leading zero   number-leading-zero
+
+public/scss/base/_form-elements.scss
+  113:12  ✖  Expected double quotes                                       string-quotes                              
+  114:12  ✖  Expected double quotes                                       string-quotes                              
+  115:12  ✖  Expected double quotes                                       string-quotes                              
+  116:12  ✖  Expected double quotes                                       string-quotes                              
+  141:6   ✖  Expected double colon pseudo-element notation                selector-pseudo-element-colon-notation     
+  237:20  ✖  Expected double quotes                                       string-quotes                              
+  300:29  ✖  Unexpected unit                                              length-zero-no-unit                        
+  304:29  ✖  Unexpected unit                                              length-zero-no-unit                        
+  309:29  ✖  Unexpected unit                                              length-zero-no-unit                        
+  332:21  ✖  Expected a leading zero                                      number-leading-zero                        
+  338:10  ✖  Expected double colon pseudo-element notation                selector-pseudo-element-colon-notation     
+  416:21  ✖  Expected a leading zero                                      number-leading-zero                        
+  455:17  ✖  Expected a leading zero                                      number-leading-zero                        
+  551:10  ✖  Expected double colon pseudo-element notation                selector-pseudo-element-colon-notation     
+  565:47  ✖  Expected a leading zero                                      number-leading-zero                        
+  574:10  ✖  Expected double colon pseudo-element notation                selector-pseudo-element-colon-notation     
+  579:6   ✖  Expected double colon pseudo-element notation                selector-pseudo-element-colon-notation     
+  657:9   ✖  Expected parentheses in mixin "base-animation" call          scss/at-mixin-argumentless-call-parentheses
+  662:6   ✖  Expected double colon pseudo-element notation                selector-pseudo-element-colon-notation     
+  679:6   ✖  Expected double colon pseudo-element notation                selector-pseudo-element-colon-notation     
+  686:25  ✖  Expected double quotes                                       string-quotes                              
+  702:10  ✖  Expected double colon pseudo-element notation                selector-pseudo-element-colon-notation     
+  717:14  ✖  Expected double colon pseudo-element notation                selector-pseudo-element-colon-notation     
+  734:24  ✖  Unexpected unit                                              length-zero-no-unit                        
+  739:17  ✖  Expected a leading zero                                      number-leading-zero                        
+  748:6   ✖  Expected double colon pseudo-element notation                selector-pseudo-element-colon-notation     
+  767:6   ✖  Expected double colon pseudo-element notation                selector-pseudo-element-colon-notation     
+  768:18  ✖  Expected double quotes                                       string-quotes                              
+  774:21  ✖  Expected a leading zero                                      number-leading-zero                        
+  805:37  ✖  Unexpected unit                                              length-zero-no-unit                        
+  805:42  ✖  Unexpected unit                                              length-zero-no-unit                        
+  808:44  ✖  Unexpected unit                                              length-zero-no-unit                        
+  816:10  ✖  Expected double colon pseudo-element notation                selector-pseudo-element-colon-notation     
+  822:43  ✖  Unexpected unit                                              length-zero-no-unit                        
+  837:14  ✖  Expected double colon pseudo-element notation                selector-pseudo-element-colon-notation     
+  939:10  ✖  Expected double colon pseudo-element notation                selector-pseudo-element-colon-notation     
+  944:17  ✖  Unexpected unit                                              length-zero-no-unit                        
+  955:25  ✖  Expected a leading zero                                      number-leading-zero                        
+ 1035:17  ✖  Expected a leading zero                                      number-leading-zero                        
+ 1041:10  ✖  Expected double colon pseudo-element notation                selector-pseudo-element-colon-notation     
+ 1047:6   ✖  Expected double colon pseudo-element notation                selector-pseudo-element-colon-notation     
+ 1048:9   ✖  Expected parentheses in mixin "nice-easing-animation" call   scss/at-mixin-argumentless-call-parentheses
+ 1075:10  ✖  Expected double colon pseudo-element notation                selector-pseudo-element-colon-notation     
+ 1079:14  ✖  Expected double colon pseudo-element notation                selector-pseudo-element-colon-notation     
+ 1084:14  ✖  Expected double colon pseudo-element notation                selector-pseudo-element-colon-notation     
+ 1108:14  ✖  Expected double colon pseudo-element notation                selector-pseudo-element-colon-notation     
+ 1115:14  ✖  Expected double colon pseudo-element notation                selector-pseudo-element-colon-notation     
+ 1120:14  ✖  Expected double colon pseudo-element notation                selector-pseudo-element-colon-notation     
+ 1133:14  ✖  Expected double colon pseudo-element notation                selector-pseudo-element-colon-notation     
+ 1139:18  ✖  Expected double colon pseudo-element notation                selector-pseudo-element-colon-notation     
+ 1154:5   ✖  Expected parentheses in mixin "flex-center" call             scss/at-mixin-argumentless-call-parentheses
+ 1182:6   ✖  Expected double colon pseudo-element notation                selector-pseudo-element-colon-notation     
+ 1188:5   ✖  Expected parentheses in mixin "nice-easing-animation" call   scss/at-mixin-argumentless-call-parentheses
+ 1189:5   ✖  Expected parentheses in mixin "flex-center" call             scss/at-mixin-argumentless-call-parentheses
+ 1231:18  ✖  Expected a leading zero                                      number-leading-zero                        
+
+public/scss/base/_form-layout.scss
+  3:5  ✖  Expected parentheses in mixin "clearfix" call      scss/at-mixin-argumentless-call-parentheses
+ 30:5  ✖  Expected parentheses in mixin "flex-column" call   scss/at-mixin-argumentless-call-parentheses
+
+public/scss/base/_header.scss
+   9:17  ✖  Expected a leading zero                                      number-leading-zero                        
+  40:9   ✖  Expected parentheses in mixin "base-animation" call          scss/at-mixin-argumentless-call-parentheses
+  76:21  ✖  Expected a leading zero                                      number-leading-zero                        
+ 101:13  ✖  Expected parentheses in mixin "nice-easing-animation" call   scss/at-mixin-argumentless-call-parentheses
+ 124:13  ✖  Expected parentheses in mixin "flex-center" call             scss/at-mixin-argumentless-call-parentheses
+ 136:26  ✖  Expected a leading zero                                      number-leading-zero                        
+ 138:25  ✖  Expected a leading zero                                      number-leading-zero                        
+ 186:29  ✖  Expected a leading zero                                      number-leading-zero                        
+ 197:17  ✖  Expected parentheses in mixin "flex-center" call             scss/at-mixin-argumentless-call-parentheses
+ 313:12  ✖  Unexpected unit                                              length-zero-no-unit                        
+ 318:20  ✖  Unexpected unit                                              length-zero-no-unit                        
+ 403:31  ✖  Expected a trailing semicolon                                declaration-block-trailing-semicolon       
+ 406:33  ✖  Expected a trailing semicolon                                declaration-block-trailing-semicolon       
+ 409:31  ✖  Expected a trailing semicolon                                declaration-block-trailing-semicolon       
+
+public/scss/base/_helper-classes.scss
+ 15:14  ✖  Expected a leading zero   number-leading-zero
+
+public/scss/base/_layout.scss
+  96:5  ✖  Expected parentheses in mixin "flex-between" call            scss/at-mixin-argumentless-call-parentheses
+ 260:5  ✖  Expected parentheses in mixin "nice-easing-animation" call   scss/at-mixin-argumentless-call-parentheses
+
+public/scss/base/_lists.scss
+ 17:10  ✖  Expected double colon pseudo-element notation   selector-pseudo-element-colon-notation
+ 33:20  ✖  Expected a leading zero                         number-leading-zero                   
+ 44:10  ✖  Expected double colon pseudo-element notation   selector-pseudo-element-colon-notation
+ 45:22  ✖  Expected double quotes                          string-quotes                         
+
+public/scss/base/_nav.scss
+  12:17  ✖  Expected a leading zero                                      number-leading-zero                        
+  20:44  ✖  Expected a leading zero                                      number-leading-zero                        
+  42:21  ✖  Expected a leading zero                                      number-leading-zero                        
+  62:13  ✖  Expected parentheses in mixin "flex-center" call             scss/at-mixin-argumentless-call-parentheses
+ 173:25  ✖  Expected a leading zero                                      number-leading-zero                        
+ 180:6   ✖  Expected double colon pseudo-element notation                selector-pseudo-element-colon-notation     
+ 181:18  ✖  Expected double quotes                                       string-quotes                              
+ 205:21  ✖  Expected a leading zero                                      number-leading-zero                        
+ 245:41  ✖  Expected a leading zero                                      number-leading-zero                        
+ 246:56  ✖  Expected a leading zero                                      number-leading-zero                        
+ 249:44  ✖  Expected a leading zero                                      number-leading-zero                        
+ 266:9   ✖  Expected parentheses in mixin "nice-easing-animation" call   scss/at-mixin-argumentless-call-parentheses
+ 286:5   ✖  Expected parentheses in mixin "flex-center" call             scss/at-mixin-argumentless-call-parentheses
+

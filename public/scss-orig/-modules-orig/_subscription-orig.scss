@@ -1,0 +1,63 @@
+.form-block-trip-subscription {
+    width: 100%;
+
+    .flex-wrapper {
+        height: initial;
+    }
+
+    span.option {
+        font-size: 70%;
+        margin-left: 10px;
+        color: $grey;
+    }
+
+    .input-wrapper {
+        @include media(medium) {
+            width: 50%;
+
+            &:nth-of-type(3) {
+                order: 1;
+                margin-top: 0;
+                margin-right: 0;
+                width: 50%;
+            }
+
+            &:nth-of-type(4) {
+                order: 3;
+            }
+        }
+
+
+        &.subscriptions-checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            margin-bottom: -20px;
+            margin-left: 40px;
+
+            @include media(medium) {
+                margin-left: 0;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-top: 20px;
+                order: 2;
+
+                label.styled-checkbox-label {
+                    margin: 20px 30px 20px 0;
+                    &:before {
+                        font-size: 8.5px;
+                    }
+                }
+            }
+            
+            //special breakpoint to make these suckers look good between $medium and here
+            @media (min-width: 1165px) {
+                label.styled-checkbox-label {
+                    margin: 20px 30px 20px 10px;
+                    &:before {
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+    }
+}

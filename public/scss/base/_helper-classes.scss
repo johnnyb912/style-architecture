@@ -1,0 +1,25 @@
+// Hide stuff and use js to bring it back!
+.hidden {
+    visibility: hidden !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.opaque-50 {
+    opacity: 0.5;
+}
+
+// THE CLASSES BELOW ARE LEFT OVER FROM THE OLD BOOTSTRAP FRAMEWORK.
+// LETS TRY NOT TO USE THESE AND STAY AS SEMANTIC AS POSSIBLE IN OUR MARKUP
+
+// Font Classes
+.lowercase { text-transform: lowercase !important; }
+.uppercase { text-transform: uppercase !important; }
+.small { font-size: 14px; }
+.xsmall { font-size: 12px; }

@@ -1,0 +1,65 @@
+table {
+    width: 100%;
+    background: $white;
+    border-collapse: collapse;
+    margin: ($base-spacing / 2) 0;
+
+    th.sortable {
+        cursor: pointer;
+    }
+
+    th.sorted-by {
+        font-weight: bold;
+    }
+
+    th.disabled {
+        pointer-events: none;
+    }
+
+    th,
+    thead > tr {
+        background: $grey;
+        border-bottom: $base-border;
+        color: $white;
+        font-family: $font;
+        font-size: 14px;
+        font-weight: 500;
+        padding: $base-spacing / 2;
+        text-align: left;
+
+        td {
+            border-right: none;
+        }
+    }
+}
+
+td {
+    border-right: 1px solid $grey-white;
+    border-bottom: $base-border;
+    border-left: 1px solid $grey-white;
+    color: $greyish-brown;
+    padding: $base-spacing / 2;
+
+    &:first-of-type {
+        border-left-color: $faded-blue;
+    }
+
+    &:last-of-type {
+        border-right-color: $faded-blue;
+    }
+}
+
+tbody {
+    padding: 0 1%;
+}
+
+thead tr {
+    border: $base-border;
+    border-color: darken($grey, 10%);
+}
+
+tr,
+td,
+th {
+    vertical-align: middle;
+}

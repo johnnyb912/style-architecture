@@ -1,0 +1,73 @@
+footer {
+    margin-bottom: constant(safe-area-inset-bottom); /* iOS 11.0 */
+    margin-bottom: env(safe-area-inset-bottom); /* iOS 11.2 */
+    @include flex-between;
+    color: $grey-medium-dark;
+    padding: 9px 2px 11px;
+    width: calc(100% - 75px);
+    font-size: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid $grey-medium-dark;
+    font-weight: 500;
+    margin: 5px 37.5px 0;
+
+    .loggedIn & {
+      display: none;
+      @include media(small) {
+        display: flex;
+        margin-left: calc(75px + 37.5px);
+        width: calc(100% - 150px);
+      }
+    }
+
+    .link-wrapper {
+      margin-top: 0.5rem;
+      width: 100%;
+    }
+    @include media(medium) {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      .link-wrapper {
+        margin-top: 0;
+        width: auto;
+      }
+    }
+
+    .link-wrapper {
+        @include flex-center;
+    }
+
+    p {margin: 0;}
+
+    a {
+        color: $grey-medium-dark;
+        padding: 0 15px;
+        text-align: center;
+        cursor: pointer;
+
+        &:last-child {
+            padding-right: 0;
+        }
+        &:first-child {
+          padding-left: 0;
+        }
+    }
+    @media screen and (max-width: $break-mobile) {
+        font-size: 11px;
+        .cr {
+          margin-top: 10px;
+        }
+    }
+}
+
+// zendesk help button
+.zopim {
+  opacity: 0 !important;
+  pointer-events: none;
+  .loggedIn & {
+    opacity: 1 !important;
+    pointer-events: inherit;
+  }
+}

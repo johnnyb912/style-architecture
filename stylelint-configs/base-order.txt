@@ -1,0 +1,481 @@
+
+public/scss/base/_alerts-and-warnings.scss
+  11:5   ✖  Expected "position" to come before "flex-wrap"         order/properties-order
+  15:5   ✖  Expected "max-height" to come before "padding"         order/properties-order
+  17:5   ✖  Expected "opacity" to come before "visibility"         order/properties-order
+  21:9   ✖  Expected "max-height" to come before "padding"         order/properties-order
+  23:9   ✖  Expected "opacity" to come before "visibility"         order/properties-order
+  34:9   ✖  Expected "position" to come before "flex-direction"    order/properties-order
+  36:9   ✖  Expected "font-size" to come before "padding"          order/properties-order
+  39:9   ✖  Expected "width" to come before "text-transform"       order/properties-order
+  40:9   ✖  Expected an empty line before property "transition"    order/properties-order
+  41:9   ✖  Expected "max-height" to come before "transition"      order/properties-order
+  43:9   ✖  Expected "opacity" to come before "visibility"         order/properties-order
+  47:13  ✖  Expected "width" to come before "font-size"            order/properties-order
+  58:13  ✖  Expected "opacity" to come before "visibility"         order/properties-order
+  65:13  ✖  Expected "border-radius" to come before "padding"      order/properties-order
+  66:13  ✖  Expected "border" to come before "border-radius"       order/properties-order
+  67:13  ✖  Expected "top" to come before "border"                 order/properties-order
+  78:13  ✖  Expected "color" to come before "padding"              order/properties-order
+ 156:17  ✖  Expected "background-color" to come before "color"     order/properties-order
+ 183:9   ✖  Expected "top" to come before "right"                  order/properties-order
+ 198:5   ✖  Expected "width" to come before "clear"                order/properties-order
+ 201:5   ✖  Expected "opacity" to come before "visibility"         order/properties-order
+ 202:5   ✖  Expected an empty line before property "transition"    order/properties-order
+ 207:9   ✖  Expected "margin-top" to come before "margin-bottom"   order/properties-order
+ 212:9   ✖  Expected "opacity" to come before "visibility"         order/properties-order
+
+public/scss/base/_animations.scss
+   3:5   ✖  Expected "transition-timing-function" to come before "transition-property"          order/properties-order
+   8:5   ✖  Expected "transition-timing-function" to come before "transition-property"          order/properties-order
+  65:5   ✖  Expected "animation" to come before "filter"                                        order/properties-order
+  65:5   ✖  Expected an empty line before property "animation"                                  order/properties-order
+  66:5   ✖  Expected "background" to come before "animation"                                    order/properties-order
+  81:5   ✖  Expected an empty line before property "animation-name"                             order/properties-order
+  84:5   ✖  Expected "animation" to come before "animation-duration"                            order/properties-order
+  85:5   ✖  Expected "display" to come before "animation"                                       order/properties-order
+ 101:5   ✖  Expected "animation" to come before "animation-duration"                            order/properties-order
+ 101:5   ✖  Expected an empty line before property "animation"                                  order/properties-order
+ 104:9   ✖  Expected "border-color" to come before "animation"                                  order/properties-order
+ 117:5   ✖  Expected "animation" to come before "animation-duration"                            order/properties-order
+ 117:5   ✖  Expected an empty line before property "animation"                                  order/properties-order
+ 141:36  ✖  Expected "opacity" to come before "transform"                                       order/properties-order
+ 141:48  ✖  Expected "height" to come before "opacity"                                          order/properties-order
+ 142:41  ✖  Expected "opacity" to come before "transform"                                       order/properties-order
+ 143:42  ✖  Expected "opacity" to come before "transform"                                       order/properties-order
+ 143:54  ✖  Expected "height" to come before "opacity"                                          order/properties-order
+ 146:40  ✖  Expected "opacity" to come before "transform"                                       order/properties-order
+ 146:52  ✖  Expected "height" to come before "opacity"                                          order/properties-order
+ 147:40  ✖  Expected "opacity" to come before "transform"                                       order/properties-order
+ 147:52  ✖  Expected "display" to come before "opacity"                                         order/properties-order
+ 148:38  ✖  Expected "opacity" to come before "transform"                                       order/properties-order
+ 148:50  ✖  Expected "height" to come before "opacity"                                          order/properties-order
+ 151:39  ✖  Expected "opacity" to come before "transform"                                       order/properties-order
+ 152:39  ✖  Expected "opacity" to come before "transform"                                       order/properties-order
+ 257:9   ✖  Expected "background" to come before "color"                                        order/properties-order
+ 302:5   ✖  Expected "-webkit-animation-iteration-count" to come before "animation-fill-mode"   order/properties-order
+ 304:5   ✖  Expected "-webkit-animation-name" to come before "animation-iteration-count"        order/properties-order
+ 308:5   ✖  Expected "background" to come before "animation-timing-function"                    order/properties-order
+ 315:5   ✖  Expected "height" to come before "background-size"                                  order/properties-order
+ 316:5   ✖  Expected "position" to come before "height"                                         order/properties-order
+ 327:35  ✖  Expected "margin-bottom" to come before "opacity"                                   order/properties-order
+ 335:5   ✖  Expected an empty line before property "animation"                                  order/properties-order
+
+public/scss/base/_buttons.scss
+   4:5   ✖  Expected "-webkit-font-smoothing" to come before "transition"   order/properties-order
+   5:5   ✖  Expected "background" to come before "-webkit-font-smoothing"   order/properties-order
+   7:5   ✖  Expected "border" to come before "border-radius"                order/properties-order
+  15:5   ✖  Expected "font-size" to come before "outline"                   order/properties-order
+  17:5   ✖  Expected "position" to come before "padding"                    order/properties-order
+  38:13  ✖  Expected "opacity" to come before "fill"                        order/properties-order
+  54:9   ✖  Expected "font-weight" to come before "text-transform"          order/properties-order
+  55:9   ✖  Expected "font-size" to come before "font-weight"               order/properties-order
+ 117:9   ✖  Expected "font-size" to come before "padding"                   order/properties-order
+ 123:9   ✖  Expected "font-weight" to come before "padding"                 order/properties-order
+ 125:9   ✖  Expected "letter-spacing" to come before "text-transform"       order/properties-order
+ 126:9   ✖  Expected "font-size" to come before "letter-spacing"            order/properties-order
+ 127:9   ✖  Expected "box-shadow" to come before "font-size"                order/properties-order
+ 128:9   ✖  Expected "border-radius" to come before "box-shadow"            order/properties-order
+ 135:9   ✖  Expected "width" to come before "padding"                       order/properties-order
+ 137:9   ✖  Expected "background-color" to come before "color"              order/properties-order
+ 147:13  ✖  Expected "background-color" to come before "border"             order/properties-order
+ 194:5   ✖  Expected "width" to come before "margin-left"                   order/properties-order
+ 197:5   ✖  Expected "box-sizing" to come before "text-align"               order/properties-order
+ 200:5   ✖  Expected "cursor" to come before "vertical-align"               order/properties-order
+ 205:5   ✖  Expected "width" to come before "display"                       order/properties-order
+ 208:9   ✖  Expected "cursor" to come before "transition"                   order/properties-order
+ 209:9   ✖  Expected "background-color" to come before "cursor"             order/properties-order
+ 211:9   ✖  Expected "border-radius" to come before "color"                 order/properties-order
+ 212:9   ✖  Expected "border-top" to come before "border-radius"            order/properties-order
+ 216:9   ✖  Expected "font-size" to come before "text-overflow"             order/properties-order
+ 219:9   ✖  Expected "width" to come before "white-space"                   order/properties-order
+ 228:13  ✖  Expected "vertical-align" to come before "fill"                 order/properties-order
+ 229:13  ✖  Expected "height" to come before "vertical-align"               order/properties-order
+ 230:13  ✖  Expected "width" to come before "height"                        order/properties-order
+ 250:13  ✖  Expected "border-left" to come before "color"                   order/properties-order
+ 251:13  ✖  Expected "border-right" to come before "border-left"            order/properties-order
+ 252:13  ✖  Expected "border-top" to come before "border-right"             order/properties-order
+ 300:5   ✖  Expected "background-color" to come before "transition"         order/properties-order
+ 314:13  ✖  Expected "z-index" to come before "visibility"                  order/properties-order
+ 316:13  ✖  Expected "background-color" to come before "opacity"            order/properties-order
+ 384:17  ✖  Expected "background-color" to come before "opacity"            order/properties-order
+ 459:9   ✖  Expected "opacity" to come before "filter"                      order/properties-order
+ 465:5   ✖  Expected "margin" to come before "opacity"                      order/properties-order
+ 467:5   ✖  Expected "height" to come before "padding"                      order/properties-order
+ 468:5   ✖  Expected "min-width" to come before "height"                    order/properties-order
+ 476:9   ✖  Expected "width" to come before "margin-bottom"                 order/properties-order
+ 487:5   ✖  Expected "border-radius" to come before "white-space"           order/properties-order
+
+public/scss/base/_fonts.scss
+ 21:5  ✖  Expected "font-weight" to come before "src"          order/properties-order
+ 22:5  ✖  Expected "font-style" to come before "font-weight"   order/properties-order
+ 27:5  ✖  Expected "font-weight" to come before "src"          order/properties-order
+ 28:5  ✖  Expected "font-style" to come before "font-weight"   order/properties-order
+ 33:5  ✖  Expected "font-weight" to come before "src"          order/properties-order
+ 34:5  ✖  Expected "font-style" to come before "font-weight"   order/properties-order
+ 39:5  ✖  Expected "font-weight" to come before "src"          order/properties-order
+ 40:5  ✖  Expected "font-style" to come before "font-weight"   order/properties-order
+ 45:5  ✖  Expected "font-weight" to come before "src"          order/properties-order
+ 46:5  ✖  Expected "font-style" to come before "font-weight"   order/properties-order
+ 51:5  ✖  Expected "font-weight" to come before "src"          order/properties-order
+ 52:5  ✖  Expected "font-style" to come before "font-weight"   order/properties-order
+ 57:5  ✖  Expected "font-weight" to come before "src"          order/properties-order
+ 58:5  ✖  Expected "font-style" to come before "font-weight"   order/properties-order
+ 63:5  ✖  Expected "font-weight" to come before "src"          order/properties-order
+ 64:5  ✖  Expected "font-style" to come before "font-weight"   order/properties-order
+ 69:5  ✖  Expected "font-weight" to come before "src"          order/properties-order
+ 70:5  ✖  Expected "font-style" to come before "font-weight"   order/properties-order
+ 75:5  ✖  Expected "font-weight" to come before "src"          order/properties-order
+ 76:5  ✖  Expected "font-style" to come before "font-weight"   order/properties-order
+
+public/scss/base/_form-elements.scss
+   18:5   ✖  Expected "border" to come before "border-radius"                                 order/properties-order
+   26:5   ✖  Expected "position" to come before "padding"                                     order/properties-order
+   29:35  ✖  Expected "width" to come before "display"                                        order/properties-order
+   58:9   ✖  Expected "font-size" to come before "font-weight"                                order/properties-order
+   84:9   ✖  Expected an empty line before property "transform"                               order/properties-order
+   94:9   ✖  Expected an empty line before property "transform"                               order/properties-order
+  121:9   ✖  Expected "height" to come before "align-items"                                   order/properties-order
+  136:5   ✖  Expected "position" to come before "padding"                                     order/properties-order
+  138:5   ✖  Expected "float" to come before "user-select"                                    order/properties-order
+  139:5   ✖  Expected "width" to come before "float"                                          order/properties-order
+  143:9   ✖  Expected "background" to come before "content"                                   order/properties-order
+  145:9   ✖  Expected "height" to come before "border-right"                                  order/properties-order
+  146:9   ✖  Expected "width" to come before "height"                                         order/properties-order
+  154:9   ✖  Expected "position" to come before "width"                                       order/properties-order
+  156:9   ✖  Expected "top" to come before "left"                                             order/properties-order
+  166:9   ✖  Expected "width" to come before "display"                                        order/properties-order
+  168:9   ✖  Expected an empty line before property "transform"                               order/properties-order
+  170:9   ✖  Expected "font-size" to come before "transition"                                 order/properties-order
+  171:9   ✖  Expected "cursor" to come before "font-size"                                     order/properties-order
+  173:9   ✖  Expected "text-overflow" to come before "white-space"                            order/properties-order
+  174:9   ✖  Expected "overflow" to come before "text-overflow"                               order/properties-order
+  178:13  ✖  Expected an empty line before property "transform"                               order/properties-order
+  187:9   ✖  Expected an empty line before property "transform"                               order/properties-order
+  189:9   ✖  Expected "opacity" to come before "transition"                                   order/properties-order
+  193:13  ✖  Expected "width" to come before "fill"                                           order/properties-order
+  202:5   ✖  Expected "height" to come before "border-right"                                  order/properties-order
+  203:5   ✖  Expected "width" to come before "height"                                         order/properties-order
+  204:5   ✖  Expected "position" to come before "width"                                       order/properties-order
+  206:5   ✖  Expected "top" to come before "left"                                             order/properties-order
+  210:5   ✖  Expected "align-items" to come before "justify-content"                          order/properties-order
+  222:9   ✖  Expected an empty line before property "transform"                               order/properties-order
+  224:9   ✖  Expected "opacity" to come before "transition"                                   order/properties-order
+  228:13  ✖  Expected "width" to come before "fill"                                           order/properties-order
+  242:9   ✖  Expected an empty line before property "transform"                               order/properties-order
+  261:5   ✖  Expected "position" to come before "pointer-events"                              order/properties-order
+  263:5   ✖  Expected "top" to come before "right"                                            order/properties-order
+  268:5   ✖  Expected "min-height" to come before "resize"                                    order/properties-order
+  269:5   ✖  Expected "height" to come before "min-height"                                    order/properties-order
+  275:9   ✖  Expected "min-height" to come before "padding"                                   order/properties-order
+  280:9   ✖  Expected "height" to come before "min-height"                                    order/properties-order
+  282:9   ✖  Expected "overflow-y" to come before "padding-left"                              order/properties-order
+  285:9   ✖  Expected "scrollbar-3dlight-color" to come before "scrollbar-base-color"         order/properties-order
+  288:9   ✖  Expected "scrollbar-arrow-color" to come before "scrollbar-track-color"          order/properties-order
+  290:9   ✖  Expected "scrollbar-dark-shadow-color" to come before "scrollbar-shadow-color"   order/properties-order
+  305:13  ✖  Expected "background" to come before "border-radius"                             order/properties-order
+  310:13  ✖  Expected "background" to come before "border-radius"                             order/properties-order
+  319:9   ✖  Expected "width" to come before "margin-top"                                     order/properties-order
+  326:5   ✖  Expected "width" to come before "margin"                                         order/properties-order
+  327:5   ✖  Expected "left" to come before "width"                                           order/properties-order
+  328:5   ✖  Expected "bottom" to come before "left"                                          order/properties-order
+  332:9   ✖  Expected an empty line before property "transition"                              order/properties-order
+  333:9   ✖  Expected "max-width" to come before "transition"                                 order/properties-order
+  336:9   ✖  Expected "bottom" to come before "white-space"                                   order/properties-order
+  345:9   ✖  Expected "bottom" to come before "z-index"                                       order/properties-order
+  351:13  ✖  Expected "opacity" to come before "visibility"                                   order/properties-order
+  363:5   ✖  Expected "z-index" to come before "padding"                                      order/properties-order
+  367:9   ✖  Expected "background-color" to come before "padding"                             order/properties-order
+  368:9   ✖  Expected "position" to come before "background-color"                            order/properties-order
+  372:9   ✖  Expected "color" to come before "font-weight"                                    order/properties-order
+  384:13  ✖  Expected "opacity" to come before "visibility"                                   order/properties-order
+  385:13  ✖  Expected an empty line before property "transition"                              order/properties-order
+  396:5   ✖  Expected an empty line before property "transform"                               order/properties-order
+  397:5   ✖  Expected "background-color" to come before "transform"                           order/properties-order
+  398:5   ✖  Expected "position" to come before "background-color"                            order/properties-order
+  400:5   ✖  Expected "z-index" to come before "box-shadow"                                   order/properties-order
+  407:5   ✖  Expected "top" to come before "left"                                             order/properties-order
+  412:9   ✖  Expected "bottom" to come before "left"                                          order/properties-order
+  415:9   ✖  Expected "border-radius" to come before "box-shadow"                             order/properties-order
+  416:9   ✖  Expected an empty line before property "transition"                              order/properties-order
+  443:9   ✖  Expected "opacity" to come before "visibility"                                   order/properties-order
+  449:5   ✖  Expected "height" to come before "padding"                                       order/properties-order
+  453:5   ✖  Expected "position" to come before "border-radius"                               order/properties-order
+  455:5   ✖  Expected an empty line before property "transition"                              order/properties-order
+  456:5   ✖  Expected "white-space" to come before "transition"                               order/properties-order
+  459:9   ✖  Expected "margin-right" to come before "pointer-events"                          order/properties-order
+  460:9   ✖  Expected "width" to come before "margin-right"                                   order/properties-order
+  464:9   ✖  Expected "position" to come before "vertical-align"                              order/properties-order
+  475:9   ✖  Expected "position" to come before "max-height"                                  order/properties-order
+  483:9   ✖  Expected "font-size" to come before "vertical-align"                             order/properties-order
+  489:9   ✖  Expected "background-color" to come before "cursor"                              order/properties-order
+  512:9   ✖  Expected "border-color" to come before "cursor"                                  order/properties-order
+  513:9   ✖  Expected "background-color" to come before "border-color"                        order/properties-order
+  528:5   ✖  Expected "-webkit-appearance" to come before "display"                           order/properties-order
+  530:5   ✖  Expected "-moz-appearance" to come before "-webkit-tap-highlight-color"          order/properties-order
+  532:5   ✖  Expected "width" to come before "-moz-appearance"                                order/properties-order
+  535:5   ✖  Expected "background-color" to come before "border-radius"                       order/properties-order
+  537:5   ✖  Expected "background-clip" to come before "border-color"                         order/properties-order
+  540:5   ✖  Expected "float" to come before "vertical-align"                                 order/properties-order
+  581:9   ✖  Expected "position" to come before "content"                                     order/properties-order
+  589:9   ✖  Expected "box-shadow" to come before "margin"                                    order/properties-order
+  590:9   ✖  Expected "z-index" to come before "box-shadow"                                   order/properties-order
+  637:5   ✖  Expected "font-size" to come before "padding"                                    order/properties-order
+  638:5   ✖  Expected "float" to come before "font-size"                                      order/properties-order
+  639:5   ✖  Expected "color" to come before "float"                                          order/properties-order
+  672:5   ✖  Expected "height" to come before "font-size"                                     order/properties-order
+  675:5   ✖  Expected "position" to come before "padding"                                     order/properties-order
+  677:5   ✖  Expected "top" to come before "right"                                            order/properties-order
+  681:9   ✖  Expected "position" to come before "content"                                     order/properties-order
+  683:9   ✖  Expected "top" to come before "left"                                             order/properties-order
+  704:13  ✖  Expected "background" to come before "transform"                                 order/properties-order
+  707:17  ✖  Expected an empty line before property "-ms-transform-origin"                    order/properties-order
+  731:5   ✖  Expected "align-items" to come before "justify-content"                          order/properties-order
+  732:5   ✖  Expected "width" to come before "align-items"                                    order/properties-order
+  735:5   ✖  Expected "border" to come before "margin"                                        order/properties-order
+  737:5   ✖  Expected "position" to come before "border-radius"                               order/properties-order
+  739:5   ✖  Expected an empty line before property "transition"                              order/properties-order
+  740:5   ✖  Expected "padding" to come before "transition"                                   order/properties-order
+  741:5   ✖  Expected "float" to come before "padding"                                        order/properties-order
+  742:5   ✖  Expected "color" to come before "float"                                          order/properties-order
+  751:9   ✖  Expected "position" to come before "display"                                     order/properties-order
+  754:9   ✖  Expected "top" to come before "text-transform"                                   order/properties-order
+  759:9   ✖  Expected "width" to come before "font-size"                                      order/properties-order
+  764:9   ✖  Expected "max-width" to come before "text-align"                                 order/properties-order
+  769:9   ✖  Expected "min-width" to come before "content"                                    order/properties-order
+  773:9   ✖  Expected an empty line before property "transform"                               order/properties-order
+  780:5   ✖  Expected "position" to come before "color"                                       order/properties-order
+  783:5   ✖  Expected "font-size" to come before "margin-right"                               order/properties-order
+  784:5   ✖  Expected "height" to come before "font-size"                                     order/properties-order
+  822:13  ✖  Expected an empty line before property "transform"                               order/properties-order
+  861:9   ✖  Expected "align-items" to come before "justify-content"                          order/properties-order
+  862:9   ✖  Expected "cursor" to come before "align-items"                                   order/properties-order
+  863:9   ✖  Expected an empty line before property "transform"                               order/properties-order
+  867:13  ✖  Expected "color" to come before "font-size"                                      order/properties-order
+  911:9   ✖  Expected "font-size" to come before "padding"                                    order/properties-order
+  912:9   ✖  Expected "color" to come before "font-size"                                      order/properties-order
+  920:13  ✖  Expected "height" to come before "fill"                                          order/properties-order
+  921:13  ✖  Expected "width" to come before "height"                                         order/properties-order
+  925:13  ✖  Expected "opacity" to come before "transform"                                    order/properties-order
+  926:13  ✖  Expected "width" to come before "opacity"                                        order/properties-order
+  930:13  ✖  Expected "align-items" to come before "justify-content"                          order/properties-order
+  935:13  ✖  Expected "color" to come before "font-weight"                                    order/properties-order
+  936:13  ✖  Expected an empty line before property "transform"                               order/properties-order
+  937:13  ✖  Expected "padding-left" to come before "transform"                               order/properties-order
+  950:9   ✖  Expected "top" to come before "right"                                            order/properties-order
+  956:9   ✖  Expected "background-color" to come before "transition"                          order/properties-order
+  958:9   ✖  Expected "border" to come before "border-radius"                                 order/properties-order
+  960:9   ✖  Expected "height" to come before "padding"                                       order/properties-order
+  962:9   ✖  Expected "color" to come before "font-weight"                                    order/properties-order
+  972:13  ✖  Expected "border-color" to come before "color"                                   order/properties-order
+  994:13  ✖  Expected "border" to come before "border-radius"                                 order/properties-order
+ 1002:13  ✖  Expected "max-height" to come before "padding"                                   order/properties-order
+ 1032:5   ✖  Expected "align-items" to come before "justify-content"                          order/properties-order
+ 1033:5   ✖  Expected "position" to come before "align-items"                                 order/properties-order
+ 1035:5   ✖  Expected an empty line before property "transition"                              order/properties-order
+ 1036:5   ✖  Expected "padding" to come before "transition"                                   order/properties-order
+ 1037:5   ✖  Expected "float" to come before "padding"                                        order/properties-order
+ 1038:5   ✖  Expected "height" to come before "float"                                         order/properties-order
+ 1043:13  ✖  Expected "background-color" to come before "color"                               order/properties-order
+ 1051:9   ✖  Expected "position" to come before "display"                                     order/properties-order
+ 1055:9   ✖  Expected "width" to come before "font-weight"                                    order/properties-order
+ 1057:9   ✖  Expected "background-color" to come before "border"                              order/properties-order
+ 1059:9   ✖  Expected "min-width" to come before "text-align"                                 order/properties-order
+ 1062:9   ✖  Expected "overflow" to come before "white-space"                                 order/properties-order
+ 1071:9   ✖  Expected "color" to come before "text-overflow"                                  order/properties-order
+ 1093:13  ✖  Expected "position" to come before "fill"                                        order/properties-order
+ 1095:13  ✖  Expected "width" to come before "height"                                         order/properties-order
+ 1136:17  ✖  Expected "border-color" to come before "color"                                   order/properties-order
+ 1148:13  ✖  Expected "cursor" to come before "pointer-events"                                order/properties-order
+ 1156:5   ✖  Expected "position" to come before "pointer-events"                              order/properties-order
+ 1164:9   ✖  Expected "width" to come before "display"                                        order/properties-order
+ 1176:5   ✖  Expected "top" to come before "left"                                             order/properties-order
+ 1179:5   ✖  Expected "background-color" to come before "padding-right"                       order/properties-order
+ 1181:5   ✖  Expected "font-weight" to come before "white-space"                              order/properties-order
+ 1193:5   ✖  Expected "min-width" to come before "cursor"                                     order/properties-order
+ 1196:5   ✖  Expected "color" to come before "font-weight"                                    order/properties-order
+ 1197:5   ✖  Expected "min-height" to come before "color"                                     order/properties-order
+ 1200:5   ✖  Expected "flex-grow" to come before "text-align"                                 order/properties-order
+ 1232:9   ✖  Expected "color" to come before "opacity"                                        order/properties-order
+ 1234:9   ✖  Expected "border-color" to come before "cursor"                                  order/properties-order
+ 1244:9   ✖  Expected "font-size" to come before "margin"                                     order/properties-order
+ 1245:9   ✖  Expected "color" to come before "font-size"                                      order/properties-order
+ 1246:9   ✖  Expected "position" to come before "color"                                       order/properties-order
+
+public/scss/base/_form-layout.scss
+   7:5   ✖  Expected "border" to come before "overflow"                 order/properties-order
+   9:5   ✖  Expected "width" to come before "margin-top"                order/properties-order
+  57:13  ✖  Expected "position" to come before "width"                  order/properties-order
+  61:17  ✖  Expected "width" to come before "margin-right"              order/properties-order
+  66:17  ✖  Expected "width" to come before "margin-right"              order/properties-order
+ 103:5   ✖  Expected "font-size" to come before "font-weight"           order/properties-order
+ 104:5   ✖  Expected "color" to come before "font-size"                 order/properties-order
+ 106:5   ✖  Expected "letter-spacing" to come before "text-transform"   order/properties-order
+
+public/scss/base/_header.scss
+   6:5   ✖  Expected "width" to come before "justify-content"               order/properties-order
+   8:5   ✖  Expected "height" to come before "background"                   order/properties-order
+   9:5   ✖  Expected an empty line before property "transition"             order/properties-order
+  14:5   ✖  Expected "z-index" to come before "transition"                  order/properties-order
+  23:9   ✖  Expected "left" to come before "margin-left"                    order/properties-order
+  24:9   ✖  Expected "top" to come before "left"                            order/properties-order
+  30:13  ✖  Expected "max-width" to come before "margin-left"               order/properties-order
+  32:13  ✖  Expected "width" to come before "margin-left"                   order/properties-order
+  34:13  ✖  Expected "left" to come before "height"                         order/properties-order
+  35:13  ✖  Expected "top" to come before "left"                            order/properties-order
+  42:9   ✖  Expected "display" to come before "transform"                   order/properties-order
+  44:9   ✖  Expected "align-items" to come before "justify-content"         order/properties-order
+  45:9   ✖  Expected "cursor" to come before "align-items"                  order/properties-order
+  48:13  ✖  Expected "width" to come before "min-width"                     order/properties-order
+  50:9   ✖  Expected "height" to come before "cursor"                       order/properties-order
+  59:17  ✖  Expected "width" to come before "min-width"                     order/properties-order
+  65:13  ✖  Expected "width" to come before "min-width"                     order/properties-order
+  76:9   ✖  Expected an empty line before property "transition"             order/properties-order
+  92:21  ✖  Expected "background-color" to come before "border-width"       order/properties-order
+ 103:13  ✖  Expected "width" to come before "margin-left"                   order/properties-order
+ 114:9   ✖  Expected "color" to come before "align-items"                   order/properties-order
+ 118:9   ✖  Expected "letter-spacing" to come before "line-height"          order/properties-order
+ 119:9   ✖  Expected "height" to come before "letter-spacing"               order/properties-order
+ 126:13  ✖  Expected "height" to come before "cursor"                       order/properties-order
+ 145:21  ✖  Expected "-ms-transform" to come before "transform"             order/properties-order
+ 147:21  ✖  Expected "animation-name" to come before "-webkit-transform"    order/properties-order
+ 186:17  ✖  Expected an empty line before property "transition"             order/properties-order
+ 187:17  ✖  Expected "animation-name" to come before "transition"           order/properties-order
+ 193:17  ✖  Expected "border-radius" to come before "color"                 order/properties-order
+ 195:17  ✖  Expected "font-size" to come before "padding"                   order/properties-order
+ 198:17  ✖  Expected "min-width" to come before "font-size"                 order/properties-order
+ 200:17  ✖  Expected "right" to come before "height"                        order/properties-order
+ 201:17  ✖  Expected "top" to come before "right"                           order/properties-order
+ 231:9   ✖  Expected "font-size" to come before "padding-left"              order/properties-order
+ 232:9   ✖  Expected "cursor" to come before "font-size"                    order/properties-order
+ 245:13  ✖  Expected "height" to come before "fill"                         order/properties-order
+ 246:13  ✖  Expected "width" to come before "height"                        order/properties-order
+ 254:13  ✖  Expected "top" to come before "padding"                         order/properties-order
+ 257:13  ✖  Expected "background-color" to come before "margin"             order/properties-order
+ 258:13  ✖  Expected an empty line before property "transform"              order/properties-order
+ 259:13  ✖  Expected "animation-name" to come before "transform"            order/properties-order
+ 262:13  ✖  Expected "pointer-events" to come before "animation-duration"   order/properties-order
+ 267:17  ✖  Expected "pointer-events" to come before "animation-duration"   order/properties-order
+ 273:17  ✖  Expected "display" to come before "transform"                   order/properties-order
+ 274:17  ✖  Expected "height" to come before "display"                      order/properties-order
+ 284:13  ✖  Expected "border-bottom" to come before "padding-bottom"        order/properties-order
+ 293:17  ✖  Expected "width" to come before "margin-left"                   order/properties-order
+ 296:17  ✖  Expected "box-shadow" to come before "margin-top"               order/properties-order
+ 314:5   ✖  Expected "right" to come before "left"                          order/properties-order
+ 317:5   ✖  Expected "height" to come before "color"                        order/properties-order
+ 319:5   ✖  Expected "display" to come before "padding-left"                order/properties-order
+ 330:13  ✖  Expected "width" to come before "display"                       order/properties-order
+ 332:13  ✖  Expected "align-items" to come before "justify-content"         order/properties-order
+ 336:17  ✖  Expected "max-width" to come before "height"                    order/properties-order
+ 342:17  ✖  Expected "font-weight" to come before "margin"                  order/properties-order
+ 351:9   ✖  Expected "right" to come before "left"                          order/properties-order
+ 357:13  ✖  Expected "width" to come before "align-items"                   order/properties-order
+ 381:9   ✖  Expected "right" to come before "left"                          order/properties-order
+ 386:13  ✖  Expected "width" to come before "display"                       order/properties-order
+
+public/scss/base/_layout.scss
+  11:5   ✖  Expected "position" to come before "margin"               order/properties-order
+  20:5   ✖  Expected "position" to come before "margin"               order/properties-order
+  23:5   ✖  Expected "bottom" to come before "left"                   order/properties-order
+  24:5   ✖  Expected "right" to come before "bottom"                  order/properties-order
+  32:5   ✖  Expected "align-items" to come before "justify-content"   order/properties-order
+  33:5   ✖  Expected "align-content" to come before "align-items"     order/properties-order
+  38:5   ✖  Expected "align-items" to come before "justify-content"   order/properties-order
+  43:5   ✖  Expected "align-items" to come before "justify-content"   order/properties-order
+  48:5   ✖  Expected "align-items" to come before "justify-content"   order/properties-order
+  53:5   ✖  Expected "align-items" to come before "justify-content"   order/properties-order
+  58:5   ✖  Expected "align-items" to come before "justify-content"   order/properties-order
+  64:5   ✖  Expected "align-items" to come before "justify-content"   order/properties-order
+  70:5   ✖  Expected "height" to come before "flex-wrap"              order/properties-order
+  83:9   ✖  Expected "align-items" to come before "justify-content"   order/properties-order
+ 119:5   ✖  Expected "min-height" to come before "padding"            order/properties-order
+ 120:5   ✖  Expected "width" to come before "min-height"              order/properties-order
+ 122:5   ✖  Expected an empty line before property "transition"       order/properties-order
+ 152:13  ✖  Expected "width" to come before "padding-left"            order/properties-order
+ 168:9   ✖  Expected "width" to come before "padding-top"             order/properties-order
+ 179:9   ✖  Expected "position" to come before "width"                order/properties-order
+ 182:13  ✖  Expected "width" to come before "display"                 order/properties-order
+ 187:13  ✖  Expected "width" to come before "display"                 order/properties-order
+ 193:13  ✖  Expected "width" to come before "height"                  order/properties-order
+ 194:13  ✖  Expected "top" to come before "width"                     order/properties-order
+ 198:17  ✖  Expected "width" to come before "fill"                    order/properties-order
+ 207:5   ✖  Expected "position" to come before "width"                order/properties-order
+ 214:5   ✖  Expected "position" to come before "margin"               order/properties-order
+ 247:5   ✖  Expected "right" to come before "left"                    order/properties-order
+ 262:5   ✖  Expected "background-color" to come before "box-shadow"   order/properties-order
+ 266:9   ✖  Expected "background-color" to come before "box-shadow"   order/properties-order
+ 280:5   ✖  Expected "width" to come before "display"                 order/properties-order
+
+public/scss/base/_lists.scss
+  4:5   ✖  Expected "list-style" to come before "counter-reset"   order/properties-order
+  8:9   ✖  Expected "position" to come before "margin-left"       order/properties-order
+ 20:13  ✖  Expected "position" to come before "content"           order/properties-order
+ 22:13  ✖  Expected "left" to come before "font-size"             order/properties-order
+ 23:13  ✖  Expected "top" to come before "left"                   order/properties-order
+ 27:17  ✖  Expected "top" to come before "font-size"              order/properties-order
+
+public/scss/base/_nav.scss
+   3:5   ✖  Expected "left" to come before "background-color"                                  order/properties-order
+   4:5   ✖  Expected "top" to come before "left"                                               order/properties-order
+   6:5   ✖  Expected "z-index" to come before "width"                                          order/properties-order
+   8:5   ✖  Expected "position" to come before "height"                                        order/properties-order
+   9:5   ✖  Expected an empty line before property "transform"                                 order/properties-order
+  10:5   ✖  Expected "-ms-transform" to come before "transform"                                order/properties-order
+  16:9   ✖  Expected "-ms-transform" to come before "transform"                                order/properties-order
+  18:9   ✖  Expected "box-shadow" to come before "-webkit-transform"                           order/properties-order
+  25:9   ✖  Expected "border-bottom" to come before "margin"                                   order/properties-order
+  26:9   ✖  Expected "border-top" to come before "border-bottom"                               order/properties-order
+  37:9   ✖  Expected "align-items" to come before "justify-content"                            order/properties-order
+  38:9   ✖  Expected "color" to come before "align-items"                                      order/properties-order
+  41:9   ✖  Expected "cursor" to come before "padding"                                         order/properties-order
+  42:9   ✖  Expected an empty line before property "transition"                                order/properties-order
+  43:9   ✖  Expected "font-size" to come before "transition"                                   order/properties-order
+  55:13  ✖  Expected "margin-right" to come before "fill"                                      order/properties-order
+  65:13  ✖  Expected "top" to come before "right"                                              order/properties-order
+  68:13  ✖  Expected "border-radius" to come before "color"                                    order/properties-order
+  69:13  ✖  Expected "height" to come before "border-radius"                                   order/properties-order
+  70:13  ✖  Expected "min-width" to come before "height"                                       order/properties-order
+  72:13  ✖  Expected "font-size" to come before "font-weight"                                  order/properties-order
+  79:9   ✖  Expected "flex-direction" to come before "justify-content"                         order/properties-order
+  81:9   ✖  Expected "color" to come before "align-items"                                      order/properties-order
+  83:9   ✖  Expected "font-size" to come before "letter-spacing"                               order/properties-order
+  95:9   ✖  Expected "color" to come before "display"                                          order/properties-order
+  96:9   ✖  Expected "border-top" to come before "color"                                       order/properties-order
+  98:9   ✖  Expected "width" to come before "margin"                                           order/properties-order
+ 107:17  ✖  Expected "margin-bottom" to come before "padding-left"                             order/properties-order
+ 120:9   ✖  Expected an empty line before property "transform"                                 order/properties-order
+ 121:9   ✖  Expected "padding-top" to come before "transform"                                  order/properties-order
+ 122:9   ✖  Expected "height" to come before "padding-top"                                     order/properties-order
+ 123:9   ✖  Expected "position" to come before "height"                                        order/properties-order
+ 127:13  ✖  Expected "border" to come before "margin"                                          order/properties-order
+ 133:13  ✖  Expected "height" to come before "justify-content"                                 order/properties-order
+ 135:13  ✖  Expected "margin-bottom" to come before "text-align"                               order/properties-order
+ 136:13  ✖  Expected "font-size" to come before "margin-bottom"                                order/properties-order
+ 168:5   ✖  Expected "border-bottom-right-radius" to come before "border-bottom-left-radius"   order/properties-order
+ 174:5   ✖  Expected "box-shadow" to come before "animation-duration"                          order/properties-order
+ 175:5   ✖  Expected "background-color" to come before "box-shadow"                            order/properties-order
+ 176:5   ✖  Expected "top" to come before "background-color"                                   order/properties-order
+ 182:9   ✖  Expected "z-index" to come before "content"                                        order/properties-order
+ 183:9   ✖  Expected "position" to come before "z-index"                                       order/properties-order
+ 204:9   ✖  Expected "font-size" to come before "padding"                                      order/properties-order
+ 205:9   ✖  Expected an empty line before property "transition"                                order/properties-order
+ 206:9   ✖  Expected "background-color" to come before "transition"                            order/properties-order
+ 212:13  ✖  Expected "background-color" to come before "color"                                 order/properties-order
+ 222:13  ✖  Expected "margin-right" to come before "fill"                                      order/properties-order
+ 227:9   ✖  Expected "border-bottom" to come before "order"                                    order/properties-order
+ 233:13  ✖  Expected "color" to come before "order"                                            order/properties-order
+ 235:13  ✖  Expected "background-color" to come before "font-weight"                           order/properties-order
+ 240:17  ✖  Expected "height" to come before "fill"                                            order/properties-order
+ 241:17  ✖  Expected "width" to come before "height"                                           order/properties-order
+ 246:13  ✖  Expected "background-color" to come before "color"                                 order/properties-order
+ 254:17  ✖  Expected "font-style" to come before "font-weight"                                 order/properties-order
+ 255:17  ✖  Expected "color" to come before "font-style"                                       order/properties-order
+ 264:9   ✖  Expected "background-color" to come before "overflow"                              order/properties-order
+ 271:17  ✖  Expected "height" to come before "display"                                         order/properties-order
+ 290:5   ✖  Expected "border-radius" to come before "text-align"                               order/properties-order
+
+public/scss/base/_tables.scss
+  5:5  ✖  Expected "width" to come before "margin"            order/properties-order
+ 26:9  ✖  Expected "background" to come before "text-align"   order/properties-order
+ 39:5  ✖  Expected "color" to come before "padding"           order/properties-order
+

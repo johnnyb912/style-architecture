@@ -1,0 +1,67 @@
+// Default Ordered List Styles
+ol {
+    list-style: none;
+    padding: 0;
+    counter-reset: li;
+    li {
+        position: relative;
+        margin-left: 25px;
+
+        @include media(medium) {
+            margin-left: 33px;
+        }
+        @include media(large) {
+            margin-left: 40px;
+        }
+
+        &::before {
+            position: absolute;
+            top: 19%;
+            left: -2.5%;
+            content: counter(li);
+            font-size: 2.2rem;
+            counter-increment: li;
+
+            @include media(medium) {
+                top: 16%;
+                font-size: 2.5rem;
+            }
+        }
+    }
+
+    @media screen and (max-width: $break-mobile) {
+        font-size: 0.8em;
+    }
+}
+
+// Default unordered lists are unstyled
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li {
+        margin-left: 0;
+        &::before {
+            content: "";
+        }
+    }
+}
+
+// @Extend this for a styled lists or use class (use for blog post styling)
+%styled,
+.list-styled {
+    list-style-type: square;
+}
+
+dl {
+    margin-bottom: $base-spacing / 2;
+
+    dt {
+        font-weight: bold;
+        margin-top: $base-spacing / 2;
+    }
+
+    dd {
+        margin: 0;
+    }
+}

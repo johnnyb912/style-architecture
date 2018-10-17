@@ -1,0 +1,219 @@
+.page-notices {
+    .flex-wrapper {
+        justify-content: center;
+    }
+}
+
+.warning-wrapper {
+    @include flex-center;
+    @include nice-easing-animation;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    color: $grey-dark;
+    padding: 0;
+    max-height: 0;
+    visibility: hidden;
+    opacity: 0;
+
+    &.active {
+        padding: 0px 14px 0px;
+        max-height: 3000px;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    svg {
+        fill: $grey-dark;
+    }
+
+    .inner-wrapper {
+        @include flex-center;
+        background-color: #ffbec5;
+        flex-direction: column;
+        position: relative;
+        padding: 2% 5%;
+        font-size: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+        width: 90%;
+        transition: all 0.25s;
+        max-height: 2000px;
+        visibility: visible;
+        opacity: 1;
+
+        @media screen and (max-width: $break-mobile) {
+            font-size: 0.8em;
+            width: 100%;
+            padding: 2% 0;
+            > button.view-warning-list {
+              margin-top: 1rem;
+            }
+        }
+
+        &.removed {
+            max-height: 0;
+            padding: 0;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        svg {
+            position: absolute;
+            background: $white;
+            padding: 5px;
+            border-radius: 50%;
+            border: 3px solid $grey-dark;
+            top: calc(50% - 25px);
+            width: 50px;
+            height: 50px;
+
+            &:nth-of-type(1) {left: -30px;}
+
+            &:nth-of-type(2) {right: -30px;}
+        }
+
+        button {
+            padding: 1.2rem 3.1rem;
+            color: $grey-dark;
+            margin-top: 15px;
+        }
+    }
+
+    &.warn-no-warn {
+        color: $brand-accent-color;
+
+        .inner-wrapper {
+            // box-shadow:
+            //     0 0 0 3px $brand-accent-color,
+            //     0 0 0 6px $white,
+            //     0 0 0 9px $brand-accent-color;
+
+            // svg {
+            //     fill: $brand-accent-color;
+            //     border-color: $brand-accent-color;
+            // }
+
+            button {
+                background: $brand-accent-color;
+            }
+        }
+    }
+
+    &.warn-notice {
+        color: $notice-color;
+
+        .inner-wrapper {
+            // box-shadow:
+            //     0 0 0 3px $notice-color,
+            //     0 0 0 6px $white,
+            //     0 0 0 9px $notice-color;
+
+            // svg {
+            //     fill: $notice-color;
+            //     border-color: $notice-color;
+            // }
+
+            button {
+                background: $notice-color;
+            }
+        }
+    }
+
+    &.warn-alert {
+        color: $alert-color;
+        &.all-good-wrapper{
+        background-color: $brand-accent-color;
+        }
+        &.not-all-good-wrapper{
+            background-color: #ffbec5;
+        }
+        &.active{
+            &.red-alert{
+                background-color: #ffbec5;
+            }
+        }
+
+        .inner-wrapper {
+            // box-shadow:
+            //     0 0 0 3px $alert-color,
+            //     0 0 0 6px $white,
+            //     0 0 0 9px $alert-color;
+
+            // svg {
+            //     fill: $alert-color;
+            //     border-color: $alert-color;
+            // }
+
+            button {
+                background: $alert-color;
+                color: $white;
+            }
+
+            &.all-good{
+
+                color:#313333;
+                background-color: $brand-accent-color;
+                // box-shadow:
+                // 0 0 0 3px $brand-accent-color,
+                // 0 0 0 6px $white,
+                // 0 0 0 9px $brand-accent-color;
+                // svg {
+                //     fill: $success-color;
+                //     border-color: $success-color;
+                // }
+
+                button {
+                    background: #313333;
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    p {
+      margin: 0;
+      text-align: center;
+    }
+
+    .close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 5px 0 15px 15px;
+
+        &:hover {cursor: pointer;}
+
+        svg {
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
+
+// Ride errors list, parent
+.warning-list-wrapper {
+    clear: both;
+    width: 100%;
+    color: $grey-dark;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.25s;
+
+    li.trip-list-ride-item {
+        // border: $alert-border!important; // to override trips in progress being green
+        margin-bottom: 25px;
+        margin-top: 50px;
+    }
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
+    }
+    @media screen and (max-width: $break-mobile) {
+        // padding-top: 910px;
+    }
+}
+.hide-button{
+    margin: 10px;
+}

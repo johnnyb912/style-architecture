@@ -1,0 +1,195 @@
+svg.icon-play-button {
+  .st0 {
+    fill-rule: evenodd;
+    clip-rule: evenodd;
+    fill: #943A96;
+  }
+  .st1 {
+    fill: none;
+    stroke: #943995;
+    stroke-miterlimit: 10;
+  }
+}
+
+svg.initiated {
+  fill: $blueberry;
+  .st0 {
+    fill: #4D3B8E;
+  }
+  .st1 {
+    fill: none;
+    stroke: #FFFFFF;
+    stroke-width: 0.25;
+    stroke-miterlimit: 10;
+  }
+}
+
+svg.icon-queued {
+  .cls-1 {
+    fill: none;
+    stroke: $blueberry;
+    stroke-miterlimit: 10;
+    stroke-width: 2px;
+  }
+  .cls-2 {
+    fill: $blueberry;
+  }
+}
+
+svg.icon-car-suv {
+  .cls-2 {
+    fill: none;
+  }
+}
+
+svg.icon-mobile-phone {
+  .cls-1 {
+    fill: $blueberry;
+  }
+  .cls-2 {
+    fill: #fff;
+  }
+}
+
+svg.car-circle {
+  .st0{fill:#8BC088;}
+  .st1{fill:#FFFFFF;}
+  .st2{fill:none;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}
+  .st3{fill:none;stroke:#8BC088;stroke-miterlimit:10;}
+}
+
+svg.circle-x {
+  fill: $error-color;
+}
+
+svg.scheduled {
+  fill: $blueberry;
+}
+
+svg.incomplete {
+  fill: $brand-magenta;
+}
+
+svg.complete {
+  fill: $success-color;
+}
+
+svg.canceled {
+  .cls-1,.cls-2{
+    fill: none;
+    stroke: #8bd5ea;
+    stroke-miterlimit: 10;
+    stroke-width: 2px;
+  }
+  .cls-2 {
+    stroke-linecap: square;
+  }
+}
+
+.tooltip-button, .contact-driver, .acknowledge, .approve, .cancel, .thumbs-up, .calendar, .check, .review-trip {
+  &:hover {
+    .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.tooltip-button {
+  position: relative;
+  .tooltip-text {
+    position: absolute;
+    margin: 0 auto;
+    display: flex;
+    top: -8px;
+  }
+  &.thumbs-up .tooltip-text {
+    margin-left: -20px;
+  }
+  &.error .tooltip-text {
+    margin-left: -10px;
+  }
+  &.control-width .tooltip-text {
+    max-width: 60px;
+    white-space: normal;
+    top: -45px;
+    margin-left: -3px;
+  }
+  &.deny {
+    .tooltip-text {
+      margin-left: 3px;
+    }
+    svg {
+      fill: $grey-warm;
+    }
+  }
+}
+
+svg.dispatch-icon {
+  .cls-1, .cls-2, .cls-3 {
+    fill-rule: evenodd;
+  }
+  .icon &{
+    .cls-3 {
+      fill: $brand-purple;
+    }
+  }
+}
+
+svg.wav-icon {
+  .cls-1, .cls-3, .cls-6 {
+    fill-rule: evenodd;
+  }
+  .cls-2 {
+    fill: none;
+    stroke-miterlimit: 10;
+    stroke-width: 1.16px;
+  }
+}
+
+svg.shared-van-icon {
+  .cls-1, .cls-2, .cls-5 {
+    fill-rule: evenodd;
+  }
+}
+
+svg {
+  .dark-grey {
+    fill: #4d4d4d;
+  }
+  .dark-grey-stroke {
+    stroke: #4d4d4d;
+  }
+  .light-grey {
+    fill: #c0bfbf;
+  }
+  .lighter-grey {
+    fill: #d1d3d4;
+  }
+  .white {
+    fill: $white;
+  }
+}
+
+.icon-check {
+  stroke-width: 1px;
+  stroke: $success-color;
+}
+
+svg.exclamation-triangle {
+  .cls-1 {
+    fill: none;
+    stroke: #bf1d77;
+    stroke-linecap: square;
+    stroke-linejoin: round;
+    stroke-width: 1.5px;
+  }
+  .cls-2 {
+    fill: #bf1d77;
+    fill-rule: evenodd;
+  }
+}
+
+svg.reassign-ride {
+  fill: $blueberry;
+}

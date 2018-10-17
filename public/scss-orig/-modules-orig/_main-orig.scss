@@ -1,0 +1,463 @@
+// MOBLIE STYLES FIRST! (4 COLUMNS)
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+// makes rems easier to use: 1.6rem = 16px
+html {font-size: 62.5%;}
+
+body {
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    background-color: $white-dark;
+    color: $base-font-color;
+    font-family: $font;
+    line-height: $base-line-height;
+    font-weight: 500;
+    font-size: 1.6rem;
+    overflow-y: auto;
+    scrollbar-base-color: $brand-purple;
+    scrollbar-base-color: $brand-purple;
+    scrollbar-3dlight-color: $brand-purple;
+    scrollbar-highlight-color: $brand-purple;
+    scrollbar-track-color: $grey-very-light;
+    scrollbar-arrow-color: $grey-dark;
+    scrollbar-shadow-color: $brand-purple;
+    scrollbar-dark-shadow-color: $brand-purple;
+
+    &.locked-scroll, &.freeze {
+      padding-right: 14px;
+      overflow: hidden;
+      @media only screen and (max-device-width : 768px) {
+        padding-right: 0;
+        position: fixed;
+      }
+    }
+
+    //custom scrollbar styling
+    &::-webkit-scrollbar {
+        width: 14px;
+    }
+
+    &::-webkit-scrollbar-track {
+        -moz-appearance: scrollbartrack-vertical;
+        background: $grey-very-light;
+        border-radius: 0px;
+    }
+
+    &::-webkit-scrollbar-thumb:window-inactive {
+        border-radius: 0px;
+        background: $grey;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 0px;
+        background: $brand-purple;
+    }
+}
+
+/* Fix for IE lockout issues */
+svg use {
+    pointer-events: none;
+}
+
+.modal {
+    transition: all ease-in-out 0.25s;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba($grey-warm-darker, 0.6);
+    background: $grey-warm-darker;
+    height: 100vh;
+    width: 100%;
+    z-index: 1000;
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+// Site-wide colour classes
+.error {
+    color: $error-color !important;
+
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4, .h4,
+    h5, .h5,
+    h6, .h6,
+    p,
+    li,
+    a,
+    .label-content,
+    > * {
+        color: $error-color;
+    }
+
+    svg {
+        fill: $error-color !important;
+    }
+
+    .input-wrapper {
+        border: 1px solid $error-color;
+        .ie11 &{
+            overflow:visible!important;
+        }
+    }
+}
+
+// Single column Forms (eg. Login, home-page-search)
+.form-column {
+    @include flex-column;
+    background-color: $white;
+    width: 100%;
+    padding: 10px 20px;
+    //max-width: 700px;
+
+    .input-wrapper {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+.form-row {
+  @include flex-column;
+  flex-direction: row;
+  background-color: $white;
+  width: 100%;
+  padding: 10px 20px;
+  //max-width: 700px;
+  flex-wrap: wrap;
+  @include media(small) {
+    flex-wrap: nowrap;
+  }
+
+  .input-wrapper {
+      width: 100%;
+      margin: 0;
+  }
+}
+
+.form-section {
+    display: flex;
+    position: relative;
+    background: $white;
+    border-top: $accent-border;
+    margin: 16px 0 25px;
+    padding: 30px;
+    flex-wrap: wrap;
+
+    @include media(large) {
+        margin: 16px 0 25px;
+        padding: 50px;
+        flex-wrap: nowrap;
+    }
+
+    &.unlocked {
+        border-top: $sucess-border;
+
+        .edit {
+            background: $success-color;
+
+            svg {fill: $grey-dark;}
+
+            &.disabled {
+                background: $grey-very-light;
+                cursor: not-allowed;
+
+                svg {
+                    fill: $grey;
+                }
+            }
+        }
+    }
+
+    h3 {
+      @media screen and (max-width: $break-mobile) {
+        margin-bottom: 20px;
+      }
+      margin-bottom: 20px;
+    }
+
+    .edit {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: $brand-accent-color;
+        padding: 5px 10px;
+        width: 40px;
+        height: 35px;
+
+        .fa { color: $white; }
+
+        &:hover {cursor: pointer;}
+
+        svg {
+            fill: $white;
+            position: relative;
+            top: 2px;
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+// NEED TO CONVERT TO REACT ANIMATION? // nope i gotcha covered on that
+
+div.hit-box{
+    height:300vh;
+    width:300vw;
+    position:fixed;
+    top:-100vh;
+    left:-100vw;
+    z-index: 1;
+    cursor: auto;
+}
+
+ul.search-results {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    position: absolute;
+    width: calc(100% - 2px);
+    max-width: 758px;
+    background: $white;
+    transition: max-height 0.25s $sweetEasing;
+    max-height: 0;
+    overflow-y: auto;
+    scrollbar-base-color: $brand-accent-color;
+    scrollbar-base-color: $brand-accent-color;
+    scrollbar-3dlight-color: $brand-accent-color;
+    scrollbar-highlight-color: $brand-accent-color;
+    scrollbar-track-color: $grey-very-light;
+    scrollbar-arrow-color: $grey-dark;
+    scrollbar-shadow-color: $brand-accent-color;
+    scrollbar-dark-shadow-color: $brand-accent-color;
+    z-index: 2;
+    z-index:1500;
+    margin-left: 1px;
+    margin-top: -1px;
+
+    h3 {
+      color: $brand-purple;
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    &.active {
+      max-height: 50vh;
+      @include media(small) {
+        max-height: 275px;
+      }
+    }
+
+    // custom scrollbar styling
+    &::-webkit-scrollbar {width: 6px;}
+
+    &::-webkit-scrollbar-track {
+        -moz-appearance: scrollbartrack-vertical;
+        background: $white;
+        border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb:window-inactive {
+        background: $grey;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 3px;
+        background: $brand-purple;
+    }
+}
+
+li.search-result {
+    border-top: 1px dotted $faded-blue;
+    padding: 0;
+    &:first-of-type {
+      border-top: 0;
+    }
+
+    &.hover,
+    &:focus,
+    &:hover {
+        background: $white-dark;
+        cursor: pointer;
+    }
+
+    a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 8px 10px;
+        cursor: pointer;
+        @media screen and (max-width: $break-mobile) {
+          display: flex;
+          flex-direction: column;
+          h3, p {
+            width: 100% !important;
+            max-width: 100% !important;
+            &.tag {
+              width: auto !important;
+            }
+          }
+        }
+
+        &:focus {
+            background: $white-dark;
+        }
+
+        p {
+          color: $grey-warm;
+          font-size: 14px;
+        }
+    }
+
+    h3,
+    p {
+        display: inline-block;
+        margin: 0 1.5% 0 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+// IE8 Fixes
+.lt-ie9 {}
+
+// Touch device fixes
+.touch {}
+
+.validation {
+    color: $error-color;
+    font-size: 12px;
+    .firefox &{
+        display: inline-block;
+    }
+    &.success {
+      color: $success-color;
+    }
+    &.neutral {
+      color: $greyish-brown;
+      svg {
+        fill: $greyish-brown
+      }
+    }
+    &.relative-position {
+      position: relative !important;
+    }
+    &.with-icon {
+      margin: 10px 0 0 28px;
+      display: inline-block;
+
+      svg {
+        position: absolute;
+        left: -28px;
+        top: 0;
+        height: 18px;
+        width: 18px;
+      }
+      @include media(medium) {
+        .two-thirds & {
+          width: 140%;
+        }
+      }
+    }
+}
+
+.fields-required-message {
+    color: $grey;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .fa-asterisk {
+      color: $berry;
+      font-size: 7px;
+      margin: 0 0.5rem;
+    }
+}
+
+.input-wrapper {
+    > label {
+        pointer-events: none;
+    }
+}
+
+.input-field-third {
+    display: inline-block;
+    width: 100%;
+    @include media(small) {
+      width: calc(33% - 12px);
+    }
+    margin-right: 20px;
+    vertical-align: top;
+
+    &:nth-child(3n+0) {
+        margin-right: 0;
+    }
+}
+
+.input-field-fourth {
+    display: inline-block;
+    width: 100%;
+    @include media(small) {
+      width: calc(50% - 10px);
+      &:nth-child(2n+0) {
+        margin-right: 0;
+      }
+    }
+    @include media(large) {
+      width: calc(25% - 15px);
+      &:nth-child(2n+0) {
+        margin-right: 20px;
+      }
+      &:nth-child(4n+0) {
+        margin-right: 0;
+      }
+    }
+    margin-right: 20px;
+    vertical-align: top;
+}
+
+.input-field-half {
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+
+    @include media(small) {
+      width: calc(50% - 10px);
+      margin-right: 20px;
+      &:nth-child(2n+0) {
+          margin-right: 0;
+      }
+    }
+}
+
+.input-field-two-thirds {
+  margin-bottom: 20px;
+  @include media(medium) {
+    margin-bottom: 0;
+  }
+  display: inline-block;
+  width: 100%;
+  @include media(small) {
+    width: calc(67% - 12px);
+    margin-right: 20px;
+  }
+  vertical-align: top;
+
+  &:nth-child(4n+0) {
+      margin-right: 0;
+  }
+}

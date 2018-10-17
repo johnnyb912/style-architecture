@@ -1,0 +1,107 @@
+// Form Layout Elements
+.input-wrapper {
+    @include clearfix();
+    position: relative;
+    width: 100%;
+    border: 1px solid transparent;
+    clear: both;
+    margin-top: 10px;
+    overflow: hidden;
+    .ie11 & {
+        overflow: visible !important;
+    }
+    &.autopop {
+        animation: 1.5s ease-out forwards indicate-autopop;
+    }
+    &.two-column-input-wrapper {
+        min-width: 100px;
+        .expiration-dates & {
+            min-width: 50px;
+        }
+    }
+    &.old-style {
+        @include media(small) {
+            margin-top: 10px;
+        }
+    }
+}
+
+.button-wrapper {
+    @include flex-column();
+    margin-top: 20px;
+}
+
+.two-column-input-group {
+    display: flex;
+    flex-wrap: wrap;
+
+    .two-column-input-wrapper {
+        &:nth-of-type(1) {
+            margin-top: 0;
+        }
+    }
+
+    &.uneven-split-group {
+        .two-column-input-wrapper {
+            width: 100%;
+
+            &:nth-of-type(even) {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    @include media(medium) {
+        .two-column-input-wrapper {
+            position: relative;
+            width: 50%;
+
+            &:nth-of-type(1) {
+                width: calc(50% - 20px);
+                margin-right: 20px;
+            }
+
+            &:nth-of-type(odd) {
+                width: calc(50% - 20px);
+                margin-right: 20px;
+            }
+
+            &:nth-of-type(2) {
+                margin-top: 0;
+            }
+        }
+
+        &.uneven-split-group {
+            .two-column-input-wrapper {
+                width: 65%;
+
+                &:nth-of-type(even) {
+                    width: calc(35% - 20px);
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    .driver-details {
+        width: 100%;
+        margin-bottom: 15px;
+
+        .two-column-input-wrapper {
+            display: inline-block;
+        }
+    }
+}
+
+p + .two-column-input-wrapper {
+    margin-top: 0;
+}
+
+.field-name-optional {
+    color: $grey;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 300;
+    letter-spacing: normal;
+    text-transform: none;
+}

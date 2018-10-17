@@ -1,0 +1,257 @@
+$selected-color: $faded-purple;
+
+.rbc-calendar {
+  .rbc-month-row + .rbc-month-row {
+    border: 0;
+  }
+  .rbc-month-row:last-of-type .date-wrapper {
+    border-bottom: 0;
+  }
+  .rbc-month-view {
+    background-color: $white;
+    .rbc-event {
+      height: 20px;
+    }
+  }
+  height: calc(100vh - 100px) !important;
+  min-height: 400px;
+  a:hover, a:focus {
+    color: inherit;
+  }
+  .rbc-day-bg, .rbc-time-view {
+    background-color: $white;
+    color: $grey-warm;
+    max-height: 781px;
+    &.rbc-selected-cell {
+      background-color: $purple-light;
+    }
+  }
+  .rbc-time-header > .rbc-row > * + *, .rbc-day-bg + .rbc-day-bg {
+    border-left: 1px solid $faded-blue;
+  }
+  .rbc-date-cell {
+    text-align: left;
+    font-size: 16px;
+    padding: 10px;
+    color: $greyish-brown;
+    a {
+      display: block;
+      font-weight: 500;
+      padding: 5px;
+      width: 29px;
+      height: 29px;
+      color: $greyish-brown;
+      cursor: pointer;
+    }
+    .fa {
+      @include nice-easing-animation;
+    }
+    &.rbc-off-range {
+      a, .fa {
+        color: $pinkish-grey;
+      }
+    }
+    &.rbc-now a {
+      background-color: $bright-pink;
+      border-radius: 100%;
+      color: $white;
+      text-align: center;
+    }
+    .fa-square-o {
+      opacity: 0;
+    }
+    &:hover .fa-square-o {
+      opacity: 1;
+      display: block;
+    }
+    .selected a {
+      background-color: $faded-blue;
+      border-radius: 100%;
+      color: $black;
+      text-align: center;
+    }
+  }
+  .rbc-header {
+    background-color: $iris;
+    color: $white;
+    font-size: 12px;
+    font-weight: bold;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 5px;
+    border-left-color: transparent !important;
+  }
+  .rbc-time-header {
+    .rbc-row:first-of-type .rbc-header-gutter {
+      background-color: $iris;
+      &:before {
+        content: 'Time';
+        font-size: 12px;
+        color: $white;
+        height: 37px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+      }
+    }
+    .rbc-row:last-of-type .rbc-header-gutter {
+      width: 80px !important;
+    }
+  }
+  div.rbc-event {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    &:hover {
+      z-index: 100;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
+    &.selected {
+      .rbc-event-label, .rbc-event-content {
+        color: $black;
+      }
+    }
+    .rbc-event-label {
+      font-size: 12px;
+      font-weight: 500;
+    }
+    .contents {
+      width: 100%;
+      padding: 2px 5px;
+      height: calc(100% - 1px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+      background-color: $light-blueberry; // pending
+      border: 0;
+      border-left: 4px solid $blueberry;
+      border-left-width: 4px !important;
+      border-radius: 2px;
+      color: $blueberry;
+      margin-top: 1px;
+    }
+    .rbc-event-content {
+      font-size: 12px;
+      font-weight: bold;
+      display: flex;
+      align-items: flex-end;
+    }
+    &.in-transit, &.completed, &.en-route, &.booking {
+      .contents {
+        background-color: #d9eed7;
+        border-left-color: #5db37e;
+        color: #5b7a5c;
+      }
+    }
+    &.in-transit .contents {
+      animation-duration: 0.5s;
+      animation-fill-mode: both;
+      animation: borderPulseGreen 2s ease-in-out alternate infinite;
+    }
+    &.canceled .contents {
+      background-color: #cce9f0;
+      border-left-color: $light-aqua;
+      color: $aqua;
+    }
+    &.incomplete .contents {
+      background-color: #fddbee;
+      border-left-color: $brand-magenta;
+      color: $berry;
+    }
+  }
+  .rbc-timeslot-group {
+    border-color: $faded-blue;
+    min-height: 80px;
+  }
+  .rbc-time-content {
+    max-height: 700px;
+    overflow-y: scroll;
+    border-top: 1px solid $faded-blue;
+  }
+  .rbc-event-content {
+    font-size: 14px;
+    height: auto;
+    flex: none;
+  }
+  .rbc-label {
+    font-size: 14px;
+  }
+  .rbc-time-column {
+    width: 80px !important;
+  }
+  .rbc-current-time-indicator {
+    background-color: $berry;
+    height: 3px;
+    left: 0 !important;
+    z-index: 10;
+    opacity: 0;
+    &:before {
+      background-color: $berry;
+      width: 14px;
+      height: 14px;
+      top: -6px;
+      left: 73px;
+    }
+  }
+  .day-header {
+    display: flex;
+    align-items: center;
+    .fa {
+      font-size: 16px;
+    }
+  }
+  .rbc-time-column:not(.rbc-time-gutter) {
+    .rbc-time-slot.selected {
+      background-color: $selected-color;
+    }
+  }
+  .rbc-time-column.rbc-today {
+    .rbc-time-slot.selected {
+      background-color: mix($selected-color, #eaf6ff);
+    }
+  }
+  .date-wrapper {
+    flex-basis: 100%;
+    border-right: 1px solid $faded-blue;
+    border-bottom: 1px solid $faded-blue;
+    .rbc-day-bg {
+      background-color: transparent;
+      max-width: 100% !important;
+      flex-basis: 100% !important;
+      height: 100%;
+    }
+  }
+  .rbc-today {
+    background-color: $white-medium-dark;
+    &.rbc-header {
+      background-color: #7E6EB9;
+    }
+  }
+}
+.rbc-allday-cell .date-wrapper {
+  border-bottom: 0;
+  &:last-of-type {
+    border-right: 0;
+  }
+  .rbc-today {
+    background-color: $white-medium-dark;
+  }
+}
+.date-wrapper.selected {
+  background-color: $selected-color;
+}
+.rbc-time-gutter .rbc-timeslot-group {
+  border-left: 0;
+}
+.rbc-time-header.rbc-overflowing {
+  border-right: 0 !important;
+  border-bottom: 1px solid $faded-blue;
+}
+.rbc-overlay-header {
+  color: $greyish-brown;
+  font-size: 15px;
+}

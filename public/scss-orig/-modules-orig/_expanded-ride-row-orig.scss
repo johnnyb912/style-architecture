@@ -1,0 +1,398 @@
+.expanded-ride-row {
+  display: flex;
+  padding: 15px 0;
+  position: relative;
+  cursor: auto;
+  &.loading {
+    .column {
+      opacity: 0;
+    }
+  }
+  span.bold-span {
+    color: $brand-purple;
+    margin-right: 5px;
+  }
+  .crud-event-log {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    .dropdown-panel-header {
+      display: none;
+    }
+    .dropdown-panel {
+      overflow: scroll;
+      max-height: 150px;
+      transition: none;
+    }
+    .crud-event {
+      margin: 5px 0;
+    }
+    h4 {
+      font-size: 14px;
+      font-weight: 500;
+      span {
+        color: $greyish-brown;
+      }
+    }
+  }
+  .column {
+    width: 100%;
+    border-right: 1px solid $faded-blue;
+    padding: 0 15px;
+    height: 225px;
+    &:last-of-type {
+      border: 0;
+      max-width: 400px;
+      .ie11 & {
+        min-width: 30%;
+      }
+    }
+    .body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      button {
+        margin-top: 8px;
+        max-width: 90%;
+        width: 200px;
+        padding: 1rem 0;
+      }
+      p {
+        margin-bottom: 2px;
+        color: $greyish-brown;
+      }
+      .input-wrapper {
+        margin-top: 0;
+        margin-left: -5px;
+        margin-bottom: 2px;
+        input {
+          height: 24px;
+          font-size: 12px;
+        }
+      }
+    }
+    .ride-details {
+      height: 200px;
+      overflow-y: scroll;
+      border: 1px solid $white;
+      border-radius: 3px;
+      padding: 10px 10px;
+
+      //custom scrollbar styling
+      &.scrollable {
+        border-color: $grey-extra-light;
+        max-width: 100%;
+        &::-webkit-scrollbar {
+          width: 8px;
+          height: 8px;
+        }
+        &::-webkit-scrollbar-track {
+          -moz-appearance: scrollbartrack-vertical;
+          background: $grey-extra-light;
+          border-radius: 0px;
+        }
+        &::-webkit-scrollbar-thumb {
+          border-radius: 3px;
+          background: $grey;
+        }
+      }
+
+      .fa-circle, .fa-circle-o {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+      }
+      .timeline {
+        margin-bottom: 0;
+        div.time, p.time {
+          min-width: 84px;
+          width: 84px;
+          font-size: 11.5px;
+          padding-top: 2px;
+        }
+        .timeline-line {
+          left: 103px;
+          &:not(.destination) {
+            height: calc(100% - 2rem)
+          }
+        }
+        li > div {
+          .address {
+            width: 200px;
+          }
+        }
+        .request-id {
+          font-size: 11px;
+        }
+        li > div {
+          max-width: none;
+          .driver-details {
+            flex-wrap: nowrap;
+            padding: 5px 10px;
+            .img-holder {
+              min-width: 45px;
+              min-height: 45px;
+              width: 45px;
+              height: 45px;
+            }
+          }
+          .address-block {
+            max-width: 100%;
+          }
+          .address {
+            width: auto;
+            p {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+    &.map {
+      max-width: 100%;
+      .map-loader {
+        flex-direction: column;
+        > div {
+          height: 50px;
+          width: 50px;
+          background-size: 50px 50px;
+        }
+        p {
+          font-size: 12px;
+          padding: 5px 0;
+        }
+      }
+      > .form-block > .map-loader {
+        height: 100%;
+        padding: 0;
+      }
+      > .form-block-trip-map-wrapper {
+        width: 100%;
+        height: 100%;
+        .map-wrapper {
+          height: 225px;
+          padding: 0;
+          .map-canvas {
+            min-height: 225px;
+            height: 225px;
+          }
+        }
+      }
+      > .form-block-trip-map-wrapper, .uber-map-container-wrapper {
+        max-width: 735px;
+      }
+      .flat-map-container-wrapper {
+        cursor: default;
+        height: 225px;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        img {
+          max-height: 80%;
+          max-width: inherit;
+          width: auto;
+        }
+      }
+      .uber-map-container-wrapper {
+        height: 225px;
+        iframe {
+          margin-top: -43px; // cuts off uber header
+        }
+      }
+    }
+    &.map.with-toggle {
+      position: relative;
+      > .form-block-trip-map-wrapper, > .form-block-trip-map-wrapper .map-wrapper, .uber-map-container-wrapper, .flat-map-container-wrapper {
+        min-height: 184px;
+        height: 184px;
+        .map-canvas {
+          min-height: 184px;
+          height: 184px;
+        }
+      }
+      .map-link {
+        position: absolute;
+        bottom: 10px;
+        left: 20px;
+        cursor: pointer;
+        &.disabled {
+          opacity: .8;
+          pointer-events: none;
+        }
+        @media screen and (max-width: $break-small) {
+          position: relative;
+          bottom: 0;
+          left: 0;
+        }
+      }
+      .scroll-modal .map-loader {
+        background-color: $white-dark;
+        padding: 0;
+        height: 100%;
+      }
+    }
+  }
+  &.loading .circulation-loader {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    transform: scale3d(.5, .5, .5);
+    z-index: inherit;
+    opacity: 0;
+    animation: fadeIn;
+    animation-delay: .1s;
+    animation-fill-mode: forwards;
+  }
+  .header-block {
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+    .map-icon {
+      height: 20px;
+      width: 20px;
+      margin-right: 15px;
+      svg {
+        fill: $blueberry;
+      }
+    }
+    h3 {
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      margin: 0;
+    }
+    &.align-top {
+      align-items: flex-start;
+    }
+  }
+  P {
+    font-size: 12px;
+  }
+}
+
+@mixin mobile-expanded-row() {
+  padding: 0;
+  flex-wrap: wrap;
+  svg {
+    transform: scale3d(.8, .8, .8);
+  }
+  .column {
+    height: 200px;
+    padding: 0;
+    width: 50%;
+    p.desc {
+      font-size: 12px;
+    }
+    .ride-details {
+      max-height: 200px;
+      border: 0;
+    }
+    .header-block {
+      display: none;
+      .dispatch & {
+        display: flex;
+      }
+      h3 {
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+    }
+    .report-issue {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+    }
+    &.map {
+      width: 50%;
+      max-width: inherit;
+      border-right: 0;
+      .map-wrapper, .uber-map-container-wrapper, .flat-map-container-wrapper {
+        min-height: 200px;
+        height: 200px;
+        .map-canvas {
+          min-height: 200px;
+          height: 200px;
+        }
+      }
+    }
+    &.map.with-toggle {
+      .map-wrapper, .uber-map-container-wrapper, .flat-map-container-wrapper {
+        min-height: 188px;
+        height: 188px;
+        .map-canvas {
+          min-height: 188px;
+          height: 188px;
+        }
+      }
+    }
+  }
+  .column:last-of-type {
+    max-width: 100%;
+    width: 100%;
+    order: 1;
+    border-top: 1px solid $faded-blue;
+    padding-top: 5px;
+    height: auto;
+    .body {
+      flex-direction: row;
+      position: relative;
+      justify-content: flex-start;
+      .body-group {
+        text-align: left;
+        padding: 0 10px;
+        flex-wrap: wrap;
+        &:nth-child(2) {
+          p, .editable-text {
+            flex-grow: 1;
+          }
+        }
+        > p, .editable-text {
+          justify-content: center;
+          white-space: nowrap;
+          font-size: 11px;
+          @include media(medium) {
+            margin: 5px 10px 5px 0;
+          }
+          &:last-of-type {
+            margin-right: 0;
+          }
+          span, p {
+            font-size: 11px;
+          }
+        }
+        button {
+          position: absolute;
+          top: 0;
+          width: 200px;
+          right: 10px;
+        }
+      }
+    }
+  }
+}
+
+div.rides-list.show-details.rider-page {
+  .fake-timeline {
+    ul, + .timeline-line {
+      margin-left: -85px;
+    }
+  }
+}
+
+@include media(small) {
+  @media screen and (max-width: $break-medium) {
+    div.rides-list.show-details {
+      height: 385px;
+      .expanded-ride-row {
+        @include mobile-expanded-row();
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $break-small) {
+  .expanded-ride-row {
+    display: none;
+  }
+}
