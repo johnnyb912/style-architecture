@@ -1,286 +1,325 @@
-.uber-map-container-wrapper{
-	width:100%;
-	height:450px;
-	max-height:450px;
-	overflow:hidden;
-	iframe{
-		border:none;
-    margin-top: -143px;
-	}
+.uber-map-container-wrapper {
+    width: 100%;
+    height: 450px;
+    max-height: 450px;
+    overflow: hidden;
+
+    iframe {
+        border: none;
+        margin-top: -143px;
+    }
 }
 
 $resting-width: 450px;
 $resting-height: 500px;
 $expanded-size: 960px;
 
-.flat-map-container-wrapper{
-  z-index: 0;
-  display: flex;
-  align-items: flex-start;
-	width:100%;
-  position:relative;
-	transition: all .25s ease-in-out;
-  img {
-    .ie11 &{
-      width: 100%;
-			z-index: 0;
+.flat-map-container-wrapper {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+
+    transition: all 0.25s ease-in-out;
+
+    img {
+        .ie11 & {
+            z-index: 0;
+            width: 100%;
+        }
     }
-  }
-  @include media(medium) {
-    cursor:zoom-in;
-    &.expanded{
-      width:200%;
-      margin-left: -100%;
-      z-index: 100;
-      background-size:contain;
-      background-position:center right;
-      background-color:rgba(255,255,255,1);
-      cursor: zoom-out;
-      min-height: calc(100% - 75px);
-      right: 0;
-      align-items: flex-start;
-      + div {
-        display: none;
-      }
+
+    @include media(medium) {
+        cursor: zoom-in;
+
+        &.expanded {
+            right: 0;
+            z-index: 100;
+            width: 200%;
+            min-height: calc(100% - 75px);
+            background-color: rgba(255, 255, 255, 1);
+            background-position: center right;
+            background-size: contain;
+            cursor: zoom-out;
+            align-items: flex-start;
+            margin-left: -100%;
+
+            + div {
+                display: none;
+            }
+        }
     }
-  }
 }
 
 .map-wrapper.directions-error {
-  .map-canvas:after {
-    content: 'Warning: Unable to load directions from Google Maps.';
-    font-size: 10px;
-    color: $greyish-brown;
-		padding: 2px 5px;
-		background-color: $white-dark;
-		position: absolute;
-		bottom: 0;
-		width: 100%;
-  }
+    .map-canvas::after {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: $white-dark;
+        color: $greyish-brown;
+        content: "Warning: Unable to load directions from Google Maps.";
+        font-size: 10px;
+        padding: 2px 5px;
+    }
 }
 
 .live-map-container {
-  height: 100vh;
-  .map-wrapper, .map-canvas {
-		height: 100%;
-	}
-	.header {
-		background-color: $brand-purple;
-		height: 56px;
-		display: flex;
-		align-items: center;
-		position: fixed;
-		top: 0;
-		z-index: 3000;
-		width: 100%;
-		img {
-			height: 32px;
-			margin-left: 10px;
-		}
-		@include media(small) {
-			display: none;
-		}
-	}
-	.ride-blurb {
-		position: fixed;
-		bottom: 0;
-		width: calc(100% - 20px);
-    max-width: 483px;
-		margin: 10px;
-		z-index: 2000;
-		background-color: $greyish-brown;
-		box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-		color: $white;
-		@include media(small) {
-			top: 28px;
-			bottom: auto;
-			left: 32px;
-			width: 483px;
-			border-radius: 3px;
-			margin: 0;
-		}
-		p {
-			margin: 0;
-		}
-		.logo {
-			width: 100px;
-			height: auto;
-			position: absolute;
-			right: 25px;
-			top: 25px;
-			display: none;
-			@include media(small) {
-				display: block;
-			}
-		}
-		.section {
-			padding: 15px;
-			display: flex;
-			justify-content: space-between;
-			position: relative;
-			.rider-eta {
-				min-width: 50px;
-				font-weight: 400;
-				border-left: 1px solid $grey-very-light;
-				padding-left: 15px;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				flex-direction: column;
-				text-transform: uppercase;
-				font-size: 14px;
-				div {
-					font-size: 26px;
-					font-weight: 500;
-					margin-bottom: -4px;
-				}
-			}
-			.rider-info {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				text-transform: uppercase;
-				.status-text {
-					color: #D7D7D7;
-				}
-			}
-			&.driver {
-				justify-content: flex-start;
-				padding-bottom: 20px;
-				padding-left: 10px;
-				.driver-info {
-					@include flex-column;
-					align-items: flex-start;
-					font-size: 14px;
-					color: #E8E8E8;
-				}
-			}
-		}
-	}
+    height: 100vh;
+
+    .map-wrapper, .map-canvas {
+        height: 100%;
+    }
+
+    .header {
+        position: fixed;
+        top: 0;
+        z-index: 3000;
+        width: 100%;
+        height: 56px;
+        background-color: $brand-purple;
+        display: flex;
+        align-items: center;
+
+        img {
+            height: 32px;
+            margin-left: 10px;
+        }
+
+        @include media(small) {
+            display: none;
+        }
+    }
+
+    .ride-blurb {
+        position: fixed;
+        bottom: 0;
+        z-index: 2000;
+        width: calc(100% - 20px);
+        max-width: 483px;
+        background-color: $greyish-brown;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        color: $white;
+        margin: 10px;
+
+        @include media(small) {
+            top: 28px;
+            bottom: auto;
+            left: 32px;
+            width: 483px;
+            border-radius: 3px;
+            margin: 0;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .logo {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            width: 100px;
+            height: auto;
+            display: none;
+
+            @include media(small) {
+                display: block;
+            }
+        }
+
+        .section {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+
+            .rider-eta {
+                min-width: 50px;
+                border-left: 1px solid $grey-very-light;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                font-size: 14px;
+                font-weight: 400;
+                padding-left: 15px;
+                text-transform: uppercase;
+
+                div {
+                    font-size: 26px;
+                    font-weight: 500;
+                    margin-bottom: -4px;
+                }
+            }
+
+            .rider-info {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-transform: uppercase;
+
+                .status-text {
+                    color: #d7d7d7;
+                }
+            }
+
+            &.driver {
+                justify-content: flex-start;
+                padding-bottom: 20px;
+                padding-left: 10px;
+
+                .driver-info {
+                    @include flex-column;
+                    color: #e8e8e8;
+                    align-items: flex-start;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
 }
 
 .driver-name {
-	text-transform: uppercase;
-	font-size: 16px;
+    font-size: 16px;
+    text-transform: uppercase;
 }
 
 .driver-details .driver-rating {
-	z-index: 10;
-  margin-top: -6px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 11px;
-  font-weight: 500;
-  background-color: $white;
-  border: 1px solid $grey-warm-darker;
-  color: $black;
-	min-height: 14px;
-  .fa {
-    font-size: 10px !important;
-		margin: 0 !important;
-  }
-  span {
-    padding: 0 0.5rem;
+    z-index: 10;
     width: 100%;
-    text-align: center;
-  }
-  span:last-of-type {
-    border-left: 1px solid $grey-warm-darker;
-  }
+    min-height: 14px;
+    background-color: $white;
+    border: 1px solid $grey-warm-darker;
+    color: $black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 500;
+    margin-top: -6px;
+
+    .fa {
+        font-size: 10px !important;
+        margin: 0 !important;
+    }
+
+    span {
+        width: 100%;
+        padding: 0 0.5rem;
+        text-align: center;
+    }
+
+    span:last-of-type {
+        border-left: 1px solid $grey-warm-darker;
+    }
 }
 
 .driver-avatar {
-	@include flex-column;
-	width: 57px;
-	height: 57px;
-	position: relative;
-	margin: 3px 20px 10px 10px;
-	.img-holder {
-		@include flex-center;
-		border-radius: 100%;
-		overflow: hidden;
-		min-height: 45px;
-		min-width: 45px;
-    height: 45px;
-    width: 45px;
-		@include media(small) {
-			min-height: 50px;
-			min-width: 50px;
-      height: 50px;
-      width: 50px;
-		}
-		img {
-			height: 100%;
-			max-width: inherit;
-			&.broken {
-				display: none;
-			}
-		}
-		svg {
-			border: 2px solid $brand-purple;
-			height: 100%;
-			width: 100%;
-			border-radius: 100%;
-			padding: 5px;
-			background-color: $white-dark;
-      margin-right: 0;
-			transform: none !important;
-			max-height: inherit;
-			.st0 {
-				fill: $brand-purple;
-			}
-			.st3 {
-				stroke: $brand-purple;
-			}
-		}
-	}
+    @include flex-column;
+    position: relative;
+    width: 57px;
+    height: 57px;
+    margin: 3px 20px 10px 10px;
+
+    .img-holder {
+        @include flex-center;
+        width: 45px;
+        min-width: 45px;
+        height: 45px;
+        min-height: 45px;
+        border-radius: 100%;
+        overflow: hidden;
+
+        @include media(small) {
+            width: 50px;
+            min-width: 50px;
+            height: 50px;
+            min-height: 50px;
+        }
+
+        img {
+            max-width: inherit;
+            height: 100%;
+
+            &.broken {
+                display: none;
+            }
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+            max-height: inherit;
+            background-color: $white-dark;
+            border: 2px solid $brand-purple;
+            border-radius: 100%;
+            margin-right: 0;
+            padding: 5px;
+
+            transform: none !important;
+
+            .st0 {
+                fill: $brand-purple;
+            }
+
+            .st3 {
+                stroke: $brand-purple;
+            }
+        }
+    }
 }
 
 .form-block-trip-map-wrapper {
-  position: relative;
-  .in-transit-overlay {
-    @include flex-center;
-    flex-direction: column;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, .45);
-    border-radius: 3px;
-    h3, a {
-        color: $white;
-          @include nice-easing-animation;
+    position: relative;
+
+    .in-transit-overlay {
+        @include flex-center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.45);
+        border-radius: 3px;
+        flex-direction: column;
+
+        h3, a {
+            color: $white;
+
+            @include nice-easing-animation;
         }
-    h3 {
-      font-size: 20px;
-      font-weight: 500;
-      margin-bottom: 10px;
+
+        h3 {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        i {
+            font-size: 12px;
+            margin-right: 5px;
+        }
+
+        a:hover {
+            letter-spacing: 0.5px;
+        }
     }
-    i {
-      margin-right: 5px;
-      font-size: 12px;
-    }
-  	a:hover {
-			letter-spacing: 0.5px;
-		}
-  }
 }
 
 // override some google maps styles:
-
 button.gm-fullscreen-control {
-  white-space: normal;
+    white-space: normal;
 }
 
 .gm-style-mtc div {
-  font-size: 13px !important;
-  padding: 0px 10px !important;
-  height: 30px !important;
-  + div {
-    display: none !important;
-  }
+    height: 30px !important;
+    font-size: 13px !important;
+    padding: 0 10px !important;
+
+    + div {
+        display: none !important;
+    }
 }

@@ -18,6 +18,7 @@
     text-decoration: none;
     vertical-align: middle;
     white-space: nowrap;
+
     transition: all 0.25s ease-in-out;
 
     @include media(xlarge) {
@@ -32,6 +33,7 @@
     &:disabled {
         background-color: #e5e5e5;
         color: $pinkish-grey;
+
         svg,
         svg > svg {
             opacity: 0.9;
@@ -54,6 +56,7 @@ input[type="submit"] {
         font-weight: bold;
         padding: 1.2rem 3.5rem;
         text-transform: uppercase;
+
         &:hover {
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
         }
@@ -62,9 +65,11 @@ input[type="submit"] {
     &.error {
         background: $error-color;
         color: $white !important;
+
         &:hover {
             background-color: #cc0707;
         }
+
         &.loading {
             @include loading-button-red(1s);
             pointer-events: none;
@@ -73,6 +78,7 @@ input[type="submit"] {
 
     &.approve {
         background: $brand-grape;
+
         &:hover {
             background: darken($brand-grape, 5%);
         }
@@ -81,6 +87,7 @@ input[type="submit"] {
     &.modify {
         background: $brand-accent-color;
         color: $grey-dark;
+
         &:hover {
             background: darken($brand-accent-color, 5%);
         }
@@ -88,6 +95,7 @@ input[type="submit"] {
 
     &.cancel {
         background: $brand-magenta;
+
         &:hover {
             background: darken($brand-magenta, 5%);
         }
@@ -96,9 +104,11 @@ input[type="submit"] {
     &.iris {
         background-color: $iris;
         color: $white;
+
         &:hover {
             background: darken($iris, 5%);
         }
+
         &:disabled {
             opacity: 0.6;
             pointer-events: none;
@@ -107,6 +117,7 @@ input[type="submit"] {
 
     &.alternate {
         background: $greyish-brown;
+
         &:hover {
             background: darken($grey-dark, 10%);
         }
@@ -137,15 +148,18 @@ input[type="submit"] {
         font-weight: 500;
         padding: 8px;
         vertical-align: middle;
+
         i {
             color: $blueberry;
             font-size: 1.5rem;
             margin-right: 5px;
         }
+
         &:hover {
             background-color: $white;
             border: solid 1px $blueberry;
         }
+
         &:disabled {
             opacity: 0.6;
             pointer-events: none;
@@ -156,9 +170,11 @@ input[type="submit"] {
         background-color: $white;
         border: 2px solid $success-color;
         color: $greyish-brown;
+
         &:disabled {
             pointer-events: none;
         }
+
         &.loading {
             @include loading-button-green(1s);
         }
@@ -203,6 +219,7 @@ input[type="submit"] {
 .tabs {
     width: 100%;
     display: flex;
+
     .tab {
         width: 100%;
         background-color: $blueberry;
@@ -224,27 +241,33 @@ input[type="submit"] {
             height: 40px;
             padding: 0;
         }
+
         svg {
             width: 21px;
             height: 21px;
             margin: -2px 10px 0 0;
             vertical-align: middle;
             fill: $white;
+
             &.car-circle {
                 .st0 {
                     fill: $white;
                 }
+
                 .st3 {
                     stroke: $white;
                 }
+
                 .st1 {
                     fill: $blueberry;
                 }
+
                 .st2 {
                     stroke: $blueberry;
                 }
             }
         }
+
         &.active {
             background-color: $white;
             border-top: 2px solid $blueberry;
@@ -252,43 +275,55 @@ input[type="submit"] {
             border-left: 1px solid $blueberry;
             color: $blueberry;
             font-weight: bold;
+
             &:hover {
                 background-color: $white;
                 color: $blueberry;
             }
+
             + .tab {
                 border-left: 0;
             }
+
             svg {
                 fill: $blueberry;
+
                 &.car-circle {
                     .st0 {
                         fill: $blueberry;
                     }
+
                     .st3 {
                         stroke: $blueberry;
                     }
+
                     .st1 {
                         fill: $white;
                     }
+
                     .st2 {
                         stroke: $white;
                     }
                 }
             }
         }
+
         &:not(.active) {
             border-left: 1px solid $white-dark;
+
             &:first-of-type {
                 border-left: 0;
             }
         }
+
         &:first-of-type.active {
             border-left-color: transparent;
         }
+
         &:last-of-type.active {
             border-right: 0;
         }
+
         &:hover {
             background-color: darken($blueberry, 5%);
             color: $white;
@@ -299,17 +334,22 @@ input[type="submit"] {
 .pill-wrapper {
     background-color: none;
     display: inline-block;
+
     transition: background-color 0.2s ease;
+
     div {
         background-color: none;
     }
+
     .tooltip-text {
         &:hover {
             background-color: #fff;
         }
     }
+
     &:hover:not(.loading) {
         cursor: pointer;
+
         .tooltip-text {
             z-index: 2147483647;
             background-color: none;
@@ -317,30 +357,37 @@ input[type="submit"] {
             visibility: visible;
         }
     }
+
     &:hover:not(.disabled),
     &.faux-hover:not(.disabled) {
         .filter-pill {
             opacity: 1;
         }
+
         .processing,
         .in-transit,
         .completed {
             background-color: #ebf7eb;
+
             .st1 {
                 fill: #cae5c8;
             }
+
             .st2 {
                 stroke: #cae5c8;
             }
         }
+
         .canceled_past,
         .canceled_future,
         .canceled {
             background-color: #e5f8fc;
         }
+
         .incomplete {
             background-color: #fae6f2;
         }
+
         .initiated,
         .scheduled,
         .queued,
@@ -348,8 +395,10 @@ input[type="submit"] {
             background-color: #efebff;
         }
     }
+
     &.loading {
         cursor: default;
+
         .filter-pill {
             &.initiated,
             &.scheduled,
@@ -357,14 +406,17 @@ input[type="submit"] {
             &.no-driver {
                 @include loading-button-iris(0.5s);
             }
+
             &.processing,
             &.in-transit,
             &.completed {
                 @include loading-button-green(0.5s);
             }
+
             &.incomplete {
                 @include loading-button-pink(0.5s);
             }
+
             &.canceled_past,
             &.canceled_future,
             &.canceled {
@@ -372,88 +424,113 @@ input[type="submit"] {
             }
         }
     }
+
     &.selected {
         &:not(.loading) {
             .tooltip-text:hover {
                 background-color: #fff;
             }
+
             .pill:hover {
                 background-color: inherit;
             }
+
             .filter-pill {
                 background-color: #8bc087;
                 opacity: 1;
+
                 &.incomplete {
                     background-color: #be1d77;
+
                     span {
                         color: white;
                     }
+
                     .cls-3 {
                         fill: white;
                     }
+
                     :hover {
                         background-color: #be1d77;
                     }
                 }
+
                 &.canceled_past,
                 &.canceled_future,
                 &.patient_initiated,
                 &.canceled {
                     background-color: #8bd5ea;
+
                     span {
                         color: white;
                     }
+
                     .cls-1,
                     .cls-2 {
                         stroke: white;
                     }
+
                     :hover {
                         background-color: #8bd5ea;
                     }
                 }
+
                 &.initiated,
                 &.scheduled,
                 &.queued,
                 &.no-driver {
                     background-color: $blueberry;
+
                     :hover {
                         background-color: $blueberry;
                     }
+
                     .st0 {
                         fill: $white;
                     }
+
                     .st1 {
                         stroke: $blueberry;
                     }
                 }
+
                 span {
                     color: white;
                 }
+
                 svg {
                     fill: white;
+
                     &.icon-queued {
                         .cls-2 {
                             fill: $white;
                         }
+
                         .cls-1 {
                             stroke: $white;
                         }
                     }
                 }
             }
+
             .car-icon {
                 .car-circle {
                     .st0 { fill: $white; }
+
                     .st1 { fill: $success-color; }
+
                     .st2 { stroke: $success-color; }
+
                     .st3 { stroke: $white; }
                 }
             }
+
             :hover {
                 background-color: #8bc087;
             }
         }
     }
+
     &.disabled:not(.loading) {
         cursor: default;
         opacity: 0.75;
@@ -470,61 +547,78 @@ input[type="submit"] {
     opacity: 1;
     padding: 0 12px;
     white-space: nowrap;
+
     .number-of-rides {
         font-size: 1.5rem;
     }
+
     .icon-style {
         width: 30px;
         margin-bottom: -10px;
     }
+
     .car-icon {
         width: 25px;
     }
+
     .not-car {
         width: 20px;
+
         circle {
             display: inline-block;
         }
     }
+
     &.processing,
     &.in-transit {
         border: 2px solid #8bc087;
+
         span {
             color: #8bc087;
         }
     }
+
     &.canceled_past,
     &.canceled_future,
     &.canceled {
         border: 2px solid #87daee;
+
         span {
             color: #87daee;
         }
     }
+
     &.incomplete {
         border: 2px solid #be1d77;
+
         span {
             color: #be1d77;
         }
     }
+
     &.completed {
         border: 2px solid #8bc087;
+
         svg {
             fill: #8bc087;
         }
+
         span {
             color: #8bc087;
         }
     }
+
     &.initiated,
     &.scheduled,
     &.queued,
     &.no-driver {
         border: 2px solid $blueberry;
+
         span {
             color: $blueberry;
         }
     }
+
     &.no-driver svg {
         fill: $blueberry;
     }

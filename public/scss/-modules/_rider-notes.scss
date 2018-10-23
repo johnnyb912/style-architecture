@@ -1,458 +1,514 @@
 .textarea {
-  border: solid 1px $faded-blue;
-  border-radius: 3px;
-  background-color: $white;
-  margin: 0 auto;
-  min-height: 103px;
-  height: 100%;
-  padding: 7px;
-  overflow: scroll;
-  font-size: 14px;
-  font-weight: 500;
-  color: $greyish-brown;
-  &::placeholder {
+    height: 100%;
+    min-height: 103px;
+    background-color: $white;
+    border: solid 1px $faded-blue;
+    border-radius: 3px;
+    color: $greyish-brown;
     font-size: 14px;
-  }
+    font-weight: 500;
+    margin: 0 auto;
+    overflow: scroll;
+    padding: 7px;
+
+    &::placeholder {
+        font-size: 14px;
+    }
 }
 
 .rider-notes-container .collapse-button {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  padding-bottom: .5rem;
-  i:not(.fa-lock) {
-    margin-right: 1rem;
-    font-size: 2rem;
-    color: $brand-purple-dark;
-    @include nice-easing-animation;
-    &.fa-minus-circle {
-      color: $grey;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding-bottom: 0.5rem;
+
+    i:not(.fa-lock) {
+        color: $brand-purple-dark;
+        font-size: 2rem;
+        margin-right: 1rem;
+
+        @include nice-easing-animation;
+
+        &.fa-minus-circle {
+            color: $grey;
+        }
     }
-  }
 }
 
 .rider-notes-wrapper {
-  height: 0;
-  overflow: hidden;
-  &.expanded {
-    height: auto;
-  }
-  .form-section-rider-notes {
-    padding: 30px;
-    margin: 0;
-    &.hide-border {
-      border: 0;
-    }
-    @media screen and (max-width: $break-mobile) {
-      padding: 60px 30px 30px;
-    }
-  }
-  .rider-text-notes {
-    margin-top: 30px;
-  }
-  .pages {
-    margin: 0 0 20px 0;
-    a:first-of-type {
-    left: 1%;
-    }
-    a:last-of-type {
-    right: 1%;
-    }
-  }
-  .add-note-wrapper {
-    @include flex-center;
-    background: $white;
-    margin: 30px 0px;
-    button {
-        width: calc(50% - 40px);
-    }
-  }
+    height: 0;
+    overflow: hidden;
 
-// Existing rider notes..
-  .existing-note {
-    display: flex;
-    flex-direction: row;
-    margin: 0 auto 30px auto;
-    background-color: $white-dark;
-    border: $grey-warm-darker .5px dotted;
-    padding: 12px;
-    padding-top: 17px;
-    width: 95%;
-    &.first-existing {
-      border-top: $grey-warm-darker .5px dotted;
-      padding-top: 20px;
-      margin-top: 20px;
+    &.expanded {
+        height: auto;
     }
-    .fa,
-    .download-file,
-    .download-button-label {
-      color: $grey;
-    }
-    .date {
-      width: 20%;
-      min-width: 250px;
-    }
-    .note {
-      font-weight: 700;
-      display: flex;
-      flex-wrap: wrap;
-      width: 100%;
-      margin-right: 20px;
-      @include media(medium) {
-        width: 45%;
-      }
-      @include media(large) {
-        width: 57%;
-      }
-    }
-  }
 
-// General CSS for both note types..
-.text-note {
-  display: flex;
-  align-items: center;
-  .download-file {
-    padding: 2px 0 0 0;
-    background-color: transparent;
-    color: $grey;
-    .download-button-label {
-      font-weight: 700;
-      display: inline;
-      font-size: 1.5rem;
-      margin-right: 10px;
-    }
-  }
-}
+    .form-section-rider-notes {
+        margin: 0;
+        padding: 30px;
 
-//Editable rider notes..
-  .editable-note {
-    margin: 10px auto;
-    width: 95%;
-    &.new-style {
-      margin-top: 0px;
-      width: 100%;
-      .flex-wrapper {
-        background: transparent;
-      }
-    }
-    &.disabled {
-      .download-link {
-        margin-right: 18px;
-        color: $grey-warm-darker;
-      }
-      .download-file:nth-child(1) {
-        color: $grey-warm-darker;
-      }
-      .date {
-        color: $grey-warm-darker;
-      }
-    }
-    .download-link {
-      color: $grey;
-    }
-    .text-area {
-      width: 100%;
-    }
-    textarea {
-      min-height: 50px;
-      height: 100%;
-      padding-left: 15px;
-      overflow: scroll;
-    }
-    .flex-wrapper {
-      flex-wrap: nowrap;
-      background: $white-dark;
-    }
-    .editable-upload-wrapper {
-      display: flex;
-      background-color: $white-dark;
-      .file-download-wrapper {
-        display: flex;
-        align-items: flex-start;
-        width: 100%;
-      }
-      .download-file {
-        padding: 20px 0px 20px 15px;
-        i {
-          margin-right: 5px;
+        &.hide-border {
+            border: 0;
         }
-      }
-    }
-  }
 
-  // CSS for add note modal
-  .modal-dialog {
-    .scrollable {
-      height: 300px;
-      width: 100%;
-      @include media(small) {
-        height: 275px;
-        width: 700px;
-      }
-      @include media(medium) {
-        height: 275px;
-        width: 650px;
-      }
+        @media screen and (max-width: $break-mobile) {
+            padding: 60px 30px 30px;
+        }
     }
-    .content {
-      height: auto;
-      width: auto;
-      @include media(small) {
-        width: auto;
-      }
-      @include media(medium) {
-        width: auto;
-      }
-    }
-    .button-container {
-      margin-top: 0;
-    }
-    &.delete-note-modal {
-      .scrollable {
-        height: 150px;
-        width: 100%;
-      }
-    }
-  }
 
-  .add-note-button-wrapper {
-    display: flex;
-    justify-content: flex-start;
-    margin: 35px 0px 2px 0px;
-  }
-  .add-note {
-    padding: 12px 16px;
-    font-size: 1.6rem;
-    font-weight: 500;
-    width: 175px;
-    color: $grey;
-    text-align: center;
-    background-color: $grey-warm-darker;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    &.active {
-      color: black;
-      background-color: $brand-accent-color;
+    .rider-text-notes {
+        margin-top: 30px;
     }
-  }
-  .add-note:focus,
-  .add-note:hover {
-    color: $black;
-    background-color: $brand-accent-color;
-  }
-  textarea {
-    margin: 0 auto;
-    min-height: 120px;
-    height: 100%;
-    padding-left: 15px;
-    overflow: scroll;
-  }
-  .upload-file {
-    display: flex;
-    flex-direction: column;
-  }
-  .upload-button {
-    @extend %button;
-    font-size: 1.6rem;
-    font-weight: 500;
-    padding: 14px 16px;
-    width: 175px;
-    margin-left: 5px;
-    cursor: pointer;
-    color: $grey;
-    background-color: $grey-warm-darker;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    &:before {
-      content: none;
-    }
-    i {
-      font-size: 1.5rem;
-      margin-right: 5px;
-    }
-    &.active {
-      color: $black;
-      background-color: $brand-accent-color;
-    }
-  }
-  .upload-button:focus,
-  .upload-button:hover {
-    color: $black;
-    background-color: $brand-accent-color;
-  }
-  .uploaded-files {
-    display: flex;
-    justify-content: center;
-    color: $grey;
-    background-color: $white-dark;
-    padding: 45px 0;
-    height: 120px;
-    margin: 0 auto;
-    i {
-      font-size: 1.8rem;
-      margin-right: 10px;
-    }
-  }
-  .file-error {
-    color: $error-color;
-    font-size: 1.5rem;
-    width: 70%;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .dropdown-panel-container
-  {
-    border-bottom: 0;
-    margin-bottom: 10px;
-    @include media(small) {
-      height: 120px;
-      margin-bottom: 0;
-    }
-  }
 
+    .pages {
+        margin: 0 0 20px;
+
+        a:first-of-type {
+            left: 1%;
+        }
+
+        a:last-of-type {
+            right: 1%;
+        }
+    }
+
+    .add-note-wrapper {
+        @include flex-center;
+        background: $white;
+        margin: 30px 0;
+
+        button {
+            width: calc(50% - 40px);
+        }
+    }
+
+    // Existing rider notes..
+    .existing-note {
+        width: 95%;
+        background-color: $white-dark;
+        border: $grey-warm-darker 0.5px dotted;
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto 30px;
+        padding: 12px;
+        padding-top: 17px;
+
+        &.first-existing {
+            border-top: $grey-warm-darker 0.5px dotted;
+            margin-top: 20px;
+            padding-top: 20px;
+        }
+
+        .fa,
+        .download-file,
+        .download-button-label {
+            color: $grey;
+        }
+
+        .date {
+            width: 20%;
+            min-width: 250px;
+        }
+
+        .note {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            font-weight: 700;
+            margin-right: 20px;
+
+            @include media(medium) {
+                width: 45%;
+            }
+            @include media(large) {
+                width: 57%;
+            }
+        }
+    }
+
+    // General CSS for both note types..
+    .text-note {
+        display: flex;
+        align-items: center;
+
+        .download-file {
+            background-color: transparent;
+            color: $grey;
+            padding: 2px 0 0;
+
+            .download-button-label {
+                display: inline;
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    //Editable rider notes..
+    .editable-note {
+        width: 95%;
+        margin: 10px auto;
+
+        &.new-style {
+            width: 100%;
+            margin-top: 0;
+
+            .flex-wrapper {
+                background: transparent;
+            }
+        }
+
+        &.disabled {
+            .download-link {
+                color: $grey-warm-darker;
+                margin-right: 18px;
+            }
+
+            .download-file:nth-child(1) {
+                color: $grey-warm-darker;
+            }
+
+            .date {
+                color: $grey-warm-darker;
+            }
+        }
+
+        .download-link {
+            color: $grey;
+        }
+
+        .text-area {
+            width: 100%;
+        }
+
+        textarea {
+            height: 100%;
+            min-height: 50px;
+            overflow: scroll;
+            padding-left: 15px;
+        }
+
+        .flex-wrapper {
+            background: $white-dark;
+            flex-wrap: nowrap;
+        }
+
+        .editable-upload-wrapper {
+            background-color: $white-dark;
+            display: flex;
+
+            .file-download-wrapper {
+                width: 100%;
+                display: flex;
+                align-items: flex-start;
+            }
+
+            .download-file {
+                padding: 20px 0 20px 15px;
+
+                i {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+
+    // CSS for add note modal
+    .modal-dialog {
+        .scrollable {
+            width: 100%;
+            height: 300px;
+
+            @include media(small) {
+                width: 700px;
+                height: 275px;
+            }
+            @include media(medium) {
+                width: 650px;
+                height: 275px;
+            }
+        }
+
+        .content {
+            width: auto;
+            height: auto;
+
+            @include media(small) {
+                width: auto;
+            }
+            @include media(medium) {
+                width: auto;
+            }
+        }
+
+        .button-container {
+            margin-top: 0;
+        }
+
+        &.delete-note-modal {
+            .scrollable {
+                width: 100%;
+                height: 150px;
+            }
+        }
+    }
+
+    .add-note-button-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        margin: 35px 0 2px;
+    }
+
+    .add-note {
+        width: 175px;
+        background-color: $grey-warm-darker;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        color: $grey;
+        font-size: 1.6rem;
+        font-weight: 500;
+        padding: 12px 16px;
+        text-align: center;
+
+        &.active {
+            background-color: $brand-accent-color;
+            color: black;
+        }
+    }
+
+    .add-note:focus,
+    .add-note:hover {
+        background-color: $brand-accent-color;
+        color: $black;
+    }
+
+    textarea {
+        height: 100%;
+        min-height: 120px;
+        margin: 0 auto;
+        overflow: scroll;
+        padding-left: 15px;
+    }
+
+    .upload-file {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .upload-button {
+        @extend %button;
+        width: 175px;
+        background-color: $grey-warm-darker;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        color: $grey;
+        cursor: pointer;
+        font-size: 1.6rem;
+        font-weight: 500;
+        margin-left: 5px;
+        padding: 14px 16px;
+
+        &::before {
+            content: none;
+        }
+
+        i {
+            font-size: 1.5rem;
+            margin-right: 5px;
+        }
+
+        &.active {
+            background-color: $brand-accent-color;
+            color: $black;
+        }
+    }
+
+    .upload-button:focus,
+    .upload-button:hover {
+        background-color: $brand-accent-color;
+        color: $black;
+    }
+
+    .uploaded-files {
+        height: 120px;
+        background-color: $white-dark;
+        color: $grey;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 45px 0;
+
+        i {
+            font-size: 1.8rem;
+            margin-right: 10px;
+        }
+    }
+
+    .file-error {
+        width: 70%;
+        color: $error-color;
+        font-size: 1.5rem;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .dropdown-panel-container {
+        border-bottom:  0;
+        margin-bottom:  10px;
+
+        @include media(small) {
+            height:  120px;
+            margin-bottom:  0;
+        }
+    }
 }
 
 .saving-note {
-  width: 100px;
-  margin: 20px auto 0 auto;
-  color: $grey-dark;
-  .fa.loading {
-    width: 15px;
-    height: 15px;
-    background-size: 15px 15px;
-  }
+    width: 100px;
+    color: $grey-dark;
+    margin: 20px auto 0;
+
+    .fa.loading {
+        width: 15px;
+        height: 15px;
+        background-size: 15px 15px;
+    }
 }
 
 // New Rider Notes Styles
 .edit-rider-modal .edit-rider-section, .page-section-book-trip {
-  .rider-text-notes {
-    margin-top: 0px;
-  }
-
-  .rider-notes-wrapper{
-
-    & > .note{ margin-top:0; }
-
-    .confirm-delete{
-      padding-top: 0;
-      margin: 20px 0px 0px;
+    .rider-text-notes {
+        margin-top: 0;
     }
 
-    .dropdown-panel-container {
-      border-top: 2px $iris solid;
-    }
-    .form-block-full{
-      border-top:none;
-      padding-top:0;
-    }
+    .rider-notes-wrapper {
+        & > .note { margin-top: 0; }
 
-    div:not(.read-only-notes-wrapper)
-    {
-      p.note{
-        position:relative;
-      }
-    }
-
-    .read-only-notes-wrapper{
-      border-top: 2px $iris solid;
-
-      .detail{
-        margin:16px 0;
-
-        p.name{
-          margin-bottom:3px;
+        .confirm-delete {
+            margin: 20px 0 0;
+            padding-top: 0;
         }
-      }
-    }
-  }
 
-  .add-note-button-wrapper {
-    margin: 20px 0 15px 0;
-    align-items: center;
-  }
+        .dropdown-panel-container {
+            border-top: 2px $iris solid;
+        }
 
-  .upload-button {
-    font-size: 1.4rem;
-    padding: 8px;
-    width: auto;
-    margin: 0 10px 0 20px;
-    color: $grey-dark;
-    background-color: $white;
-    border: solid 1px $faded-blue;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
-    &:before {
-      content: none;
-    }
-    i {
-      color: $blueberry;
-      font-size: 1.5rem;
-      margin-right: 5px;
-    }
-  }
-  .upload-button:focus,
-  .upload-button:hover {
-    border: solid 1px $blueberry;
-    background-color: $white;
-  }
-  .uploaded-files {
-    width: auto;
-    display: flex;
-    justify-content: flex-start;
-    background-color: transparent;
-    padding: 0;
-    height: auto;
-    margin: 0;
-    font-size: 13px;
-    font-style: italic;
-  }
+        .form-block-full {
+            border-top: none;
+            padding-top: 0;
+        }
 
-  textarea {
-    @extend .textarea;
-  }
+        div:not(.read-only-notes-wrapper) {
+            p.note {
+                position: relative;
+            }
+        }
 
-  .editable-upload-wrapper {
-    background-color: $white;
-    border: solid 1px $faded-blue;
-    border-radius: 3px;
-    i {
-      color: $blueberry;
+        .read-only-notes-wrapper {
+            border-top: 2px $iris solid;
+
+            .detail {
+                margin: 16px 0;
+
+                p.name {
+                    margin-bottom: 3px;
+                }
+            }
+        }
     }
-  }
+
+    .add-note-button-wrapper {
+        align-items: center;
+        margin: 20px 0 15px;
+    }
+
+    .upload-button {
+        width: auto;
+        background-color: $white;
+        border: solid 1px $faded-blue;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        color: $grey-dark;
+        font-size: 1.4rem;
+        margin: 0 10px 0 20px;
+        padding: 8px;
+
+        &::before {
+            content: none;
+        }
+
+        i {
+            color: $blueberry;
+            font-size: 1.5rem;
+            margin-right: 5px;
+        }
+    }
+
+    .upload-button:focus,
+    .upload-button:hover {
+        background-color: $white;
+        border: solid 1px $blueberry;
+    }
+
+    .uploaded-files {
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        display: flex;
+        justify-content: flex-start;
+        font-size: 13px;
+        font-style: italic;
+        margin: 0;
+        padding: 0;
+    }
+
+    textarea {
+        @extend .textarea;
+    }
+
+    .editable-upload-wrapper {
+        background-color: $white;
+        border: solid 1px $faded-blue;
+        border-radius: 3px;
+
+        i {
+            color: $blueberry;
+        }
+    }
 }
 
-.edit-rider-modal .edit-rider-section
-{
-  .form-block-full
-  {
-    padding-top:20px;
+.edit-rider-modal .edit-rider-section {
+    .form-block-full {
+        padding-top: 20px;
 
-    & .field:first-of-type{ margin-top:0; }
-  }
+        & .field:first-of-type { margin-top: 0; }
+    }
 
-  h2[data-section="Rider Notes"]
-  {
-    border-top:2px solid $purple-blue;
+    h2[data-section="Rider Notes"] {
+        border-top: 2px solid $purple-blue;
+
+        @include media(small) {
+            margin-top: 10px;
+            padding-top: 20px;
+        }
+
+        &:first-of-type { border-top: 0; }
+    }
+
     @include media(small) {
-      margin-top: 10px;
-      padding-top: 20px;
+        .wrapper-wrapper > h2[data-section="Rider Notes"] {
+            margin-top: 0;
+            padding-top: 0;
+        }
     }
-
-    &:first-of-type{ border-top:0 }
-  }
-  @include media(small) {
-    .wrapper-wrapper > h2[data-section="Rider Notes"] {
-      margin-top:0;
-      padding-top:0;
-    }
-  }
 }
 
 .toggle-more {
-  color: $bright-blue;
-  text-decoration: underline;
-  font-size: 1.4rem;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  cursor: pointer;
+    color: $bright-blue;
+    cursor: pointer;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-decoration: underline;
 }

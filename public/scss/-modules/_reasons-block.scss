@@ -1,255 +1,301 @@
 .cancel-block {
-  z-index: 1000;
-  color: $grey-dark;
-  width: 100%;
-  > div {
-    width: 100%;
-    &:not(:first-of-type) {
-      margin-top: 15px;
-    }
-  }
-  div.button-wrapper {
-    height: auto;
-    margin-top: 0;
-    button {
-      background-color: $grey-dark;
-      padding: 10px 15px;
-      font-size: 1.2rem;
-      margin-bottom: 0;
-      height: 35px;
-      text-transform: uppercase;
-      font-weight: 500;
-      &:hover {
-        background-color: $black;
-      }
-    }
-  }
-  .cancel-reason-inputs {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    flex-direction: column;
-    overflow: hidden;
-    > p {
-      width: 100%;
-      text-align: left;
-    }
-    @media screen and (max-width: $break-small) {
-      .input-wrapper {
-        width: 100%;
-      }
-    }
-    @include media(small) {
-      flex-direction: row;
-    }
-    .input-wrapper {
-      margin-top: 5px;
-      @include media(small) {
-        margin-top: 0;
-      }
-    }
-    .input-wrapper:nth-child(1) {
-      @include media(small) {
-        width: 40%;
-      }
-    }
-    .input-wrapper:nth-child(2) {
-      @include media(small) {
-        width: 60%;
-      }
-    }
-    ::before {
-      width: 50px;
-      .ie11 &{
-        width: 50px;
-        height: 45px;
-      }
-    }
-    .max {
-      position: relative;
-      width: 100%;
-      @include media(small) {
-        max-width: 150px;
-      }
-      .input-wrapper {
-        width: 100%;
-      }
-      .asterisk {
-        position: absolute;
-        right: 0.5rem;
-        top: 1.5rem;
-        @include media(small) {
-          top: 0.5rem;
-        }
-        display: flex;
-        width: 14px;
-        .fa {
-          margin-right: 0;
-        }
-      }
-    }
-  }
-  svg {
-    fill: $grey-dark;
-    margin-left: 10px;
-    cursor: pointer;
-    font-size: 1.8rem;
-    position: absolute;
-    top: 10px;
-    right: 10px;
     z-index: 1000;
-    height: 18px;
-    width: 18px;
-    &:hover {
-      fill: $black;
+    width: 100%;
+    color: $grey-dark;
+
+    > div {
+        width: 100%;
+
+        &:not(:first-of-type) {
+            margin-top: 15px;
+        }
     }
-  }
+
+    div.button-wrapper {
+        height: auto;
+        margin-top: 0;
+
+        button {
+            height: 35px;
+            background-color: $grey-dark;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0;
+            padding: 10px 15px;
+            text-transform: uppercase;
+
+            &:hover {
+                background-color: $black;
+            }
+        }
+    }
+
+    .cancel-reason-inputs {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+        padding: 0;
+
+        > p {
+            width: 100%;
+            text-align: left;
+        }
+
+        @media screen and (max-width: $break-small) {
+            .input-wrapper {
+                width: 100%;
+            }
+        }
+
+        @include media(small) {
+            flex-direction: row;
+        }
+
+        .input-wrapper {
+            margin-top: 5px;
+
+            @include media(small) {
+                margin-top: 0;
+            }
+        }
+
+        .input-wrapper:nth-child(1) {
+            @include media(small) {
+                width: 40%;
+            }
+        }
+
+        .input-wrapper:nth-child(2) {
+            @include media(small) {
+                width: 60%;
+            }
+        }
+
+        ::before {
+            width: 50px;
+
+            .ie11 & {
+                width: 50px;
+                height: 45px;
+            }
+        }
+
+        .max {
+            position: relative;
+            width: 100%;
+
+            @include media(small) {
+                max-width: 150px;
+            }
+
+            .input-wrapper {
+                width: 100%;
+            }
+
+            .asterisk {
+                position: absolute;
+                top: 1.5rem;
+                right: 0.5rem;
+                width: 14px;
+                display: flex;
+
+                @include media(small) {
+                    top: 0.5rem;
+                }
+
+                .fa {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    svg {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+        font-size: 1.8rem;
+        margin-left: 10px;
+        fill: $grey-dark;
+
+        &:hover {
+            fill: $black;
+        }
+    }
 }
 
 .trip-list-ride-item.pending-cancel {
-  position: relative;
-  .cancel-block {
-    .ie11 &{
-      margin-top: -30px;
-    }
-    &.trip-list {
-      padding: 0 2rem;
-      p {
-        text-align: center;
-        @include media(small) {
-          text-align: left;
+    position: relative;
+
+    .cancel-block {
+        .ie11 & {
+            margin-top: -30px;
         }
-      }
-      .cancel-reason-inputs button {
-        height: 44px;
-        margin-top: 5px;
-        @include media(small) {
-          margin-top: 0;
-          border-top-left-radius: 0;
-          border-bottom-left-radius: 0;
+
+        &.trip-list {
+            padding: 0 2rem;
+
+            p {
+                text-align: center;
+
+                @include media(small) {
+                    text-align: left;
+                }
+            }
+
+            .cancel-reason-inputs button {
+                height: 44px;
+                margin-top: 5px;
+
+                @include media(small) {
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                    margin-top: 0;
+                }
+            }
+
+            svg {
+                top: -1rem;
+                right: 1rem;
+            }
         }
-      }
-      svg {
-        top: -1rem;
-        right: 1rem;
-      }
     }
-  }
 }
 
 .rides-list-ride-item.pending-cancel {
-  cursor: default;
-  border-bottom: 0;
+    border-bottom: 0;
+    cursor: default;
 }
 
 div.cancel-block {
-  width: 100%;
-  padding: 20px;
-  position: relative;
-  background-color: #eaeaea;
-  p {
-    color: $greyish-brown;
-    text-align: center;
-    margin-bottom: 10px;
-    @include media(small) {
-      text-align: left;
-      width: 100%;
-    }
-  }
+    position: relative;
+    width: 100%;
+    background-color: #eaeaea;
+    padding: 20px;
 
-  &.no-reason p {
-    text-align: center;
-  }
+    p {
+        color: $greyish-brown;
+        margin-bottom: 10px;
+        text-align: center;
 
-  .fa-question-circle {
-    color: $grey;
-    font-size: 1.3rem;
-  }
+        @include media(small) {
+            width: 100%;
+            text-align: left;
+        }
+    }
 
-  .more-info {
-    text-align: left;
-    color: $grey;
-    font-size: 1.2rem;
-    margin: 0.5rem 0;
-    @include media(small) {
-      margin-bottom: 0;
+    &.no-reason p {
+        text-align: center;
     }
-    .fa {
-      margin-right: 0.5rem;
-    }
-  }
 
-  button.btn-small {
-    height: 32px;
-    min-width: 100%;
-    margin-top: 5px;
-    @include media(small) {
-      min-width: 80px;
-      height: 32px;
-      margin: 1px;
+    .fa-question-circle {
+        color: $grey;
+        font-size: 1.3rem;
     }
-  }
 
-  // for only a yes-no button
-  &.no-reason {
-    @include flex-column;
-    .button-wrapper {
-      width: auto;
-      min-height: 0;
-      flex-direction: column;
-      @include media(small) {
-        flex-direction: row;
-      }
+    .more-info {
+        color: $grey;
+        font-size: 1.2rem;
+        margin: 0.5rem 0;
+        text-align: left;
+
+        @include media(small) {
+            margin-bottom: 0;
+        }
+
+        .fa {
+            margin-right: 0.5rem;
+        }
     }
+
     button.btn-small {
-      border-radius: 3px;
-      min-width: 123px;
-      width: auto;
-      height: 35px;
-      background-color: $greyish-brown;
-      margin-top: 10px;
-      @include media(small) {
+        min-width: 100%;
+        height: 32px;
         margin-top: 5px;
-        &:first-of-type {
-          margin-right: 20px;
-        }
-      }
-      &:hover {
-        background-color: $black;
-      }
-      &.error {
-        background-color: $error-color;
-        &:hover {
-          background-color: darken($error-color, 5%);
-        }
-      }
-      &.blueberry {
-        background-color: $blueberry;
-        &:hover {
-          background-color: darken($blueberry, 5%);
-        }
-      }
-    }
-  }
 
-  &.reassign {
-    .input-wrapper {
-      width: calc(100% - 130px);
-      display: inline-block;
-      vertical-align: top;
+        @include media(small) {
+            min-width: 80px;
+            height: 32px;
+            margin: 1px;
+        }
     }
-    button {
-      height: 34px;
-      padding: 0;
-      width: 120px;
-      margin-left: 10px;
+
+    // for only a yes-no button
+    &.no-reason {
+        @include flex-column;
+
+        .button-wrapper {
+            width: auto;
+            min-height: 0;
+            flex-direction: column;
+
+            @include media(small) {
+                flex-direction: row;
+            }
+        }
+
+        button.btn-small {
+            width: auto;
+            min-width: 123px;
+            height: 35px;
+            background-color: $greyish-brown;
+            border-radius: 3px;
+            margin-top: 10px;
+
+            @include media(small) {
+                margin-top: 5px;
+
+                &:first-of-type {
+                    margin-right: 20px;
+                }
+            }
+
+            &:hover {
+                background-color: $black;
+            }
+
+            &.error {
+                background-color: $error-color;
+
+                &:hover {
+                    background-color: darken($error-color, 5%);
+                }
+            }
+
+            &.blueberry {
+                background-color: $blueberry;
+
+                &:hover {
+                    background-color: darken($blueberry, 5%);
+                }
+            }
+        }
     }
-  }
+
+    &.reassign {
+        .input-wrapper {
+            width: calc(100% - 130px);
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        button {
+            width: 120px;
+            height: 34px;
+            margin-left: 10px;
+            padding: 0;
+        }
+    }
 }
 
 // for modal
 .modal-dialog .cancel-block {
-  text-align: center;
+    text-align: center;
 }

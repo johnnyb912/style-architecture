@@ -68,6 +68,7 @@ body {
     height: 100%;
     display: flex;
     flex-wrap: wrap;
+
     &.align-center {
         align-items: center;
     }
@@ -75,16 +76,20 @@ body {
 
 .flex {
     display: flex;
+
     &.between {
         justify-content: space-between;
     }
+
     &.center {
         align-items: center;
         justify-content: center;
     }
+
     &.center-align {
         align-items: center;
     }
+
     &.flex-grow {
         > div {
             flex-grow: 1;
@@ -94,6 +99,7 @@ body {
 
 .flex-between {
     @include flex-between();
+
     &.baseline {
         align-items: baseline;
     }
@@ -102,7 +108,6 @@ body {
 .flex-column {
     flex-direction: column;
 }
-
 
 .map-container {
     width: 800px;
@@ -163,6 +168,7 @@ $content-wrapper-width-xlarge: calc(80% + 75px);
             padding-left: 75px;
         }
     }
+
     &.ride-list-mobile {
         position: relative;
         width: 100%;
@@ -172,28 +178,34 @@ $content-wrapper-width-xlarge: calc(80% + 75px);
             padding-top: 0;
         }
     }
+
     &.no-max-width {
         max-width: none;
     }
+
     .phone-field {
         position: relative;
         width: 100%;
+
         .phone {
             width: calc(75% - 14px);
             display: inline-block;
             margin-right: 14px;
         }
+
         .ext {
             width: 25%;
             display: inline-block;
             white-space: nowrap;
         }
+
         .phone-icon-wrapper {
             position: absolute;
             top: 4px;
             right: 4px;
             width: 26px;
             height: 26px;
+
             svg {
                 width: 100%;
                 fill: $blueberry;
@@ -271,6 +283,7 @@ section {
     @include media(small) {
         margin-top: 20px;
     }
+
     &.remove-margin {
         margin-top: 0;
     }
@@ -279,6 +292,7 @@ section {
 .page-container {
     width: 100%;
     display: inline-block;
+
     .page-section {
         background-color: $white;
         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
@@ -287,13 +301,16 @@ section {
             &.one-third {
                 width: 30%;
             }
+
             &.two-thirds {
                 width: calc(70% - 20px);
             }
         }
+
         &.left {
             float: left;
         }
+
         &.right {
             float: right;
         }
@@ -303,8 +320,10 @@ section {
 .verify-page {
     .rider-consent-page {
         a { word-wrap: break-word; }
+
         .upload-file {
             margin: 0;
+
             input,
             label,
             a { display: none; }

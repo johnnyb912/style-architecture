@@ -1,263 +1,318 @@
 .print-only {
-  display: none;
+    display: none;
 }
 
 @media print {
-  .app-container, #root, .content-wrapper  {
-    height: 99% !important;
-    border: 1px solid rgba(255, 255, 255, 0); // HACK: Adding border prevents printing an extra page
-  }
-  header,
-  footer,
-  .message-holder,
-  .vertical-nav,
-  .no-print,
-  button,
-  .gmnoprint, // hide google map non-printable elements
-  .gm-style-cc, // hides 'Report a map error' on google map
-  .page-section-rider-at-glance {
-    display: none !important;
-  }
-  .content-wrapper {
-    padding: 0 !important;
-    max-width: inherit;
-    width: 100% !important;
-  }
-  body {
-    margin: 0 !important;
-    background-color: $white;
-    -webkit-print-color-adjust: exact; // forces background colors to render in print
-  }
-  .print-only {
-    display: block;
-    &.flex-between, &.flex {
-      display: flex;
+    .app-container, #root, .content-wrapper {
+        height: 99% !important;
+        border: 1px solid rgba(255, 255, 255, 0); // HACK: Adding border prevents printing an extra page
     }
-  }
-  .pulse {
-    animation: none;
-  }
 
-  .form-block-trip-map-wrapper {
-    min-height: 270px !important;
-    height: 270px !important;
-    position: relative;
-    overflow: hidden;
-    max-width: 400px !important;
-    .map-wrapper {
-      position: relative;
-      overflow: visible !important;
-      display: inline-block;
-      right: calc(110% - 300px);
-      &.adjust-print-small {
-        right: calc(88% - 300px);
-        &.live-map {
-          right: calc(20% - 250px);
-        }
-      }
-      &.adjust-print-large {
-        right: calc(25% - 250px);
-      }
-      .map-canvas {
-        overflow: visible !important;
-      }
+    header,
+    footer,
+    .message-holder,
+    .vertical-nav,
+    .no-print,
+    button,
+    .gmnoprint,
+    .gm-style-cc,
+    .page-section-rider-at-glance {
+        display: none !important;
     }
-  }
 
-  // specific styles for printing trip overview page
-  .page-tripoverview {
-    .recurring-trip-info {
-      padding-top: 10px;
-      .ride-wrapper {
+    .content-wrapper {
+        width: 100% !important;
+        max-width: inherit;
+        padding: 0 !important;
+    }
+
+    body {
+        background-color: $white;
+        margin: 0 !important;
+        -webkit-print-color-adjust: exact; // forces background colors to render in print
+    }
+
+    .print-only {
         display: block;
+
+        &.flex-between, &.flex {
+            display: flex;
+        }
+    }
+
+    .pulse {
+        animation: none;
+    }
+
+    .form-block-trip-map-wrapper {
         position: relative;
-        h4, a {
-          column-span: all;
-          margin-bottom: 0;
-        }
-        a {
-          margin-bottom: 10px;
-        }
-        .simple-ride-list {
-          position: relative;
-          display: inline-block;
-          width: 100%;
-          padding-top: 10px;
-          column-count: 2;
-          column-fill: auto;
-          p {
-            display: block;
-            span {
-              display: inline-block;
-            }
-          }
-        }
-      }
-    }
-    .repeat-block {
-      border: 0;
-      padding: 0;
-      .xdsoft_datetimepicker {
-        display: none;
-      }
-      .time svg {
-        display: none;
-      }
+        max-width: 400px !important;
+        height: 270px !important;
+        min-height: 270px !important;
+        overflow: hidden;
 
-      h4 {
-        margin-bottom: 10px;
-        display: block;
-        text-transform: uppercase;
-        font-weight: bold;
-        letter-spacing: 1.3px;
-        font-size: 14px;
-        margin-bottom: 12px;
-        display: inline-block;
-      }
-      p {
-        margin-bottom: 0;
-        min-width: 40%;
-      }
-    }
-    .print-header {
-      margin-bottom: 20px;
-      img {
-        width: 100px;
-        height: auto;
-      }
-      .flex-column {
-        text-align: right;
-        h3, h2 {
-          margin: 0;
-          font-weight: 500;
+        .map-wrapper {
+            position: relative;
+            right: calc(110% - 300px);
+            display: inline-block;
+            overflow: visible !important;
+
+            &.adjust-print-small {
+                right: calc(88% - 300px);
+
+                &.live-map {
+                    right: calc(20% - 250px);
+                }
+            }
+
+            &.adjust-print-large {
+                right: calc(25% - 250px);
+            }
+
+            .map-canvas {
+                overflow: visible !important;
+            }
         }
-        h3 {
-          font-size: 20px;
-          color: #7D7D7D;
+    }
+
+    // specific styles for printing trip overview page
+    .page-tripoverview {
+        .recurring-trip-info {
+            padding-top: 10px;
+
+            .ride-wrapper {
+                position: relative;
+                display: block;
+
+                h4, a {
+                    column-span: all;
+                    margin-bottom: 0;
+                }
+
+                a {
+                    margin-bottom: 10px;
+                }
+
+                .simple-ride-list {
+                    position: relative;
+                    width: 100%;
+                    display: inline-block;
+                    column-fill: auto;
+                    column-count: 2;
+                    padding-top: 10px;
+
+                    p {
+                        display: block;
+
+                        span {
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
         }
-      }
-    }
-    margin-top: 15px;
-    .date {
-      background-color: $grey-white !important;
-      font-size: 20px;
-      font-weight: 500;
-      padding: 3px 10px;
-      margin: 0;
-      .recurring-trip {
-        color: $greyish-brown;
-        font-size: 15px;
-        text-transform: none;
-        letter-spacing: normal;
-        svg {
-          fill: $blueberry;
-          width: 15px;
-          height: 15px;
+
+        .repeat-block {
+            border: 0;
+            padding: 0;
+
+            .xdsoft_datetimepicker {
+                display: none;
+            }
+
+            .time svg {
+                display: none;
+            }
+
+            h4 {
+                display: block;
+                display: inline-block;
+                font-size: 14px;
+                font-weight: bold;
+                letter-spacing: 1.3px;
+                margin-bottom: 10px;
+                margin-bottom: 12px;
+                text-transform: uppercase;
+            }
+
+            p {
+                min-width: 40%;
+                margin-bottom: 0;
+            }
         }
-      }
-    }
-    .form-section {
-      box-shadow: none !important;
-      border-top: 0;
-      padding: 0;
-      margin-top: 0 !important;
-    }
-    .ride-summary-wrapper {
-      padding: 0;
-      margin: 0;
-      border: 0;
-      flex-wrap: nowrap !important;
-      border-bottom: 2px solid #B7B0D5;
-      padding: 20px 0;
-      &:nth-child(2) {
-        .date-time {
-          top: 20px;
+
+        .print-header {
+            margin-bottom: 20px;
+
+            img {
+                width: 100px;
+                height: auto;
+            }
+
+            .flex-column {
+                text-align: right;
+
+                h3, h2 {
+                    font-weight: 500;
+                    margin: 0;
+                }
+
+                h3 {
+                    color: #7d7d7d;
+                    font-size: 20px;
+                }
+            }
         }
-      }
-      &:last-of-type {
-        margin-bottom: 20px;
-      }
-      .header, .date-time {
-        display: inline-block;
-        margin-bottom: 0;
-        h3 {
-          margin: 0;
-          font-size: 16px;
-          font-weight: 500;
+        margin-top: 15px;
+
+        .date {
+            background-color: $grey-white !important;
+            font-size: 20px;
+            font-weight: 500;
+            margin: 0;
+            padding: 3px 10px;
+
+            .recurring-trip {
+                color: $greyish-brown;
+                font-size: 15px;
+                letter-spacing: normal;
+                text-transform: none;
+
+                svg {
+                    width: 15px;
+                    height: 15px;
+                    fill: $blueberry;
+                }
+            }
         }
-        .map-icon {
-          margin-left: 0;
+
+        .form-section {
+            border-top: 0;
+            box-shadow: none !important;
+            margin-top: 0 !important;
+            padding: 0;
         }
-      }
-      .date-time {
-        position: absolute;
-      }
-    }
-    .timeline-line {
-      left: 1.5rem !important;
-      margin: 0 !important;
-      &.dashed {
-        opacity: .5;
-      }
-    }
-    .timeline-line, .fa {
-      position: absolute;
-    }
-    .timeline {
-      margin-top: 15px;
-      .event > div {
-        margin-top: -5px;
-        margin-left: 50px;
-        .event-label {
-          margin-left: 0;
+
+        .ride-summary-wrapper {
+            border: 0;
+            border-bottom: 2px solid #b7b0d5;
+            flex-wrap: nowrap !important;
+            margin: 0;
+            padding: 0;
+            padding: 20px 0;
+
+            &:nth-child(2) {
+                .date-time {
+                    top: 20px;
+                }
+            }
+
+            &:last-of-type {
+                margin-bottom: 20px;
+            }
+
+            .header, .date-time {
+                display: inline-block;
+                margin-bottom: 0;
+
+                h3 {
+                    font-size: 16px;
+                    font-weight: 500;
+                    margin: 0;
+                }
+
+                .map-icon {
+                    margin-left: 0;
+                }
+            }
+
+            .date-time {
+                position: absolute;
+            }
         }
-      }
-    }
-    .fake-timeline ul {
-      margin: 0 !important;
-    }
-    .right-column {
-      padding: 0 !important;
-      margin: 0 !important;
-      min-height: 270px !important;
-    }
-    .event {
-      height: 80px;
-      .fa-circle, .fa-circle-o {
-        left: calc(1.5rem - 3.5px);
-        margin: 0;
-      }
-      .fa-circle-o {
-        opacity: .5;
-        left: calc(1.5rem - 5px);
-      }
-      > div {
-        margin-left: 20px;
-      }
-      > .time {
-        font-size: 20px;
-        margin-left: 35px;
-        margin-top: -8px;
-        width: inherit !important;
-        text-align: left;
-        color: $grey-warm;
-        p {
-          color: $grey-warm;
+
+        .timeline-line {
+            left: 1.5rem !important;
+            margin: 0 !important;
+
+            &.dashed {
+                opacity: 0.5;
+            }
         }
-        .ride-data-wrapper {
-          width: auto;
-          .sub-info {
-            font-size: 12px;
-            text-align: center;
-          }
+
+        .timeline-line, .fa {
+            position: absolute;
         }
-      }
-      .address-block {
-        margin: 0;
-        .fa {
-          display: none;
+
+        .timeline {
+            margin-top: 15px;
+
+            .event > div {
+                margin-top: -5px;
+                margin-left: 50px;
+
+                .event-label {
+                    margin-left: 0;
+                }
+            }
         }
-      }
+
+        .fake-timeline ul {
+            margin: 0 !important;
+        }
+
+        .right-column {
+            min-height: 270px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .event {
+            height: 80px;
+
+            .fa-circle, .fa-circle-o {
+                left: calc(1.5rem - 3.5px);
+                margin: 0;
+            }
+
+            .fa-circle-o {
+                left: calc(1.5rem - 5px);
+                opacity: 0.5;
+            }
+
+            > div {
+                margin-left: 20px;
+            }
+
+            > .time {
+                width: inherit !important;
+                color: $grey-warm;
+                font-size: 20px;
+                margin-top: -8px;
+                margin-left: 35px;
+                text-align: left;
+
+                p {
+                    color: $grey-warm;
+                }
+
+                .ride-data-wrapper {
+                    width: auto;
+
+                    .sub-info {
+                        font-size: 12px;
+                        text-align: center;
+                    }
+                }
+            }
+
+            .address-block {
+                margin: 0;
+
+                .fa {
+                    display: none;
+                }
+            }
+        }
     }
-  }
 }

@@ -1,273 +1,328 @@
 .table-dropdown,
 .expandable-toggles {
-  .expanded .input-wrapper {
-    input[type='text'] {
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-      border-color: $blueberry;
-      border-bottom-color: $faded-blue;
-      padding-right: 25px;
-      td &{
-        border-color: transparent;
-      }
-    }
-  }
+    .expanded .input-wrapper {
+        input[type="text"] {
+            border-color: $blueberry;
+            border-bottom-color: $faded-blue;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            padding-right: 25px;
 
-  .fa-navicon, .fa-angle-right, .fa-angle-down {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    align-items: center;
-    display: flex;
-    color: $grey-warm-darker;
-    cursor: pointer;
-    padding: 1rem;
-    font-size: 22px;
-    transition: all .2s ease;
-  }
-  .dropdown-options {
-    transition: .2s $sweetEasing max-height;
-    margin-left: 1px;
-    margin-top: -1px;
-    overflow-y: scroll;
-    max-height: 365px;
-    > .input-wrapper {
-      border-top: 1px solid $grey-extra-light;
-      border-bottom: 1px solid $grey-extra-light;
-    }
-    label {
-      white-space: nowrap;
-    }
-   .options {
-     margin: 1rem 2rem;
-      label {
-        margin-left: 15px;
-      }
-    }
-    &.collapsed {
-      max-height: 0;
-      padding-top: 0;
-      padding-bottom: 0;
-      border: 0;
-      margin: 0;
-      overflow-y: hidden;
-      .toggle-section {
-        display: none;
-      }
-      .input-wrapper {
-        opacity: 0;
-      }
-    }
-    width: calc(100% - 2px);
-    left: 1px;
-    background-color: $white;
-    border: 1px solid $blueberry;
-    .locked & {
-      border-color: $cloudy-blue;
-    }
-    border-radius: 0 0 4px 4px;
-    border-top: 0;
-
-    //custom scrollbar styling
-    &::-webkit-scrollbar {
-      width: 6px;
-    }
-    &::-webkit-scrollbar-track {
-      -moz-appearance: scrollbartrack-vertical;
-      background: transparent;
-      border-radius: 4px;
-    }
-    &::-webkit-scrollbar-thumb {
-      border-radius: 3px;
-      background: $pinkish-grey;
-    }
-
-    > span {
-      margin: 5px 5px 0 5px;
-      display: block;
-      @include media(medium) {
-        width: 50%;
-        .admin-portal-table &{
-          width: 90%;
+            td & {
+                border-color: transparent;
+            }
         }
-      }
     }
-    .options:not(:first-of-type) {
-      .toggle-section {
-        margin-top: 15px;
-      }
+
+    .fa-navicon, .fa-angle-right, .fa-angle-down {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        color: $grey-warm-darker;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-size: 22px;
+        padding: 1rem;
+
+        transition: all 0.2s ease;
     }
-    .toggle-section {
-      padding-bottom: 6px;
-      width: 100%;
-      border-bottom: 1px solid #979797;
-      left: 8px;
-      font-size: 14px;
-      color: $grey-warm;
-      margin-bottom: 10px;
+
+    .dropdown-options {
+        left: 1px;
+        width: calc(100% - 2px);
+        max-height: 365px;
+        background-color: $white;
+        border: 1px solid $blueberry;
+        border-top: 0;
+        border-radius: 0 0 4px 4px;
+        margin-top: -1px;
+        margin-left: 1px;
+        overflow-y: scroll;
+
+        transition: 0.2s $sweetEasing max-height;
+
+        > .input-wrapper {
+            border-top: 1px solid $grey-extra-light;
+            border-bottom: 1px solid $grey-extra-light;
+        }
+
+        label {
+            white-space: nowrap;
+        }
+
+        .options {
+            margin: 1rem 2rem;
+
+            label {
+                margin-left: 15px;
+            }
+        }
+
+        &.collapsed {
+            max-height: 0;
+            border: 0;
+            margin: 0;
+            overflow-y: hidden;
+            padding-top: 0;
+            padding-bottom: 0;
+
+            .toggle-section {
+                display: none;
+            }
+
+            .input-wrapper {
+                opacity: 0;
+            }
+        }
+
+        .locked & {
+            border-color: $cloudy-blue;
+        }
+
+        //custom scrollbar styling
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        &::-webkit-scrollbar-track {
+            -moz-appearance: scrollbartrack-vertical;
+            background: transparent;
+            border-radius: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $pinkish-grey;
+            border-radius: 3px;
+        }
+
+        > span {
+            display: block;
+            margin: 5px 5px 0;
+
+            @include media(medium) {
+                width: 50%;
+
+                .admin-portal-table & {
+                    width: 90%;
+                }
+            }
+        }
+
+        .options:not(:first-of-type) {
+            .toggle-section {
+                margin-top: 15px;
+            }
+        }
+
+        .toggle-section {
+            left: 8px;
+            width: 100%;
+            border-bottom: 1px solid #979797;
+            color: $grey-warm;
+            font-size: 14px;
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+        }
+
+        .checkbox-wrapper {
+            width: 100%;
+            margin-top: 5px !important;
+        }
+
+        &.styled {
+            border: 1px solid $faded-blue;
+
+            input {
+                border: none;
+            }
+        }
     }
-    .checkbox-wrapper {
-      width: 100%;
-      margin-top: 5px !important;
+
+    .footer {
+        position: absolute;
+        top: 7px;
+        right: 30px;
+
+        @media screen and (max-width: $break-small) {
+            top: -23px;
+            right: 0;
+        }
     }
-    &.styled {
-      border: 1px solid $faded-blue;
-      input {
-        border: none;
-      }
+
+    .footnote {
+        position: relative;
+        bottom: 0;
+        font-size: 12px;
     }
-  }
-  .footer {
-    position: absolute;
-    top: 7px;
-    right: 30px;
-    @media screen and (max-width: $break-small) {
-      top: -23px;
-      right: 0;
+
+    input::placeholder {
+        color: $grey;
     }
-  }
-  .footnote {
-    position: relative;
-    bottom: 0;
-    font-size: 12px;
-  }
-  input::placeholder {
-    color: $grey;
-  }
-  .select-all {
-    font-size: 12px;
-    font-weight: 500;
-    color: $greyish-brown;
-    cursor: pointer;
-    &:hover {
-      color: $grey-warm;
+
+    .select-all {
+        color: $greyish-brown;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 500;
+
+        &:hover {
+            color: $grey-warm;
+        }
     }
-  }
-  .fa-caret-down {
-    right: 15px;
-    top: 10px;
-    color: $greyish-brown;
-  }
+
+    .fa-caret-down {
+        top: 10px;
+        right: 15px;
+        color: $greyish-brown;
+    }
 }
 
 .table-dropdown.drop-down-style, .expandable-toggles.drop-down-style {
-  @include nice-easing-animation;
-  .footer {
-    top: 42px;
-    right: 20px;
-    color: $greyish-brown;
-    z-index: 6;
-    @media screen and (max-width: $break-small) {
-      top: -20px;
-      right: 0;
-    }
-  }
-  .input-wrapper > input[type='text'] {
-    border-color: $faded-blue;
-    &:hover {
-      border-color: $faded-blue-hover;
-    }
-  }
-  &.locked {
-    opacity: .5;
-    .input-wrapper {
-      pointer-events: none;
-    }
-    .fa {
-      display: none;
-    }
-  }
-  .dropdown-options {
-    padding: 0;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    position: absolute;
-    z-index: 6;
-    left: 0;
-    overflow-y: hidden;
-    display: none;
-    > .input-wrapper {
-      border: 0;
-      input, input:hover {
-        border-radius: 0;
-        border-left: 0;
-        border-right: 0;
-      }
-    }
-    &.collapsed {
-      opacity: 0;
-    }
-    .options {
-      flex-wrap: nowrap;
-      padding: 5px;
-      .checkbox-wrapper {
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        &.no-text-overflow {
-          text-overflow: unset;
-          overflow: unset;
+    @include nice-easing-animation;
+
+    .footer {
+        top: 42px;
+        right: 20px;
+        z-index: 6;
+        color: $greyish-brown;
+
+        @media screen and (max-width: $break-small) {
+            top: -20px;
+            right: 0;
         }
-      }
-      .option {
-        padding: 0.5rem 1rem;
-        font-size: 14px;
-        font-weight: 500;
-        cursor: pointer;
-        color: #4c4c4c;
-        &.disabled {
-          color: #999999;
-          cursor: not-allowed;
-        }
-      }
-      .option:hover {
-        background-color: $white-dark;
-      }
-      @include media(medium) {
-        flex-direction: column;
-        flex-wrap: nowrap;
-        .checkbox-wrapper {
-          width: 100%;
-        }
-      }
-      .selected {
-        background-color: #c9c9fb;
-      }
     }
-  }
-  .expanded {
-    max-height: 200px;
-    + .dropdown-options {
-      border: 1px solid $blueberry;
-      border-top: 0;
-      display: block;
-      overflow-y: scroll;
+
+    .input-wrapper > input[type="text"] {
+        border-color: $faded-blue;
+
+        &:hover {
+            border-color: $faded-blue-hover;
+        }
     }
-  }
-  div.options {
-    display: block;
-    padding: 10px;
-    max-height: calc(365px - 32px);
-    overflow-y: scroll;
-  }
-  &.has-footnote {
+
+    &.locked {
+        opacity: 0.5;
+
+        .input-wrapper {
+            pointer-events: none;
+        }
+
+        .fa {
+            display: none;
+        }
+    }
+
     .dropdown-options {
-      max-height: calc(365px + 43px); // footer is 43px tall
+        position: absolute;
+        left: 0;
+        z-index: 6;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+        display: none;
+        overflow-y: hidden;
+        padding: 0;
+
+        > .input-wrapper {
+            border: 0;
+
+            input, input:hover {
+                border-right: 0;
+                border-left: 0;
+                border-radius: 0;
+            }
+        }
+
+        &.collapsed {
+            opacity: 0;
+        }
+
+        .options {
+            flex-wrap: nowrap;
+            padding: 5px;
+
+            .checkbox-wrapper {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+
+                &.no-text-overflow {
+                    overflow: unset;
+                    text-overflow: unset;
+                }
+            }
+
+            .option {
+                color: #4c4c4c;
+                cursor: pointer;
+                font-size: 14px;
+                font-weight: 500;
+                padding: 0.5rem 1rem;
+
+                &.disabled {
+                    color: #999;
+                    cursor: not-allowed;
+                }
+            }
+
+            .option:hover {
+                background-color: $white-dark;
+            }
+
+            @include media(medium) {
+                flex-direction: column;
+                flex-wrap: nowrap;
+
+                .checkbox-wrapper {
+                    width: 100%;
+                }
+            }
+
+            .selected {
+                background-color: #c9c9fb;
+            }
+        }
     }
-    .footnote {
-      padding: 6px 10px;
-      border-top: $base-border;
-      background-color: $white-dark;
-      color: $greyish-brown;
-      margin: 0;
+
+    .expanded {
+        max-height: 200px;
+
+        + .dropdown-options {
+            border: 1px solid $blueberry;
+            border-top: 0;
+            display: block;
+            overflow-y: scroll;
+        }
     }
-  }
-  .hide-icon input[type='text'] {
-    color: $greyish-brown;
-    cursor: pointer;
-    &:hover {
-      border-color: $faded-blue-hover;
+
+    div.options {
+        max-height: calc(365px - 32px);
+        display: block;
+        overflow-y: scroll;
+        padding: 10px;
     }
-  }
+
+    &.has-footnote {
+        .dropdown-options {
+            max-height: calc(365px + 43px); // footer is 43px tall
+        }
+
+        .footnote {
+            background-color: $white-dark;
+            border-top: $base-border;
+            color: $greyish-brown;
+            margin: 0;
+            padding: 6px 10px;
+        }
+    }
+
+    .hide-icon input[type="text"] {
+        color: $greyish-brown;
+        cursor: pointer;
+
+        &:hover {
+            border-color: $faded-blue-hover;
+        }
+    }
 }

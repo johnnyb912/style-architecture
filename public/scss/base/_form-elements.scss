@@ -26,7 +26,9 @@ select {
     outline: none;
     padding: 10px;
     padding-left: 64px;
+
     &::-ms-clear { width: 0; height: 0; display: none; }
+
     &.error {
         border: 3px solid $error-color;
     }
@@ -56,9 +58,11 @@ select {
         color: $black;
         font-size: 14px;
         font-weight: 500;
+
         &:focus {
             border-color: $blueberry;
         }
+
         &::placeholder {
             color: $grey-medium-light;
         }
@@ -99,8 +103,8 @@ input,
     &:disabled + label .icon-form svg {
         fill: $grey-very-light;
     }
-    .tight & {
 
+    .tight & {
         & + label .icon-form {
             transform: translate3d(-55px, 3px, 0);
         }
@@ -117,6 +121,7 @@ input[type="phone"],
 input[type="email"],
 input[type="password"] {
     text-overflow: ellipsis;
+
     + label {
         height: 45px;
         display: flex;
@@ -251,6 +256,7 @@ select {
 
     &:disabled + .select-label {
         color: $grey-very-light;
+
         .select-icon svg {
             fill: $grey-very-light;
         }
@@ -321,6 +327,7 @@ textarea {
 
 .checkbox-wrapper {
     overflow: visible;
+
     &.small {
         width: 270px;
         margin-top: 10px;
@@ -334,6 +341,7 @@ textarea {
     width: 100%;
     height: 100%;
     margin: 0 auto;
+
     .tooltip-text {
         position: absolute;
         bottom: 100%;
@@ -343,21 +351,25 @@ textarea {
         white-space: normal;
 
         transition: 0.3s ease all;
+
         &::after {
             content: none;
         }
     }
+
     .tooltip-arrow {
         bottom: calc(127%);
         left: calc(50% - 8px);
         z-index: 5;
     }
+
     &:hover {
         .lock-tooltip-wrapper,
         .tooltip-arrow {
             opacity: 1;
             visibility: visible;
         }
+
         .tooltip-text {
             bottom: calc(100% + 16px);
         }
@@ -370,6 +382,7 @@ textarea {
     background-color: $white;
     border-radius: 5px;
     padding: 5px 10px;
+
     span {
         position: relative;
         z-index: 6;
@@ -393,6 +406,7 @@ textarea {
 
             transition: 0.3s ease all;
         }
+
         .lock-tooltip-wrapper {
             bottom: 36px;
         }
@@ -416,6 +430,7 @@ textarea {
     top: 5px;
     left: -18px;
     z-index: 3;
+
     .lock-tooltip-wrapper {
         position: absolute;
         bottom: 24px;
@@ -430,6 +445,7 @@ textarea {
             left: -15px;
         }
     }
+
     .lock-tooltip {
         position: relative;
 
@@ -437,17 +453,21 @@ textarea {
             white-space: nowrap;
         }
     }
+
     .tooltip-arrow {
         top: -22px;
         left: 2px;
     }
+
     .input-lock {
         width: 18px;
         height: 18px;
+
         svg {
             fill: $grey;
         }
     }
+
     .lock-tooltip-wrapper,
     .tooltip-arrow {
         opacity: 0;
@@ -466,6 +486,7 @@ textarea {
     white-space: nowrap;
 
     transition: 0.2s ease all;
+
     .symbol-wrapper {
         position: relative;
         width: 10px;
@@ -475,59 +496,72 @@ textarea {
         pointer-events: none;
         vertical-align: middle;
     }
+
     .empty-box {
         width: 100%;
         height: 100%;
         border: 1px solid $faded-blue;
         border-radius: 1px;
     }
+
     .checkbox-check {
         position: absolute;
         top: -1px;
         width: 12px;
         max-height: 12px;
+
         svg.icon-check {
             stroke: $white;
         }
     }
+
     .checkbox-label {
         font-size: 1.3rem;
         font-weight: 500;
         pointer-events: none;
         vertical-align: middle;
     }
+
     &:hover {
         background-color: $white;
         border: 1px solid $faded-blue-hover;
         cursor: pointer;
     }
+
     &.checked {
         background-color: $iris;
         border: 1px solid $iris;
         color: white;
+
         svg {
             fill: $white;
         }
+
         &.disabled {
             background-color: $faded-blue-hover;
             color: $white;
+
             &:hover {
                 background-color: $faded-blue-hover;
             }
         }
+
         &:hover {
             background-color: $blueberry;
         }
     }
+
     &.disabled {
         background-color: $white-medium-dark;
         border-color: $titan-white;
         color: $grey;
         cursor: auto;
         pointer-events: none;
+
         .empty-box {
             border-color: $titan-white;
         }
+
         &:hover {
             cursor: normal;
         }
@@ -577,12 +611,15 @@ input.check-toggle {
         background-color: rgba($pinkish-grey, 0.7);
         color: $grey;
         pointer-events: none;
+
         .checkbox-wrapper & {
             animation: none;
         }
+
         + label.check-toggle-label {
             color: $grey-very-light;
         }
+
         &::before {
             background-color: $pinkish-grey;
         }
@@ -655,9 +692,11 @@ label.check-toggle-label {
         span {
             opacity: 0;
             visibility: hidden;
+
             &.show {
                 opacity: 1;
                 visibility: visible;
+
                 .fa-lock {
                     margin-left: 1rem;
                 }
@@ -713,12 +752,15 @@ input.styled-radio {
 
         &::after {
             background: $bright-green;
+
             transform: scale(0.63) translateY(-21px);
+
             .ie11 & {
                 padding: 5px 15px;
 
                 -ms-transform-origin: 47% -44%; // THIS IS FOR IE ONLY. Don't remove prefix
             }
+
             .firefox & {
                 transform: scale(0.63) translateY(-19px);
             }
@@ -727,6 +769,7 @@ input.styled-radio {
         &.disabled {
             border-color: $grey-warm-darker;
             cursor: default;
+
             &::after {
                 background: $grey-warm-darker;
             }
@@ -741,7 +784,7 @@ label.styled-radio-label {
     position: relative;
     width: $checkbox-size;
     height: $checkbox-size;
-    border: ($checkbox-size / 10) solid #7A7A7A;
+    border: ($checkbox-size / 10) solid #7a7a7a;
     border-radius: 50%;
     color: $grey;
     cursor: pointer;
@@ -754,6 +797,7 @@ label.styled-radio-label {
     padding: 0;
 
     transition: 0.2s;
+
     &.disabled {
         border-color: $grey-warm-darker;
         cursor: default;
@@ -773,6 +817,7 @@ label.styled-radio-label {
         font-size: 10px;
         text-align: center;
         text-transform: uppercase;
+
         .ie11 & {
             top: -35px;
         }
@@ -805,6 +850,7 @@ label.styled-radio-label {
     h3 {
         margin-bottom: 20px;
     }
+
     .datetime-radio-wrapper {
         display: flex;
     }
@@ -812,48 +858,59 @@ label.styled-radio-label {
 
 .input-wrapper.mini {
     margin-top: 0;
+
     input {
         padding: 4px;
         padding-left: 35px;
+
         &.filled + label .icon-form,
         &:focus + label .icon-form {
             transform: translate3d(0, 0, 0);
         }
+
         &:focus + label .label-content {
             transform: translate3d(100px, 0, 0);
         }
     }
+
     label {
         height: 100%;
         display: flex;
         align-items: center;
         padding: 0 0.5rem;
+
         &::before {
             width: 30px;
             height: 100%;
         }
+
         .label-content {
             font-size: 80%;
 
             transform: translate3d(15px, 0, 0);
         }
+
         .icon-form {
             display: flex;
+
             svg {
                 width: 20px;
                 height: 20px;
             }
         }
     }
+
     &.hide-icon {
         input {
             padding-left: 10px;
         }
+
         label {
             &::before {
                 content: none;
             }
         }
+
         .icon-form {
             svg {
                 display: none;
@@ -865,12 +922,15 @@ label.styled-radio-label {
 .subsection-header,
 .benefit-plan-form {
     width: 100%;
+
     .ride-title {
         display: inline-block;
     }
+
     .pulled-right {
         float: right;
     }
+
     .delete-button {
         cursor: pointer;
         display: flex;
@@ -878,6 +938,7 @@ label.styled-radio-label {
         justify-content: flex-end;
 
         transform: translateX(0);
+
         p.delete {
             color: $brand-purple;
             display: inline-block;
@@ -886,24 +947,30 @@ label.styled-radio-label {
             margin-bottom: 0;
             vertical-align: middle;
         }
+
         svg {
             width: 15px;
             height: 15px;
             vertical-align: middle;
+
             svg.circle-x {
                 fill: $brand-purple;
             }
         }
+
         &:hover {
             p {
                 color: $brand-purple-dark;
             }
+
             svg.circle-x {
                 fill: $brand-purple-dark;
             }
         }
+
         &.loading {
             cursor: wait;
+
             svg {
                 fill: $grey;
             }
@@ -922,6 +989,7 @@ label.styled-radio-label {
 // New input styles
 .input-wrapper:not(.old-style) {
     text-overflow: ellipsis;
+
     label {
         height: 32px;
         color: $grey-medium-light;
@@ -932,11 +1000,13 @@ label.styled-radio-label {
         @include media(large) {
             font-size: 14px;
         }
+
         svg {
             width: 18px;
             height: 18px;
             fill: $grey-warm-darker;
         }
+
         .icon-form {
             width: 32px;
             border-right: 1px solid $grey-warm-darker;
@@ -947,6 +1017,7 @@ label.styled-radio-label {
 
             transform: none;
         }
+
         .label-content {
             color: $grey-medium-light;
             font-size: 14px;
@@ -955,20 +1026,24 @@ label.styled-radio-label {
 
             transform: none;
         }
+
         &::before {
             content: none;
         }
     }
+
     .select-label {
         width: 0;
         border-right: 0;
     }
+
     .select-arrow {
         @include triangle(9px, $greyish-brown, down);
         top: 45%;
         right: 15px;
         cursor: pointer;
     }
+
     select,
     input {
         height: 32px;
@@ -979,23 +1054,30 @@ label.styled-radio-label {
         font-size: 14px;
         font-weight: 500;
         padding: 0 0 0 40px;
+
         transition: all 0.2s ease;
+
         &:hover {
             border: 1px solid $faded-blue-hover;
         }
+
         &:focus {
             border: 1px solid $blueberry;
         }
+
         &:disabled {
             border-color: $cloudy-blue;
             color: $grey;
+
             &::placeholder {
                 color: $grey;
             }
         }
     }
+
     select {
         padding: 0 35px 0 10px;
+
         &.non-selected {
             color: $grey-medium-light;
         }
@@ -1005,37 +1087,47 @@ label.styled-radio-label {
         border: solid 1px $faded-blue;
         border-radius: 3px;
         margin-top: 0;
+
         &:hover {
             border: 1px solid $faded-blue-hover;
         }
+
         &.active {
             border: 1px solid $blueberry;
             border-radius: 3px;
         }
+
         .select-arrow {
             margin-top: 15px;
         }
+
         input {
             max-height: 34px;
             border: 0;
             padding: 0.1rem 30px 0.1rem 1rem; // allow room on the right for arrow
+
             &:disabled.override-disabled-style {
                 color: $greyish-brown;
             }
         }
     }
+
     &.hide-icon {
         .icon-form {
             width: 10px;
+
             svg {
                 display: none;
             }
         }
+
         .label-content {
             padding-left: 4px;
         }
+
         input {
             padding-left: 12px;
+
             &.arrow {
                 padding: 0 26px 0 12px;
             }
@@ -1056,14 +1148,17 @@ label.radio-label {
     padding: 0;
 
     transition: 0.2s;
+
     &.disabled {
         cursor: default;
+
         &::before {
             background-color: $white-medium-dark;
             border-color: $titan-white;
             color: $grey;
         }
     }
+
     &::before {
         @include nice-easing-animation();
         position: relative;
@@ -1090,24 +1185,30 @@ label.radio-label {
             min-width: 147px;
         }
     }
+
     &.icon-radio-label {
         width: 50px;
+
         &::before {
             border: 1px solid $iris;
         }
+
         &:hover {
             &::before {
                 border: 1px solid $iris;
             }
         }
+
         &.checked {
             &::before {
                 background-color: $iris;
             }
+
             svg {
                 fill: white;
             }
         }
+
         svg {
             position: absolute;
             width: 18px;
@@ -1116,45 +1217,56 @@ label.radio-label {
         }
     }
 }
+
 .datetime-radio-wrapper.new-style {
     display: flex;
+
     > div {
         margin-right: -1px;
+
         &:hover {
             z-index: 1;
         }
     }
+
     > div:first-of-type {
         label::before {
             border-top-left-radius: 4px;
             border-bottom-left-radius: 4px;
         }
     }
+
     > div:last-of-type {
         margin-right: 0;
+
         label::before {
             border-top-right-radius: 4px;
             border-bottom-right-radius: 4px;
         }
+
         input:checked + label.radio-label {
             &::before {
                 border-color: $iris;
             }
         }
     }
+
     input.new-style-radio {
         display: none;
+
         &:hover + label:not(.disabled)::before {
             border-color: $iris;
         }
 
         &:checked + label.radio-label {
             z-index: 2;
+
             &::before {
                 background-color: $iris;
                 border-color: $dark-iris;
                 color: $white;
             }
+
             &.disabled {
                 &::before {
                     background-color: $grey;
@@ -1179,6 +1291,7 @@ label.radio-label {
     width: 30px;
     height: 32px;
     pointer-events: none;
+
     svg {
         width: 20px;
         height: 18px;
@@ -1199,6 +1312,7 @@ label.radio-label {
     font-weight: 500;
     padding-right: 7px;
     white-space: nowrap;
+
     &::before {
         display: none;
     }
@@ -1219,39 +1333,48 @@ label.radio-label {
     overflow: hidden;
     padding: 5px;
     text-align: center;
+
     &:not(:last-of-type) {
         border-right: 0;
     }
+
     &:hover,
     &:focus {
         border-color: $iris;
     }
+
     svg {
         width: 16px;
         height: 16px;
         fill: $iris;
     }
+
     &.active {
         background-color: $iris;
         color: $white;
+
         svg {
             fill: $white;
         }
     }
+
     &:first-of-type {
         border-top-left-radius: 3px;
         border-bottom-left-radius: 3px;
     }
+
     &:last-of-type {
         border-top-right-radius: 3px;
         border-bottom-right-radius: 3px;
     }
+
     &.disabled {
         background-color: $grey;
         border-color: $grey;
         color: $white;
         cursor: not-allowed;
         opacity: 0.8;
+
         &:active {
             pointer-events: none;
         }
@@ -1266,18 +1389,22 @@ label.radio-label {
         font-weight: 500;
         margin: 20px 0 5px;
     }
+
     .input-lock-wrapper {
         top: -4px;
         left: -22px;
+
         &:hover .lock-tooltip-wrapper {
             bottom: 34px;
         }
+
         .edit-rider-wrapper & {
             .lock-tooltip-wrapper {
                 left: -7px;
             }
         }
     }
+
     &.pull-up {
         margin-top: -10px;
     }

@@ -1,22 +1,27 @@
 .avo {
-  button {
-    background-color: $avo-green;
-    &:hover,
-    &:focus {
-        background: $avo-green;
+    button {
+        background-color: $avo-green;
+
+        &:hover,
+        &:focus {
+            background: $avo-green;
+        }
     }
-  }
-  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-    color: $avo-dark-grey;
-  }
-  a {
-    color: $avo-dark-grey;
-    &:hover,
-    &:focus {
-      color: $black;
+
+    h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+        color: $avo-dark-grey;
     }
-  }
-  .bold {
-    color: $avo-dark-grey;
-  }
+
+    a {
+        color: $avo-dark-grey;
+
+        &:hover,
+        &:focus {
+            color: $black;
+        }
+    }
+
+    .bold {
+        color: $avo-dark-grey;
+    }
 }

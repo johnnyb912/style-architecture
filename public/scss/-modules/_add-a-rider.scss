@@ -34,6 +34,7 @@
 
         background-color: #979797;
         margin-left: -27px;
+
         transition: 1s $sweetEasing max-height;
 
         @include media(large) {
@@ -45,6 +46,7 @@
             width: 100%;
             height: 100%;
             background-color: $brand-purple;
+
             transform: scaleY(0);
             transform-origin: top center;
             transition: transform 1.3s;
@@ -126,8 +128,8 @@
     }
 
     .pulled-right {
-        text-align: right;
         float: right;
+        text-align: right;
 
         p {
             display: inline-block;
@@ -147,8 +149,8 @@
         svg.circle-x {
             width: 15px;
             height: 15px;
-            fill: $brand-purple;
             margin-top: 3px;
+            fill: $brand-purple;
         }
 
         &:hover {
@@ -200,7 +202,7 @@
         cursor: pointer;
         font-size: 1.3rem;
         font-weight: 500;
-        letter-spacing: .1rem;
+        letter-spacing: 0.1rem;
         margin-left: 10px;
         text-decoration: underline;
         text-transform: none;
@@ -257,11 +259,13 @@
             position: absolute;
             top: 12px;
             right: 4px;
+
             transform: rotate(90deg);
-            transition: all .2s ease;
+            transition: all 0.2s ease;
 
             &.collapsed {
                 right: 20px;
+
                 transform: rotate(0);
             }
         }
@@ -270,7 +274,8 @@
     .notification-div {
         height: unset;
         overflow: hidden;
-        transition: all .3s ease;
+
+        transition: all 0.3s ease;
 
         @include media(small) {
             min-height: 96px;
@@ -306,7 +311,7 @@
     }
 
     .rider-consent-wrapper .datetime-radio-wrapper {
-        height: unset
+        height: unset;
     }
 
     .form-wrapper .note-form,
@@ -366,7 +371,7 @@
 
     .dropdown-panel-container.add-rider {
         border: 0;
-        margin: 0 0 30px 0;
+        margin: 0 0 30px;
         padding: 0;
 
         & + .form-block-full {
@@ -431,8 +436,8 @@
             :not(.expandable-toggles) {
                 .checkbox-wrapper.input-wrapper {
                     width: 100%;
-                    margin-bottom: 10px;
                     margin-right: 60px;
+                    margin-bottom: 10px;
 
                     .ie11 & {
                         margin-right: 0;
@@ -529,10 +534,12 @@
                 bottom: 15px;
                 display: inline-block;
                 pointer-events: none;
-                transition: all .3s ease;
+
+                transition: all 0.3s ease;
 
                 &.expanded {
                     right: 20px;
+
                     transform: rotate(90deg);
                 }
             }
@@ -585,8 +592,8 @@
             }
 
             &.active {
-                display: flex;
                 background-color: transparent;
+                display: flex;
 
                 h2 {
                     color: $brand-purple;
@@ -615,6 +622,7 @@
         border-top: 2px solid $iris;
         padding: 10px 0;
     }
+
     .rider-form-prior-auth {
         .form-block {
             border-top: none;
@@ -681,20 +689,20 @@
             .ie11 & {
                 .radio-container-0 {
                     .datetime-radio-wrapper > div:first-of-type {
-                        label:before {
+                        label::before {
                             width: 140px;
                         }
                     }
 
                     .datetime-radio-wrapper > div:last-of-type {
-                        label:before {
+                        label::before {
                             width: 160px;
                         }
                     }
                 }
 
                 .radio-container-1 {
-                    label:before {
+                    label::before {
                         width: 115px;
 
                         @include media(small) {

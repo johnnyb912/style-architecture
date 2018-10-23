@@ -7,18 +7,23 @@
     clear: both;
     margin-top: 10px;
     overflow: hidden;
+
     .ie11 & {
         overflow: visible !important;
     }
+
     &.autopop {
         animation: 1.5s ease-out forwards indicate-autopop;
     }
+
     &.two-column-input-wrapper {
         min-width: 100px;
+
         .expiration-dates & {
             min-width: 50px;
         }
     }
+
     &.old-style {
         @include media(small) {
             margin-top: 10px;

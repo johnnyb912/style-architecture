@@ -1,974 +1,1198 @@
 .dispatch-actions {
-  min-width: 180px;
-  &:not(.header) {
-    color: $greyish-brown;
-    @include media(small) {
-      height: 100%;
-    }
-  }
-  > div {
-    width: 100%;
-    &.flex {
-      flex-grow: 1;
-      align-items: center;
-      padding: 10px;
-      @media screen and (max-width: $break-small) {
-        padding: 10px 0;
-      }
-      svg {
-        margin-right: 10px;
-      }
-    }
-  }
-  svg {
-    margin-right: 6px;
-  }
-  .error svg {
-    fill: $error-color;
-  }
-  .success svg {
-    fill: $success-color;
-  }
-  button {
-    width: 71px;
-    height: 32px;
-    padding: 0 5px;
-    font-size: 12px;
-    margin: 5px;
-    &.long-button {
-      width: 154px;
-    }
-    &.go-to-ride {
-      width: calc(100% - 20px);
-      margin: 10px;
-      transition: .01s ease margin;
-      &:active {
-        margin: 11px 9px 9px 11px;
-        box-shadow: none;
-      }
-    }
-  }
-  .ride-list-header &{
     min-width: 180px;
-  }
-  .timer {
-    border-top: $base-border;
-    padding: 12px 0 4px;
-    color: $greyish-brown;
-    min-height: 24px;
-    @include media(small) {
-      padding-top: 4px;
+
+    &:not(.header) {
+        color: $greyish-brown;
+
+        @include media(small) {
+            height: 100%;
+        }
     }
-    a {
-      text-decoration: underline;
-      color: $blueberry;
-      cursor: pointer;
-      &:hover {
-        color: darken($blueberry, 10%);
-      }
-      &:not(:first-of-type) {
-        margin-left: 15px;
-      }
+
+    > div {
+        width: 100%;
+
+        &.flex {
+            flex-grow: 1;
+            align-items: center;
+            padding: 10px;
+
+            @media screen and (max-width: $break-small) {
+                padding: 10px 0;
+            }
+
+            svg {
+                margin-right: 10px;
+            }
+        }
     }
-    &.dismiss {
-      padding: 3px 0 5px;
+
+    svg {
+        margin-right: 6px;
     }
-  }
+
+    .error svg {
+        fill: $error-color;
+    }
+
+    .success svg {
+        fill: $success-color;
+    }
+
+    button {
+        width: 71px;
+        height: 32px;
+        font-size: 12px;
+        margin: 5px;
+        padding: 0 5px;
+
+        &.long-button {
+            width: 154px;
+        }
+
+        &.go-to-ride {
+            width: calc(100% - 20px);
+            margin: 10px;
+
+            transition: 0.01s ease margin;
+
+            &:active {
+                box-shadow: none;
+                margin: 11px 9px 9px 11px;
+            }
+        }
+    }
+
+    .ride-list-header & {
+        min-width: 180px;
+    }
+
+    .timer {
+        min-height: 24px;
+        border-top: $base-border;
+        color: $greyish-brown;
+        padding: 12px 0 4px;
+
+        @include media(small) {
+            padding-top: 4px;
+        }
+
+        a {
+            color: $blueberry;
+            cursor: pointer;
+            text-decoration: underline;
+
+            &:hover {
+                color: darken($blueberry, 10%);
+            }
+
+            &:not(:first-of-type) {
+                margin-left: 15px;
+            }
+        }
+
+        &.dismiss {
+            padding: 3px 0 5px;
+        }
+    }
 }
 
 .dispatch-queue {
-  position: relative;
-  color: $grey-warm;
-  &.warning-list-wrapper {
-    .rides-list:last-of-type .rides-list-ride-item {
-      border-bottom: 0;
-    }
-  }
-  @include nice-easing-animation;
-  @media screen and (max-width: $break-small) {
-    margin-top: 55px;
-  }
-  @media screen and (max-width: $break-mobile) {
-    margin-top: 60px;
-  }
-  &.warning-list-wrapper {
-    @media screen and (max-width: $break-small) {
-      margin-top: 44px;
-    }
-  }
-  .ride-info {
-    overflow: hidden;
-  }
-  .list-header {
-    border-bottom: 0;
-    height: 50px;
-    margin-bottom: 20px;
-    @media screen and (max-width: $break-small) {
-      margin-bottom: 10px;
-    }
-    .mode-links h4 {
-      font-size: 14px;
-      font-weight: 500;
-      color: $greyish-brown;
-    }
-    .selected h4 {
-      font-weight: bold;
-    }
-  }
-  @media screen and (max-width: $break-medium) {
-    .all-rides-filter {
-      text-align: center;
-    }
-  }
-  .filter-wrapper {
-    @media screen and (max-width: $break-small) {
-      margin: 10px 0;
-      .all-rides-filter {
-        text-align: left;
-        padding-left: 10px;
-      }
-      .filters-wrapper-wrapper:first-of-type {
-        margin-bottom: 10px;
-        border: 0 !important;
-      }
-      .filters-wrapper-wrapper {
-        margin-right: 0;
-      }
-    }
-    @include media(medium) {
-      padding-left: 29px;
-    }
-    margin: 20px 0;
-    .filters-wrapper-wrapper:nth-child(2) {
-      border-right: 0 !important;
-    }
-    .filter-label {
-      display: inline;
-      @media screen and (max-width: $break-medium) {
-        display: none;
-      }
-    }
-    .filters-wrapper-wrapper.just-past {
-      .filter-label {
-        display: none;
-      }
-    }
-  }
-  .filter-label {
-    font-size: 14px;
-  }
-  @include media(small) {
-    @media screen and (max-width: $break-medium) {
-      .pill .tooltip-text {
-        margin-left: -60px;
-      }
-    }
-  }
-  .filter-pill {
-    background-color: $white;
-  }
-  .trip-list-ride-item {
-    max-height: 450px;
-    &.show-actions-block {
-      max-height: 200px;
-    }
-    &.show-details {
-      max-height: 900px;
-      overflow: hidden;
-      .rides-list-ride-item {
-        background-color: $faded-purple;
-      }
-      p, span:not(.bold-span) {
-        color: $greyish-brown;
-      }
-      .progress-bar-background {
-        border-color: $grey;
-        .dot {
-          background-color: $grey;
-        }
-      }
-    }
-    @include media(small) {
-      height: auto;
-      max-height: 80px;
-      &.show-details {
-        max-height: 500px;
-        height: auto;
-        @include media(medium) {
-          max-height: 335px;
-          &.show-actions-block {
-            max-height: none;
-          }
-        }
-      }
-    }
-  }
-  .DateRangePicker .DateRangePickerInput {
-    height: 34px;
-  }
-  .DateRangePicker .DateInput input {
-    height: 32px;
-  }
-  .today-button-wrapper {
-    display: inline-block;
-    vertical-align: top;
-    margin-right: 6px;
-    .all-rides-button {
-      height: 34px;
-    }
-  }
-  .date-tz-wrapper {
-    @include flex-center;
-    flex-wrap: wrap;
-    .mobile-filters-label {
-      display: none;
-    }
-    @include media(small) {
-      .date-picker-wrapper {
-        margin: 0 6px;
-      }
-    }
-    @include media(medium) {
-      display: block;
-      right: 20px;
-      top: 17px;
-      position: absolute;
-    }
-  }
-  @media screen and (max-width: $break-small) {
-    .ride-list p {
-      margin: 0;
-    }
-    .ride-data-wrapper {
-      align-items: center;
-      justify-content: center;
-    }
-  }
-  @include media(small) {
-    .ride-data-wrapper:not(:last-of-type) {
-      padding-right: 5px;
-      &.column {
-        align-items: center;
-        @include media(medium) {
-          align-items: flex-start;
-        }
-      }
-    }
-    .ride-data-wrapper.address {
-      width: 200px;
-      p {
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
-        width: 100%;
-      }
-    }
-    .ride-data-wrapper.vehicle {
-      min-width: 100px;
-    }
-  }
-  .ride-data-wrapper.time > div:not(.progress-bar-container) {
-    margin: 0;
-    text-align: center;
-  }
-  .ride-data-wrapper.driver {
-    svg {
-      vertical-align: middle;
-      fill: $grey-warm;
-      min-height: 15px;
-      min-width: 15px;
-      width: 15px;
-      margin-left: 5px;
-      cursor: pointer;
-    }
-    justify-content: flex-end;
-    @include media(small) {
-      justify-content: flex-start;
-    }
-  }
-  > .circulation-loader {
     position: relative;
-    padding: 100px 0;
-  }
-  .rides-list .expanded-ride-row.dispatch {
-    justify-content: center;
-    display: flex !important;
-    flex-direction: column;
-    background-color: $white;
-    @include media(small) {
-      flex-direction: row-reverse;
-    }
-    p {
-      font-size: 12px;
-      padding-bottom: 5px;
-      &.note {
-        @include media(medium) {
-          border-bottom: 1px solid $iris;
-          padding-bottom: 10px;
-        }
-        + div.rider-phone {
-          margin-top: 15px;
-        }
-      }
-    }
-    .rider-phone {
-      margin-left: 14px;
-      .lock-tooltip {
-        width: 210px;
-        white-space: normal;
+    color: $grey-warm;
 
-      }
-      .tooltip-arrow {
-        left: -1px;
-      }
-      .input-lock-wrapper {
-        top: 0;
-        svg {
-          fill: $brand-purple;
-          height: 14px;
-          width: 14px;
-          min-height: auto;
-          min-width: auto;
+    &.warning-list-wrapper {
+        .rides-list:last-of-type .rides-list-ride-item {
+            border-bottom: 0;
         }
-      }
-      .input-lock-wrapper:hover {
-        .lock-tooltip-wrapper {
-          bottom: 30px;
-        }
-      }
-      @media screen and (max-width: $break-small)  {
-        .lock-tooltip-wrapper {
-          left: -20px;
-        }
-      }
     }
-    .column {
-      .header-block {
-        padding-bottom: 10px;
-      }
-      .header-block h3 {
-        margin-bottom: 5px;
-      }
-      &.mobile-only { // addresses shown in expanded row on smaller screens
-        overflow: scroll;
-        @include media(medium) {
-          display: none;
-        }
-      }
-      @include media(small) {
-        &:not(.map):not(.address) {
-          width: auto;
-          flex-grow: 1;
-          width: 25%;
-        }
-      }
-      &.map {
-        max-width: 50%;
-      }
-      @media screen and (max-width: $break-medium)  {
-        order: unset;
-        &:nth-child(1) {
-          order: 3;
-        }
-        &:nth-child(2) {
-          order: 4;
-          @include media(small) {
-            order: 2;
-          }
-        }
-        &:nth-child(3) {
-          order: 1;
-          @include media(small) {
-            order: 4;
-          }
-        }
-        &:nth-child(4) {
-          order: 1;
-        }
-      }
-      &:last-of-type:not(.address) {
-        border-right: 1px solid $faded-blue;
-        width: auto;
-      }
-      &:first-of-type {
-        border: 0;
-      }
-      .body {
-        justify-content: flex-start;
-        height: calc(100% - 14px);
-      }
-      .header-block {
-        padding-bottom: 10px;
-        display: flex !important;
-        h3 {
-          font-size: 14px;
-        }
-        @include media(medium) {
-          h3 {
-            font-size: 16px;
-          }
-          &:not(.align-top) {
-            padding-bottom: 20px;
-          }
-          &.align-top {
-            align-items: flex-start;
-            padding: 0 0 10px 0;
-          }
-        }
-      }
-      .report-issue {
-        @media screen and (max-width: $break-medium) {
-          margin-top: 10px;
-        }
-        h4, .fa {
-          font-size: 14px;
-          font-weight: 500;
-        }
-      }
-    }
-    @media screen and (max-width: $break-medium) {
-      padding: 10px 20px 20px;
-      border-top: 1px solid $cloudy-blue;
-      @include media(small) {
-        padding: 0;
-      }
-      div.column {
-        height: auto;
-        padding: 0;
-        width: 100%;
-        border: 0;
-        &:not(.address):not(:first-of-type):not(.map) {
-          @include media(small) {
-            width: 50%;
-          }
-        }
-        &:not(.address):not(:first-of-type) {
-          border-bottom: 1px solid $cloudy-blue;
-          &.map {
-            @media screen and (max-width: $break-small) {
-              border-bottom: 0;
-            }
-          }
-        }
-        @include media(medium) {
-          width: auto;
-        }
-        &:not(.map):not(.address) {
-          padding: 10px;
-          border-right: 0;
-          @include media(small) {
-            width: 50%;
-            border-left: 1px solid $cloudy-blue;
-          }
-          &.mobile-only {
-            width: 100%;
-            @include media(small) {
-              width: 50%;
-              border: 0;
-              display: flex;
-              .body:last-of-type {
-                margin-left: 50px;
-              }
-              .body, .body .ride-data-wrapper {
-                display: block;
-                text-align: left;
-                border: 0;
-                p {
-                  padding: 0;
-                }
-              }
-            }
-          }
-        }
-        &.map.with-toggle {
-          padding: 10px;
-          border-top: 1px solid $cloudy-blue;
-          @include media(small) {
-            border-top: 0;
-          }
-        }
-        .body {
-          height: inherit;
-          flex-direction: column;
-          .body-group {
-            display: block;
-            text-align: left;
-            padding: 0;
-          }
-        }
-        &.map {
-          @media screen and (max-width: $break-small) {
-            max-width: none;
-          }
-          .form-block {
-            max-width: 100%;
-            @media screen and (max-width: $break-small) {
-              .map-wrapper {
-                min-height: 225px;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  @media screen and (max-width: $break-small) {
-    .ride-list {
-      border-top: 1px solid $faded-blue;
-    }
-    .mobile-only .body:first-of-type {
-      margin-bottom: 10px;
-    }
-    .address {
-      text-align: left;
-      padding: 0;
-      p {
-        margin: 0;
-        color: $grey-warm;
-        padding-bottom: 2px;
-        font-size: 12px;
-      }
-    }
-    .date-tz-wrapper {
-      margin: 0 10px 10px;
-      justify-content: space-between;
-    }
-    .trip-list-ride-item {
-      &.show-details {
-        max-height: unset;
-      }
-      .rides-list-ride-item.dispatch {
-        padding: 30px 30px 0;
-        .ride-info {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          overflow: inherit;
-        }
-      }
-      .ride-data-wrapper {
-        padding-bottom: 1.8rem;
-      }
-      .ride-data-wrapper.vehicle {
-        svg {
-          margin-left: -5px;
-          + span {
-            margin-top: 5px;
-            text-align: left;
-          }
-        }
-      }
-      .ride-data-wrapper:not(.time):not(.dispatch-actions):not(.address) {
-        min-width: 50%;
-        width: 50%;
-        align-items: flex-start;
-        p {
-          font-size: 14px;
-        }
-      }
-      .cost-info {
-        justify-content: flex-end;
-      }
-      .progress-bar-container {
-        width: 60%;
-      }
-      .time {
-        justify-content: space-between;
-        > div:not(.progress-bar-container) {
-          margin: 0;
-          p, span {
-            text-align: left;
-          }
-          text-align: left;
-          &:last-of-type {
-            text-align: right;
-          }
-          .column, .init-code {
-            display: block;
-          }
-        }
-      }
-      .dispatch-actions {
-        border-color: $faded-blue;
-        > div.flex {
-          padding: 5px 0;
-          justify-content: center;
-        }
-        button {
-          width: 50%;
-          height: 35px;
-          &:first-of-type {
-            margin-left: 0;
-          }
-          &:last-of-type {
-            margin-right: 0;
-          }
-        }
-        padding-bottom: 0;
-      }
-      .timer {
-        width: calc(100% + 60px);
-        font-size: 14px;
-        background-color: $white-medium-dark;
-        padding: 12px 0;
-        border-color: $grey-white;
-        span {
-          font-size: 14px;
-        }
-      }
-    }
-  }
-  .dispatch-table-header {
-    position: absolute;
-    right: 0;
-    top: 88px;
-    transition: .2s ease-in-out font-size;
-    margin-bottom:0px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 2.5rem;
-    .table-actions {
-      position: absolute;
-      right: 0;
-      bottom: -5px;
-      &.low {
-        bottom: -4.7rem;
-      }
-    }
-    .download {
-      position: relative;
-      button {
-        border-radius: 0;
-        border-top-left-radius: 3px;
-        height: 35px;
-        margin-bottom: 5px;
-        background-color: $grey;
-        min-width: 111px;
-        &:hover, &.active {
-          background-color: $grey-dark;
-        }
-      }
-      .download-options {
-        margin: -4px 0rem;
-      }
-    }
-    @media screen and (max-width: $break-medium) {
-      top: 142px;
-    }
+
+    @include nice-easing-animation;
+
     @media screen and (max-width: $break-small) {
-      position: inherit;
-      margin: 0px 72.2% -6px;
+        margin-top: 55px;
     }
-  }
+    @media screen and (max-width: $break-mobile) {
+        margin-top: 60px;
+    }
+
+    &.warning-list-wrapper {
+        @media screen and (max-width: $break-small) {
+            margin-top: 44px;
+        }
+    }
+
+    .ride-info {
+        overflow: hidden;
+    }
+
+    .list-header {
+        height: 50px;
+        border-bottom: 0;
+        margin-bottom: 20px;
+
+        @media screen and (max-width: $break-small) {
+            margin-bottom: 10px;
+        }
+
+        .mode-links h4 {
+            color: $greyish-brown;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .selected h4 {
+            font-weight: bold;
+        }
+    }
+
+    @media screen and (max-width: $break-medium) {
+        .all-rides-filter {
+            text-align: center;
+        }
+    }
+
+    .filter-wrapper {
+        @media screen and (max-width: $break-small) {
+            margin: 10px 0;
+
+            .all-rides-filter {
+                padding-left: 10px;
+                text-align: left;
+            }
+
+            .filters-wrapper-wrapper:first-of-type {
+                border: 0 !important;
+                margin-bottom: 10px;
+            }
+
+            .filters-wrapper-wrapper {
+                margin-right: 0;
+            }
+        }
+
+        @include media(medium) {
+            padding-left: 29px;
+        }
+        margin: 20px 0;
+
+        .filters-wrapper-wrapper:nth-child(2) {
+            border-right: 0 !important;
+        }
+
+        .filter-label {
+            display: inline;
+
+            @media screen and (max-width: $break-medium) {
+                display: none;
+            }
+        }
+
+        .filters-wrapper-wrapper.just-past {
+            .filter-label {
+                display: none;
+            }
+        }
+    }
+
+    .filter-label {
+        font-size: 14px;
+    }
+
+    @include media(small) {
+        @media screen and (max-width: $break-medium) {
+            .pill .tooltip-text {
+                margin-left: -60px;
+            }
+        }
+    }
+
+    .filter-pill {
+        background-color: $white;
+    }
+
+    .trip-list-ride-item {
+        max-height: 450px;
+
+        &.show-actions-block {
+            max-height: 200px;
+        }
+
+        &.show-details {
+            max-height: 900px;
+            overflow: hidden;
+
+            .rides-list-ride-item {
+                background-color: $faded-purple;
+            }
+
+            p, span:not(.bold-span) {
+                color: $greyish-brown;
+            }
+
+            .progress-bar-background {
+                border-color: $grey;
+
+                .dot {
+                    background-color: $grey;
+                }
+            }
+        }
+
+        @include media(small) {
+            height: auto;
+            max-height: 80px;
+
+            &.show-details {
+                height: auto;
+                max-height: 500px;
+
+                @include media(medium) {
+                    max-height: 335px;
+
+                    &.show-actions-block {
+                        max-height: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .DateRangePicker .DateRangePickerInput {
+        height: 34px;
+    }
+
+    .DateRangePicker .DateInput input {
+        height: 32px;
+    }
+
+    .today-button-wrapper {
+        display: inline-block;
+        margin-right: 6px;
+        vertical-align: top;
+
+        .all-rides-button {
+            height: 34px;
+        }
+    }
+
+    .date-tz-wrapper {
+        @include flex-center;
+        flex-wrap: wrap;
+
+        .mobile-filters-label {
+            display: none;
+        }
+
+        @include media(small) {
+            .date-picker-wrapper {
+                margin: 0 6px;
+            }
+        }
+        @include media(medium) {
+            position: absolute;
+            top: 17px;
+            right: 20px;
+            display: block;
+        }
+    }
+
+    @media screen and (max-width: $break-small) {
+        .ride-list p {
+            margin: 0;
+        }
+
+        .ride-data-wrapper {
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    @include media(small) {
+        .ride-data-wrapper:not(:last-of-type) {
+            padding-right: 5px;
+
+            &.column {
+                align-items: center;
+
+                @include media(medium) {
+                    align-items: flex-start;
+                }
+            }
+        }
+
+        .ride-data-wrapper.address {
+            width: 200px;
+
+            p {
+                width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+
+        .ride-data-wrapper.vehicle {
+            min-width: 100px;
+        }
+    }
+
+    .ride-data-wrapper.time > div:not(.progress-bar-container) {
+        margin: 0;
+        text-align: center;
+    }
+
+    .ride-data-wrapper.driver {
+        svg {
+            width: 15px;
+            min-width: 15px;
+            min-height: 15px;
+            cursor: pointer;
+            margin-left: 5px;
+            vertical-align: middle;
+            fill: $grey-warm;
+        }
+        justify-content: flex-end;
+
+        @include media(small) {
+            justify-content: flex-start;
+        }
+    }
+
+    > .circulation-loader {
+        position: relative;
+        padding: 100px 0;
+    }
+
+    .rides-list .expanded-ride-row.dispatch {
+        background-color: $white;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+
+        @include media(small) {
+            flex-direction: row-reverse;
+        }
+
+        p {
+            font-size: 12px;
+            padding-bottom: 5px;
+
+            &.note {
+                @include media(medium) {
+                    border-bottom: 1px solid $iris;
+                    padding-bottom: 10px;
+                }
+
+                + div.rider-phone {
+                    margin-top: 15px;
+                }
+            }
+        }
+
+        .rider-phone {
+            margin-left: 14px;
+
+            .lock-tooltip {
+                width: 210px;
+                white-space: normal;
+            }
+
+            .tooltip-arrow {
+                left: -1px;
+            }
+
+            .input-lock-wrapper {
+                top: 0;
+
+                svg {
+                    width: 14px;
+                    min-width: auto;
+                    height: 14px;
+                    min-height: auto;
+                    fill: $brand-purple;
+                }
+            }
+
+            .input-lock-wrapper:hover {
+                .lock-tooltip-wrapper {
+                    bottom: 30px;
+                }
+            }
+
+            @media screen and (max-width: $break-small) {
+                .lock-tooltip-wrapper {
+                    left: -20px;
+                }
+            }
+        }
+
+        .column {
+            .header-block {
+                padding-bottom: 10px;
+            }
+
+            .header-block h3 {
+                margin-bottom: 5px;
+            }
+
+            &.mobile-only { // addresses shown in expanded row on smaller screens
+                overflow: scroll;
+
+                @include media(medium) {
+                    display: none;
+                }
+            }
+
+            @include media(small) {
+                &:not(.map):not(.address) {
+                    width: auto;
+                    width: 25%;
+                    flex-grow: 1;
+                }
+            }
+
+            &.map {
+                max-width: 50%;
+            }
+
+            @media screen and (max-width: $break-medium) {
+                order: unset;
+
+                &:nth-child(1) {
+                    order: 3;
+                }
+
+                &:nth-child(2) {
+                    order: 4;
+
+                    @include media(small) {
+                        order: 2;
+                    }
+                }
+
+                &:nth-child(3) {
+                    order: 1;
+
+                    @include media(small) {
+                        order: 4;
+                    }
+                }
+
+                &:nth-child(4) {
+                    order: 1;
+                }
+            }
+
+            &:last-of-type:not(.address) {
+                width: auto;
+                border-right: 1px solid $faded-blue;
+            }
+
+            &:first-of-type {
+                border: 0;
+            }
+
+            .body {
+                height: calc(100% - 14px);
+                justify-content: flex-start;
+            }
+
+            .header-block {
+                display: flex !important;
+                padding-bottom: 10px;
+
+                h3 {
+                    font-size: 14px;
+                }
+
+                @include media(medium) {
+                    h3 {
+                        font-size: 16px;
+                    }
+
+                    &:not(.align-top) {
+                        padding-bottom: 20px;
+                    }
+
+                    &.align-top {
+                        align-items: flex-start;
+                        padding: 0 0 10px;
+                    }
+                }
+            }
+
+            .report-issue {
+                @media screen and (max-width: $break-medium) {
+                    margin-top: 10px;
+                }
+
+                h4, .fa {
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        @media screen and (max-width: $break-medium) {
+            border-top: 1px solid $cloudy-blue;
+            padding: 10px 20px 20px;
+
+            @include media(small) {
+                padding: 0;
+            }
+
+            div.column {
+                width: 100%;
+                height: auto;
+                border: 0;
+                padding: 0;
+
+                &:not(.address):not(:first-of-type):not(.map) {
+                    @include media(small) {
+                        width: 50%;
+                    }
+                }
+
+                &:not(.address):not(:first-of-type) {
+                    border-bottom: 1px solid $cloudy-blue;
+
+                    &.map {
+                        @media screen and (max-width: $break-small) {
+                            border-bottom: 0;
+                        }
+                    }
+                }
+
+                @include media(medium) {
+                    width: auto;
+                }
+
+                &:not(.map):not(.address) {
+                    border-right: 0;
+                    padding: 10px;
+
+                    @include media(small) {
+                        width: 50%;
+                        border-left: 1px solid $cloudy-blue;
+                    }
+
+                    &.mobile-only {
+                        width: 100%;
+
+                        @include media(small) {
+                            width: 50%;
+                            border: 0;
+                            display: flex;
+
+                            .body:last-of-type {
+                                margin-left: 50px;
+                            }
+
+                            .body, .body .ride-data-wrapper {
+                                border: 0;
+                                display: block;
+                                text-align: left;
+
+                                p {
+                                    padding: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.map.with-toggle {
+                    border-top: 1px solid $cloudy-blue;
+                    padding: 10px;
+
+                    @include media(small) {
+                        border-top: 0;
+                    }
+                }
+
+                .body {
+                    height: inherit;
+                    flex-direction: column;
+
+                    .body-group {
+                        display: block;
+                        padding: 0;
+                        text-align: left;
+                    }
+                }
+
+                &.map {
+                    @media screen and (max-width: $break-small) {
+                        max-width: none;
+                    }
+
+                    .form-block {
+                        max-width: 100%;
+
+                        @media screen and (max-width: $break-small) {
+                            .map-wrapper {
+                                min-height: 225px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: $break-small) {
+        .ride-list {
+            border-top: 1px solid $faded-blue;
+        }
+
+        .mobile-only .body:first-of-type {
+            margin-bottom: 10px;
+        }
+
+        .address {
+            padding: 0;
+            text-align: left;
+
+            p {
+                color: $grey-warm;
+                font-size: 12px;
+                margin: 0;
+                padding-bottom: 2px;
+            }
+        }
+
+        .date-tz-wrapper {
+            justify-content: space-between;
+            margin: 0 10px 10px;
+        }
+
+        .trip-list-ride-item {
+            &.show-details {
+                max-height: unset;
+            }
+
+            .rides-list-ride-item.dispatch {
+                padding: 30px 30px 0;
+
+                .ride-info {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    overflow: inherit;
+                }
+            }
+
+            .ride-data-wrapper {
+                padding-bottom: 1.8rem;
+            }
+
+            .ride-data-wrapper.vehicle {
+                svg {
+                    margin-left: -5px;
+
+                    + span {
+                        margin-top: 5px;
+                        text-align: left;
+                    }
+                }
+            }
+
+            .ride-data-wrapper:not(.time):not(.dispatch-actions):not(.address) {
+                width: 50%;
+                min-width: 50%;
+                align-items: flex-start;
+
+                p {
+                    font-size: 14px;
+                }
+            }
+
+            .cost-info {
+                justify-content: flex-end;
+            }
+
+            .progress-bar-container {
+                width: 60%;
+            }
+
+            .time {
+                justify-content: space-between;
+
+                > div:not(.progress-bar-container) {
+                    margin: 0;
+
+                    p, span {
+                        text-align: left;
+                    }
+                    text-align: left;
+
+                    &:last-of-type {
+                        text-align: right;
+                    }
+
+                    .column, .init-code {
+                        display: block;
+                    }
+                }
+            }
+
+            .dispatch-actions {
+                border-color: $faded-blue;
+
+                > div.flex {
+                    justify-content: center;
+                    padding: 5px 0;
+                }
+
+                button {
+                    width: 50%;
+                    height: 35px;
+
+                    &:first-of-type {
+                        margin-left: 0;
+                    }
+
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
+                }
+                padding-bottom: 0;
+            }
+
+            .timer {
+                width: calc(100% + 60px);
+                background-color: $white-medium-dark;
+                border-color: $grey-white;
+                font-size: 14px;
+                padding: 12px 0;
+
+                span {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    .dispatch-table-header {
+        position: absolute;
+        top: 88px;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 2.5rem;
+        margin-bottom: 0;
+
+        transition: 0.2s ease-in-out font-size;
+
+        .table-actions {
+            position: absolute;
+            right: 0;
+            bottom: -5px;
+
+            &.low {
+                bottom: -4.7rem;
+            }
+        }
+
+        .download {
+            position: relative;
+
+            button {
+                min-width: 111px;
+                height: 35px;
+                background-color: $grey;
+                border-radius: 0;
+                border-top-left-radius: 3px;
+                margin-bottom: 5px;
+
+                &:hover, &.active {
+                    background-color: $grey-dark;
+                }
+            }
+
+            .download-options {
+                margin: -4px 0;
+            }
+        }
+
+        @media screen and (max-width: $break-medium) {
+            top: 142px;
+        }
+        @media screen and (max-width: $break-small) {
+            position: inherit;
+            margin: 0 72.2% -6px;
+        }
+    }
 }
 
 .roundtrip-link {
-  height: 80px;
-  @include media(small) {
-    height: 35px;
-  }
-  width: 3px;
-  background-color: $brand-purple;
-  position: absolute;
-  left: 7px;
-  z-index: 2;
-  .fa {
     position: absolute;
-    left: -3px;
-    color: $brand-purple;
-  }
-  &.order-1 {
-    top: 133px;
+    left: 7px;
+    z-index: 2;
+    width: 3px;
+    height: 80px;
+    background-color: $brand-purple;
+
     @include media(small) {
-      top: 45px;
-      height: 35px;
+        height: 35px;
     }
+
     .fa {
-      top: -10px;
+        position: absolute;
+        left: -3px;
+        color: $brand-purple;
     }
-    .show-details &{
-      height: inherit;
-      bottom: 0;
+
+    &.order-1 {
+        top: 133px;
+
+        @include media(small) {
+            top: 45px;
+            height: 35px;
+        }
+
+        .fa {
+            top: -10px;
+        }
+
+        .show-details & {
+            bottom: 0;
+            height: inherit;
+        }
+
+        .show-actions-block & {
+            bottom: 0;
+            z-index: 11;
+            height: inherit;
+        }
     }
-    .show-actions-block &{
-      height: inherit;
-      bottom: 0;
-      z-index: 11;
+
+    &.order-2 {
+        top: 0;
+
+        .fa {
+            bottom: -10px;
+        }
     }
-  }
-  &.order-2 {
-    top: 0;
-    .fa {
-      bottom: -10px;
+
+    @include media(medium) {
+        left: 10px;
     }
-  }
-  @include media(medium) {
-    left: 10px;
-  }
 }
 
 .rides-list.round-trip {
-  &.order-1 {
-    border-bottom: 1px dashed $faded-blue;
-    .rides-list-ride-item {
-      border-bottom: 1px solid transparent;
+    &.order-1 {
+        border-bottom: 1px dashed $faded-blue;
+
+        .rides-list-ride-item {
+            border-bottom: 1px solid transparent;
+        }
+
+        .expanded-ride-row.dispatch {
+            @include media(small) {
+                border-left: 20px solid $white-dark;
+            }
+            @include media(medium) {
+                border-left-color: $white;
+            }
+        }
+
+        .dispatch-actions {
+            display: none;
+
+            @include media(small) {
+                display: flex;
+            }
+        }
     }
-    .expanded-ride-row.dispatch {
-      @include media(small) {
-        border-left: 20px solid $white-dark;
-      }
-      @include media(medium) {
-        border-left-color: $white;
-      }
+
+    &.hide-actions {
+        @include media(small) {
+            .dispatch-actions > div {
+                visibility: hidden;
+            }
+        }
     }
-    .dispatch-actions {
-      display: none;
-      @include media(small) {
-        display: flex;
-      }
-    }
-  }
-  &.hide-actions {
-    @include media(small) {
-      .dispatch-actions > div {
-        visibility: hidden;
-      }
-    }
-  }
 }
 
 @media screen and (max-width: $break-medium) {
-  .ride-data-wrapper.address {
-    display: none;
-  }
-  .mobile-only .address {
-    display: block;
-    width: 100%;
-  }
+    .ride-data-wrapper.address {
+        display: none;
+    }
+
+    .mobile-only .address {
+        width: 100%;
+        display: block;
+    }
 }
 
 .cancel-block.dispatch, .cancel-block.mobile {
-  padding: 20px;
-  z-index: 10;
-  span {
-    font-size: 14px;
-  }
-  p {
-    color: $black;
-    font-size: 12px;
-    font-weight: 500;
-  }
-  button, a.button {
-    width: 125px;
-    font-size: 12px;
-    padding: 10px;
-    text-transform: uppercase;
-    font-weight: 500;
-    &:disabled {
-      opacity: .5;
-      cursor: not-allowed;
+    z-index: 10;
+    padding: 20px;
+
+    span {
+        font-size: 14px;
     }
-    &.iris {
-      background-color: $iris;
-      &:not(:disabled):hover {
-        background-color: darken($iris, 5%);
-      }
+
+    p {
+        color: $black;
+        font-size: 12px;
+        font-weight: 500;
     }
-    &.cancel {
-      background-color: $greyish-brown;
-      &:hover {
-        background-color: darken($greyish-brown, 5%);
-      }
-    }
-  }
-  .flex {
+
     button, a.button {
-      margin: 15px 10px 0;
-    }
-  }
-  .close {
-    @include nice-easing-animation;
-    position: absolute;
-    right: 10px;
-    top: 5px;
-    cursor: pointer;
-    &:hover {
-      transform: scale3d(1.1, 1.1, 1.1);
-    }
-    svg {
-      fill: $black;
-    }
-  }
-  .drivers-dynamic-tab {
-    display: inline-block;
-    vertical-align: middle;
-    width: calc(100% - 200px);
-    float: left;
-    position: relative;
-    .input-wrapper {
-      margin: 0;
-      .label-content {
-        color: $grey-warm;
-      }
-      &.results-active {
-        input {
-          border-radius: 3px 3px 0 0;
+        width: 125px;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 10px;
+        text-transform: uppercase;
+
+        &:disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
         }
-      }
+
+        &.iris {
+            background-color: $iris;
+
+            &:not(:disabled):hover {
+                background-color: darken($iris, 5%);
+            }
+        }
+
+        &.cancel {
+            background-color: $greyish-brown;
+
+            &:hover {
+                background-color: darken($greyish-brown, 5%);
+            }
+        }
     }
-  }
-  .search-results {
-    max-width: calc(100% - 2px);
-    box-shadow: none;
-    border-radius: 0 0 3px 3px;
-    border: 1px solid $iris;
-    border-top-color: $faded-blue;
-    margin-top: -2px;
-    display: none;
-    max-height: 150px;
-    &.active {
-      display: block;
+
+    .flex {
+        button, a.button {
+            margin: 15px 10px 0;
+        }
     }
-    li {
-      margin: 0;
-      border: 0;
-      text-align: left;
-      padding: 5px 20px;
-      font-size: 14px;
-      color: $greyish-brown;
-      &:before {
-        content: none;
-      }
-      svg {
-        width: 37px;
-        margin-right: 20px;
-      }
-      svg, span {
+
+    .close {
+        @include nice-easing-animation;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale3d(1.1, 1.1, 1.1);
+        }
+
+        svg {
+            fill: $black;
+        }
+    }
+
+    .drivers-dynamic-tab {
+        position: relative;
+        width: calc(100% - 200px);
+        display: inline-block;
+        float: left;
         vertical-align: middle;
-      }
+
+        .input-wrapper {
+            margin: 0;
+
+            .label-content {
+                color: $grey-warm;
+            }
+
+            &.results-active {
+                input {
+                    border-radius: 3px 3px 0 0;
+                }
+            }
+        }
     }
-  }
+
+    .search-results {
+        max-width: calc(100% - 2px);
+        max-height: 150px;
+        border: 1px solid $iris;
+        border-top-color: $faded-blue;
+        border-radius: 0 0 3px 3px;
+        box-shadow: none;
+        display: none;
+        margin-top: -2px;
+
+        &.active {
+            display: block;
+        }
+
+        li {
+            border: 0;
+            color: $greyish-brown;
+            font-size: 14px;
+            margin: 0;
+            padding: 5px 20px;
+            text-align: left;
+
+            &::before {
+                content: none;
+            }
+
+            svg {
+                width: 37px;
+                margin-right: 20px;
+            }
+
+            svg, span {
+                vertical-align: middle;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: $break-small) {
-  .mobile-modal {
-    .content {
-      width: 100%;
-      height: 95vh;
-      .modal-body {
-        height: 100%;
-      }
-      .scrollable {
-        overflow: hidden;
-        max-height: none;
-        height: 100%;
-      }
-    }
-    textarea {
-      height: 111px;
-      margin: 14px;
-      width: calc(100% - 28px);
-    }
-    .cancel-block {
-      background-color: $white;
-      font-size: 16px;
-      .flex {
-        button, a.button  {
-          margin-top: 40px;
-          padding: 12px;
+    .mobile-modal {
+        .content {
+            width: 100%;
+            height: 95vh;
+
+            .modal-body {
+                height: 100%;
+            }
+
+            .scrollable {
+                height: 100%;
+                max-height: none;
+                overflow: hidden;
+            }
         }
-      }
-      padding: 0;
-      height: calc(95vh - 61px);
-      > span {
-        padding: 0 10px;
-        display: block;
-      }
-      .search-results {
-        border: 0;
-        width: 100%;
-        margin: 0;
-        position: relative;
-        max-width: none;
-        height: calc(100% - 186px);
-        max-height: calc(100% - 186px);
-        overflow: scroll;
-        border-bottom: $base-border !important;
-        .bold {
-          font-size: 16px;
+
+        textarea {
+            width: calc(100% - 28px);
+            height: 111px;
+            margin: 14px;
         }
-        li {
-          border-bottom: 1px solid $grey-white;
-          padding: 13px 20px;
-          div {
-            pointer-events: none;
-          }
-          &.selected {
+
+        .cancel-block {
+            height: calc(95vh - 61px);
+            background-color: $white;
+            font-size: 16px;
+            padding: 0;
+
+            .flex {
+                button, a.button {
+                    margin-top: 40px;
+                    padding: 12px;
+                }
+            }
+
+            > span {
+                display: block;
+                padding: 0 10px;
+            }
+
+            .search-results {
+                position: relative;
+                width: 100%;
+                max-width: none;
+                height: calc(100% - 186px);
+                max-height: calc(100% - 186px);
+                border: 0;
+                border-bottom: $base-border !important;
+                margin: 0;
+                overflow: scroll;
+
+                .bold {
+                    font-size: 16px;
+                }
+
+                li {
+                    border-bottom: 1px solid $grey-white;
+                    padding: 13px 20px;
+
+                    div {
+                        pointer-events: none;
+                    }
+
+                    &.selected {
+                        background-color: $blueberry;
+                        color: $white;
+                    }
+                }
+
+                .safari & {
+                    max-height: calc(100vh - 340px);
+                }
+            }
+
+            .submit {
+                width: calc(100% - 20px);
+                margin-top: 16px;
+            }
+        }
+
+        .mobile-header-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            + .cancel-block {
+                margin-top: calc(48px + 61px);
+
+                .search-results {
+                    height: calc(95vh - 173px);
+                    max-height: calc(95vh - 173px);
+
+                    .safari & {
+                        max-height: calc(95vh - 280px);
+                    }
+                }
+            }
+        }
+
+        .mobile-header {
             background-color: $blueberry;
             color: $white;
-          }
+            font-size: 18px;
+            padding: 19px;
+
+            svg {
+                position: absolute;
+                top: 18px;
+                right: 18px;
+                fill: $white;
+            }
         }
-        .safari &{
-          max-height: calc(100vh - 340px);
+
+        .mobile-sub-header {
+            background-color: $iris;
+            color: $white;
+            font-size: 14px;
+            padding: 15px 19px;
         }
-      }
-      .submit {
-        width: calc(100% - 20px);
-        margin-top: 16px;
-      }
-    }
-    .mobile-header-wrapper {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      + .cancel-block {
-        margin-top: calc(48px + 61px);
-        .search-results {
-          height: calc(95vh - 173px);
-          max-height: calc(95vh - 173px);
-          .safari &{
-            max-height: calc(95vh - 280px);
-          }
+
+        img {
+            width: 139px;
+            display: block;
+            margin: 0 auto;
+            padding: 70px 0 30px;
         }
-      }
     }
-    .mobile-header {
-      background-color: $blueberry;
-      color: $white;
-      font-size: 18px;
-      padding: 19px;
-      svg {
-        position: absolute;
-        right: 18px;
-        top: 18px;
-        fill: $white;
-      }
-    }
-    .mobile-sub-header {
-      background-color: $iris;
-      color: $white;
-      font-size: 14px;
-      padding: 15px 19px;
-    }
-    img {
-      margin: 0 auto;
-      display: block;
-      padding: 70px 0 30px;
-      width: 139px;
-    }
-  }
 }
 
 .ride-list-mobile .dispatch {
-  .page-header {
-    @media screen and (max-width: $break-mobile) {
-      top: 0;
+    .page-header {
+        @media screen and (max-width: $break-mobile) {
+            top: 0;
+        }
+        top: 10px;
+
+        .fa {
+            margin-right: 10px;
+        }
     }
-    top: 10px;
-    .fa {
-      margin-right: 10px;
-    }
-  }
 }

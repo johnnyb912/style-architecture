@@ -1,1309 +1,1564 @@
 .page-trip-list {
-  margin: 0 auto;
-  margin-top: 1%;
-  margin-bottom: 120px;
-  @include media(small) {
-    margin-bottom: 35px;
-  }
-  width: 98%;
-  background-color: $white-medium-dark;
-  box-shadow: -1px 1px 5px $grey;
-  transition: all .3s ease;
-  overflow: hidden;
-  &.visible-overflow {
-    overflow: visible;
-  }
-  &.taller {
-    min-height: 600px;
-  }
-  .rides-index-header {
-    padding: 12px 10px;
-    .wrapper {
-      margin: 0 6px;
-      display: inline-block;
-      vertical-align: top;
-      &.time-zone-wrapper, &.time-range-wrapper, &.alert-type-wrapper {
-        margin-right: 0;
-      }
-      &.alert-type-wrapper {
-        width: 200px;
-        transition: .1s ease all;
-        &.expanded {
-          width: 400px;
-        }
-      }
-      &.middle-align {
-        vertical-align: middle;
-      }
+    width: 98%;
+    background-color: $white-medium-dark;
+    box-shadow: -1px 1px 5px $grey;
+    margin: 0 auto;
+    margin-top: 1%;
+    margin-bottom: 120px;
+    overflow: hidden;
+
+    transition: all 0.3s ease;
+
+    @include media(small) {
+        margin-bottom: 35px;
     }
-    .row {
-      position: relative;
-      display: flex;
-      min-height: 32px;
-      &:not(:last-of-type){
-        margin-bottom: 12px;
-      }
-      .alert-type-span {
-        display: inline-block;
-        line-height: 32px;
-      }
-      .styled-dropdown {
-        margin-top: 0;
-        input {
-          height: 30px
-        }
-      }
-      .row-item-right {
-        position: absolute;
-        right: 0;
-      }
+
+    &.visible-overflow {
+        overflow: visible;
     }
-    .rider-filter-wrapper {
-      flex: 1 1 auto;
-      vertical-align: middle;
-      width: 100%;
-      transition: all 0.3s ease;
-      position: relative;
-      margin-right: 0;
-      .input-wrapper {
-        margin-top: 0;
-        width: 100%;
-        border: none;
-        input {
-          height: 32px;
-        }
-        label {
-          height: 32px;
-        }
-      }
-      .clear-search {
-        margin-top: 0;
-        height: 100%;
-        top: 0;
-      }
+
+    &.taller {
+        min-height: 600px;
     }
-    .top-row {
-      position: relative;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      @include media(smallMedium) {
-        flex-wrap: nowrap;
-      }
 
-      > .flex, .page-mode-wrapper {
-        margin-bottom: 12px;
-        height: 32px;
-        @include media(smallMedium) {
-          margin-bottom: 0;
-        }
-      }
+    .rides-index-header {
+        padding: 12px 10px;
 
-      > .flex {
-        width: calc(100% - 12px);
-      }
-
-      @media screen and (max-width: $break-small-medium) {
-        .page-alerts & {
-          justify-content: center;
-          + .row {
-            justify-content: center;
-            .row-item-right {
-              position: relative;
-              h4 {
-                margin-bottom: 10px;
-              }
-            }
-          }
-          .page-mode-wrapper {
-            width: 100%;
-            @include flex-center;
-          }
-          .date-picker-wrapper, .time-zone-wrapper {
-            margin-top: 12px;
-          }
-        }
-      }
-
-      .view-wrapper {
-        vertical-align: middle;
-        .datetime-radio-wrapper {
-          label:before {
-            min-width: 50px;
-            width: 50px;
-          }
-        }
-      }
-
-      .date-wrapper {
-        display: inherit;
-      }
-      .time-range-wrapper {
-        display: none;
-        height: 32px;
-        min-width: 200px;
-        @include media(smallMedium) {
-          position: absolute;
-          top: 45px;
-          right: 0;
-        }
-        @include media(medium) {
-          position: relative;
-          top: auto;
-          right: auto;
-        }
-        .dates {
-          display: flex;
-          justify-content: flex-end;
-          .displayed-range {
+        .wrapper {
             display: inline-block;
-            margin-top: 7px;
-            color: $brand-purple;
-            font-size: 14px;
-            font-weight: bold;
-            white-space: nowrap;
-            &.smaller-font {
-              font-size: .85em;
+            margin: 0 6px;
+            vertical-align: top;
+
+            &.time-zone-wrapper, &.time-range-wrapper, &.alert-type-wrapper {
+                margin-right: 0;
             }
-          }
+
+            &.alert-type-wrapper {
+                width: 200px;
+
+                transition: 0.1s ease all;
+
+                &.expanded {
+                    width: 400px;
+                }
+            }
+
+            &.middle-align {
+                vertical-align: middle;
+            }
         }
-      }
-      &.top-row-calendar {
-        .time-zone-wrapper {
-          .input-wrapper {
-            min-width: 70px;
-            width: 70px;
-          }
+
+        .row {
+            position: relative;
+            min-height: 32px;
+            display: flex;
+
+            &:not(:last-of-type) {
+                margin-bottom: 12px;
+            }
+
+            .alert-type-span {
+                display: inline-block;
+                line-height: 32px;
+            }
+
+            .styled-dropdown {
+                margin-top: 0;
+
+                input {
+                    height: 30px;
+                }
+            }
+
+            .row-item-right {
+                position: absolute;
+                right: 0;
+            }
         }
-        .time-range-wrapper {
-          display: inline-block;
+
+        .rider-filter-wrapper {
+            position: relative;
+            width: 100%;
+            flex: 1 1 auto;
+            margin-right: 0;
+            vertical-align: middle;
+
+            transition: all 0.3s ease;
+
+            .input-wrapper {
+                width: 100%;
+                border: none;
+                margin-top: 0;
+
+                input {
+                    height: 32px;
+                }
+
+                label {
+                    height: 32px;
+                }
+            }
+
+            .clear-search {
+                top: 0;
+                height: 100%;
+                margin-top: 0;
+            }
         }
-        label:before {
-          min-width: 80px;
+
+        .top-row {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            @include media(smallMedium) {
+                flex-wrap: nowrap;
+            }
+
+            > .flex, .page-mode-wrapper {
+                height: 32px;
+                margin-bottom: 12px;
+
+                @include media(smallMedium) {
+                    margin-bottom: 0;
+                }
+            }
+
+            > .flex {
+                width: calc(100% - 12px);
+            }
+
+            @media screen and (max-width: $break-small-medium) {
+                .page-alerts & {
+                    justify-content: center;
+
+                    + .row {
+                        justify-content: center;
+
+                        .row-item-right {
+                            position: relative;
+
+                            h4 {
+                                margin-bottom: 10px;
+                            }
+                        }
+                    }
+
+                    .page-mode-wrapper {
+                        width: 100%;
+
+                        @include flex-center;
+                    }
+
+                    .date-picker-wrapper, .time-zone-wrapper {
+                        margin-top: 12px;
+                    }
+                }
+            }
+
+            .view-wrapper {
+                vertical-align: middle;
+
+                .datetime-radio-wrapper {
+                    label::before {
+                        width: 50px;
+                        min-width: 50px;
+                    }
+                }
+            }
+
+            .date-wrapper {
+                display: inherit;
+            }
+
+            .time-range-wrapper {
+                min-width: 200px;
+                height: 32px;
+                display: none;
+
+                @include media(smallMedium) {
+                    position: absolute;
+                    top: 45px;
+                    right: 0;
+                }
+                @include media(medium) {
+                    position: relative;
+                    top: auto;
+                    right: auto;
+                }
+
+                .dates {
+                    display: flex;
+                    justify-content: flex-end;
+
+                    .displayed-range {
+                        color: $brand-purple;
+                        display: inline-block;
+                        font-size: 14px;
+                        font-weight: bold;
+                        margin-top: 7px;
+                        white-space: nowrap;
+
+                        &.smaller-font {
+                            font-size: 0.85em;
+                        }
+                    }
+                }
+            }
+
+            &.top-row-calendar {
+                .time-zone-wrapper {
+                    .input-wrapper {
+                        width: 70px;
+                        min-width: 70px;
+                    }
+                }
+
+                .time-range-wrapper {
+                    display: inline-block;
+                }
+
+                label::before {
+                    min-width: 80px;
+                }
+            }
         }
-      }
+
+        .form-row {
+            width: auto;
+            height: 32px;
+            background-color: transparent;
+            display: inline-block;
+            padding: 0;
+            vertical-align: middle;
+
+            input:not(.DateInput.input) {
+                height: 32px;
+            }
+
+            label {
+                height: 32px;
+            }
+
+            .datetime-radio-wrapper {
+                height: 32px;
+
+                label {
+                    &::before {
+                        border: 1px solid $faded-blue;
+                    }
+                }
+            }
+        }
     }
-    .form-row {
-      background-color: transparent;
-      display: inline-block;
-      width: auto;
-      vertical-align: middle;
-      height: 32px;
-      padding: 0;
-      input:not(.DateInput.input) {
-        height: 32px;
-      }
-      label {
-        height: 32px;
-      }
-      .datetime-radio-wrapper {
-        height: 32px;
-        label {
-          &:before {
-            border: 1px solid $faded-blue;
-          }
-        }
-      }
-    }
-  }
-  &.small-screen {
-    width: 100%;
-    margin-top: 0;
-    .rider-filter-wrapper {
-      display: inline-block;
-      width: 65%;
-      .input-wrapper {
+
+    &.small-screen {
         width: 100%;
         margin-top: 0;
-        margin-right: 0;
-        border: none;
-        input {
-          height: 36px;
-          border-radius: 0;
-        }
-      }
-    }
-    .top {
-      height: 36px;
-    }
-    .all-rides-mobile-button {
-      border: none;
-      background-color: white;
-      display: inline-block;
-      padding: 0;
-      height: 36px;
-      border: 1px solid $faded-blue;
-      border-radius: 0;
-      border-left: none;
-      color: $grey-warm-darker;
-      vertical-align: top;
-      font-weight: 500;
-    }
-    .filter-btn {
-      width: 25%;
-      &.active {
-        color: white;
-        background-color: $blueberry;
-        border-bottom: 1px solid $blueberry;
-      }
-    }
-    .page-view-btn {
-      width: 10%;
-      svg {
-        width: 60%;
-        height: 60%;
-        vertical-align: middle;
-        fill: $grey-warm-darker;
-      }
-    }
-    .mobile-filter-out-wrapper {
-      position: absolute;
-      width: 100%;
-      overflow: hidden;
-      z-index: 10000;
-      max-height: 0;
-      transition: all .3s ease;
-      &.expanded {
-        max-height: 600px;
-        box-shadow: 1px 2px 3px #ddd;
-        // overflow: visible;
-      }
-    }
-    .mobile-filters-header {
-      width: 100%;
-      background: $blueberry;
-      color: white;
-      top: 0;
-      text-align: center;
-      .filters-text {
-        padding: 10px 0;
-        margin: 0 auto;
-      }
-    }
 
-    .time-range-wrapper.mobile .dates {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      .displayed-range {
-        width: 100%;
-        text-align: left;
-        margin-left: 10px;
-        color: $brand-purple;
-        font-size: 14px;
-        font-weight: bold;
-      }
-      button {
-        margin: 0;
-        width: 50px;
-        border-radius: 0;
-        background-color: transparent;
-        border: 0;
-      }
-    }
+        .rider-filter-wrapper {
+            width: 65%;
+            display: inline-block;
 
-    .mobile-filters-body {
-      width: 100%;
-      background-color: white;
-      position: relative;
-      min-height: 450px;
-      height: auto;
-      border-bottom: 1px solid $cloudy-blue;
-      overflow: visible;
-      .time-zone-wrapper {
-        .input-wrapper {
-          display: inline-block;
-          width: 25%;
+            .input-wrapper {
+                width: 100%;
+                border: none;
+                margin-top: 0;
+                margin-right: 0;
+
+                input {
+                    height: 36px;
+                    border-radius: 0;
+                }
+            }
         }
-        .today-button-wrapper {
-          .all-rides-button.today-button {
+
+        .top {
             height: 36px;
-            width: 90px;
-            span {
-              margin-left: 15px;
-            }
-            & svg {
-              left: 7px;
-              display: inline-block;
-            }
-          }
         }
-      }
-      .today-button svg {
-        display: none;
-      }
-      .body-container {
-        width: 93%;
-        margin: 0 auto;
-        .mobile-wrapper {
-          padding-top: 20px;
-        }
-        .mobile-filters-label {
-          margin: 0;
-          margin-bottom: 5px;
-          color: $grey-warm-darker;
-          font-size: .9em;
-        }
-        .date-picker-wrapper {
-          padding-top: 20px;
-          position: relative;
-        }
-      }
-      .date-picker-wrapper {
-        display: inline-block;
-        .DateRangePickerInput {
-          width: 275px;
-        }
-        .DateInput_1 {
-          width: 120px;
-        }
-      }
-      .today-button-wrapper {
-        display: inline-block;
-        vertical-align: top;
-        margin-left: 10px;
-        .all-rides-button.today-button {
-          span {
-            padding: 0;
-            margin-left: 0;
-          }
-        }
-      }
-      .ride-status-wrapper {
-        .all-rides-filter {
-          .filters-wrapper-wrapper {
-            border-right: none;
-            display: block;
-            &:not(:first-of-type) {
-              margin-top: 15px;
-            }
-            &.collapse, &.just-future, &.just-past {
-              margin-top: 0;
-            }
-            .filter-label {
-              display: block;
-              color: $grey;
-              font-size: .8em;
-            }
-          }
-        }
-      }
 
-      .apply-filters-btn-wrapper {
-        width: 90%;
-        margin: 0 auto;
-        .apply-filters-btn {
-          width: 100%;
-          margin-bottom: 15px;
+        .all-rides-mobile-button {
+            height: 36px;
+            background-color: white;
+            border: none;
+            border: 1px solid $faded-blue;
+            border-left: none;
+            border-radius: 0;
+            color: $grey-warm-darker;
+            display: inline-block;
+            font-weight: 500;
+            padding: 0;
+            vertical-align: top;
         }
-      }
+
+        .filter-btn {
+            width: 25%;
+
+            &.active {
+                background-color: $blueberry;
+                border-bottom: 1px solid $blueberry;
+                color: white;
+            }
+        }
+
+        .page-view-btn {
+            width: 10%;
+
+            svg {
+                width: 60%;
+                height: 60%;
+                vertical-align: middle;
+                fill: $grey-warm-darker;
+            }
+        }
+
+        .mobile-filter-out-wrapper {
+            position: absolute;
+            z-index: 10000;
+            width: 100%;
+            max-height: 0;
+            overflow: hidden;
+
+            transition: all 0.3s ease;
+
+            &.expanded {
+                max-height: 600px;
+                box-shadow: 1px 2px 3px #ddd;
+
+                // overflow: visible;
+            }
+        }
+
+        .mobile-filters-header {
+            top: 0;
+            width: 100%;
+            background: $blueberry;
+            color: white;
+            text-align: center;
+
+            .filters-text {
+                margin: 0 auto;
+                padding: 10px 0;
+            }
+        }
+
+        .time-range-wrapper.mobile .dates {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            .displayed-range {
+                width: 100%;
+                color: $brand-purple;
+                font-size: 14px;
+                font-weight: bold;
+                margin-left: 10px;
+                text-align: left;
+            }
+
+            button {
+                width: 50px;
+                background-color: transparent;
+                border: 0;
+                border-radius: 0;
+                margin: 0;
+            }
+        }
+
+        .mobile-filters-body {
+            position: relative;
+            width: 100%;
+            height: auto;
+            min-height: 450px;
+            background-color: white;
+            border-bottom: 1px solid $cloudy-blue;
+            overflow: visible;
+
+            .time-zone-wrapper {
+                .input-wrapper {
+                    width: 25%;
+                    display: inline-block;
+                }
+
+                .today-button-wrapper {
+                    .all-rides-button.today-button {
+                        width: 90px;
+                        height: 36px;
+
+                        span {
+                            margin-left: 15px;
+                        }
+
+                        & svg {
+                            left: 7px;
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+
+            .today-button svg {
+                display: none;
+            }
+
+            .body-container {
+                width: 93%;
+                margin: 0 auto;
+
+                .mobile-wrapper {
+                    padding-top: 20px;
+                }
+
+                .mobile-filters-label {
+                    color: $grey-warm-darker;
+                    font-size: 0.9em;
+                    margin: 0;
+                    margin-bottom: 5px;
+                }
+
+                .date-picker-wrapper {
+                    position: relative;
+                    padding-top: 20px;
+                }
+            }
+
+            .date-picker-wrapper {
+                display: inline-block;
+
+                .DateRangePickerInput {
+                    width: 275px;
+                }
+
+                .DateInput_1 {
+                    width: 120px;
+                }
+            }
+
+            .today-button-wrapper {
+                display: inline-block;
+                margin-left: 10px;
+                vertical-align: top;
+
+                .all-rides-button.today-button {
+                    span {
+                        margin-left: 0;
+                        padding: 0;
+                    }
+                }
+            }
+
+            .ride-status-wrapper {
+                .all-rides-filter {
+                    .filters-wrapper-wrapper {
+                        border-right: none;
+                        display: block;
+
+                        &:not(:first-of-type) {
+                            margin-top: 15px;
+                        }
+
+                        &.collapse, &.just-future, &.just-past {
+                            margin-top: 0;
+                        }
+
+                        .filter-label {
+                            color: $grey;
+                            display: block;
+                            font-size: 0.8em;
+                        }
+                    }
+                }
+            }
+
+            .apply-filters-btn-wrapper {
+                width: 90%;
+                margin: 0 auto;
+
+                .apply-filters-btn {
+                    width: 100%;
+                    margin-bottom: 15px;
+                }
+            }
+        }
     }
-  }
 }
 
 .ride-list-header {
-  display: none;
-  @include media(small) {
-    display: flex;
-  }
-  justify-content: space-between;
-  background-color: $iris;
-  color: $white;
-  font-size: 12px;
-  height: 37px;
-  align-items: center;
-  width: 100%;
-  border-left: 5px solid transparent;
-  .time-block {
-    width: 400px;
-    display: flex;
-    justify-content: space-around;
-    > div:first-of-type, div:last-of-type {
-      width: 46px;
-      margin: 0 20px;
-    }
-  }
-  .ride-data-wrapper:not(.time-block):not(.ride-status):not(.checkbox) {
+    width: 100%;
+    height: 37px;
+    background-color: $iris;
+    border-left: 5px solid transparent;
+    color: $white;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+
     @include media(small) {
-      justify-content: center;
+        display: flex;
     }
-    @include media(medium) {
-      justify-content: flex-start;
+
+    .time-block {
+        width: 400px;
+        display: flex;
+        justify-content: space-around;
+
+        > div:first-of-type, div:last-of-type {
+            width: 46px;
+            margin: 0 20px;
+        }
     }
-  }
-  .button-wrapper {
-    margin-top: 0;
-    @include media(small) {
-      width: 140px;
-      justify-content: flex-end;
-      min-width: 140px;
-      &.past-actions {
-        width: 300px;
-      }
+
+    .ride-data-wrapper:not(.time-block):not(.ride-status):not(.checkbox) {
+        @include media(small) {
+            justify-content: center;
+        }
+        @include media(medium) {
+            justify-content: flex-start;
+        }
     }
-    @include media(medium) {
-      min-width: 150px;
-      &.dispatch-actions {
-        width: 200px;
-      }
+
+    .button-wrapper {
+        margin-top: 0;
+
+        @include media(small) {
+            width: 140px;
+            min-width: 140px;
+            justify-content: flex-end;
+
+            &.past-actions {
+                width: 300px;
+            }
+        }
+        @include media(medium) {
+            min-width: 150px;
+
+            &.dispatch-actions {
+                width: 200px;
+            }
+        }
     }
-  }
-  .checkbox {
-    .checkbox-container {
-      background-color: transparent;
+
+    .checkbox {
+        .checkbox-container {
+            background-color: transparent;
+        }
+
+        svg {
+            fill: $white;
+        }
     }
-    svg {
-      fill: $white;
+
+    .ride-status {
+        max-width: 140px;
+        justify-content: center;
+
+        &.vehicle {
+            min-width: 100px;
+            max-width: inherit;
+            padding-right: 10px;
+
+            @include media(medium) {
+                min-width: 140px;
+            }
+        }
     }
-  }
-  .ride-status {
-    max-width: 140px;
-    justify-content: center;
-    &.vehicle {
-      min-width: 100px;
-      max-width: inherit;
-      padding-right: 10px;
-      @include media(medium) {
-        min-width: 140px;
-      }
+
+    .ride-status {
+        @include media(small) {
+            min-width: 100px; // these max-widths are needed to get IE to behave
+            max-width: 100px;
+        }
+        @include media(medium) {
+            min-width: 140px;
+            max-width: 140px;
+            padding: 0 10px;
+        }
+        @include media(large) {
+            min-width: 200px;
+            max-width: 200px;
+        }
     }
-  }
-  .ride-status {
-    @include media(small) {
-      max-width: 100px;
-      min-width: 100px; // these max-widths are needed to get IE to behave
+
+    .sortable-col {
+        cursor: pointer;
+
+        &.selected {
+            font-weight: bold;
+        }
+
+        .order {
+            margin: 0 6px 0 -18px;
+        }
     }
-    @include media(medium) {
-      min-width: 140px;
-      max-width: 140px;
-      padding: 0 10px;
-    }
-    @include media(large) {
-      min-width: 200px;
-      max-width: 200px;
-    }
-  }
-  .sortable-col {
-    cursor: pointer;
-    &.selected {
-      font-weight: bold;
-    }
-    .order {
-      margin: 0 6px 0 -18px;
-    }
-  }
 }
 
 .all-rides-button {
-  height: 32px;
-  background-color: white;
-  padding: 0 7px 0 7px;
-  font-size: .9em;
-  font-weight: 500;
-  color: $grey-dark;
-  border: 1px solid $faded-blue;
-  .timezone {
-    font-size: 11px;
-    margin-right: 10px;
-    margin-top: 3px;
-  }
-  &:hover {
+    height: 32px;
     background-color: white;
-    border: 1px solid $faded-blue-hover;
-  }
-  span {
-    display: inline-block;
-  }
-  svg {
-    width: 20px;
-    height: 20px;
-    fill: $iris;
-  }
-  &.active {
-    background-color: $iris;
-    color: white;
-    svg {
-      fill: white;
+    border: 1px solid $faded-blue;
+    color: $grey-dark;
+    font-size: 0.9em;
+    font-weight: 500;
+    padding: 0 7px;
+
+    .timezone {
+        font-size: 11px;
+        margin-top: 3px;
+        margin-right: 10px;
     }
-  }
-  &.today-button {
-    max-width: 96px;
+
+    &:hover {
+        background-color: white;
+        border: 1px solid $faded-blue-hover;
+    }
+
     span {
-      padding: 0 14px 0 7px;
-      margin-left: 25px;
+        display: inline-block;
     }
+
     svg {
-      bottom: 5px;
-      position:absolute;
-      display: inline-block;
+        width: 20px;
+        height: 20px;
+        fill: $iris;
     }
-  }
-  &.dates-arrow{
-    margin-left: 6px;
-    .fa {
-      font-size: 24px;
-      color: $brand-purple;
+
+    &.active {
+        background-color: $iris;
+        color: white;
+
+        svg {
+            fill: white;
+        }
     }
-    &.dates-arrow-left {
-      margin-left: 10px;
+
+    &.today-button {
+        max-width: 96px;
+
+        span {
+            margin-left: 25px;
+            padding: 0 14px 0 7px;
+        }
+
+        svg {
+            position: absolute;
+            bottom: 5px;
+            display: inline-block;
+        }
     }
-  }
+
+    &.dates-arrow {
+        margin-left: 6px;
+
+        .fa {
+            color: $brand-purple;
+            font-size: 24px;
+        }
+
+        &.dates-arrow-left {
+            margin-left: 10px;
+        }
+    }
 }
 
 .ride-list-day-header {
-  display: block;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 1.2px;
-  background-color: $white-medium-dark;
-  color: $greyish-brown;
-  border-bottom: 1px solid rgba($purple-blue, 0.75);
-  width: 100%;
-  text-align: center;
-  padding: 4px 0;
-  @media screen and (max-width: $break-small) {
-    background-color: $blueberry;
-    color: $white;
-  }
+    width: 100%;
+    background-color: $white-medium-dark;
+    border-bottom: 1px solid rgba($purple-blue, 0.75);
+    color: $greyish-brown;
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    padding: 4px 0;
+    text-align: center;
+
+    @media screen and (max-width: $break-small) {
+        background-color: $blueberry;
+        color: $white;
+    }
 }
 
 .page-trip-list {
-  .left {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: flex-start;
-    align-items: flex-start;
-    .input-wrapper {
-      margin-right: 0px;
-      margin-bottom: 15px;
-      width: 100%;
+    .left {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        .input-wrapper {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 15px;
+        }
+
+        .input-wrapper:nth-child(3) {
+            width: 100%;
+        }
     }
-    .input-wrapper:nth-child(3) {
-      width: 100%;
-    }
-  }
 }
 
 .tooltip-text {
-  pointer-events: none;
-  visibility: hidden;
-  background-color: white;
-  color: $grey-dark;
-  text-align: center;
-  padding: 5px 5px;
-  font-size: 12px;
-  font-weight: 400;
-  border-radius: 6px;
-  margin-left: -17px;
-  margin-top: -22px;
-  position: absolute;
-  opacity: 0;
-  z-index: 10;
-  box-shadow: 1px 1px 5px 1px $grey;
-  transition: opacity 0.7s;
-  -webkit-transition-delay: 0.5s; /* Safari */
-  transition-delay: 0.5s;
-  line-height: 1;
-  .pill & {
-    margin-top: -34px;
-  }
+    position: absolute;
+    z-index: 10;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 1px 1px 5px 1px $grey;
+    color: $grey-dark;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+    margin-top: -22px;
+    margin-left: -17px;
+    opacity: 0;
+    padding: 5px;
+    pointer-events: none;
+    text-align: center;
+    visibility: hidden;
+
+    transition: opacity 0.7s;
+    -webkit-transition-delay: 0.5s; /* Safari */
+    transition-delay: 0.5s;
+
+    .pill & {
+        margin-top: -34px;
+    }
 }
+
 .tooltip-text::after {
-  content: '▼';
-  color: $white;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  margin-top: -2px;
-  text-shadow: 0px -1px 1px white, $grey 1px 2px 5px;
-  transform: scaleX(1.5);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    color: $white;
+    content: "▼";
+    margin-top: -2px;
+    margin-left: -5px;
+    text-shadow: 0 -1px 1px white, $grey 1px 2px 5px;
+
+    transform: scaleX(1.5);
 }
 
 .ride-list {
-  margin: 0;
-  p {
-    margin: 0 auto;
-    @include media(medium) {
-      margin: 0;
-    }
-  }
-  p {
-    font-size: 12px;
-    font-weight: 500;
-    color: $grey-warm;
-    &.sub-info {
-      font-size: 11px;
-      &.error {
-        text-align: center;
-        @media screen and (max-width: $break-large) {
-          max-width: 140px;
-        }
-      }
-      @include media(medium) {
-        font-size: 12px;
-      }
-      .column {
-        @include flex-column;
-      }
-    }
-    &.eta {
-      border: 1px solid $success-color;
-      line-height: 10px;
-      padding: 2px 5px;
-      &.late {
-        border-color: $warning-color;
-      }
-    }
-  }
-  @include media(medium) {
+    margin: 0;
+
     p {
-      font-size: 14px;
+        margin: 0 auto;
+
+        @include media(medium) {
+            margin: 0;
+        }
     }
-  }
-  .ride-status {
-    @include flex-column;
-    p.error {
-      max-width: 160px;
-    }
-  }
-  .ride-data-wrapper {
-    &.rider-info p.clickable {
-      display: inline-block;
-      cursor: pointer;
-      &:hover {
-        font-weight: bold;
-      }
-    }
-    div.time, p.time {
-      text-align: center;
-      font-size: 15px;
-      @include media(medium) {
-        font-size: 20px;
-      }
-    }
-    &.wrap {
-      flex-wrap: wrap;
-    }
-    &.time .error {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      p {
+
+    p {
+        color: $grey-warm;
         font-size: 12px;
-        color: $error-color;
-      }
-      svg {
-        height: 12px;
-        width: 11px;
-      }
+        font-weight: 500;
+
+        &.sub-info {
+            font-size: 11px;
+
+            &.error {
+                text-align: center;
+
+                @media screen and (max-width: $break-large) {
+                    max-width: 140px;
+                }
+            }
+
+            @include media(medium) {
+                font-size: 12px;
+            }
+
+            .column {
+                @include flex-column;
+            }
+        }
+
+        &.eta {
+            border: 1px solid $success-color;
+            line-height: 10px;
+            padding: 2px 5px;
+
+            &.late {
+                border-color: $warning-color;
+            }
+        }
     }
-  }
+
+    @include media(medium) {
+        p {
+            font-size: 14px;
+        }
+    }
+
+    .ride-status {
+        @include flex-column;
+
+        p.error {
+            max-width: 160px;
+        }
+    }
+
+    .ride-data-wrapper {
+        &.rider-info p.clickable {
+            cursor: pointer;
+            display: inline-block;
+
+            &:hover {
+                font-weight: bold;
+            }
+        }
+
+        div.time, p.time {
+            font-size: 15px;
+            text-align: center;
+
+            @include media(medium) {
+                font-size: 20px;
+            }
+        }
+
+        &.wrap {
+            flex-wrap: wrap;
+        }
+
+        &.time .error {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            p {
+                color: $error-color;
+                font-size: 12px;
+            }
+
+            svg {
+                width: 11px;
+                height: 12px;
+            }
+        }
+    }
 }
 
 .rides-list-ride-item, .rider-alert {
-  padding: 15px 15px 0;
-  @include media(small) {
-    padding: 0;
-  }
+    padding: 15px 15px 0;
+
+    @include media(small) {
+        padding: 0;
+    }
 }
 
 .rides-list-ride-item {
-  @include nice-easing-animation;
-  display: flex;
-  @include media(small) {
-    height: 80px;
-  }
-  border-bottom: 1px solid $faded-blue-hover;
-  &.placeholder {
-    .background-masker {
-      background: #ddd;
-      &.status-icon-placeholder {
-        width: 40px;
-        height: 40px;
-      }
+    @include nice-easing-animation;
+    border-bottom: 1px solid $faded-blue-hover;
+    display: flex;
+
+    @include media(small) {
+        height: 80px;
     }
-  }
-  &:hover {
-    background-color: rgba($faded-blue, 0.1);
-  }
+
+    &.placeholder {
+        .background-masker {
+            background: #ddd;
+
+            &.status-icon-placeholder {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+
+    &:hover {
+        background-color: rgba($faded-blue, 0.1);
+    }
 }
 
 .button-wrapper {
-  .cancel .tooltip-text {
-    margin-left: -15px;
-  }
-  .thumbs-up .tooltip-text {
-    margin-left: -32px;
-  }
-  .calendar .tooltip-text {
-    margin-left: -5px;
-  }
-  .review-trip .tooltip-text {
-    margin-left: -17px;
-  }
-  .contact-driver .tooltip-text {
-    margin-left: -10px;
-  }
-  .reassign, .fail {
+    .cancel .tooltip-text {
+        margin-left: -15px;
+    }
+
+    .thumbs-up .tooltip-text {
+        margin-left: -32px;
+    }
+
+    .calendar .tooltip-text {
+        margin-left: -5px;
+    }
+
+    .review-trip .tooltip-text {
+        margin-left: -17px;
+    }
+
+    .contact-driver .tooltip-text {
+        margin-left: -10px;
+    }
+
+    .reassign, .fail {
+        .tooltip-text {
+            margin-left: -6px;
+        }
+    }
+
     .tooltip-text {
-      margin-left: -6px;
+        font-size: 12px;
+        margin-top: -35px;
+        margin-left: -25px;
+
+        &.disabled {
+            margin-top: -45px;
+            margin-left: -100%;
+        }
+
+        span.disabled-why {
+            font-size: 10px;
+            font-style: italic;
+            font-weight: bold;
+        }
     }
-  }
-  .tooltip-text {
-    font-size: 12px;
-    margin-top: -35px;
-    margin-left: -25px;
-    &.disabled {
-      margin-left: -100%;
-      margin-top: -45px;
-    }
-    span.disabled-why {
-      font-weight: bold;
-      font-style: italic;
-      font-size: 10px;
-    }
-  }
 }
 
 svg {
-  fill: $brand-purple;
-  &.edit > svg {
-    margin-top: 5px;
-    fill: $brand-grape;
-  }
-  &.check > svg {
-    fill: $success-color;
-  }
-  &.phone, &.map-marker-radius {
+    fill: $brand-purple;
 
-    > svg {
-      fill: $brand-grape;
+    &.edit > svg {
+        margin-top: 5px;
+        fill: $brand-grape;
     }
-  }
-  &.thumbs-up {
-    margin-top: -2px;
-  }
-  &.patient_initiated > svg {
-    fill: $blueberry;
-  }
+
+    &.check > svg {
+        fill: $success-color;
+    }
+
+    &.phone, &.map-marker-radius {
+        > svg {
+            fill: $brand-grape;
+        }
+    }
+
+    &.thumbs-up {
+        margin-top: -2px;
+    }
+
+    &.patient_initiated > svg {
+        fill: $blueberry;
+    }
 }
 
 .ride-wrapper {
-  &.future {
-    @include media(large) {
-      .ride-status {
-        width: 125px;
-        min-width: 125px;
-      }
+    &.future {
+        @include media(large) {
+            .ride-status {
+                width: 125px;
+                min-width: 125px;
+            }
+        }
     }
-  }
 }
 
 .selected-ride-footer {
-  .action:not(:last-of-type) {
-    margin-right: 50px;
-  }
-  transition: .25s $sweetEasing transform;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: $white;
-  z-index: 20000000; // has to be this high to cover zendesk button
-  box-shadow: 2px 0 4px 1px rgba(76, 76, 76, 0.5);
-  padding: 10px;
-  font-size: 14px;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 120px;
-  transition: translateY(0);
-  animation-duration: 2s;
-  &.slide-down {
-    transform: translateY(100%);
-    div {
-      opacity: 0;
+    .action:not(:last-of-type) {
+        margin-right: 50px;
     }
-  }
-  .flex-between {
-    flex-direction: column;
-    > div:nth-child(2) {
-      padding-top: 5px;
-    }
-  }
-  @include media(small) {
-    padding: 0 35px 0 75px;
-    flex-direction: row;
-    height: 76px;
-    justify-content: space-between;
-    .flex-between {
-      align-items: flex-start;
-    }
-  }
-  @include media(medium) {
-    .flex-between {
-      flex-direction: row;
-      align-items: center;
-      > div:nth-child(2) {
-        padding-top: 0;
-      }
-    }
-  }
-  &.pending-cancel {
-    height: 200px;
-    p {
-      padding: 0 10px;
-    }
-    @include media(small) {
-      height: 100px;
-      p {
-        padding: 0;
-      }
-    }
-  }
-  span {
-    text-transform: uppercase;
-    color: $blueberry;
-  }
-  .flex {
-    align-items: center;
-  }
-  .count {
-    @include flex-center;
-    color: $white;
-    background-color: $brand-purple;
-    border-radius: 24px;
-    padding: 3px 7px;
-    min-width: 24px;
-    min-height: 24px;
-    margin-right: 10px;
-  }
-  .select-all {
-    @include media(small) {
-      margin-left: 34px;
-    }
-    @include media(medium) {
-      margin-left: 20px;
-    }
-    border-bottom: 1px solid $brand-purple;
-    cursor: pointer;
-    &:hover {
-      color: $brand-purple-dark;
-    }
-  }
-  .action {
-    cursor: pointer;
-    &:hover svg {
-      transform: scale3d(1.1, 1.1, 1.1);
-    }
-    @include flex-center;
-    span {
-      color: $black;
-    }
-    svg {
-      @include nice-easing-animation;
-      height: 20px;
-      width: 20px;
-      margin-right: 5px;
-    }
-    .fa {
-      margin-right: 10px;
-    }
-  }
-  .cancel-block {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 20000000; // has to be this high to cover zendesk button
+    width: 100%;
+    height: 120px;
     background-color: $white;
-    padding: 0;
-    position: initial;
-    p {
-      margin-bottom: 5px;
-    }
-  }
-  .summary {
+    box-shadow: 2px 0 4px 1px rgba(76, 76, 76, 0.5);
     flex-direction: column;
     justify-content: space-around;
-    height: 90%;
+    font-size: 14px;
+    padding: 10px;
+
+    animation-duration: 2s;
+    transition: 0.25s $sweetEasing transform;
+
+    transition: translateY(0);
+
+    &.slide-down {
+        transform: translateY(100%);
+
+        div {
+            opacity: 0;
+        }
+    }
+
+    .flex-between {
+        flex-direction: column;
+
+        > div:nth-child(2) {
+            padding-top: 5px;
+        }
+    }
+
     @include media(small) {
-      flex-direction: row;
-      justify-content: center;
+        height: 76px;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 35px 0 75px;
+
+        .flex-between {
+            align-items: flex-start;
+        }
     }
-    width: 100%;
-    .flex, .fa {
-      margin: 0 10px;
+    @include media(medium) {
+        .flex-between {
+            flex-direction: row;
+            align-items: center;
+
+            > div:nth-child(2) {
+                padding-top: 0;
+            }
+        }
     }
-    svg {
-      height: 18px;
-      width: 18px;
-      margin-right: 10px;
+
+    &.pending-cancel {
+        height: 200px;
+
+        p {
+            padding: 0 10px;
+        }
+
+        @include media(small) {
+            height: 100px;
+
+            p {
+                padding: 0;
+            }
+        }
     }
-  }
-  .freeze & {
-    padding-right: calc(35px + 14px);
-    @media only screen and (max-device-width : 768px) {
-      padding-right: 35px;
+
+    span {
+        color: $blueberry;
+        text-transform: uppercase;
     }
-  }
+
+    .flex {
+        align-items: center;
+    }
+
+    .count {
+        @include flex-center;
+        min-width: 24px;
+        min-height: 24px;
+        background-color: $brand-purple;
+        border-radius: 24px;
+        color: $white;
+        margin-right: 10px;
+        padding: 3px 7px;
+    }
+
+    .select-all {
+        @include media(small) {
+            margin-left: 34px;
+        }
+        @include media(medium) {
+            margin-left: 20px;
+        }
+        border-bottom: 1px solid $brand-purple;
+        cursor: pointer;
+
+        &:hover {
+            color: $brand-purple-dark;
+        }
+    }
+
+    .action {
+        cursor: pointer;
+
+        &:hover svg {
+            transform: scale3d(1.1, 1.1, 1.1);
+        }
+
+        @include flex-center;
+
+        span {
+            color: $black;
+        }
+
+        svg {
+            @include nice-easing-animation;
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        .fa {
+            margin-right: 10px;
+        }
+    }
+
+    .cancel-block {
+        position: initial;
+        background-color: $white;
+        padding: 0;
+
+        p {
+            margin-bottom: 5px;
+        }
+    }
+
+    .summary {
+        width: 100%;
+        height: 90%;
+        flex-direction: column;
+        justify-content: space-around;
+
+        @include media(small) {
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .flex, .fa {
+            margin: 0 10px;
+        }
+
+        svg {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+        }
+    }
+
+    .freeze & {
+        padding-right: calc(35px + 14px);
+
+        @media only screen and (max-device-width: 768px) {
+            padding-right: 35px;
+        }
+    }
 }
 
 // when calendar button is hidden (mobile view)
 .rides-index-header-mobile.no-toggle {
-  .rider-filter-wrapper {
-    width: 75%;
-  }
+    .rider-filter-wrapper {
+        width: 75%;
+    }
 }
 
 .page-alerts {
-  .circulation-loader {
-    position: relative;
-    padding: 40px 0;
-  }
-  .rides-index-header-mobile {
-    .alert-type-span {
-      display: inline-block;
-      &.mobile-filters-label {
-        padding-top: 15px;
-      }
+    .circulation-loader {
+        position: relative;
+        padding: 40px 0;
     }
-    .rider-filter-wrapper {
-      width: 100%;
+
+    .rides-index-header-mobile {
+        .alert-type-span {
+            display: inline-block;
+
+            &.mobile-filters-label {
+                padding-top: 15px;
+            }
+        }
+
+        .rider-filter-wrapper {
+            width: 100%;
+        }
+
+        .mobile-filters-body {
+            .body-container {
+                text-align: center;
+            }
+
+            .page-mode-wrapper {
+                display: inline-block;
+                padding-top: 25px;
+            }
+
+            .DateRangePicker {
+                margin-bottom: 0;
+            }
+        }
+
+        .top { text-align: center; }
     }
-    .mobile-filters-body {
-      .body-container {
-        text-align: center;
-      }
-      .page-mode-wrapper {
-        display: inline-block;
-        padding-top: 25px;
-      }
-      .DateRangePicker {
-        margin-bottom: 0;
-      }
-    }
-    .top{ text-align:center }
-  }
 }
 
 div.selected-row {
-  background-image: linear-gradient(rgba(120, 99, 191, 0.2), rgba(120, 99, 191, 0.2));
-  background-blend-mode: multiply;
-  .button-wrapper, .checkbox {
-    border-left-color: #C5C2D4;
-  }
+    background-image: linear-gradient(rgba(120, 99, 191, 0.2), rgba(120, 99, 191, 0.2));
+    background-blend-mode: multiply;
+
+    .button-wrapper, .checkbox {
+        border-left-color: #c5c2d4;
+    }
 }
 
 .date-picker-wrapper {
-  display: inline-block;
-  width: auto;
-  margin-left: 0;
-  z-index: 1600;
-  vertical-align: top;
-  @include media(smallMedium) {
-    margin: 0 6px;
-  }
+    z-index: 1600;
+    width: auto;
+    display: inline-block;
+    margin-left: 0;
+    vertical-align: top;
+
+    @include media(smallMedium) {
+        margin: 0 6px;
+    }
 }
 
 .time-zone-wrapper {
-  display: inline-block;
-  .input-wrapper {
-    min-width: 75px;
-    width: 70px;
-    transition: all .1s ease;
-    margin-right: 0;
-    input {
-      padding-right: 0;
+    display: inline-block;
+
+    .input-wrapper {
+        width: 70px;
+        min-width: 75px;
+        margin-right: 0;
+
+        transition: all 0.1s ease;
+
+        input {
+            padding-right: 0;
+        }
+
+        .select-arrow {
+            right: 10px;
+        }
     }
-    .select-arrow {
-      right: 10px;
-    }
-  }
 }
 
 @include media(small) {
-  .ride-data-wrapper {
-    @media screen and (max-width: $break-medium-large) {
-      .long, &.long {
-        display: none;
-      }
-      @include media(small) {
-        .ride-data-wrapper.time {
-          width: 300px;
-        }
-        .progress-bar-container.mini {
-          display: none;
-          + .sub-info {
-            .divider {
-              display: none;
+    .ride-data-wrapper {
+        @media screen and (max-width: $break-medium-large) {
+            .long, &.long {
+                display: none;
             }
-            span {
-              display: block;
-              white-space: nowrap;
-              margin-bottom: 2px;
-              padding-bottom: 2px;
+
+            @include media(small) {
+                .ride-data-wrapper.time {
+                    width: 300px;
+                }
+
+                .progress-bar-container.mini {
+                    display: none;
+
+                    + .sub-info {
+                        .divider {
+                            display: none;
+                        }
+
+                        span {
+                            display: block;
+                            margin-bottom: 2px;
+                            padding-bottom: 2px;
+                            white-space: nowrap;
+                        }
+                    }
+                }
             }
-          }
         }
-      }
     }
-  }
 }
 
 .all-rides-filter {
-  &.hidden {
-    visibility: hidden;
-  }
-  background-color: none;
-  .filters-wrapper-wrapper {
-    display: inline-block;
-    transition: all .2s ease;
-    margin-left: 0;
-    overflow: hidden;
-    vertical-align: top;
-    white-space: nowrap;
-    &:not(:last-of-type):not(.collapse):not(.just-past) {
-      margin-right: 10px;
-      border-right: 1px solid $iris;
-      @include media(mediumLarge) {
-        margin-right: 15px;
-        padding-right: 12px;
-      }
+    &.hidden {
+        visibility: hidden;
     }
-    &.collapse {
-      margin-right: 0;
-      padding-right: 0;
-      min-width: 0;
-    }
-    .filters-wrapper {
-      &.display-none {
-        display: none;
-      }
-      &.past {
-        .filter-label:hover {
-          .incomplete {
-            background-color: #fadeee;
-          }
-          .completed {
-            background-color: #cae5c8;
-          }
-          .canceled_past, .canceled_future {
-            background-color: #e9f3f5;
-          }
+    background-color: none;
+
+    .filters-wrapper-wrapper {
+        display: inline-block;
+        margin-left: 0;
+        overflow: hidden;
+        vertical-align: top;
+        white-space: nowrap;
+
+        transition: all 0.2s ease;
+
+        &:not(:last-of-type):not(.collapse):not(.just-past) {
+            border-right: 1px solid $iris;
+            margin-right: 10px;
+
+            @include media(mediumLarge) {
+                margin-right: 15px;
+                padding-right: 12px;
+            }
         }
-        @media screen and (max-width: 1102px) {
-          width: auto;
+
+        &.collapse {
+            min-width: 0;
+            margin-right: 0;
+            padding-right: 0;
         }
-      }
-      &.just-past {
-        border-right: none;
-      }
-      &.current, &.future {
-        @media screen and (max-width: 1102px) {
-          width: auto;
-        }
-      }
-      margin-left: 0;
-      overflow: hidden;
-      vertical-align: top;
-      white-space: nowrap;
-      &.collapse {
-        min-width: 0;
-        padding-right: 0;
-        margin-right: 0;
-        border-right: none;
-        @media screen and (max-width: $break-medium) {
-          height: 0;
-        }
-      }
+
+        .filters-wrapper {
+            &.display-none {
+                display: none;
+            }
+
+            &.past {
+                .filter-label:hover {
+                    .incomplete {
+                        background-color: #fadeee;
+                    }
+
+                    .completed {
+                        background-color: #cae5c8;
+                    }
+
+                    .canceled_past, .canceled_future {
+                        background-color: #e9f3f5;
+                    }
+                }
+
+                @media screen and (max-width: 1102px) {
+                    width: auto;
+                }
+            }
+
+            &.just-past {
+                border-right: none;
+            }
+
+            &.current, &.future {
+                @media screen and (max-width: 1102px) {
+                    width: auto;
+                }
+            }
+            margin-left: 0;
+            overflow: hidden;
+            vertical-align: top;
+            white-space: nowrap;
+
+            &.collapse {
+                min-width: 0;
+                border-right: none;
+                margin-right: 0;
+                padding-right: 0;
+
+                @media screen and (max-width: $break-medium) {
+                    height: 0;
+                }
+            }
 
 
-      @media screen and (max-width: $break-medium) {
-        width: 100%;
-      }
+            @media screen and (max-width: $break-medium) {
+                width: 100%;
+            }
+        }
     }
-  }
-  .ride-number {
-    margin: 0 20px 0 70px;
-    padding-right: 20px;
-    display: inline-block;
-    font-size: .9em;
-    color: black;
-    border-right: 1px solid $blueberry;
-    span {
-      font-size: 1.2em;
-      color: $berry;
+
+    .ride-number {
+        border-right: 1px solid $blueberry;
+        color: black;
+        display: inline-block;
+        font-size: 0.9em;
+        margin: 0 20px 0 70px;
+        padding-right: 20px;
+
+        span {
+            color: $berry;
+            font-size: 1.2em;
+        }
     }
-  }
-  .filter-label {
-    @media screen and (max-width: 1154px) {
-      display: none;
+
+    .filter-label {
+        @media screen and (max-width: 1154px) {
+            display: none;
+        }
     }
-  }
-  .filters {
-    display: inline-block;
-  }
+
+    .filters {
+        display: inline-block;
+    }
 }
 
 .filter-label {
-  font-size: .9em;
-  color: #4c4c4c;
-  margin-right: 10px;
-  &.active {
-    font-weight: bold;
-  }
-  &:hover {
-    cursor: pointer;
-    text-decoration: underline
-  }
+    color: #4c4c4c;
+    font-size: 0.9em;
+    margin-right: 10px;
+
+    &.active {
+        font-weight: bold;
+    }
+
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
 }
 
 .dispatch-queue.my-rides {
-  .date-tz-wrapper {
-    margin: 0;
-    top: 0;
-    left: 0;
-    padding: 15px;
-    position: relative;
-    display: flex;
-    justify-content: flex-start;
-    .styled-dropdown.input-wrapper:not(.old-style) {
-      margin-top: 0;
-    }
-    @include media(small) {
-      background-color: $white;
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-      padding: 15px;
-    }
-  }
-  @media screen and (max-width: $break-mobile) {
     .date-tz-wrapper {
-      padding: 0;
-    }
-    .today-button-wrapper {
-      flex-grow: 2;
-    }
-  }
-  @media screen and (max-width: $break-small) {
-    width: 100%;
-    .date-tz-wrapper {
-      .DateRangePickerInput {
-        width: 246px;
-      }
-      .DateInput {
-        width: 110px;
-      }
-      .today-button-wrapper {
-        margin-right: 0;
-      }
-      .today-button {
-        width: 100%;
-        max-width: none;
-        padding: 0 10px;
-        border-radius: 0;
-        border-left: none;
-        border-right: none;
-        span {
-          padding: 0;
-          margin-left: 0;
+        position: relative;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: flex-start;
+        margin: 0;
+        padding: 15px;
+
+        .styled-dropdown.input-wrapper:not(.old-style) {
+            margin-top: 0;
         }
-      }
-      .styled-dropdown {
-        border-radius: 0;
-        min-width: 40px;
-        width: 65px;
-        vertical-align: top;
-        margin-top: 0;
-        &.input-wrapper:not(.old-style) {
-          margin-top: 0;
-          input {
-            border-color: #cfcbdd;
-            border-radius: 0;
-            padding: 1px 5px;
-          }
+
+        @include media(small) {
+            width: 100%;
+            background-color: $white;
+            display: flex;
+            justify-content: flex-end;
+            padding: 15px;
         }
-      }
-      .time-zone-wrapper {
-        width: 60px;
-      }
     }
-    .ride-data-wrapper.dispatch-actions {
-      width: 100%;
-      button {
+
+    @media screen and (max-width: $break-mobile) {
+        .date-tz-wrapper {
+            padding: 0;
+        }
+
+        .today-button-wrapper {
+            flex-grow: 2;
+        }
+    }
+    @media screen and (max-width: $break-small) {
         width: 100%;
-      }
+
+        .date-tz-wrapper {
+            .DateRangePickerInput {
+                width: 246px;
+            }
+
+            .DateInput {
+                width: 110px;
+            }
+
+            .today-button-wrapper {
+                margin-right: 0;
+            }
+
+            .today-button {
+                width: 100%;
+                max-width: none;
+                border-right: none;
+                border-left: none;
+                border-radius: 0;
+                padding: 0 10px;
+
+                span {
+                    margin-left: 0;
+                    padding: 0;
+                }
+            }
+
+            .styled-dropdown {
+                width: 65px;
+                min-width: 40px;
+                border-radius: 0;
+                margin-top: 0;
+                vertical-align: top;
+
+                &.input-wrapper:not(.old-style) {
+                    margin-top: 0;
+
+                    input {
+                        border-color: #cfcbdd;
+                        border-radius: 0;
+                        padding: 1px 5px;
+                    }
+                }
+            }
+
+            .time-zone-wrapper {
+                width: 60px;
+            }
+        }
+
+        .ride-data-wrapper.dispatch-actions {
+            width: 100%;
+
+            button {
+                width: 100%;
+            }
+        }
     }
-  }
 }
 
 .my-rides-page {
-  .rides-index-header {
-    background-color: white;
-    .row {
-      margin: 0;
-      padding: 12px 10px;
-      .date-wrapper {
-        margin-left: calc(100% - 490px)
-      }
+    .rides-index-header {
+        background-color: white;
+
+        .row {
+            margin: 0;
+            padding: 12px 10px;
+
+            .date-wrapper {
+                margin-left: calc(100% - 490px);
+            }
+        }
     }
-  }
 }
 
 
 .scroll-modal .prior-auth-approval-modal {
-  padding: 10px 30px;
-  height: calc(100% - 65px);
-  // font-size: .9em;
-  color: $greyish-brown;
-  .alert-card & {
-    // font-size: 1.1em;
-  }
-  .section {
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgba(120, 99, 191, 0.5);
-    &:not(:first-of-type) {
-      padding-top: 20px;
+    height: calc(100% - 65px);
+
+    // font-size: .9em;
+    color: $greyish-brown;
+    padding: 10px 30px;
+
+    .alert-card & {
+        // font-size: 1.1em;
     }
-  }
-  .text-top {
-    margin-bottom: 20px;
-  }
-  .ride-count-warning {
-    .icon-wrapper {
-      display: inline-block;
-      width: 4%;
-      height: 18px;
-      svg {
-        width: 100%;
-      }
+
+    .section {
+        border-bottom: 1px solid rgba(120, 99, 191, 0.5);
+        padding-bottom: 20px;
+
+        &:not(:first-of-type) {
+            padding-top: 20px;
+        }
     }
-    p {
-      display: inline-block;
-      width: 96%;
-      vertical-align: top;
+
+    .text-top {
+        margin-bottom: 20px;
     }
-  }
-  .trips-overview.section {
-    .simple-ride-list {
-      margin-bottom: 15px;
-      li {
-        margin-top: 3px;
-      }
+
+    .ride-count-warning {
+        .icon-wrapper {
+            width: 4%;
+            height: 18px;
+            display: inline-block;
+
+            svg {
+                width: 100%;
+            }
+        }
+
+        p {
+            width: 96%;
+            display: inline-block;
+            vertical-align: top;
+        }
     }
-    .item:not(:last-of-type) {
-      margin-right: 18px;
+
+    .trips-overview.section {
+        .simple-ride-list {
+            margin-bottom: 15px;
+
+            li {
+                margin-top: 3px;
+            }
+        }
+
+        .item:not(:last-of-type) {
+            margin-right: 18px;
+        }
+
+        .trips-overview-icon {
+            width: 18px;
+            height: 18px;
+            margin-right: 18px;
+            vertical-align: middle;
+        }
     }
-    .trips-overview-icon {
-      vertical-align: middle;
-      height: 18px;
-      width: 18px;
-      margin-right: 18px;
-    }
-  }
 }
 
 h4.section-label-thick {
-  text-transform: uppercase;
-  color: $brand-purple;
-  letter-spacing: 1.5px;
-  font-weight: 700;
+    color: $brand-purple;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
 }

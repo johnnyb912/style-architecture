@@ -1,10 +1,10 @@
 .billing-dynamic-tab, .appointment_types-dynamic-tab {
     .dynamic-search-results {
-        display: flex;
         position: relative;
-        flex-direction: column;
-        width: calc(100% - 3px);
         left: 0;
+        width: calc(100% - 3px);
+        display: flex;
+        flex-direction: column;
         overflow-x: hidden;
     }
 
@@ -20,15 +20,15 @@
 
         &.add-anchor {
             @include flex-center;
-            flex-wrap: wrap;
-            display: block;
+            max-height: 74px;
             background: $grey-dark;
             color: $white;
-            text-transform: uppercase;
+            display: block;
+            flex-wrap: wrap;
             font-size: 2rem;
-            text-align: center;
             padding: 0;
-            max-height:74px;
+            text-align: center;
+            text-transform: uppercase;
 
             span {
                 width: 100%;
@@ -40,25 +40,27 @@
 
             a {
                 p:first-child {
+                    color: $white;
                     font-size: 0.6em;
-                    color: $white;
                 }
+
                 p:last-child {
-                    font-size: 0.9em;
                     color: $white;
+                    font-size: 0.9em;
                 }
             }
         }
     }
 
-    #add-billing-form{
-        .input-wrapper{
+    #add-billing-form {
+        .input-wrapper {
             min-width: 100%;
         }
     }
-    .modal-dialog{
-       .form-block {
-            width:100%!important;
-       }
+
+    .modal-dialog {
+        .form-block {
+            width: 100% !important;
+        }
     }
 }

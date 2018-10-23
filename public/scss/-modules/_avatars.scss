@@ -1,48 +1,47 @@
 body {
-	.avatar{
-		display:none;
-	}
+    .avatar {
+        display: none;
+    }
 }
 
 .showavatars {
-
-	.avatar{
-		display:block;
-	}
-
-	.page-section-rider-at-glance{
-
-	  .rider-info:first-child{
-      	padding-left: 35px;
+    .avatar {
+        display: block;
     }
 
-    .rider-info:first-child{
-				padding-left: 35px;
-		}
+    .page-section-rider-at-glance {
+        .rider-info:first-child {
+            padding-left: 35px;
+        }
 
-    .avatar{
-        border:1px solid $grey-warm-darker;
-        position:absolute;
-        left:-15px;
-        top:15px;
-        height:50px;
-        width:50px;
-        background-color:$white;
+        .rider-info:first-child {
+            padding-left: 35px;
+        }
+
+        .avatar {
+            position: absolute;
+            top: 15px;
+            left: -15px;
+            width: 50px;
+            height: 50px;
+            background-color: $white;
+            border: 1px solid $grey-warm-darker;
+        }
     }
-  }
 
     li.trip-list-ride-item {
-    		.avatar{
-            $avsize:30px;
-            background:$white;
-            border:1px solid $grey-warm-darker;
-            width:$avsize;
-            height:$avsize;
-            min-height:$avsize;
-            min-width:$avsize;
-            top:-6px;
-            left:-7px;
-            position:absolute;
+        .avatar {
+
+            $avsize: 30px;
+            position: absolute;
+            top: -6px;
+            left: -7px;
+            width: $avsize;
+            min-width: $avsize;
+            height: $avsize;
+            min-height: $avsize;
+            background: $white;
+            border: 1px solid $grey-warm-darker;
         }
-		}
+    }
 }

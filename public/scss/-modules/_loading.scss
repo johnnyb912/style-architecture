@@ -1,15 +1,20 @@
-$loadcolor1:lighten($brand-accent-color,20%);
-$loadcolor2:$white-dark;
-$loadcolor3:$white;
+$loadcolor1: lighten($brand-accent-color, 20%);
+$loadcolor2: $white-dark;
+$loadcolor3: $white;
 $heartbeat: 0.99s;
 
 @keyframes isLoading {
-  0%  { background-color: $loadcolor2; }
-  20%   { background-color: $loadcolor2; }
-  35%  { background-color: $loadcolor3; }
-  50% { background-color: $loadcolor1; }
-  100%  { background-color: $loadcolor2; }
+    0% { background-color: $loadcolor2; }
+
+    20% { background-color: $loadcolor2; }
+
+    35% { background-color: $loadcolor3; }
+
+    50% { background-color: $loadcolor1; }
+
+    100% { background-color: $loadcolor2; }
 }
+
 /*
 @keyframes aStrobe {
   0%  { left:0; background-position:0 0;}
@@ -34,26 +39,30 @@ $heartbeat: 0.99s;
 } */
 
 @keyframes spin {
-    0% {transform:rotate(0deg);}
-    100% {transform:rotate(360deg);}
+    0% { transform: rotate(0deg); }
+
+    100% { transform: rotate(360deg); }
 }
 
-.content-wrapper{
-  transition:opacity .3s ease-in;
+.content-wrapper {
+    transition: opacity 0.3s ease-in;
 }
 
-$spinnerSize:180px;
-$mobileSpinnerSize:60px;
-#spinner{
-  pointer-events: none;
-  opacity: 0;
-  transition:opacity 1s ease-out;
+$spinnerSize: 180px;
+$mobileSpinnerSize: 60px;
+
+#spinner {
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 1s ease-out;
 }
 
-#analytics-spinner{
-  pointer-events: none;
-  opacity:0;
-  transition:opacity 1s ease-out;
+#analytics-spinner {
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 1s ease-out;
 }
 
 /* I think it'd be awesome to eventually move to a model where the
@@ -64,154 +73,177 @@ have one CSS spinner that gets injected into that div. Less spinner code,
 and a way faster/cleaner experience. */
 
 .analytics-table-wrapper.loading {
-  background-image:none !important;
-  #analytics-spinner{
-    background-image:url('/images/spinner.png');
-    .mobile &{
-      background-image:url('images/spinner.png');
+    background-image: none !important;
+
+    #analytics-spinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 1000;
+        width: $spinnerSize;
+        height: $spinnerSize;
+        background-image: url("/images/spinner.png");
+        background-repeat: no-repeat;
+        background-size: $spinnerSize $spinnerSize;
+        display: block;
+        margin: -($spinnerSize/2.5) 0 0 (-$spinnerSize/2.5);
+        opacity: 1;
+
+        animation: spin $heartbeat ease-in-out;
+        animation-iteration-count: infinite;
+        transform-origin: 52.5% 50%;
+
+        .mobile & {
+            background-image: url("images/spinner.png");
+        }
+
+        @media screen and (max-width: $break-mobile) {
+            width: 50px;
+            height: 50px;
+            background-size: 50px 50px;
+            margin: -20px 0 0 -35px;
+        }
     }
-    display:block;
-    opacity:1;
-    background-repeat:no-repeat;
-    left:50%;
-    top:50%;
-    margin:-($spinnerSize/2.5) 0 0 (-$spinnerSize/2.5);
-    width:$spinnerSize;
-    height:$spinnerSize;
-    background-size:$spinnerSize $spinnerSize;
-    position:absolute;
-    z-index:1000;
-    animation: spin $heartbeat ease-in-out;
-    animation-iteration-count: infinite;
-    transform-origin:52.5% 50%;
-    @media screen and (max-width: $break-mobile) {
-      margin: -20px 0 0 -35px;
-      width: 50px;
-      height: 50px;
-      background-size: 50px 50px;
+
+    #analyticsTable {
+        opacity: 0.2;
     }
-  }
-  #analyticsTable {
-    opacity: 0.2
-  }
-  .content-wrapper{
-    opacity:0;
-  }
-  *{
-    cursor:wait!important;
-  }
+
+    .content-wrapper {
+        opacity: 0;
+    }
+
+    * {
+        cursor: wait !important;
+    }
 }
 
-body.loading{
-    background-image:none !important;
+body.loading {
+    background-image: none !important;
+
     //animation: isLoading $heartbeat ease-in-out;
     //animation-iteration-count: infinite;
 
-/*     #heartbeat{
+    /*     #heartbeat{
   display:block;
   opacity:.5;
 } */
-    #spinner{
-      background-image:url('/images/spinner.png');
-      .mobile &{
-        background-image:url('images/spinner.png');
-      }
-      background-repeat:no-repeat;
-      opacity: 1;
-      left:50%;
-      top:50%;
-      margin:-($spinnerSize/2) 0 0 (-$spinnerSize/2);
-      width:$spinnerSize;
-      height:$spinnerSize;
-      background-size:$spinnerSize $spinnerSize;
-      position:fixed;
-      z-index:1000;
-      animation: spin $heartbeat ease-in-out;
-      animation-iteration-count: infinite;
-      transform-origin:52.5% 50%;
-      @media screen and (max-width: $break-mobile) {
-        margin:-($mobileSpinnerSize/2) 0 0 (-$mobileSpinnerSize/2);
-        width: $mobileSpinnerSize;
-        height: $mobileSpinnerSize;
-        background-size: $mobileSpinnerSize $mobileSpinnerSize;
-      }
+
+    #spinner {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 1000;
+        width: $spinnerSize;
+        height: $spinnerSize;
+        background-image: url("/images/spinner.png");
+        background-repeat: no-repeat;
+        background-size: $spinnerSize $spinnerSize;
+        margin: -($spinnerSize/2) 0 0 (-$spinnerSize/2);
+        opacity: 1;
+
+        animation: spin $heartbeat ease-in-out;
+        animation-iteration-count: infinite;
+        transform-origin: 52.5% 50%;
+
+        .mobile & {
+            background-image: url("images/spinner.png");
+        }
+
+        @media screen and (max-width: $break-mobile) {
+            width: $mobileSpinnerSize;
+            height: $mobileSpinnerSize;
+            background-size: $mobileSpinnerSize $mobileSpinnerSize;
+            margin: -($mobileSpinnerSize/2) 0 0 (-$mobileSpinnerSize/2);
+        }
     }
-    .content-wrapper{
-      opacity:0;
+
+    .content-wrapper {
+        opacity: 0;
     }
-    *{
-      cursor:wait!important;
+
+    * {
+        cursor: wait !important;
     }
 }
 
-$smallSpinnerSize:11px;
+$smallSpinnerSize: 11px;
+
 i.fa.loading {
-  background-image:url('/images/logo-c.png');
-  .mobile &{
-    background-image:url('images/logo-c.png');
-  }
-  background-repeat:no-repeat;
-  width:$smallSpinnerSize;
-  height:$smallSpinnerSize;
-  background-size:$smallSpinnerSize $smallSpinnerSize;
-  pointer-events: none;
-  animation: spin $heartbeat ease-in-out;
-  animation-iteration-count: infinite;
-  color: transparent !important;
+    width: $smallSpinnerSize;
+    height: $smallSpinnerSize;
+    background-image: url("/images/logo-c.png");
+    background-repeat: no-repeat;
+    background-size: $smallSpinnerSize $smallSpinnerSize;
+    color: transparent !important;
+    pointer-events: none;
+
+    animation: spin $heartbeat ease-in-out;
+    animation-iteration-count: infinite;
+
+    .mobile & {
+        background-image: url("images/logo-c.png");
+    }
 }
 
 .circulation-loader {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 0;
-  height: 80%;
-  &.full-height {
-    height: 100vh;
-  }
-  > *:first-child {
-    pointer-events: none;
-    opacity:1;
-    transition:opacity 1s ease-out;
-    background-image:url('/images/spinner.png');
-    .mobile &{
-      background-image:url('images/spinner.png');
-    }
-    background-repeat:no-repeat;
-    width:$spinnerSize;
-    height:$spinnerSize;
-    background-size:$spinnerSize $spinnerSize;
-    animation: spin $heartbeat ease-in-out;
-    animation-iteration-count: infinite;
-    transform-origin:52.5% 50%;
-  }
-  .loader-msg {
     position: absolute;
-    margin-top: 50px;
-    color: #34495e;
-  }
-  &.mobile {
-    > *:first-child {
-      top: 0;
-      display: flex;
-      z-index: 1;
-      width: $mobileSpinnerSize;
-      height: $mobileSpinnerSize;
-      background-size: $mobileSpinnerSize $mobileSpinnerSize;
-    }
-    z-index: 1;
-    position: fixed;
+    left: 0;
     width: 100%;
-    height: 100%;
-    top: 0;
-    background: rgba(236, 240, 241, 0.5);
-  }
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.full-height {
+        height: 100vh;
+    }
+
+    > *:first-child {
+        width: $spinnerSize;
+        height: $spinnerSize;
+        background-image: url("/images/spinner.png");
+        background-repeat: no-repeat;
+        background-size: $spinnerSize $spinnerSize;
+        opacity: 1;
+        pointer-events: none;
+
+        animation: spin $heartbeat ease-in-out;
+        animation-iteration-count: infinite;
+        transform-origin: 52.5% 50%;
+        transition: opacity 1s ease-out;
+
+        .mobile & {
+            background-image: url("images/spinner.png");
+        }
+    }
+
+    .loader-msg {
+        position: absolute;
+        color: #34495e;
+        margin-top: 50px;
+    }
+
+    &.mobile {
+        > *:first-child {
+            top: 0;
+            z-index: 1;
+            width: $mobileSpinnerSize;
+            height: $mobileSpinnerSize;
+            background-size: $mobileSpinnerSize $mobileSpinnerSize;
+            display: flex;
+        }
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background: rgba(236, 240, 241, 0.5);
+    }
 }
 
 body.custom-logo {
-  .circulation-loader > div, .fa.loading, &.loading #spinner {
-    background-image: url('../www/images/custom-logo-square.png');
-  }
+    .circulation-loader > div, .fa.loading, &.loading #spinner {
+        background-image: url("../www/images/custom-logo-square.png");
+    }
 }

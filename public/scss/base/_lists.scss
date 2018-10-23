@@ -3,6 +3,7 @@ ol {
     list-style: none;
     padding: 0;
     counter-reset: li;
+
     li {
         position: relative;
         margin-left: 25px;
@@ -39,8 +40,10 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+
     li {
         margin-left: 0;
+
         &::before {
             content: "";
         }

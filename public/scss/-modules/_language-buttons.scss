@@ -1,37 +1,44 @@
 .language-button-container {
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 2rem;
-  margin-bottom: -5rem;
-  margin-top: 2rem;
-  @include media(small) {
-    margin-bottom: -5.5rem;
-  }
-  &.privacy {
-    margin-bottom: 1rem;
-    margin-top: -1rem;
-    @include media(medium) {
-      padding-right: 2rem;
-      margin-bottom: -5rem;
-      margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2rem;
+    margin-bottom: -5rem;
+    padding-right: 2rem;
+
+    @include media(small) {
+        margin-bottom: -5.5rem;
     }
-  }
-  button {
-    font-weight: 500;
-    font-size: 1.5rem;
-    padding: 1rem 2rem;
-    margin: 0;
-    &:last-of-type {
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
+
+    &.privacy {
+        margin-top: -1rem;
+        margin-bottom: 1rem;
+
+        @include media(medium) {
+            margin-top: 2rem;
+            margin-bottom: -5rem;
+            padding-right: 2rem;
+        }
     }
-    &:first-of-type {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
+
+    button {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin: 0;
+        opacity: 0.5;
+        padding: 1rem 2rem;
+
+        &:last-of-type {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        &:first-of-type {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        &.active {
+            opacity: 1;
+        }
     }
-    opacity: .5;
-    &.active {
-      opacity: 1;
-    }
-  }
 }

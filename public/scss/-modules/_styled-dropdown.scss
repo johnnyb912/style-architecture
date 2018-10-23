@@ -1,133 +1,162 @@
 .styled-dropdown {
-  overflow: visible;
-  transition: .2s $sweetEasing max-height;
-  &.disabled {
-    pointer-events: none;
-  }
-  .hitBox {
-    z-index: 0;
-  }
-  &:not(.active) {
-    max-height: 34px;
-  }
-  &.active {
-    max-height: calc(186px + 55px);
-    z-index: 1;
-  }
-  margin-right: 10px;
-  &:last-of-type {
-    margin-right: 0;
-  }
-  .click-catcher { // this is for Edge and Firefox, where a disabled input does not propagate a click
-    height: 32px;
-    width: 100%;
-  }
-  .dropdown-options {
-    transition: .2s $sweetEasing max-height, .5s $sweetEasing padding;
-    border-top: 1px solid $faded-blue;
-    max-height: 205px;
-    overflow-y: scroll;
-    background-color: $white;
-    width: 100%;
-    position: relative;
-    z-index: 1650;
-    label {
-      white-space: nowrap;
+    margin-right: 10px;
+    overflow: visible;
+
+    transition: 0.2s $sweetEasing max-height;
+
+    &.disabled {
+        pointer-events: none;
     }
-    .options {
-      display: flex;
-      flex-direction: column;
-      .option {
-        color: $grey-medium-dark;
-        font-size: 14px;
-        padding: .5rem 1rem;
-        cursor: pointer;
-        &:hover {
-          background-color: $white-dark;
+
+    .hitBox {
+        z-index: 0;
+    }
+
+    &:not(.active) {
+        max-height: 34px;
+    }
+
+    &.active {
+        z-index: 1;
+        max-height: calc(186px + 55px);
+    }
+
+    &:last-of-type {
+        margin-right: 0;
+    }
+
+    .click-catcher { // this is for Edge and Firefox, where a disabled input does not propagate a click
+        width: 100%;
+        height: 32px;
+    }
+
+    .dropdown-options {
+        position: relative;
+        z-index: 1650;
+        width: 100%;
+        max-height: 205px;
+        background-color: $white;
+        border-top: 1px solid $faded-blue;
+        overflow-y: scroll;
+
+        transition: 0.2s $sweetEasing max-height, 0.5s $sweetEasing padding;
+
+        label {
+            white-space: nowrap;
         }
-        &.disabled {
-          pointer-events: none;
-          color: $pinkish-grey;
+
+        .options {
+            display: flex;
+            flex-direction: column;
+
+            .option {
+                color: $grey-medium-dark;
+                cursor: pointer;
+                font-size: 14px;
+                padding: 0.5rem 1rem;
+
+                &:hover {
+                    background-color: $white-dark;
+                }
+
+                &.disabled {
+                    color: $pinkish-grey;
+                    pointer-events: none;
+                }
+            }
         }
-      }
+
+        &.collapsed {
+            max-height: 0;
+            border: 0;
+            margin: 0;
+            overflow-y: hidden;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
     }
-    &.collapsed {
-      max-height: 0;
-      padding-top: 0;
-      padding-bottom: 0;
-      border: 0;
-      margin: 0;
-      overflow-y: hidden;
-    }
-  }
 }
 
 .reassign {
-  .selected {
-    background-color: #c9c9fb;
-  }
+    .selected {
+        background-color: #c9c9fb;
+    }
 }
 
 .date-dropdowns {
-  .validation {
-    font-size: 12px;
-    bottom: -17px;
-    margin-bottom: 0;
-  }
-  .input-wrapper {
-    z-index: 3;
-    min-width: inherit;
-  }
-  @media screen and (max-width: $break-small) {
-    flex-direction: column;
-    > div {
-      margin-bottom: 10px;
-    }
     .validation {
-      bottom: -13px;
+        bottom: -17px;
+        font-size: 12px;
+        margin-bottom: 0;
     }
-  }
+
+    .input-wrapper {
+        z-index: 3;
+        min-width: inherit;
+    }
+
+    @media screen and (max-width: $break-small) {
+        flex-direction: column;
+
+        > div {
+            margin-bottom: 10px;
+        }
+
+        .validation {
+            bottom: -13px;
+        }
+    }
 }
 
 .height-weight-inputs {
-  flex-wrap: wrap;
-  > div:first-of-type, div.flex {
-    width: 100%;
-  }
-  @include media(small) {
-    flex-wrap: nowrap;
-    > div:not(:last-of-type) {
-      margin-right: 15px;
+    flex-wrap: wrap;
+
+    > div:first-of-type, div.flex {
+        width: 100%;
     }
-  }
-  .flex.center {
-    max-height: 36px;
-    align-items: flex-start;
-    .input-wrapper {
-      margin-right: 3px;
-      min-width: 62px;
-      width: 62px;
-      padding-left: 1px;
+
+    @include media(small) {
+        flex-wrap: nowrap;
+
+        > div:not(:last-of-type) {
+            margin-right: 15px;
+        }
     }
-    .dropdown-units {
-      color: $greyish-brown;
-      font-size: 14px;
-      font-weight: 500;
-      margin-top: 10px;
-      &:first-of-type {
-        margin-right: 10px;
-      }
+
+    .flex.center {
+        max-height: 36px;
+        align-items: flex-start;
+
+        .input-wrapper {
+            width: 62px;
+            min-width: 62px;
+            margin-right: 3px;
+            padding-left: 1px;
+        }
+
+        .dropdown-units {
+            color: $greyish-brown;
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 10px;
+
+            &:first-of-type {
+                margin-right: 10px;
+            }
+        }
     }
-  }
-  .edit-form-section & {
-    h3 {
-      margin-top: 0;
+
+    .edit-form-section & {
+        h3 {
+            margin-top: 0;
+        }
+
+        > div:last-of-type {
+            margin-top: 20px;
+
+            @include media(small) {
+                margin-top: 0;
+            }
+        }
     }
-    > div:last-of-type {
-      margin-top: 20px;
-      @include media(small) {
-        margin-top: 0;
-      }
-    }
-  }
 }

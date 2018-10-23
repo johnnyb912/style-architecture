@@ -191,7 +191,6 @@
             ]
         },
         {
-            "emptyLineBefore": "always",
             "properties": [
                 "animation",
                 "animation-name",

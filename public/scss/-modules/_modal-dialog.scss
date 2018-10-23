@@ -1,385 +1,426 @@
 body, .page-rider .page-section-rider-at-glance.page-section {
-  .modal-dialog {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 9999;
-    &.active.loaded {
-      z-index: 9999;
-      pointer-events: all;
-    }
-
-    &.loading {
-      .content {
-        opacity: 0;
-      }
-    }
-
-    p {
-      color: $grey-dark;
-    }
-
-    .animated-component {
-      z-index: 9999;
-
-      &.will-animate {
-        .content {
-          transform: translate3d(-50%, -50%, 0);
-        }
-      }
-    }
-
-    .overlay {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 9998;
-      background-color: rgba(0, 0, 0, 0.5);
-      cursor: pointer;
-      &.persistent {
-        cursor: default;
-      }
-    }
-
-    .content {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      min-width: 90%;
-      z-index: 9999;
-      &:not(.full-width) {
-        max-width: 90%;
-        max-height: 95%;
-      }
-      .upper-content {
-        padding: 33px;
-      }
-      &.error-container {
-        padding-bottom: 0;
-        .error-modal-footer {
-          text-align: center;
-          width: 100%;
-          background-color: $grey-white;
-          height: 60px;
-          button {
-            margin: 13px 13px 0;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            padding: 10px 25px;
-            box-shadow: 1px 1px 1px $grey;
-            background-color: $greyish-brown;
-            font-size: 14px;
-          }
-        }
-      }
-      @include media(small) {
-        min-width: 10%;
-        min-height: 10%;
-        max-width: 95%;
-        max-height: 95%;
-      }
-      @include media(large) {
-        .upper-content {
-          padding: 60px 55px 35px 55px;
-        }
-      }
-      -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-      -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-      background-color: $white;
-      transform: translate3d(-50%, -40%, 0);
-      transition: transform 0.5s ease-in-out, min-width 0.25s $sweetEasing, min-height 0.25s $sweetEasing;
-      cursor: default;
-
-      &.expanded {
-        min-width: 90%;
-        min-height: 90%;
-      }
-
-      .scrollable {
-        overflow-y: scroll;
-        max-height: 93%;
-        -ms-overflow-style: none; // hide scrollbar in IE
-        @include media(large) {
-          max-height: calc(90vh - 172px);
-        }
-      }
-      .new-style {
-        .input-wrapper {
-          margin-top: 0
-        }
-        .scroll-modal {
-          height: 100%;
-          overflow-y: scroll;
-        }
-      }
-      .modal-body > .new-style {
+    .modal-dialog {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
         width: 100%;
-        height: calc(100% - 55px - 65px);
-        &.full-height {
-          height: calc(100% - 8px);
-        }
-        @include media(small) {
-          height: calc(100% - 65px);
-          position: absolute;
-          top: 0;
-          max-height: none;
-          overflow-y: hidden;
-          margin-top: 65px;
-          padding-bottom: 55px;
-        }
-      }
-
-      .button-container {
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        margin-top: 10px;
-        @include media(small) {
-          margin-top: 15px;
-        }
-        @include media(medium) {
-          margin-top: 20px;
-        }
-        @include media(large) {
-          margin-top: 25px;
-        }
-        text-align: center;
-
-        .action-button {
-          margin-right: 15px;
-          padding: 1.3rem;
-          @include media(medium) {
-            padding: 1.5rem 3rem;
-          }
-
-          &:last-child {
-            margin-right: 0;
-          }
-        }
-        display: flex;
-        justify-content: center;
-      }
-
-      .close-button {
-        position: absolute;
-        right: 15px;
-        top: 15px;
-        height: 40px;
-        cursor: pointer;
-
-        > svg {
-          @include nice-easing-animation;
-          width: 30px;
-          height: 30px;
-          margin: 0;
-          fill: $grey;
-          border: 1px solid transparent;
-          &:hover {
-            background-color: $white-dark;
-            border-color: $grey-extra-light;
-          }
-          > svg {
-            @include nice-easing-animation;
-            fill: $brand-purple;
-          }
-          &:hover {
-            > svg {
-              fill: darken($grey-warm-darker, 20%);
-            }
-          }
-        }
-      }
-      &.lockout {
-        background-color: $brand-purple;
-        .new-error-modal {
-          .new-error-content {
-            .main-paragraph {
-              border-bottom: 1px solid white;
-            }
-            p, h3 {
-              color: white;
-            }
-          }
-          h4 {
-            color: white;
-          }
-          svg {
-            fill: #89308A;
-          }
-        }
-      }
-    }
-
-    &.options-array{
-      h3{
-        margin-bottom: 1rem;
-      }
-
-      .option-block {
-        margin-bottom: 2rem;
-        &:last-of-type {
-          margin: 0;
-        }
-        h4 {
-          font-size: 1.5rem;
-          font-weight: 500;
-          margin-bottom: 10px;
-          a {
-            margin: 0;
-          }
-          &.underline {
-            padding-bottom: 5px;
-          }
-        }
-        > div {
-          display: flex;
-          flex-wrap: wrap;
-          height: auto;
-        }
-      }
-    }
-
-    .modal-footnote {
-      color: $success-color;
-      margin-top: 1.5rem;
-      text-align: center;
-    }
-
-    &.ride-details-modal {
-      .content {
-        @include media(small) {
-          min-width: 70%;
-        }
-        @include media(medium) {
-          min-width: 65%;
-        }
-        @include media(large) {
-          min-width: 50%;
-        }
-      }
-    }
-
-    &.location-modal {
-      .content {
-        @include media(small) {
-          min-width: 80%;
-        }
-        @include media(medium) {
-          min-width: 50%;
-        }
-        &.expanded {
-          @include media(small) {
-            min-width: 90%;
-            min-height: 95%;
-          };
-          @include media(medium) {
-            min-width: 95%;
-            min-height: 95%;
-          };
-        }
-      }
-    }
-
-    &.new-style {
-      .close-button svg svg {
-        fill: $white-dark;
-        @include media(small) {
-          fill: $brand-purple;
-        }
-      }
-
-      .content {
-        display: flex;
-        flex-direction: column;
         height: 100%;
-        width: 100%;
-        border-top: 0;
-        -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
-        -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        padding: 0px;
-        @include media(small) {
-          min-width: none;
-          min-height: none;
-          max-width: none;
-          max-height: none;
-          border-top: solid 8px $blueberry;
+        pointer-events: none;
+
+        &.active.loaded {
+            z-index: 9999;
+            pointer-events: all;
         }
-        @include media(medium) {
-          height: 95vh;
-          width: 820px;
-        }
-        .modal-body {
-          height: 100%;
-        }
-        .header {
-          display: flex;
-          align-items: center;
-          padding-left: 20px;
-          height: 65px;
-          min-height: 65px;
-          width: 100%;
-          background: $iris;
-          h3 {
-            color: $white;
-            font-size: 1.7rem !important;
-            margin: 0;
-            width: 80%;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            overflow: hidden;
-          }
-          @include media(small) {
-            padding-left: 30px;
-            h3 {
-              color: $brand-purple;
-              font-size: 2.4rem !important;
-              width: auto;
-              font-weight: bold !important;
+
+        &.loading {
+            .content {
+                opacity: 0;
             }
-            background: $grey-white;
-          }
         }
 
-        .close-button {
-          > svg {
-            width: 25px;
-            height: 25px;
-            fill: $black;
-          }
+        p {
+            color: $grey-dark;
         }
-      }
 
-      &.short {
+        .animated-component {
+            z-index: 9999;
+
+            &.will-animate {
+                .content {
+                    transform: translate3d(-50%, -50%, 0);
+                }
+            }
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            z-index: 9998;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+
+            &.persistent {
+                cursor: default;
+            }
+        }
+
         .content {
-          @include media(medium) {
-            height: 50%;
-            min-height: 450px;
-          }
-        }
-      }
-    }
-  }
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 9999;
+            min-width: 90%;
+            background-color: $white;
+            -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            cursor: default;
 
-  // fixes for full heigh mobile modals on safari
-  .safari {
-    .mobile-modal {
-      .animated-component.will-animate .content {
-        transform: none;
-      }
-      .content {
-        left: auto;
-        top: auto;
-        transform: none;
-      }
+            transform: translate3d(-50%, -40%, 0);
+            transition: transform 0.5s ease-in-out, min-width 0.25s $sweetEasing, min-height 0.25s $sweetEasing;
+
+            &:not(.full-width) {
+                max-width: 90%;
+                max-height: 95%;
+            }
+
+            .upper-content {
+                padding: 33px;
+            }
+
+            &.error-container {
+                padding-bottom: 0;
+
+                .error-modal-footer {
+                    width: 100%;
+                    height: 60px;
+                    background-color: $grey-white;
+                    text-align: center;
+
+                    button {
+                        background-color: $greyish-brown;
+                        box-shadow: 1px 1px 1px $grey;
+                        font-size: 14px;
+                        letter-spacing: 1.2px;
+                        margin: 13px 13px 0;
+                        padding: 10px 25px;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+
+            @include media(small) {
+                min-width: 10%;
+                max-width: 95%;
+                min-height: 10%;
+                max-height: 95%;
+            }
+            @include media(large) {
+                .upper-content {
+                    padding: 60px 55px 35px;
+                }
+            }
+
+            &.expanded {
+                min-width: 90%;
+                min-height: 90%;
+            }
+
+            .scrollable {
+                max-height: 93%;
+                overflow-y: scroll;
+                -ms-overflow-style: none; // hide scrollbar in IE
+
+                @include media(large) {
+                    max-height: calc(90vh - 172px);
+                }
+            }
+
+            .new-style {
+                .input-wrapper {
+                    margin-top: 0;
+                }
+
+                .scroll-modal {
+                    height: 100%;
+                    overflow-y: scroll;
+                }
+            }
+
+            .modal-body > .new-style {
+                width: 100%;
+                height: calc(100% - 55px - 65px);
+
+                &.full-height {
+                    height: calc(100% - 8px);
+                }
+
+                @include media(small) {
+                    position: absolute;
+                    top: 0;
+                    height: calc(100% - 65px);
+                    max-height: none;
+                    margin-top: 65px;
+                    overflow-y: hidden;
+                    padding-bottom: 55px;
+                }
+            }
+
+            .button-container {
+                position: relative;
+                left: 50%;
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+                text-align: center;
+
+                transform: translateX(-50%);
+
+                @include media(small) {
+                    margin-top: 15px;
+                }
+                @include media(medium) {
+                    margin-top: 20px;
+                }
+                @include media(large) {
+                    margin-top: 25px;
+                }
+
+                .action-button {
+                    margin-right: 15px;
+                    padding: 1.3rem;
+
+                    @include media(medium) {
+                        padding: 1.5rem 3rem;
+                    }
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            .close-button {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                height: 40px;
+                cursor: pointer;
+
+                > svg {
+                    @include nice-easing-animation;
+                    width: 30px;
+                    height: 30px;
+                    border: 1px solid transparent;
+                    margin: 0;
+                    fill: $grey;
+
+                    &:hover {
+                        background-color: $white-dark;
+                        border-color: $grey-extra-light;
+                    }
+
+                    > svg {
+                        @include nice-easing-animation;
+                        fill: $brand-purple;
+                    }
+
+                    &:hover {
+                        > svg {
+                            fill: darken($grey-warm-darker, 20%);
+                        }
+                    }
+                }
+            }
+
+            &.lockout {
+                background-color: $brand-purple;
+
+                .new-error-modal {
+                    .new-error-content {
+                        .main-paragraph {
+                            border-bottom: 1px solid white;
+                        }
+
+                        p, h3 {
+                            color: white;
+                        }
+                    }
+
+                    h4 {
+                        color: white;
+                    }
+
+                    svg {
+                        fill: #89308a;
+                    }
+                }
+            }
+        }
+
+        &.options-array {
+            h3 {
+                margin-bottom: 1rem;
+            }
+
+            .option-block {
+                margin-bottom: 2rem;
+
+                &:last-of-type {
+                    margin: 0;
+                }
+
+                h4 {
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                    margin-bottom: 10px;
+
+                    a {
+                        margin: 0;
+                    }
+
+                    &.underline {
+                        padding-bottom: 5px;
+                    }
+                }
+
+                > div {
+                    height: auto;
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+            }
+        }
+
+        .modal-footnote {
+            color: $success-color;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        &.ride-details-modal {
+            .content {
+                @include media(small) {
+                    min-width: 70%;
+                }
+                @include media(medium) {
+                    min-width: 65%;
+                }
+                @include media(large) {
+                    min-width: 50%;
+                }
+            }
+        }
+
+        &.location-modal {
+            .content {
+                @include media(small) {
+                    min-width: 80%;
+                }
+                @include media(medium) {
+                    min-width: 50%;
+                }
+
+                &.expanded {
+                    @include media(small) {
+                        min-width: 90%;
+                        min-height: 95%;
+                    }
+                    @include media(medium) {
+                        min-width: 95%;
+                        min-height: 95%;
+                    }
+                }
+            }
+        }
+
+        &.new-style {
+            .close-button svg svg {
+                fill: $white-dark;
+
+                @include media(small) {
+                    fill: $brand-purple;
+                }
+            }
+
+            .content {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                height: 100%;
+                border-top: 0;
+                -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+                -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+                box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+                display: flex;
+                flex-direction: column;
+                padding: 0;
+
+                @include media(small) {
+                    min-width: none;
+                    max-width: none;
+                    min-height: none;
+                    max-height: none;
+                    border-top: solid 8px $blueberry;
+                }
+                @include media(medium) {
+                    width: 820px;
+                    height: 95vh;
+                }
+
+                .modal-body {
+                    height: 100%;
+                }
+
+                .header {
+                    width: 100%;
+                    height: 65px;
+                    min-height: 65px;
+                    background: $iris;
+                    display: flex;
+                    align-items: center;
+                    padding-left: 20px;
+
+                    h3 {
+                        width: 80%;
+                        color: $white;
+                        font-size: 1.7rem !important;
+                        margin: 0;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+
+                    @include media(small) {
+                        background: $grey-white;
+                        padding-left: 30px;
+
+                        h3 {
+                            width: auto;
+                            color: $brand-purple;
+                            font-size: 2.4rem !important;
+                            font-weight: bold !important;
+                        }
+                    }
+                }
+
+                .close-button {
+                    > svg {
+                        width: 25px;
+                        height: 25px;
+                        fill: $black;
+                    }
+                }
+            }
+
+            &.short {
+                .content {
+                    @include media(medium) {
+                        height: 50%;
+                        min-height: 450px;
+                    }
+                }
+            }
+        }
     }
-  }
+
+    // fixes for full heigh mobile modals on safari
+    .safari {
+        .mobile-modal {
+            .animated-component.will-animate .content {
+                transform: none;
+            }
+
+            .content {
+                top: auto;
+                left: auto;
+
+                transform: none;
+            }
+        }
+    }
 }

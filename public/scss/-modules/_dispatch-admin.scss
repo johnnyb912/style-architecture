@@ -1,58 +1,71 @@
 .dispatch {
-  .admin-page {
-    table {
-      td {
-        vertical-align: middle;
-        font-size: 14px;
-        color: $grey-warm;
-        padding: .8rem .65rem;
-        &.empty {
-          background: #d8d8d8;
-        }
-      }
-      tr {
-        .blank-row{ border-bottom:0; border-top:0; }
-        .first-row{ border-bottom:0; border-top:1px solid rgba(120, 99, 191, 0.5); }
+    .admin-page {
+        table {
+            td {
+                color: $grey-warm;
+                font-size: 14px;
+                padding: 0.8rem 0.65rem;
+                vertical-align: middle;
 
-        &:not(:last-of-type) td:empty{ border-bottom-color:rgba(120, 99, 191, 0.15); }
-        &:last-of-type td{ border-bottom:1px solid rgba(120, 99, 191, 0.5); }
-      }
-    }
-    .admin-table-header {
-      position:relative;
-      .wrapper {
-        display: inline-block;
-        position:absolute;
-        right:0;
-        top:0;
-      }
-    }
-    .org-setting {
-      .span-wrapper {
-        margin-top: 15px;
-        .input-wrapper.checkbox-wrapper {
-          margin-top: 15px;
+                &.empty {
+                    background: #d8d8d8;
+                }
+            }
+
+            tr {
+                .blank-row { border-top: 0; border-bottom: 0; }
+
+                .first-row { border-top: 1px solid rgba(120, 99, 191, 0.5); border-bottom: 0; }
+
+                &:not(:last-of-type) td:empty { border-bottom-color: rgba(120, 99, 191, 0.15); }
+
+                &:last-of-type td { border-bottom: 1px solid rgba(120, 99, 191, 0.5); }
+            }
         }
-      }
+
+        .admin-table-header {
+            position: relative;
+
+            .wrapper {
+                position: absolute;
+                top: 0;
+                right: 0;
+                display: inline-block;
+            }
+        }
+
+        .org-setting {
+            .span-wrapper {
+                margin-top: 15px;
+
+                .input-wrapper.checkbox-wrapper {
+                    margin-top: 15px;
+                }
+            }
+        }
+
+        .one-fifth {
+            width: 20%;
+        }
+
+        .four-fifths {
+            width: 80%;
+        }
     }
-    .one-fifth {
-      width: 20%;
-    }
-    .four-fifths {
-      width: 80%;
-    }
-  }
 }
 
 .highlight {
-  color: $brand-purple;
+    color: $brand-purple;
 }
+
 .highlight-green {
-  color: $bright-green;
+    color: $bright-green;
 }
+
 .highlight-red {
-  color: $alert-color;
+    color: $alert-color;
 }
+
 .highlight-pink {
-  color: $berry;
+    color: $berry;
 }

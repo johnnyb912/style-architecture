@@ -1,258 +1,320 @@
 .invoice-page {
-  color: $grey-warm;
-  @media screen and (max-width: $break-mobile) {
-    padding: 15px 10px;
-  }
-  @include media(small) {
-    margin-top: 2rem;
-  }
-  .cols {
-    margin: 1rem 0;
-  }
-  .invoice-body {
-    background-color: $white;
-    padding: 20px;
+    color: $grey-warm;
+
+    @media screen and (max-width: $break-mobile) {
+        padding: 15px 10px;
+    }
+
     @include media(small) {
-      padding: 40px;
+        margin-top: 2rem;
     }
-    font-size: 14px;
-    font-weight: 500;
-  }
-  .header-wrapper {
-    margin-top: 20px;
-    div {
-      display: inline-block;
+
+    .cols {
+        margin: 1rem 0;
     }
-    h2, h3 {
-      display: inline;
-    }
-    .info-pop-up {
-      top: -5px;
-      p {
-        font-size: 11px;
-        width: 145px;
-        &:after {
-          left: calc(50% + 20px);
+
+    .invoice-body {
+        background-color: $white;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 20px;
+
+        @include media(small) {
+            padding: 40px;
         }
-        @include media(medium) {
-          width: 330px;
-          bottom: -7px;
-          left: 22px;
-          margin-left: 5px;
-          &:after {
-            @include triangle(15px, $grey-dark, left);
-            left: -15px;
-            bottom: 7px;
-          }
-        }
-      }
     }
-  }
-  .invoice-bold {
-    color: $brand-purple;
-    margin-right: 8px;
-    font-size: 16px;
-    &.flex.between {
-      justify-content: space-between;
-    }
-  }
-  .row {
-    @include media(medium) {
-      display: flex;
-      justify-content: space-between;
-    }
-    &:first-of-type {
-      font-size: 16px;
-      h3 {
+
+    .header-wrapper {
         margin-top: 20px;
-        margin-bottom: 10px;
-        @include media(medium) {
-          margin-top: 0;
+
+        div {
+            display: inline-block;
         }
-      }
-    }
-    &.cost-container {
-      .invoice-bold {
-        margin: 20px 0 10px;
-        display: flex;
-      }
-      .column {
-        @include nice-easing-animation;
-        width: 100%;
-        @include media(medium) {
-          width: 50%;
+
+        h2, h3 {
+            display: inline;
         }
-      }
+
+        .info-pop-up {
+            top: -5px;
+
+            p {
+                width: 145px;
+                font-size: 11px;
+
+                &::after {
+                    left: calc(50% + 20px);
+                }
+
+                @include media(medium) {
+                    bottom: -7px;
+                    left: 22px;
+                    width: 330px;
+                    margin-left: 5px;
+
+                    &::after {
+                        @include triangle(15px, $grey-dark, left);
+                        bottom: 7px;
+                        left: -15px;
+                    }
+                }
+            }
+        }
     }
-  }
-  .column > div {
-    margin-bottom: 5px;
-  }
-  h3 {
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 0;
-  }
-  h2 {
-    font-size: 24px;
-    font-weight: 500;
-    margin: 0;
-  }
-  .underline {
-    border-bottom: 1px solid $iris;
-    padding-bottom: 10px;
-    margin: 30px 0 20px;
-  }
-  h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0;
-  }
-  p {
-    font-size: 13px;
-  }
-  .paren {
-    text-transform: none;
-    letter-spacing: normal;
-  }
-  .asterisk {
-    color: $bright-pink;
-    font-size: 18px;
-  }
-  .total {
-    text-align: right;
-    color: $greyish-brown;
-    text-transform: uppercase;
-    margin-top: 20px;
-    border-bottom: 1px solid $purple-blue;
-    padding-bottom: 3px;
-  }
-  .total-amount {
-    margin: 12px 0 15px !important;
-    color: $greyish-brown;
-    font-weight: bold;
-  }
-  .download {
-    margin: 5px 0 15px;
-    button {
-      background-color: $white;
-      color: $grey-medium-dark;
-      padding: 7px 10px;
-      border: 1px solid $faded-blue;
-      font-weight: 500;
-      font-size: 14px;
-      .fa {
-        margin-right: 0;
-        color: $blueberry;
-      }
+
+    .invoice-bold {
+        color: $brand-purple;
+        font-size: 16px;
+        margin-right: 8px;
+
+        &.flex.between {
+            justify-content: space-between;
+        }
     }
-    .download-options {
-      margin: 0 1px;
-      width: auto;
+
+    .row {
+        @include media(medium) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &:first-of-type {
+            font-size: 16px;
+
+            h3 {
+                margin-top: 20px;
+                margin-bottom: 10px;
+
+                @include media(medium) {
+                    margin-top: 0;
+                }
+            }
+        }
+
+        &.cost-container {
+            .invoice-bold {
+                display: flex;
+                margin: 20px 0 10px;
+            }
+
+            .column {
+                @include nice-easing-animation;
+                width: 100%;
+
+                @include media(medium) {
+                    width: 50%;
+                }
+            }
+        }
     }
-  }
-  .date {
+
+    .column > div {
+        margin-bottom: 5px;
+    }
+
+    h3 {
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+        margin-bottom: 0;
+        text-transform: uppercase;
+    }
+
     h2 {
-      font-size: 24px;
-      @include media(small) {
+        font-size: 24px;
+        font-weight: 500;
+        margin: 0;
+    }
+
+    .underline {
+        border-bottom: 1px solid $iris;
+        margin: 30px 0 20px;
+        padding-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    .paren {
+        letter-spacing: normal;
+        text-transform: none;
+    }
+
+    .asterisk {
+        color: $bright-pink;
+        font-size: 18px;
+    }
+
+    .total {
+        border-bottom: 1px solid $purple-blue;
+        color: $greyish-brown;
+        margin-top: 20px;
+        padding-bottom: 3px;
         text-align: right;
-      }
+        text-transform: uppercase;
     }
-  }
-  .flex-between.header {
-    align-items: flex-start;
-    @include media(small) {
-      height: 93px;
+
+    .total-amount {
+        color: $greyish-brown;
+        font-weight: bold;
+        margin: 12px 0 15px !important;
     }
-    @media screen and (max-width: $break-small) {
-      display: block;
-      .right {
-        float: inherit;
-      }
+
+    .download {
+        margin: 5px 0 15px;
+
+        button {
+            background-color: $white;
+            border: 1px solid $faded-blue;
+            color: $grey-medium-dark;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 7px 10px;
+
+            .fa {
+                color: $blueberry;
+                margin-right: 0;
+            }
+        }
+
+        .download-options {
+            width: auto;
+            margin: 0 1px;
+        }
     }
-  }
-  .search-block.right .dropdown-container {
-    height: 38px;
-    min-width: 220px;
-    margin-bottom: 5px;
-  }
-  .billing-code-table {
-    width: 98%;
-    margin: 0;
-    &.nested {
-      margin-top: 0;
+
+    .date {
+        h2 {
+            font-size: 24px;
+
+            @include media(small) {
+                text-align: right;
+            }
+        }
     }
-    tr, td, th {
-      border: 0;
-      text-align: right;
+
+    .flex-between.header {
+        align-items: flex-start;
+
+        @include media(small) {
+            height: 93px;
+        }
+
+        @media screen and (max-width: $break-small) {
+            display: block;
+
+            .right {
+                float: inherit;
+            }
+        }
     }
-    th {
-      color: $brand-purple;
-      padding: 0 0 10px;
-      background-color: $white;
+
+    .search-block.right .dropdown-container {
+        min-width: 220px;
+        height: 38px;
+        margin-bottom: 5px;
     }
-    td {
-      background-color: $white;
-      padding: 2px !important;
+
+    .billing-code-table {
+        width: 98%;
+        margin: 0;
+
+        &.nested {
+            margin-top: 0;
+        }
+
+        tr, td, th {
+            border: 0;
+            text-align: right;
+        }
+
+        th {
+            background-color: $white;
+            color: $brand-purple;
+            padding: 0 0 10px;
+        }
+
+        td {
+            background-color: $white;
+            padding: 2px !important;
+        }
+
+        td:first-of-type, th:first-of-type {
+            text-align: left;
+        }
+
+        &.nested {
+            width: 100%;
+
+            th {
+                border-bottom: 1px solid $faded-blue;
+                padding: 5px 0;
+            }
+
+            tr:nth-child(2) td {
+                padding-top: 5px !important;
+            }
+
+            th {
+                height: auto;
+            }
+
+            td, th {
+                text-align: center;
+            }
+        }
     }
-    td:first-of-type, th:first-of-type {
-      text-align: left;
+
+    .analytics-table-wrapper {
+        overflow-x: scroll;
+
+        th {
+            cursor: pointer;
+        }
+
+        .fa-info-circle {
+            cursor: pointer;
+            pointer-events: all;
+        }
     }
-    &.nested {
-      width: 100%;
-      th {
-        border-bottom: 1px solid $faded-blue;
-        padding: 5px 0;
-      }
-      tr:nth-child(2) td {
-        padding-top: 5px !important;
-      }
-      th {
-        height: auto;
-      }
-      td, th {
-        text-align: center;
-      }
+
+    .fa.sort {
+        position: absolute;
+        width: 2rem;
+        font-size: 1.2rem;
+
+        &.fa-sort-asc {
+            padding-top: 0.5rem;
+        }
     }
-  }
-  .analytics-table-wrapper {
-    overflow-x: scroll;
-    th {
-      cursor: pointer;
+
+    .note {
+        color: $greyish-brown;
+        font-style: italic;
+        font-weight: bold;
+        margin-top: -20px;
+        margin-bottom: 20px;
+
+        span:first-of-type {
+            margin-right: 5px;
+        }
     }
-    .fa-info-circle {
-      pointer-events: all;
-      cursor: pointer;
-    }
-  }
-  .fa.sort {
-    position: absolute;
-    width: 2rem;
-    font-size: 1.2rem;
-    &.fa-sort-asc {
-      padding-top: .5rem;
-    }
-  }
-  .note {
-    margin-top: -20px;
-    margin-bottom: 20px;
-    color: $greyish-brown;
-    font-style: italic;
-    font-weight: bold;
-    span:first-of-type {
-      margin-right: 5px;
-    }
-  }
 }
 
 p.download-requested {
-  color: $iris;
-  font-size: 14px;
-  font-weight: 500;
-  margin-top: -10px;
-  .fa {
-    font-size: 16px;
-  }
+    color: $iris;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: -10px;
+
+    .fa {
+        font-size: 16px;
+    }
 }

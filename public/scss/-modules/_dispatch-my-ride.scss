@@ -1,341 +1,414 @@
 .my-ride {
-  height: calc(100vh - 140px);
-  background-color: transparent;
-  margin-top: -30px;
-  position: relative;
-  .upload-progress {
+    position: relative;
+    height: calc(100vh - 140px);
     background-color: transparent;
-    top: -4px;
-    &.inc {
-      animation: dynamicLoadingIncrease 1s infinite;
-    }
-    &.dec {
-      animation: dynamicLoadingDecrease 1s 0.2s infinite;
-    }
-  }
-  .my-ride-trip-status {
-    width: 100%;
-    height: 45px;
-    background-color: $blueberry;
-    text-align: center;
-    transition: .3s $sweetEasing all;
-    position: relative;
-    &.shrink {
-      height: 0;
-    }
-    .status-text {
-      line-height: 45px;
-      text-transform: uppercase;
-      color: white;
-    }
-    .green-bar {
-      width: 0;
-      height: 6px;
-      background-color: $bright-green;
-      transition: .3s $sweetEasing all;
-      position: absolute;
-      right: 0;
-      bottom: -3px;
-      &.expanded {
-        width: 100%;
-        left: 0;
-      }
-    }
-  }
-  .my-ride-information-wrapper {
-    position: relative;
-    background-color: white;
-    width: 40%;
-    height: 100%;
-    display: inline-block;
-    vertical-align: top;
-    .my-ride-information-wrapper-int {
-      overflow: scroll;
-      height: calc(100% - 98px);
-    }
-    p {
-      margin: 0;
-      color: $grey;
-      vertical-align: middle;
-      font-size: 16px;
-      &.highlight {
-        color: $blueberry;
-      }
-      &.caps {
-        text-transform: uppercase;
-      }
-    }
-    span {
-      font-size: 14px;
-    }
-    h3 {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-top: 5px;
-      margin-bottom: 0;
-      font-weight: 500;
-    }
-    h4 {
-      text-transform: uppercase;
-      font-size: 16px;
-      font-weight: 500px;
-      letter-spacing: 1px;
-      margin-bottom: 5px;
-      &:not(:first-of-type) {
-        margin-top: 20px;
-      }
+    margin-top: -30px;
+
+    .upload-progress {
+        top: -4px;
+        background-color: transparent;
+
+        &.inc {
+            animation: dynamicLoadingIncrease 1s infinite;
+        }
+
+        &.dec {
+            animation: dynamicLoadingDecrease 1s 0.2s infinite;
+        }
     }
 
-    .my-ride-section {
-      position: relative;
-      margin: 0 auto;
-      width: 80%;
-      padding: 15px 0;
-      &:not(.my-ride-rider-notes) {
-        border-bottom: 1px solid $faded-blue;
-      }
-      &.my-ride-rider-options {
-        text-align: center;
-        .action-buttons-wrapper {
-          margin-top: 20px;
-        }
-        a {
-          width: 130px;
-          height: 36px;
-          &:not(:last-child) {
-            margin-right: 10px;
-          }
-        }
-      }
-      .info-wrapper {
-        margin-left: 42px;
-        position: relative;
-        &:not(:last-of-type) {
-          margin-bottom: 15px;
-        }
-        svg {
-          position: absolute;
-          left: -28px;
-          vertical-align: middle;
-          height: 22px;
-          width: 22px;
-          fill: $blueberry;
-        }
-      }
-    }
-    .my-ride-footer {
-      position:absolute;
-      bottom: 0;
-      width: 100%;
-      padding: 25px 27px;
-      background-color: white;
-      .footer-button {
-        vertical-align: middle;
-        width: 48%;
-        height: 48px;
-        padding: 0;
-        font-size: 14px;
-        text-transform: uppercase;
-        transition: 0s width;
-        -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
-        -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
-        -webkit-user-select: none;
-        -webkit-tap-highlight-color: rgba(0,0,0,0);
-        &:not(:last-of-type) {
-          margin-right: 4%;
-        }
-        &.count-1 {
-          width: 100%;
-        }
-        &.no-show {
-          background-color: #d90023;
-        }
-        &.hold-button {
-          overflow: hidden;
-          text-align: center;
-          &:after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left: -100%;
-            top: 0;
-            background: #bc1d77; /* Old browsers */
-            background: linear-gradient(270deg, #bc1d77, #6c0848, #93469a, #4d3a8c, #86d2e8);
-            background-size: 300% 300%;
-            -webkit-animation: wavyGradient 3s ease infinite;
-            -moz-animation: wavyGradient 3s ease infinite;
-            animation: wavyGradient 3s ease infinite;
-            transition: 0.2s ease all;
-          }
-          &.no-show:after {
-            background: #bc1d77; /* Old browsers */
-            background: linear-gradient(270deg, #ffe2e0, #d90023);
-          }
-          &.add-gradient {
-            &:after {
-              left: 0;
-              transition: 0.8s linear all;
-            }
-            &.add-pop {
-              animation: pop 0.3s linear 1;
-            }
-          }
-        }
-      }
-      .hold-complete {
-        position: relative;
-        z-index: 5;
-      }
-    }
-  }
-  .my-ride-map-wrapper {
-    width: 60%;
-    height: 100%;
-    display: inline-block;
-    vertical-align: top;
-    position: absolute;
-    right: 0;
-    .form-block-trip-map-wrapper {
-      height: 100%;
-      .map-wrapper {
-        max-height: 100%;
-      }
-    }
-  }
-  @media screen and (max-width: $break-mobile) {
-    height: calc(100vh - 100px);
-    margin-top: 0;
-    .tutorial-box {
-      position: fixed;
-      width: 90%;
-      height: 30%;
-      min-height: 250px;
-      left: 0;
-      margin: 5%;
-      bottom: 12%;
-      text-align: center;
-      background-color: rgba(0, 0, 0, .75);
-      z-index: 10;
-      color: white;
-      opacity: 1;
-      transition: .3s ease all;
-      .icon-wrapper {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        height: 45%;
-        .circle {
-          position: absolute;
-          z-index: 11;
-          width: 20px;
-          height: 20px;
-          border-radius: 50px;
-          top: 13px;
-          left: calc(50% - 12px);
-          background: #6b6b6b; /* Old browsers */
-          background: -moz-radial-gradient(center, ellipse cover, #6b6b6b 0%, #131313 100%);
-          background: -webkit-radial-gradient(center, ellipse cover, #6b6b6b 0%,#131313 100%);
-          background: radial-gradient(ellipse at center, #575757 25%,#fff 100%);
-          transition: .3s ease all;
-          filter: blur(1px);
-          opacity: .9;
-          &:before {
-            border-radius: inherit;
-            background: radial-gradient(ellipse at center, #131313 0%,#fff 50%);
-            content: '';
-            display: block;
-            height: 100%;
-            position: absolute;
-            top: 0; left: 0;
-            opacity: 0;
-            width: 100%;
-            z-index: -100;
-            transition: .3s ease all;
-          }
-        }
-        svg {
-          position: relative;
-          z-index: 12;
-          margin-top: 8px;
-          fill: white;
-          transition: .3s ease all;
-        }
-      }
-      span {
-        margin-bottom: 20px;
-      }
-      .got-it {
-        padding: 0;
-        width: 145px;
-        height: 34px;
-        background-color: transparent;
-        border: 1px solid white;
-        font-weight: 500;
-        margin-top: 20px;
-      }
-      &.pressed {
-        svg {
-          margin-top: 0;
-        }
-        .circle {
-          transition: .3s ease all;
-          background-size: 110%;
-          &:before {
-            filter: blur(2px);
-            opacity: .8;
-          }
-        }
-      }
-      &.shift {
-        opacity: 0;
-        bottom: -10%;
-      }
-    }
-    .my-ride-map-wrapper {
-      width: 100%;
-      height: 30vh;
-      top: 0;
-      &.add-margin {
-        top: 45px;
-      }
-      .form-block-trip-map-wrapper .map-wrapper {
-        min-height: 0;
-      }
-      .form-block-trip-map-wrapper .map-canvas {
-        min-height: 0;
-      }
-    }
     .my-ride-trip-status {
-      position: -webkit-sticky;
-      position: sticky;
-      top: 0;
-      z-index: 5;
-    }
-    .my-ride-information-wrapper {
-      width: 100%;
-      position: absolute;
-      top: 30vh;
-      // padding-bottom: 67px;
-      &.add-margin {
-        top: calc(30vh + 45px);
-      }
-      .my-ride-information-wrapper-int {
-        height: auto;
-        padding-bottom: 80px;
-      }
-      .my-ride-section {
-        width: 90%;
-        &.my-ride-rider-notes {
-          padding: 15px 20px;
+        position: relative;
+        width: 100%;
+        height: 45px;
+        background-color: $blueberry;
+        text-align: center;
+
+        transition: 0.3s $sweetEasing all;
+
+        &.shrink {
+            height: 0;
         }
-      }
-      .my-ride-footer {
-        position: fixed;
-        bottom: 0;
-        padding: 15px;
-        background-color: white;
-        border-top: 1px solid $grey-extra-light;
-      }
+
+        .status-text {
+            color: white;
+            line-height: 45px;
+            text-transform: uppercase;
+        }
+
+        .green-bar {
+            position: absolute;
+            right: 0;
+            bottom: -3px;
+            width: 0;
+            height: 6px;
+            background-color: $bright-green;
+
+            transition: 0.3s $sweetEasing all;
+
+            &.expanded {
+                left: 0;
+                width: 100%;
+            }
+        }
     }
-  }
+
+    .my-ride-information-wrapper {
+        position: relative;
+        width: 40%;
+        height: 100%;
+        background-color: white;
+        display: inline-block;
+        vertical-align: top;
+
+        .my-ride-information-wrapper-int {
+            height: calc(100% - 98px);
+            overflow: scroll;
+        }
+
+        p {
+            color: $grey;
+            font-size: 16px;
+            margin: 0;
+            vertical-align: middle;
+
+            &.highlight {
+                color: $blueberry;
+            }
+
+            &.caps {
+                text-transform: uppercase;
+            }
+        }
+
+        span {
+            font-size: 14px;
+        }
+
+        h3 {
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-top: 5px;
+            margin-bottom: 0;
+            text-transform: uppercase;
+        }
+
+        h4 {
+            font-size: 16px;
+            font-weight: 500px;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+
+            &:not(:first-of-type) {
+                margin-top: 20px;
+            }
+        }
+
+        .my-ride-section {
+            position: relative;
+            width: 80%;
+            margin: 0 auto;
+            padding: 15px 0;
+
+            &:not(.my-ride-rider-notes) {
+                border-bottom: 1px solid $faded-blue;
+            }
+
+            &.my-ride-rider-options {
+                text-align: center;
+
+                .action-buttons-wrapper {
+                    margin-top: 20px;
+                }
+
+                a {
+                    width: 130px;
+                    height: 36px;
+
+                    &:not(:last-child) {
+                        margin-right: 10px;
+                    }
+                }
+            }
+
+            .info-wrapper {
+                position: relative;
+                margin-left: 42px;
+
+                &:not(:last-of-type) {
+                    margin-bottom: 15px;
+                }
+
+                svg {
+                    position: absolute;
+                    left: -28px;
+                    width: 22px;
+                    height: 22px;
+                    vertical-align: middle;
+                    fill: $blueberry;
+                }
+            }
+        }
+
+        .my-ride-footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: white;
+            padding: 25px 27px;
+
+            .footer-button {
+                width: 48%;
+                height: 48px;
+                font-size: 14px;
+                padding: 0;
+                text-transform: uppercase;
+                -webkit-user-select: none;
+                vertical-align: middle;
+
+                transition: 0s width;
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
+                -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+
+                &:not(:last-of-type) {
+                    margin-right: 4%;
+                }
+
+                &.count-1 {
+                    width: 100%;
+                }
+
+                &.no-show {
+                    background-color: #d90023;
+                }
+
+                &.hold-button {
+                    overflow: hidden;
+                    text-align: center;
+
+                    &::after {
+                        position: absolute;
+                        top: 0;
+                        left: -100%;
+                        width: 100%;
+                        height: 100%;
+                        background: #bc1d77; /* Old browsers */
+                        background: linear-gradient(270deg, #bc1d77, #6c0848, #93469a, #4d3a8c, #86d2e8);
+                        background-size: 300% 300%;
+                        content: "";
+
+                        -webkit-animation: wavyGradient 3s ease infinite;
+                        -moz-animation: wavyGradient 3s ease infinite;
+                        animation: wavyGradient 3s ease infinite;
+                        transition: 0.2s ease all;
+                    }
+
+                    &.no-show::after {
+                        background: #bc1d77; /* Old browsers */
+                        background: linear-gradient(270deg, #ffe2e0, #d90023);
+                    }
+
+                    &.add-gradient {
+                        &::after {
+                            left: 0;
+
+                            transition: 0.8s linear all;
+                        }
+
+                        &.add-pop {
+                            animation: pop 0.3s linear 1;
+                        }
+                    }
+                }
+            }
+
+            .hold-complete {
+                position: relative;
+                z-index: 5;
+            }
+        }
+    }
+
+    .my-ride-map-wrapper {
+        position: absolute;
+        right: 0;
+        width: 60%;
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+
+        .form-block-trip-map-wrapper {
+            height: 100%;
+
+            .map-wrapper {
+                max-height: 100%;
+            }
+        }
+    }
+
+    @media screen and (max-width: $break-mobile) {
+        height: calc(100vh - 100px);
+        margin-top: 0;
+
+        .tutorial-box {
+            position: fixed;
+            bottom: 12%;
+            left: 0;
+            z-index: 10;
+            width: 90%;
+            height: 30%;
+            min-height: 250px;
+            background-color: rgba(0, 0, 0, 0.75);
+            color: white;
+            margin: 5%;
+            opacity: 1;
+            text-align: center;
+
+            transition: 0.3s ease all;
+
+            .icon-wrapper {
+                height: 45%;
+                margin-top: 20px;
+                margin-bottom: 20px;
+
+                .circle {
+                    position: absolute;
+                    top: 13px;
+                    left: calc(50% - 12px);
+                    z-index: 11;
+                    width: 20px;
+                    height: 20px;
+                    background: #6b6b6b; /* Old browsers */
+                    background: -moz-radial-gradient(center, ellipse cover, #6b6b6b 0%, #131313 100%);
+                    background: -webkit-radial-gradient(center, ellipse cover, #6b6b6b 0%, #131313 100%);
+                    background: radial-gradient(ellipse at center, #575757 25%, #fff 100%);
+                    border-radius: 50px;
+                    opacity: 0.9;
+
+                    transition: 0.3s ease all;
+                    filter: blur(1px);
+
+                    &::before {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: -100;
+                        width: 100%;
+                        height: 100%;
+                        background: radial-gradient(ellipse at center, #131313 0%, #fff 50%);
+                        border-radius: inherit;
+                        content: "";
+                        display: block;
+                        opacity: 0;
+
+                        transition: 0.3s ease all;
+                    }
+                }
+
+                svg {
+                    position: relative;
+                    z-index: 12;
+                    margin-top: 8px;
+
+                    transition: 0.3s ease all;
+                    fill: white;
+                }
+            }
+
+            span {
+                margin-bottom: 20px;
+            }
+
+            .got-it {
+                width: 145px;
+                height: 34px;
+                background-color: transparent;
+                border: 1px solid white;
+                font-weight: 500;
+                margin-top: 20px;
+                padding: 0;
+            }
+
+            &.pressed {
+                svg {
+                    margin-top: 0;
+                }
+
+                .circle {
+                    background-size: 110%;
+
+                    transition: 0.3s ease all;
+
+                    &::before {
+                        opacity: 0.8;
+                        filter: blur(2px);
+                    }
+                }
+            }
+
+            &.shift {
+                bottom: -10%;
+                opacity: 0;
+            }
+        }
+
+        .my-ride-map-wrapper {
+            top: 0;
+            width: 100%;
+            height: 30vh;
+
+            &.add-margin {
+                top: 45px;
+            }
+
+            .form-block-trip-map-wrapper .map-wrapper {
+                min-height: 0;
+            }
+
+            .form-block-trip-map-wrapper .map-canvas {
+                min-height: 0;
+            }
+        }
+
+        .my-ride-trip-status {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 5;
+        }
+
+        .my-ride-information-wrapper {
+            position: absolute;
+            top: 30vh;
+            width: 100%;
+
+            // padding-bottom: 67px;
+            &.add-margin {
+                top: calc(30vh + 45px);
+            }
+
+            .my-ride-information-wrapper-int {
+                height: auto;
+                padding-bottom: 80px;
+            }
+
+            .my-ride-section {
+                width: 90%;
+
+                &.my-ride-rider-notes {
+                    padding: 15px 20px;
+                }
+            }
+
+            .my-ride-footer {
+                position: fixed;
+                bottom: 0;
+                background-color: white;
+                border-top: 1px solid $grey-extra-light;
+                padding: 15px;
+            }
+        }
+    }
 }

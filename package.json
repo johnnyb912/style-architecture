@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "stylelint": "stylelint \"public/scss/*.scss\"",
-    "stylelint:specificity": "stylelint \"public/scss/base/*.scss\" --config stylelint-configs/stylelint-no-specificity.json",
-    "stylelint:order": "stylelint \"public/scss/base/*.scss\" --config stylelint-configs/stylelint-order.json",
-    "stylelint:spaces": "stylelint \"public/scss/base/*.scss\" --config stylelint-configs/stylelint-spaces.json",
-    "stylelint:minor": "stylelint \"public/scss/base/*.scss\" --config stylelint-configs/stylelint-minor.json",
+    "stylelint": "stylelint \"public/scss/**/*.scss\" && exit 1",
+    "stylelint:specificity": "stylelint \"public/scss/**/*.scss\" --config stylelint-configs/stylelint-no-specificity.json && exit 1",
+    "stylelint:order": "stylelint \"public/scss/**/*.scss\" --config stylelint-configs/stylelint-order.json && exit 1",
+    "stylelint:spaces": "stylelint \"public/scss/**/*.scss\" --config stylelint-configs/stylelint-spaces.json && exit 1",
+    "stylelint:minor": "stylelint \"public/scss/**/*.scss\" --config stylelint-configs/stylelint-minor.json && exit 1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "git@github.com:johnnyb912/style-architecture.git",

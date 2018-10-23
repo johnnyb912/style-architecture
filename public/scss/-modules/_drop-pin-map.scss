@@ -1,113 +1,127 @@
 .drop-pin-map-wrapper.loaded {
-  .map-canvas {
-    height: 100%;
-    width: 100%;
-  }
+    .map-canvas {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .drop-pin-map {
-  .expander {
-    top: 20px;
-    right: 0;
-    padding: 0.5rem 1rem;
-    color: rgb(86, 86, 86);
-    z-index: 2000;
-    background-color: $white;
-    margin: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px;
-    cursor: pointer;
-    border-radius: 2px;
-    opacity: 0;
-    pointer-events: none;
-    .fa {
-      transition: transform 0.5s $sweetEasing;
+    .expander {
+        top: 20px;
+        right: 0;
+        z-index: 2000;
+        background-color: $white;
+        border-radius: 2px;
+        box-shadow: rgba(0, 0, 0, 0.298039) 0 1px 4px -1px;
+        color: rgb(86, 86, 86);
+        cursor: pointer;
+        margin: 1rem;
+        opacity: 0;
+        padding: 0.5rem 1rem;
+        pointer-events: none;
+
+        .fa {
+            transition: transform 0.5s $sweetEasing;
+        }
+
+        &:hover {
+            color: $black;
+
+            .fa-expand {
+                -ms-transform: scale(1.1); /* IE 9 */
+                -webkit-transform: scale(1.1); /* Chrome, Safari, Opera */
+                transform: scale(1.1);
+            }
+
+            .fa-compress {
+                -ms-transform: scale(0.9); /* IE 9 */
+                -webkit-transform: scale(0.9); /* Chrome, Safari, Opera */
+                transform: scale(0.9);
+            }
+        }
     }
-    &:hover {
-      color: $black;
-      .fa-expand {
-        -ms-transform: scale(1.1); /* IE 9 */
-        -webkit-transform: scale(1.1); /* Chrome, Safari, Opera */
-        transform: scale(1.1);
-      }
-      .fa-compress {
-        -ms-transform: scale(0.9); /* IE 9 */
-        -webkit-transform: scale(0.9); /* Chrome, Safari, Opera */
-        transform: scale(0.9);
-      }
+
+    .info {
+        font-size: 1rem;
     }
-  }
-  .info {
-    font-size: 1rem;
-  }
 }
 
 .add-edit-modal-form .drop-pin-map.loaded .expander {
-  @include media(small) {
-    opacity: 1;
-    pointer-events: all;
-  }
+    @include media(small) {
+        opacity: 1;
+        pointer-events: all;
+    }
 }
 
 .drop-pin-map-wrapper {
-  height: 0;
-  width: 100%;
-  transition: all 0.25s $sweetEasing;
-  overflow: hidden;
-  @include media(small) {
-    min-width: 500px;
-  }
-  @include media(medium) {
-    min-width: 500px;
-  }
-  &.loaded {
-    height: 100%;
-    min-height: 200px;
-    margin-top: 5px;
-    @include media(small) {
-      margin-top: 10px;
-    }
-    @include media(large) {
-      margin-top: 15px;
-    }
-    &.expanded {
-      width: 100%;
-      height: calc(95vh - 370px);
-      @include media(large) {
-        height: calc(95vh - 200px);
-      }
-    }
-  }
-
-  .map-canvas {
-    height: 100%;
-    min-height: 200px;
     width: 100%;
-  }
+    height: 0;
+    overflow: hidden;
+
+    transition: all 0.25s $sweetEasing;
+
+    @include media(small) {
+        min-width: 500px;
+    }
+    @include media(medium) {
+        min-width: 500px;
+    }
+
+    &.loaded {
+        height: 100%;
+        min-height: 200px;
+        margin-top: 5px;
+
+        @include media(small) {
+            margin-top: 10px;
+        }
+        @include media(large) {
+            margin-top: 15px;
+        }
+
+        &.expanded {
+            width: 100%;
+            height: calc(95vh - 370px);
+
+            @include media(large) {
+                height: calc(95vh - 200px);
+            }
+        }
+    }
+
+    .map-canvas {
+        width: 100%;
+        height: 100%;
+        min-height: 200px;
+    }
 }
 
 .form-section-rider-contact {
-  .drop-pin-map-wrapper.loaded {
-    height: 300px;
-    margin-bottom: 40px;
-  }
-  .map-canvas {
-    height: 300px;
-    width: 100%;
-    @include media(large) {
-      height: 300px;
+    .drop-pin-map-wrapper.loaded {
+        height: 300px;
+        margin-bottom: 40px;
     }
-  }
+
+    .map-canvas {
+        width: 100%;
+        height: 300px;
+
+        @include media(large) {
+            height: 300px;
+        }
+    }
 }
 
 .drop-pin-map .footnote {
-  height: 0;
-  overflow: hidden;
-  transition: height .25s $sweetEasing;
-  font-size: 12px;
-  color: $greyish-brown;
-  margin-bottom: 5px;
+    height: 0;
+    color: $greyish-brown;
+    font-size: 12px;
+    margin-bottom: 5px;
+    overflow: hidden;
+
+    transition: height 0.25s $sweetEasing;
 }
 
 .drop-pin-map.loaded .footnote {
-  height: auto;
+    height: auto;
 }
