@@ -199,7 +199,7 @@
 
     li {
         &::before {
-            content: "",;
+            content: '',;
         }
         display: flex;
         align-items: flex-start;
@@ -296,7 +296,7 @@
                     border: 20px solid;
                     border-color: transparent transparent lighten($brand-accent-color, 15%) transparent;
                     border-radius: 10px;
-                    content: "";
+                    content: '';
                 }
 
                 &.text-left {

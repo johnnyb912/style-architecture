@@ -1,11 +1,11 @@
 // Breakpoints values - MOBILE FIRST!!
 $breakpoints: (
-    "small": (min-width: 767px),
-    "smallMedium": (min-width: 900px),
-    "medium": (min-width: 1025px),
-    "mediumLarge": (min-width: 1230px),
-    "large": (min-width: 1366px),
-    "xlarge": (min-width: 1920px)
+    'small': (min-width: 767px),
+    'smallMedium': (min-width: 900px),
+    'medium': (min-width: 1025px),
+    'mediumLarge': (min-width: 1230px),
+    'large': (min-width: 1366px),
+    'xlarge': (min-width: 1920px)
 );
 
 @mixin media($name) {
@@ -16,7 +16,7 @@ $breakpoints: (
             @content;
         }
     } @else {
-        @warn "Unfortunately, no value could be retrieved from `#{$breakpoints}`. " + "Please make sure it is defined in the `$breakpoints` map.";
+        @warn 'Unfortunately, no value could be retrieved from `#{$breakpoints}`. ' + 'Please make sure it is defined in the `$breakpoints` map.';
     }
 }
 

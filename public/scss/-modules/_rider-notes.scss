@@ -485,7 +485,7 @@
         & .field:first-of-type { margin-top: 0; }
     }
 
-    h2[data-section="Rider Notes"] {
+    h2[data-section='Rider Notes'] {
         border-top: 2px solid $purple-blue;
 
         @include media(small) {
@@ -497,7 +497,7 @@
     }
 
     @include media(small) {
-        .wrapper-wrapper > h2[data-section="Rider Notes"] {
+        .wrapper-wrapper > h2[data-section='Rider Notes'] {
             margin-top: 0;
             padding-top: 0;
         }

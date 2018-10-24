@@ -220,7 +220,7 @@ section.form-section-trip-overview {
 
             .ride-status-icon {
                 //Tooltips on hover of ride-status-icon
-                &::before { content: "Ride Completed"; }
+                &::before { content: 'Ride Completed'; }
 
                 svg { fill: $brand-accent-color; }
             }
@@ -235,7 +235,7 @@ section.form-section-trip-overview {
 
             .ride-status-icon {
                 //Tooltips on hover of ride-status-icon
-                &::before { content: "Currently in Transit"; }
+                &::before { content: 'Currently in Transit'; }
 
                 svg { fill: $success-color; }
             }
@@ -272,7 +272,7 @@ section.form-section-trip-overview {
                 position: absolute;
                 top: calc(50% - 10px);
                 left: -12px;
-                content: "";
+                content: '';
                 opacity: 0;
                 visibility: hidden;
 
@@ -441,7 +441,7 @@ section.form-section-trip-overview {
         }
 
         h3::after {
-            content: ":";
+            content: ':';
             margin-right: 5px;
         }
     }

@@ -212,7 +212,7 @@
     padding: 0;
     text-indent: 100%;
     white-space: nowrap;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=50)';
 }
 
 .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_prev,
@@ -272,7 +272,7 @@
 .xdsoft_datetimepicker .xdsoft_next:hover,
 .xdsoft_datetimepicker .xdsoft_prev:hover {
     opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)';
 }
 
 .xdsoft_datetimepicker .xdsoft_label {
@@ -415,12 +415,12 @@
 .xdsoft_datetimepicker .xdsoft_time_box > div > div.xdsoft_disabled {
     cursor: default;
     opacity: 0.5;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=50)';
 }
 
 .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_other_month.xdsoft_disabled {
     opacity: 0.2;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=20)';
 }
 
 .xdsoft_datetimepicker .xdsoft_calendar td:hover,
@@ -519,13 +519,13 @@
     background: linear-gradient(to bottom, $white 0%, #f4f8fa 73%);
     border: 1px solid #d7d8da;
     color: #82878c;
-    font-family: "museo-sans", "Book Antiqua", sans-serif;
+    font-family: 'museo-sans', 'Book Antiqua', sans-serif;
     font-size: 12px;
     font-weight: 300;
     padding: 4px 17px 4px 33px;
 
     /* W3C */
-    filter: progid:dximagetransform.microsoft.gradient(startColorstr="$white", endColorstr="#f4f8fa", GradientType=0);
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr='$white', endColorstr='#f4f8fa', GradientType=0);
 
     /* IE6-9 */
 }
@@ -555,7 +555,7 @@
     color: #454551;
 
     /* W3C */
-    filter: progid:dximagetransform.microsoft.gradient(startColorstr="#f4f8fa", endColorstr="$white", GradientType=0);
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#f4f8fa', endColorstr='$white', GradientType=0);
 
     /* IE6-9 */
 }

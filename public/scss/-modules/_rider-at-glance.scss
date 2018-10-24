@@ -197,7 +197,7 @@
             @include media(small) {
                 &::before {
                     color: $blueberry;
-                    content: "•";
+                    content: '•';
                     font-size: 18px;
                     margin: 0 8px;
                 }
@@ -863,7 +863,7 @@
                 left: 7%;
                 width: 86%;
                 border-bottom: 2px solid $iris;
-                content: "";
+                content: '';
             }
         }
 
@@ -885,7 +885,7 @@
                         left: 7%;
                         width: 86%;
                         border-top: 1px solid $iris;
-                        content: "";
+                        content: '';
                     }
                 }
 

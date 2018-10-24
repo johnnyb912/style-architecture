@@ -116,10 +116,10 @@ input,
     }
 }
 
-input[type="text"],
-input[type="phone"],
-input[type="email"],
-input[type="password"] {
+input[type='text'],
+input[type='phone'],
+input[type='email'],
+input[type='password'] {
     text-overflow: ellipsis;
 
     + label {
@@ -153,7 +153,7 @@ label {
         height: 45px;
         background: $white-dark;
         border-right: $dotted-border;
-        content: "";
+        content: '';
 
         @include media(small) {
             height: 49px;
@@ -245,7 +245,7 @@ label {
 select {
     -moz-appearance: none;
     text-indent: 0.01px;
-    text-overflow: "";
+    text-overflow: '';
 
     // Makes the select elements act like the input elements
     &.filled + .select-label .select-icon {
@@ -635,7 +635,7 @@ input.check-toggle {
         background-color: $white;
         border-radius: 50%;
         box-shadow: 0 2px 2px 0 $grey-warm;
-        content: "";
+        content: '';
         margin: 0.2rem;
 
         .checkbox-wrapper & {
@@ -733,8 +733,8 @@ label.error {
         left: -30px;
         width: 30px;
         height: 37px;
-        background: url("../www/images/error-tab.png") no-repeat;
-        content: "";
+        background: url('../www/images/error-tab.png') no-repeat;
+        content: '';
     }
 
     &.valid {
@@ -828,7 +828,7 @@ label.styled-radio-label {
         min-height: $checkbox-size;
         background: $bright-green;
         border-radius: 50%;
-        content: "";
+        content: '';
 
         transform: scale(0) translateY(-9px);
         transition: 0.2s;

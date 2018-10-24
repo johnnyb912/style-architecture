@@ -1,7 +1,7 @@
 .table-dropdown,
 .expandable-toggles {
     .expanded .input-wrapper {
-        input[type="text"] {
+        input[type='text'] {
             border-color: $blueberry;
             border-bottom-color: $faded-blue;
             border-bottom-right-radius: 0;
@@ -194,7 +194,7 @@
         }
     }
 
-    .input-wrapper > input[type="text"] {
+    .input-wrapper > input[type='text'] {
         border-color: $faded-blue;
 
         &:hover {
@@ -317,7 +317,7 @@
         }
     }
 
-    .hide-icon input[type="text"] {
+    .hide-icon input[type='text'] {
         color: $greyish-brown;
         cursor: pointer;
 

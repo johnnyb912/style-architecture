@@ -25,6 +25,7 @@
 
 // Triangle Mixing from http://bourbon.io/docs/#triangle
 @mixin triangle($size, $color, $direction) {
+
     $width: nth($size, 1);
     $height: nth($size, length($size));
     $foreground-color: nth($color, 1);
@@ -93,7 +94,7 @@
 // This hack will use the polyfill for fixing IE background-size: cover issue.
 // backgroundsize.min.htc file needs to be uploaded to server in the root directory of the wordpress install.
 @mixin fix-ie8-background-cover {
-    -ms-behavior: url("../backgroundsize.min.htc");
+    -ms-behavior: url('../backgroundsize.min.htc');
 }
 
 // FLASHES

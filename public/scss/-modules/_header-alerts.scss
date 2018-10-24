@@ -57,7 +57,7 @@
         position: absolute;
         top: -10px;
         right: 15px;
-        content: "";
+        content: '';
 
         @include triangle(20px, $blueberry, up);
         @include media(small) {

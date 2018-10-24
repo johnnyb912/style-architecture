@@ -82,7 +82,7 @@ and a way faster/cleaner experience. */
         z-index: 1000;
         width: $spinnerSize;
         height: $spinnerSize;
-        background-image: url("/images/spinner.png");
+        background-image: url('/images/spinner.png');
         background-repeat: no-repeat;
         background-size: $spinnerSize $spinnerSize;
         display: block;
@@ -94,7 +94,7 @@ and a way faster/cleaner experience. */
         transform-origin: 52.5% 50%;
 
         .mobile & {
-            background-image: url("images/spinner.png");
+            background-image: url('images/spinner.png');
         }
 
         @media screen and (max-width: $break-mobile) {
@@ -136,7 +136,7 @@ body.loading {
         z-index: 1000;
         width: $spinnerSize;
         height: $spinnerSize;
-        background-image: url("/images/spinner.png");
+        background-image: url('/images/spinner.png');
         background-repeat: no-repeat;
         background-size: $spinnerSize $spinnerSize;
         margin: -($spinnerSize/2) 0 0 (-$spinnerSize/2);
@@ -147,7 +147,7 @@ body.loading {
         transform-origin: 52.5% 50%;
 
         .mobile & {
-            background-image: url("images/spinner.png");
+            background-image: url('images/spinner.png');
         }
 
         @media screen and (max-width: $break-mobile) {
@@ -172,7 +172,7 @@ $smallSpinnerSize: 11px;
 i.fa.loading {
     width: $smallSpinnerSize;
     height: $smallSpinnerSize;
-    background-image: url("/images/logo-c.png");
+    background-image: url('/images/logo-c.png');
     background-repeat: no-repeat;
     background-size: $smallSpinnerSize $smallSpinnerSize;
     color: transparent !important;
@@ -182,7 +182,7 @@ i.fa.loading {
     animation-iteration-count: infinite;
 
     .mobile & {
-        background-image: url("images/logo-c.png");
+        background-image: url('images/logo-c.png');
     }
 }
 
@@ -202,7 +202,7 @@ i.fa.loading {
     > *:first-child {
         width: $spinnerSize;
         height: $spinnerSize;
-        background-image: url("/images/spinner.png");
+        background-image: url('/images/spinner.png');
         background-repeat: no-repeat;
         background-size: $spinnerSize $spinnerSize;
         opacity: 1;
@@ -214,7 +214,7 @@ i.fa.loading {
         transition: opacity 1s ease-out;
 
         .mobile & {
-            background-image: url("images/spinner.png");
+            background-image: url('images/spinner.png');
         }
     }
 
@@ -244,6 +244,6 @@ i.fa.loading {
 
 body.custom-logo {
     .circulation-loader > div, .fa.loading, &.loading #spinner {
-        background-image: url("../www/images/custom-logo-square.png");
+        background-image: url('../www/images/custom-logo-square.png');
     }
 }

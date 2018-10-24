@@ -422,7 +422,7 @@
                 }
             }
 
-            .input-wrapper input[type="text"] {
+            .input-wrapper input[type='text'] {
                 height: 42px;
             }
 
@@ -510,7 +510,7 @@
             .input-wrapper {
                 margin: 0;
 
-                input[type="text"],label,label::before {
+                input[type='text'],label,label::before {
                     height: 40px;
                     border: 0;
                     font-size: 14px;
@@ -532,7 +532,7 @@
                         }
                     }
 
-                    input[type="text"],label,label::before {
+                    input[type='text'],label,label::before {
                         height: 30px;
                     }
                 }
@@ -1975,7 +1975,7 @@
             }
 
             .option::after {
-                content: "s";
+                content: 's';
             }
         }
     }

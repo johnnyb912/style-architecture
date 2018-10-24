@@ -1563,7 +1563,7 @@
         div {
             position: relative;
             width: 20%;
-            width: "100%";
+            width: '100%';
             height: 0;
             margin: 1rem 0;
             padding: 0 0 50px;
@@ -2221,7 +2221,7 @@
             position: absolute;
             bottom: -7px;
             left: calc(50% - 7px);
-            content: "";
+            content: '';
 
             @include triangle(15px, $grey-dark, down);
         }
