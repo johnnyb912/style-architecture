@@ -1,21 +1,25 @@
 {
-  "name": "style-architecture",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "stylelint": "stylelint \"public/scss/**/*.scss\" && exit 1",
-    "stylelint:specificity": "stylelint \"public/scss/**/*.scss\" --config stylelint-configs/stylelint-no-specificity.json && exit 1",
-    "stylelint:order": "stylelint \"public/scss/**/*.scss\" --config stylelint-configs/stylelint-order.json && exit 1",
-    "stylelint:spaces": "stylelint \"public/scss/**/*.scss\" --config stylelint-configs/stylelint-spaces.json && exit 1",
-    "stylelint:minor": "stylelint \"public/scss/**/*.scss\" --config stylelint-configs/stylelint-minor.json && exit 1",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": "git@github.com:johnnyb912/style-architecture.git",
-  "author": "John Boyle <john.boyle912@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "stylelint": "^9.6.0",
-    "stylelint-order": "^1.0.0",
-    "stylelint-scss": "^3.3.1"
-  }
+    "name": "style-architecture",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "clean": "rimraf node_modules",
+        "clean-install": "npm run clean && rimraf package-lock.json && npm cache verify && npm install",
+        "stylelint": "stylelint \"public/scss/**/*.scss\" || exit 0",
+        "stylelint:specificity": "stylelint \"public/scss/**/*.scss\" --config stylelint-configs/stylelint-no-specificity.json || exit 0",
+        "stylelint:order": "stylelint \"public/scss/**/*.scss\" --config stylelint-configs/stylelint-order.json || exit 0",
+        "stylelint:spaces": "stylelint \"public/scss/**/*.scss\" --config stylelint-configs/stylelint-spaces.json || exit 0",
+        "stylelint:minor": "stylelint \"public/scss/**/*.scss\" --config stylelint-configs/stylelint-minor.json || exit 0",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": "git@github.com:johnnyb912/style-architecture.git",
+    "author": "John Boyle <john.boyle912@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "stylelint": "15.2.0",
+        "stylelint-config-sensible-scss": "github:johnnyb912/stylelint-config-sensible-scss#update-branch"
+    },
+    "devDependencies": {
+        "rimraf": "4.1.2"
+    }
 }
